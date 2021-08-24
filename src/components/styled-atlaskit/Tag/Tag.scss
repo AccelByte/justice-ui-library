@@ -1,0 +1,47 @@
+/*
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+.styled-atlaskit-tag {
+  display: inline;
+  [class*='-BaseTag'] {
+    margin: 0;
+    background-color: $tag-backgroundColor;
+    color: $color--text--tertiary;
+    height: 25px;
+    &:hover {
+      background-color: $tag-backgroundColor--hovered;
+      color: $color--text--tertiary;
+      button {
+        background-color: $tag-backgroundColor--hovered;
+      }
+    }
+    [class*='-Content'] {
+      margin: auto 5px;
+      &:hover {
+        background-color: $tag-backgroundColor--hovered;
+        color: $color--text--tertiary;
+      }
+    }
+    button {
+      background-color: $tag-backgroundColor;
+      margin-right: 5px;
+      &:hover {
+        background-color: $tag-backgroundColor--hovered !important;
+      }
+      span {
+        color: $color--text--tertiary;
+        width: 24px;
+        height: 24px;
+        &[class*='-Icon'] > svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}

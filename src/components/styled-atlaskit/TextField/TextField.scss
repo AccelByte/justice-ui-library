@@ -1,0 +1,27 @@
+/*
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "../../../styles/variables";
+
+.styled-atlaskit-textfield {
+  label {
+    span {
+      font-weight: normal;
+      font-size: $font-size-h6;
+      color: $text-field-label--inactive;
+    }
+  }
+  div[class^="Content-"] {
+    border-radius: $border-radius;
+    border: 1px solid $input-borderColor--inactive;
+  }
+  &.styled-atlaskit-textfield--isFocused {
+    div[class^="Content-"] {
+      border-radius: $border-radius;
+      border: 2px solid $input-borderColor--active;
+    }
+  }
+}

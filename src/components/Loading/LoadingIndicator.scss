@@ -1,0 +1,31 @@
+/*!
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ *
+ */
+
+@import "src/styles/variables";
+@import "src/styles/animations";
+
+.loading-icon {
+  display: block;
+  margin: 0 auto;
+  border: 3px solid $base-60;
+  border-top-color: $base-black;
+  border-radius: 44px;
+  animation: spin 1s linear infinite;
+  opacity: 0.5;
+  &.small {
+    width: 16px;
+    height: 16px;
+  }
+  &.normal {
+    width: 34px;
+    height: 34px;
+  }
+  &.large {
+    width: 64px;
+    height: 64px;
+  }
+}

@@ -1,0 +1,30 @@
+/*
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  font-size: $font-size-h4;
+  line-height: 1;
+  a {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    &.disabled{
+      cursor: not-allowed;
+      pointer-events: none;
+      color: $color--disabled !important;
+    }
+    &.navigation{
+      cursor: pointer;
+      color: $color--icon !important;
+    }
+  }
+}

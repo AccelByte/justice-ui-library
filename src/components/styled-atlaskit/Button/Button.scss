@@ -1,0 +1,82 @@
+/*
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+button.styled-atlaskit-button {
+  border-radius: $border-radius;
+  height: 35px;
+  padding: 0 10px;
+  span {
+    font-family: $font-family-primary;
+    font-size: $font-size-h6;
+    line-height: 30px;
+    font-weight: normal;
+  }
+  &:not(:disabled) {
+    &.primary {
+      background-color: $button-backgroundColor--primary--enabled;
+      &:hover {
+        background-color: $button-backgroundColor--primary--hovered;
+      }
+      &:active {
+        background-color: $button-backgroundColor--primary--active;
+      }
+    }
+    &.outline {
+      background-color: transparent;
+      border: 1px solid $button-borderColor--outline--enabled;
+      span {
+        color: $button-color--ghost--enabled;
+      }
+      &:hover {
+        background-color: $button-backgroundColor--outline--hovered;
+      }
+      &:active {
+        background-color: $button-backgroundColor--outline--active;
+      }
+      &.danger {
+        background-color: transparent;
+        border-color: $button-borderColor--danger--enabled;
+        span {
+          color: $color--error--primary;
+        }
+      }
+    }
+    &.subtle {
+      span {
+        color: $button-color--ghost--enabled;
+      }
+      &:hover {
+        background-color: $button-backgroundColor--subtle--hovered;
+      }
+      &:active {
+        background-color: $button-backgroundColor--subtle--active;
+      }
+    }
+    &.danger {
+      background-color: $button-backgroundColor--danger--enabled;
+      span {
+        color: $color--text--tertiary;
+      }
+    }
+  }
+  &:disabled {
+    &.primary {
+      background-color: $button-backgroundColor--disabled;
+      span {
+        color: $color--text--tertiary;
+      }
+    }
+    &.outline {
+      background-color: transparent;
+      border: 1px solid $button-borderColor--outline--disabled;
+      span {
+        color: $color--disabled;
+      }
+    }
+  }
+}

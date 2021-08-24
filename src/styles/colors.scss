@@ -1,0 +1,120 @@
+/*
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+$base-black: #000000;
+$base-120: #232831;
+$base-80: #687792;
+$semantic-red-100: #ac1616;
+$semantic-yellow-100: #b17707;
+$semantic-blue-100: #025896;
+$semantic-green-100: #00642e;
+$base-white: #ffffff;
+$base-20: #e1e4e9;
+$base-10: #f5f6f8;
+$base-140: #15181d;
+$base-130: #1c2027;
+$base-110: #373f4e;
+$base-100: #4c576b;
+$brand-80: #0b6cff;
+$brand-60: #4c93ff;
+$brand-100: #004ec3;
+$brand-10: #eff5ff;
+$brand-40: #8dbaff;
+$base-40: #b8bfcd;
+$semantic-blue-10: #eef6fb;
+$semantic-green-10: #eef7f2;
+$semantic-yellow-10: #fef9ee;
+$semantic-red-10: #fdf1f1;
+$base-90: #5a677f;
+$base-70: #7b89a1;
+$base-60: #909bb0;
+$base-50: #a4adbe;
+$secondary-50: #343447;
+$semantic-red-90: #cb1a1a;
+$semantic-red-80: #e32626;
+$semantic-red-70: #de350b;
+$base-150: #1e2749;
+$base-30: #141c34;
+$semantic-yellow-90: #d18c09;
+$semantic-yellow-80: #f1a20a;
+$semantic-green-90: #007637;
+$semantic-green-80: #008940;
+$semantic-blue-90: #0368b1;
+$semantic-blue-80: #0479cd;
+$blue-10: #e8f0fe;
+
+$semantic-purple-100: #7e13cb;
+$semantic-purple-90: #931ee9;
+$semantic-purple-80: #a542ed;
+$semantic-purple-10: #f9f2fe;
+$gray-80: #f5f5f5;
+
+// Project Colors
+$color--accent: $brand-80;
+
+$color--text--primary: $base-120;
+$color--text--secondary: $base-80;
+$color--text--tertiary: $base-white;
+$color--icon: $base-80;
+$color--disabled: $base-40;
+
+$color--info--primary: $semantic-blue-100;
+$color--info--secondary: $semantic-blue-10;
+$color--success--primary: $semantic-green-100;
+$color--success--secondary: $semantic-green-10;
+$color--warning--primary: $semantic-yellow-80;
+$color--warning--secondary: $semantic-yellow-10;
+$color--error--primary: $semantic-red-80;
+$color--error--secondary: $semantic-red-10;
+
+$color--divider: $base-20;
+
+$backgroundColor--primary: $base-white;
+
+// Input
+$input-backgroundColor: $base-white;
+$input-backgroundColor--hovered: $base-10;
+$input-color--placeholder: $base-40;
+
+$input-borderColor--inactive: $base-40;
+$input-borderColor--hovered: $base-80;
+$input-borderColor--active: $brand-80;
+
+// Button
+$button-color--ghost--enabled: $color--accent;
+
+$button-backgroundColor--primary--enabled: $color--accent;
+$button-backgroundColor--primary--hovered: $brand-60;
+$button-backgroundColor--primary--active: $brand-100;
+$button-backgroundColor--disabled: $color--disabled;
+
+$button-backgroundColor--outline--hovered: $brand-10;
+$button-backgroundColor--outline--active: $brand-40;
+$button-borderColor--outline--enabled: $brand-80;
+$button-borderColor--outline--disabled: $color--disabled;
+
+$button-backgroundColor--subtle--hovered: $brand-10;
+$button-backgroundColor--subtle--active: $brand-40;
+
+$button-backgroundColor--danger--enabled: $semantic-red-80;
+$button-borderColor--danger--enabled: $semantic-red-80;
+
+$button-borderColor--green: $color--success--primary;
+
+// Radio
+$radio-borderColor--selected: $color--accent;
+$radio-color--disabled: $color--disabled;
+
+// Tag
+$tag-backgroundColor: $color--accent;
+$tag-backgroundColor--hovered: $brand-60;
+
+// Input Select
+$select-option--hovered: $base-10;
+$select-option--selected: $brand-80;
+
+// Input Text
+$text-field-label--inactive: $base-80;

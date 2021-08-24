@@ -1,0 +1,76 @@
+/*
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+.information-table {
+  .horizontalFieldText {
+    min-height: 45px;
+    &.label-hidden {
+      .cell-2 {
+        padding-left: 0;
+      }
+    }
+  }
+  .cell-1 {
+    width: 20%;
+    min-width: 110px;
+    font-size: $font-size-h6;
+    color: $color--text--secondary;
+    align-self: flex-start;
+    padding-top: 11px;
+    line-height: 24px;
+    &.left {
+      text-align: left;
+    }
+    &.center {
+      text-align: center;
+    }
+    &.right {
+      text-align: right;
+    }
+  }
+  //
+  //    i {
+  //      font-size: 15px;
+  //      position: relative;
+  //    }
+  //
+  //    &.left {
+  //      text-align: left;
+  //
+  //      i.icon-info[data-tip] {
+  //        font-size: $font-size-h3;
+  //        position: relative;
+  //
+  //        &:before {
+  //          position: absolute;
+  //          top: 3px;
+  //        }
+  //      }
+  //    }
+  //
+  //    &.center {
+  //      text-align: center;
+  //    }
+  //
+  //    &.right {
+  //      text-align: right;
+  //    }
+  //  }
+  //
+  .cell-2 {
+    flex: 1;
+    padding-left: 30px;
+    font-family: $font-family-primary;
+    font-size: $font-size-h5;
+    color: $color--text--primary;
+    word-break: break-all;
+  }
+
+
+  //}
+}

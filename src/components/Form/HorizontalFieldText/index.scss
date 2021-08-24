@@ -1,0 +1,20 @@
+/*
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+.horizontalFieldText {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .cell-1 .label {
+    margin-right: 5px;
+    font-size: $font-size-h5;
+    color: $color--text--secondary;
+  }
+}

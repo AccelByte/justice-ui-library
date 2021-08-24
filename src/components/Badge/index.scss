@@ -1,0 +1,91 @@
+/*
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "../../styles/variables";
+
+.badge-container {
+  padding: 2px 5px;
+  color: $base-100;
+  border-radius: 2px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  &.basic{
+    color: $base-white;
+    &.error{
+      background-color: $semantic-red-90;
+    }
+    &.warning{
+      background-color: $semantic-yellow-100;
+    }
+    &.success{
+      background-color: $semantic-green-100;
+    }
+    &.info{
+      background-color: $semantic-blue-100;
+    }
+    &.inactive{
+      background-color: $base-80;
+    }
+    &.general{
+      background-color: $base-120;
+    }
+  }
+  &.light{
+    &.error{
+      color: $semantic-red-90;
+      background-color: $semantic-red-10;
+    }
+    &.warning{
+      color:$base-120;
+      background-color: $semantic-yellow-10;
+    }
+    &.success{
+      color: $semantic-green-100;
+      background-color: $semantic-green-10;
+    }
+    &.info{
+      color: $semantic-blue-100;
+      background-color: $semantic-blue-10;
+    }
+    &.inactive{
+      color: $base-100;
+      background-color: $base-20;
+    }
+    &.general{
+      color: $base-120;
+      background-color: $base-20;
+    }
+  }
+  &.outline{
+    border-width: 1px;
+    border-style: solid;
+    &.error{
+      color: $semantic-red-90;
+      border-color: $semantic-red-10;
+    }
+    &.warning{
+      color:$semantic-yellow-100;
+      border-color: $semantic-yellow-100;
+    }
+    &.success{
+      color: $semantic-green-100;
+      border-color: $semantic-green-100;
+    }
+    &.info{
+      color: $semantic-blue-100;
+      border-color: $semantic-blue-100;
+    }
+    &.inactive{
+      color: $base-80;
+      border-color: $base-80;
+    }
+    &.general{
+      color: $base-120;
+      border-color: $base-120;
+    }
+  }
+}

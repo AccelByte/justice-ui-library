@@ -1,0 +1,35 @@
+/*
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&family=Roboto+Mono:400&display=swap');
+@import './colors';
+
+// Typography
+$font-family-primary: 'Roboto', sans-serif;
+$font-family-monospace: 'Roboto Mono', monospace;
+
+$font-size-h1-large: 28px;
+$font-size-h1: 24px;
+$font-size-h2: 22px;
+$font-size-h3: 20px;
+$font-size-h4: 18px;
+$font-size-h5: 16px;
+$font-size-h6: 14px;
+$font-size-h7: 12px;
+$font-size-h8: 11px;
+$font-size-h9: 10px;
+
+// Width
+$img-width-1: 78px;
+$container-large: 1024px;
+$container-small: 768px;
+$container-full: 100%;
+
+// Height
+$img-height-1: 78px;
+$header-height: 56px;
+
+$border-radius: 4px;
