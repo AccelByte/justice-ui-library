@@ -1,6 +1,6 @@
 {
   "name": "justice-ui-library",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "AccelByte Inc",
   "license": "AccelByte License",
   "main": "./build/index.js",
@@ -8,7 +8,9 @@
   "scripts": {
     "test": "react-scripts test",
     "clean": "rimraf build",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@atlaskit/button": "^11.0.11",
@@ -28,7 +30,8 @@
     "@types/react-dom": "^17.0.0",
     "@types/react-tooltip": "^3.3.5",
     "classnames": "^2.2.5",
-    "node-sass": "^4.8.1",
+    "moment": "^2.29.1",
+    "react-datetime": "^2.16.3",
     "react-scripts": "4.0.3",
     "react-tooltip": "^3.6.1",
     "styled-components": "^3.2.6",
@@ -36,24 +39,35 @@
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.15.0",
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
     "@rollup/plugin-typescript": "^8.2.5",
+    "@storybook/addon-actions": "^6.3.7",
+    "@storybook/addon-essentials": "^6.3.7",
+    "@storybook/addon-links": "^6.3.7",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/react": "^6.3.7",
     "@typescript-eslint/eslint-plugin": "^4.29.2",
     "@typescript-eslint/parser": "^4.29.2",
+    "babel-loader": "^8.2.2",
+    "css-loader": "5.2.6",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "postcss": "^8.3.6",
     "prettier": "^2.3.2",
+    "react-dom": "^17.0.2",
     "rollup": "^2.56.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.1"
+    "rollup-plugin-postcss": "^4.0.1",
+    "sass": "^1.38.1",
+    "sass-loader": "10.1.1",
+    "style-loader": "2.0.0"
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^17.0.2"
   }
 }
