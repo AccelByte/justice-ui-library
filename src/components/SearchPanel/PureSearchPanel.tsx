@@ -8,6 +8,7 @@ import classNames from "classnames";
 import * as React from "react";
 import { Enum } from "../../types";
 import "./PureSearchPanel.scss";
+import { Icon } from "../Icon";
 
 export const SearchIconPosition = Enum("LEFT", "RIGHT");
 

@@ -12,6 +12,7 @@ export * from "./Card";
 export * from "./Card/utility";
 export * from "./Form/HorizontalFieldText";
 export * from "./Form/RadioButton";
+export * from "./Icon";
 export * from "./Loading/LoadingIndicator";
 export * from "./Loading/LoadingOrErrorWrapper";
 export * from "./Navigation/Breadcrumb";
