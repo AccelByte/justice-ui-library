@@ -57,9 +57,10 @@
       align-items: center;
       margin-top: 0;
       letter-spacing: 0.02em;
-      > a {
+      &__link {
         font-family: $font-family-primary;
         font-size: $font-size-h6;
+        box-sizing: border-box;
         height: 20px;
         display: block;
         color: $base-100;
@@ -70,9 +71,10 @@
         &:hover {
           color: $base-120;
           border-bottom: 0.7px solid $base-120;
+          cursor: pointer;
         }
       }
-      > span,
+      > &__no-link,
       > .item-separator {
         display: block;
         font-weight: 500;

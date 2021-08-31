@@ -6,6 +6,6 @@
 
 export interface BreadcrumbSchema {
   text: string;
-  link?: string;
+  onClick?: () => void;
   dataQa?: string | null;
 }

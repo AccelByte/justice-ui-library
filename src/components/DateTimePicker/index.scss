@@ -1,0 +1,63 @@
+/*!
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+.datepicker__input-field {
+  display: flex;
+  width: 100%;
+  border: 1px solid $input-borderColor--inactive;
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 40px;
+  &:hover {
+    background-color: $input-backgroundColor--hovered;
+  }
+  &:focus-within {
+    border: 2px solid $input-borderColor--active;
+  }
+  input {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-family: $font-family-primary;
+    font-size: 16px;
+    &:focus {
+      outline: none;
+    }
+    &.form-control[readonly] {
+      background-color: transparent;
+    }
+    &.form-control:focus {
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+  i {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    color: $base-40;
+  }
+  &.isDisabled{
+    background-color: $base-10;
+    input {
+      pointer-events: none;
+    }
+    &:hover, input:hover {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.datepicker__container {
+  width: 100%;
+  .rdtPicker {
+    font-family: $font-family-primary;
+    font-size: $font-size-h6;
+  }
+}

@@ -1,0 +1,15 @@
+/*
+ *  Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ *  This is licensed software from AccelByte Inc, for limitations
+ *  and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+.field-error-message {
+  display: block;
+  color: $semantic-red-90;
+  font-size: $font-size-h6;
+  margin: 4px 0;
+  font-family: $font-family-primary;
+}

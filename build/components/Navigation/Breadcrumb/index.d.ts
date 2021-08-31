@@ -10,7 +10,6 @@ export interface BreadcrumbProps {
     pageTitleBadge?: BadgeProps;
     containerSize?: Enum<typeof CONTAINER_SIZE>;
     className?: string;
-    customLink?: React.ReactNode;
 }
 export declare class Breadcrumb extends React.Component<BreadcrumbProps> {
     render(): JSX.Element;

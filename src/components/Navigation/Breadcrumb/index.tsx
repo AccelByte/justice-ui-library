@@ -18,7 +18,6 @@ export interface BreadcrumbProps {
   pageTitleBadge?: BadgeProps;
   containerSize?: Enum<typeof CONTAINER_SIZE>;
   className?: string;
-  customLink?: React.ReactNode;
 }
 
 export class Breadcrumb extends React.Component<BreadcrumbProps> {
@@ -47,14 +46,14 @@ export class Breadcrumb extends React.Component<BreadcrumbProps> {
             {breadcrumbLists.map((item, key: number) => {
               return (
                 <li key={key} className="breadcrumb-nav__item">
-                  {item.link && (
-                    <a href={item.link}>
+                  {item.onClick && (
+                    <span onClick={item.onClick} className={"breadcrumb-nav__item__link"}>
                       {useBackButton && <i className="back-button-icon icon-ab-arrow-left" />}
                       {item.text}
-                    </a>
+                    </span>
                   )}
                   {key !== lastItemKey && <span className="item-separator">/</span>}
-                  {!item.link && <span>{item.text}</span>}
+                  {!item.onClick && <span className={"breadcrumb-nav__item__no-link"}>{item.text}</span>}
                 </li>
               );
             })}
