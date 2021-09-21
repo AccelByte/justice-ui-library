@@ -1,0 +1,68 @@
+/*!
+ * Copyright (c) 2018-2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+.styled-radio-tab-vertical {
+  display: flex;
+  flex-flow: column;
+
+  >div:hover {
+    background-color: $base-white !important;
+  }
+  .radio-container {
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+    .render-content {
+      margin-left: 30px;
+    }
+    .radio-item {
+      margin-right: 20px;
+      cursor: pointer;
+      &:hover {
+        background-color: transparent;
+        .radio-icon {
+          border-color: $base-70;
+        }
+      }
+      .radio-helper {
+        color: $color--text--secondary;
+        display: block;
+        margin-top: 8px;
+        margin-left: 30px;
+      }
+      &.disabled {
+        cursor: not-allowed;
+        .radio-label {
+          color: $radio-color--disabled;
+        }
+      }
+      .radio-icon {
+        display: inline-block;
+        width: 20px !important;
+        height: 20px !important;
+        border: 1px solid $base-40;
+        border-radius: 50%;
+        position: relative;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+      &.selected {
+        .radio-icon {
+          border: 5px solid $radio-borderColor--selected;
+          &::before {
+            display: none !important;
+          }
+        }
+      }
+      .radio-label {
+        color: $color--text--primary;
+        vertical-align: bottom;
+      }
+    }
+  }
+}

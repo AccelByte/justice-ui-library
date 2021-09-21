@@ -1,0 +1,60 @@
+/*
+ *
+ *  * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ *  * This is licensed software from AccelByte Inc, for limitations
+ *  * and restrictions contact your company contract manager.
+ *
+ */
+
+@import "src/styles/variables";
+
+.loader-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 160px;
+  z-index: 100;
+  display: none;
+  opacity: 0.5;
+  position: relative;
+
+  &.show {
+    display: block;
+    min-height: 300px;
+  }
+
+  .loading-flag {
+    width: 148px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .loading-icon {
+      display: block;
+      width: 34px;
+      height: 34px;
+      margin: 0 auto;
+      border: 3px solid $base-60;
+      border-top-color: black;
+      border-radius: 44px;
+      animation: spin 1s linear infinite;
+    }
+
+    .loading-info {
+      display: block;
+      color: black;
+      font-size: $font-size-h3;
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

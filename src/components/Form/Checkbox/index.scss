@@ -1,0 +1,59 @@
+/*
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+.styled-checkbox {
+  padding: 20px 0 10px 32px;
+  position: relative;
+  label {
+    display: block;
+    padding: 0;
+  }
+  .field-helper-text {
+    margin-top: 8px;
+  }
+  &__input {
+    width: 0;
+    height: 0;
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &__icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    border: 1px solid $base-40;
+    position: absolute;
+    left: 0;
+    top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > i {
+      font-size: $font-size-h5;
+      display: block;
+    }
+  }
+  &__label {
+    line-height: 20px;
+    display: block;
+  }
+
+  &.isChecked {
+    .styled-checkbox {
+      &__icon {
+        border-color: $brand-80;
+        background-color: $brand-80;
+        > i {
+          color: $base-white;
+        }
+      }
+    }
+  }
+}

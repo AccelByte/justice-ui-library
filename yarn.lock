@@ -79,6 +79,13 @@
     memoize-one "^5.1.0"
     tslib "^1.9.3"
 
+"@atlaskit/codemod-utils@^3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@atlaskit/codemod-utils/-/codemod-utils-3.4.0.tgz#8ec854b6b935e290eafe701b83167450af9c2efa"
+  integrity sha512-cmKbsIQXA52HhMJf5qau8WZyqwvFvc7ToADa3Omv2KHY3DdBK2KBPg1YWVtw7I+FnzPRBLFyWNVaQTlHsUstew==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+
 "@atlaskit/dropdown-menu@^9.0.0":
   version "9.0.6"
   resolved "https://registry.yarnpkg.com/@atlaskit/dropdown-menu/-/dropdown-menu-9.0.6.tgz#9e3fa39777404cb6c42f3ff13bb7024ba596c3a7"
@@ -132,6 +139,16 @@
     "@atlaskit/inline-dialog" "^13.0.0"
     "@atlaskit/spinner" "^15.0.0"
     "@atlaskit/theme" "^11.3.0"
+    "@babel/runtime" "^7.0.0"
+
+"@atlaskit/field-text-area@^8.0.7":
+  version "8.0.7"
+  resolved "https://registry.yarnpkg.com/@atlaskit/field-text-area/-/field-text-area-8.0.7.tgz#92f8d56508fb5355309e8787c4bce68f22546d12"
+  integrity sha512-5NEP+t79zXCWCv954xd8RWmlMB759ZL6crkcji08806hmgjDXH5zEUxynCmsRiOkJO/0P9qY80XvUz7w8u2Bhw==
+  dependencies:
+    "@atlaskit/analytics-next" "^8.0.0"
+    "@atlaskit/field-base" "^15.0.0"
+    "@atlaskit/theme" "^12.0.0"
     "@babel/runtime" "^7.0.0"
 
 "@atlaskit/field-text@^11.0.6":
@@ -355,6 +372,15 @@
     exenv "^1.2.2"
     prop-types "^15.5.10"
 
+"@atlaskit/theme@^12.0.0":
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/@atlaskit/theme/-/theme-12.0.0.tgz#f70b9bb2d18fc040ac5197d7636129119138c089"
+  integrity sha512-vrsOU2ZG3j6MKPp/NqqD7CLVL8U6OSD960ZaCypvPWwhqB1ZjDJ6CZXlq7yyHjCZWZbt9o6v12uR9fetwh3jiA==
+  dependencies:
+    "@atlaskit/codemod-utils" "^3.4.0"
+    "@atlaskit/tokens" "^0.2.0"
+    "@babel/runtime" "^7.0.0"
+
 "@atlaskit/theme@^8.1.4", "@atlaskit/theme@^8.1.5":
   version "8.1.9"
   resolved "https://registry.yarnpkg.com/@atlaskit/theme/-/theme-8.1.9.tgz#ddad6f0458a07cef6b5273dfd510067c8420484b"
@@ -384,6 +410,13 @@
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@atlaskit/tokens/-/tokens-0.1.0.tgz#9552be258372edfcb2031c60338b5987b7cf2788"
   integrity sha512-D5nqI4jAbQYJwX1iVuGIa2Cr51QRrLL+hOhjMDEGj1nHkvgkIq0f24tAH8y5rUEW6/G7KGoDixHtvuw364Buug==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+
+"@atlaskit/tokens@^0.2.0":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@atlaskit/tokens/-/tokens-0.2.1.tgz#85b48d52d49688ebaef604949426588ba9c81892"
+  integrity sha512-Fm/F9mOC7QI5OSwvyY5N5+cvhx0lPLPAE5sE520ztb+YOaSiFxHZ13YBJkkdVTtxbGsYayYWITinGDQcCnhLog==
   dependencies:
     "@babel/runtime" "^7.0.0"
 

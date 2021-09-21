@@ -1,0 +1,138 @@
+/*
+ * Copyright (c) 2021. AccelByte Inc. All Rights Reserved
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+.__react_component_tooltip.valid-field-text-popover-container {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.12);
+  padding: 16px;
+  color: $color--text--secondary !important;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  max-width: 320px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+  &.show {
+    opacity: 1;
+  }
+  &.place-left {
+    margin-left: -22px;
+    &:after {
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      right: -12px;
+      margin-top: -8px;
+    }
+    &:before {
+      border-left-color: rgba(0, 0, 0, 0.12);
+      border-left-width: 16px;
+      border-left-style: solid;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      right: -16px;
+      margin-top: -8px;
+      filter: blur(2px);
+    }
+  }
+  &.place-right {
+    margin-left: 22px;
+    &:after {
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      left: -12px;
+      margin-top: -8px;
+    }
+    &:before {
+      border-right-color: rgba(0, 0, 0, 0.12);
+      border-right-width: 16px;
+      border-right-style: solid;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      left: -16px;
+      margin-top: -8px;
+      filter: blur(2px);
+    }
+  }
+  &.place-top {
+    margin-top: -22px;
+    &:after {
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      bottom: -12px;
+    }
+    &:before {
+      border-top-color: rgba(0, 0, 0, 0.12);
+      border-top-width: 16px;
+      border-top-style: solid;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      bottom: -16px;
+      margin-left: -8px;
+      filter: blur(2px);
+    }
+  }
+  &.place-bottom {
+    margin-top: 22px;
+    &:after {
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      top: -12px;
+    }
+    &:before {
+      border-bottom-color: rgba(0, 0, 0, 0.12);
+      border-bottom-width: 16px;
+      border-bottom-style: solid;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      top: -16px;
+      margin-left: -8px;
+      filter: blur(2px);
+    }
+  }
+
+  &.type-light {
+    &.place-right {
+      &:after {
+        border-right-width: 16px;
+      }
+    }
+    &.place-left {
+      &:after {
+        border-left-width: 16px;
+      }
+    }
+    &.place-top {
+      &:after {
+        border-top-width: 16px;
+      }
+    }
+    &.place-bottom {
+      &:after {
+        border-bottom-width: 16px;
+      }
+    }
+  }
+
+  ul {
+    padding-left: 16px;
+  }
+  code {
+    font-weight: 500;
+    font-size: 14px;
+    &.allow {
+      color: $brand-80;
+    }
+    &.not-allow {
+      color: $semantic-red-90;
+    }
+  }
+  li + li {
+    margin-top: 8px;
+  }
+}
+

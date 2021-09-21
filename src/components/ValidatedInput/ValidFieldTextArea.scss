@@ -1,0 +1,29 @@
+/*!
+ *
+ *  * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ *  * This is licensed software from AccelByte Inc, for limitations
+ *  * and restrictions contact your company contract manager.
+ *
+ */
+
+@import "src/styles/variables";
+
+.valid-field-text-area {
+  [class|="Content__ChildWrapper"] > [class|="Content"] {
+    border: 1px solid $base-40;
+    & > textarea {
+      min-height: 100px;
+    }
+  }
+  &.focusedFieldText {
+    [class|="Content__ChildWrapper"] > [class|="Content"] {
+      border: 2px solid $brand-80;
+    }
+  }
+
+  .fieldInformationTextArea, .fieldHeader {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+}

@@ -26,3 +26,5 @@ export const ModalForm = ({ children, fullHorizontal = false }: ModalFormProps) 
 export const ModalMessage = ({ children }: { children: React.ReactNode }) => (
   <div className="styled-atlaskit-modal-message">{children}</div>
 );
+
+export const ModalTitle = ({ title }: { title: string }) => <div className="styled-atlaskit-modal-title">{title}</div>;

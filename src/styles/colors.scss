@@ -74,6 +74,12 @@ $color--divider: $base-20;
 
 $backgroundColor--primary: $base-white;
 
+// Tip
+$tip-backgroundColor--info: $color--info--secondary;
+$tip-backgroundColor--success: $color--success--secondary;
+$tip-backgroundColor--warning: $color--warning--secondary;
+$tip-backgroundColor--error: $color--error--secondary;
+
 // Input
 $input-backgroundColor: $base-white;
 $input-backgroundColor--hovered: $base-10;

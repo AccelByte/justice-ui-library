@@ -1,0 +1,87 @@
+/*
+ * Copyright (c) 2018-2019 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+.tip-notification {
+  box-sizing: border-box;
+  min-height: 40px;
+  max-width: 50%;
+  border-radius: 4px;
+  transition: all 0.5s ease;
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 30px;
+  opacity: 0;
+  z-index: 604;
+  display: none;
+  text-align: center;
+
+  &.show {
+    display: inline-block;
+    opacity: 1;
+    &.relative {
+      display: flex;
+    }
+  }
+
+  &.relative {
+    max-width: 100%;
+    align-items: baseline;
+    position: relative;
+    top: 0;
+    margin: 16px 0;
+    padding: 12px;
+    text-align: left;
+    z-index: 100;
+  }
+
+  &.success {
+    background-color: $tip-backgroundColor--success;
+    color: $color--success--primary;
+  }
+  &.error {
+    background-color: $tip-backgroundColor--error;
+    color: $color--error--primary;
+  }
+  &.info {
+    background-color: $tip-backgroundColor--info;
+    color: $color--info--primary;
+  }
+  &.warning {
+    background-color: $tip-backgroundColor--warning;
+    color: $color--warning--primary;
+  }
+
+  > i {
+    font-size: $font-size-h4;
+    display: block;
+  }
+
+  .notification-message {
+    font-size: $font-size-h6;
+    line-height: 20px;
+    padding: 0 12px;
+    color: $base-120;
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    font-size: 16px;
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

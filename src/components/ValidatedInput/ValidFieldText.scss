@@ -1,0 +1,55 @@
+/*!
+ *
+ *  * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ *  * This is licensed software from AccelByte Inc, for limitations
+ *  * and restrictions contact your company contract manager.
+ *
+ */
+
+@import "src/styles/variables";
+
+.valid-field-text {
+  position: relative;
+
+  .field-info {
+    font-size: $font-size-h5;
+    color: $input-color--placeholder;
+    margin-top: 10px;
+  }
+
+  .ValidFieldInformation,
+  .fieldHeader {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    white-space: pre-wrap;
+    &.pushRight {
+      justify-content: flex-end;
+    }
+  }
+  .fieldHeader > label {
+    display: initial;
+  }
+
+  div > label {
+    display: none;
+  }
+  .valid-field-text-input-container {
+    height: 40px;
+    position: relative;
+    [class|="Content__ChildWrapper"] > [class|="Content"] {
+      border: 1px solid $base-40;
+    }
+    &.focusedFieldText {
+      [class|="Content__ChildWrapper"] > [class|="Content"] {
+        border: 2px solid $brand-80;
+      }
+    }
+  }
+}
+
+.password-field-text {
+  input {
+    padding-right: 24px;
+  }
+}

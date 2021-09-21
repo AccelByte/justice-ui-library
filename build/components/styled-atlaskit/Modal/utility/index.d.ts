@@ -8,3 +8,6 @@ export declare const ModalForm: ({ children, fullHorizontal }: ModalFormProps) =
 export declare const ModalMessage: ({ children }: {
     children: React.ReactNode;
 }) => JSX.Element;
+export declare const ModalTitle: ({ title }: {
+    title: string;
+}) => JSX.Element;

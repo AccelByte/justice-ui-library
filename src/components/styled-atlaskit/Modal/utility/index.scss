@@ -9,6 +9,8 @@
 .styled-atlaskit-modal-form {
   margin: 0 auto;
   font-size: $font-size-h5;
+  position: relative;
+  z-index: 2;
 
   &.full-horizontal {
     width: 100%;
@@ -22,4 +24,15 @@
   margin: 24px 0;
   box-sizing: border-box;
   word-break: break-word;
+}
+
+.styled-atlaskit-modal-title {
+  padding: 20px 24px;
+  margin: 0 -24px;
+  border-bottom: 1px solid $base-20;
+  font-size: 18px;
+  color: $base-120;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.01em;
 }
