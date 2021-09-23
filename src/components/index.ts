@@ -26,6 +26,7 @@ export * from "./Icon";
 export * from "./Loading/LoadingIndicator";
 export * from "./Loading/LoadingOrErrorWrapper";
 export * from "./Navigation/Breadcrumb";
+export * from "./Navigation/NavigationTab";
 export * from "./Page";
 export * from "./Pagination";
 export * from "./SearchPanel/PureSearchPanel";
@@ -39,3 +40,4 @@ export * from "./ValidatedInput/ValidFieldText";
 export * from "./ValidatedInput/ValidFieldTextArea";
 export * from "./ValidatedInput/ValidMultiSelect";
 export * from "./ValidatedInput/ValidSelect";
+export * from "./EmptyResultsWithIcon/EmptyResultsWithIcon"

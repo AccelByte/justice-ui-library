@@ -1,0 +1,74 @@
+/*!
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "../../../styles/variables";
+
+.tab-navigation {
+  margin: 0 0 30px;
+  height: 60px;
+  background-color: $backgroundColor--primary;
+  > .wrapper {
+    display: flex;
+    padding: 0 15px;
+  }
+  &--small,
+  &--large,
+  &--full {
+    > .wrapper {
+      padding: 0 30px;
+      margin: 0 auto;
+    }
+  }
+  &--large {
+    > .wrapper {
+      max-width: $container-large;
+    }
+  }
+  &--small {
+    > .wrapper {
+      max-width: $container-small;
+    }
+  }
+  &--full {
+    > .wrapper {
+      max-width: $container-full;
+    }
+  }
+  .tab-item {
+    padding: 19px 15px 15px;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: $font-size-h5;
+    color: $color--text--secondary;
+    &.tab-active {
+      color: $base-120;
+      border-bottom: 3.75px solid $color--accent;
+    }
+  }
+}
+
+.tab-navigation--vertical {
+  @extend .tab-navigation;
+  flex-direction: column;
+  border-radius: 4px;
+  height: 100%;
+  padding: 0;
+  justify-content: center;
+  .wrapper {
+    display: block;
+    padding: 0;
+  }
+  .tab-item {
+    @extend .tab-item;
+    border-bottom: 1px solid $color--divider;
+    &.tab-active {
+      @extend .tab-active;
+      border-bottom: 1px solid $color--divider;
+      border-left: 5px solid $color--accent;
+      color: $brand-80;
+    }
+  }
+}
