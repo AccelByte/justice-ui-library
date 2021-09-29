@@ -52,7 +52,7 @@ export const Modal = ({
       });
 
     return actions;
-  }, []);
+  }, [isLoading, isDisabled]);
 
   return (
     <AkModal actions={getActions} scrollBehavior={scrollBehavior} autoFocus={autoFocus} width={width} {...props}>

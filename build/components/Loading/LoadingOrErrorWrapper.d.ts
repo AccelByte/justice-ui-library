@@ -5,7 +5,7 @@ export interface LoadingOrErrorWrapperProps {
     loadingInfo?: string;
     error?: Error | null;
     errorTitle?: string;
-    errorMessage?: string;
+    errorMessage?: React.ReactNode;
     errorImage?: string;
     isRefreshable?: boolean;
     onErrorActionClick?: () => void;
