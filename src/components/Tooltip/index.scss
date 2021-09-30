@@ -1,0 +1,91 @@
+/*
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+.common-tooltip {
+  position: relative;
+  cursor: pointer;
+
+  .common-tooltip-children {
+    display: block;
+    box-sizing: border-box;
+    max-width: 121px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 16px;
+    position: relative;
+
+    &.no-clipboard {
+      padding-right: 0;
+    }
+
+    &.medium {
+      max-width: 100px;
+    }
+
+    &.narrow {
+      max-width: 60px;
+    }
+
+    .icon {
+      color: $button-color--inactive--text;
+      vertical-align: baseline;
+    }
+
+    .clipboard {
+      position: absolute;
+      right: 0;
+      display: none;
+    }
+  }
+
+  .common-tooltip-content {
+    position: absolute;
+    background-color: $tooltip-backgroundColor;
+    border-radius: 4px;
+    color: $color--text--tertiary;
+    padding: 5px 10px;
+    font-size: $font-size-h6;
+    bottom: 150%;
+    left: 0;
+    transform: translateX(-32%);
+    cursor: default;
+    display: none;
+    white-space: pre;
+    &.position-right {
+      transform: translateX(-8%);
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 7px 5px 0 5px;
+      border-color: $tooltip-backgroundColor transparent transparent transparent;
+      top: 98%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &.tooltip-boxed{
+      white-space: normal;
+      width: 200px;
+    }
+  }
+
+  &:hover {
+    .common-tooltip-content {
+      display: block;
+    }
+    .common-tooltip-children {
+      .clipboard {
+        display: inline-block;
+      }
+    }
+  }
+}

@@ -40,4 +40,5 @@ export * from "./ValidatedInput/ValidFieldText";
 export * from "./ValidatedInput/ValidFieldTextArea";
 export * from "./ValidatedInput/ValidMultiSelect";
 export * from "./ValidatedInput/ValidSelect";
-export * from "./EmptyResultsWithIcon/EmptyResultsWithIcon"
+export * from "./EmptyResultsWithIcon/EmptyResultsWithIcon";
+export * from "./Tooltip";

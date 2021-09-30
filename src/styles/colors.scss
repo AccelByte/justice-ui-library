@@ -90,6 +90,7 @@ $input-borderColor--hovered: $base-80;
 $input-borderColor--active: $brand-80;
 
 // Button
+$button-color--inactive--text: $color--accent;
 $button-color--ghost--enabled: $color--accent;
 
 $button-backgroundColor--primary--enabled: $color--accent;
@@ -124,3 +125,6 @@ $select-option--selected: $brand-80;
 
 // Input Text
 $text-field-label--inactive: $base-80;
+
+// Tooltip
+$tooltip-backgroundColor: $base-120;
