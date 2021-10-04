@@ -42,3 +42,6 @@ export * from "./ValidatedInput/ValidMultiSelect";
 export * from "./ValidatedInput/ValidSelect";
 export * from "./EmptyResultsWithIcon/EmptyResultsWithIcon";
 export * from "./Tooltip";
+export * from "./Accordion";
+export * from "./Banner";
+export * from "./ButtonWithIcon";

@@ -7,10 +7,12 @@
 @import "src/styles/variables";
 
 .horizontalFieldText {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
+  &.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 
   .cell-1 .label {
     margin-right: 5px;

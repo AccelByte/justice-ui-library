@@ -8,7 +8,7 @@ interface ItemTab {
     isActive: boolean;
     dataQa?: string | null;
 }
-interface NavigationTabProps {
+export interface NavigationTabProps {
     config: ItemTab[];
     changePage: (url: string) => void;
     isChangeRoute?: boolean;

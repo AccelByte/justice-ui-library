@@ -16,6 +16,9 @@ button.styled-atlaskit-button {
     line-height: 30px;
     font-weight: normal;
   }
+  .icon {
+    margin-right: 15px;
+  }
   &:not(:disabled) {
     &.primary {
       background-color: $button-backgroundColor--primary--enabled;

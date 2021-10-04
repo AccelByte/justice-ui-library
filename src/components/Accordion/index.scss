@@ -1,0 +1,37 @@
+/*
+* Copyright (c) 2020 AccelByte Inc. All Rights Reserved.
+* This is licensed software from AccelByte Inc, for limitations
+* and restrictions contact your company contract manager.
+*/
+
+@import "../../styles/variables.scss";
+
+.accordion {
+  font-family: $font-family-primary;
+  .accordionHead {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    color: $brand-100;
+    align-items: center;
+  }
+  .accordionHead,
+  .accordionBody {
+    padding: 12px;
+    background-color: $brand-10;
+    border-radius: 3px;
+  }
+  .accordionBody {
+    padding-top: 0;
+    display: none;
+    font-size: $font-size-h6;
+  }
+  .accordionContent {
+    background: $base-white;
+    border-radius: 3px;
+    padding: 10px;
+  }
+  .show {
+    display: block;
+  }
+}

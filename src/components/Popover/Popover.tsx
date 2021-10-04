@@ -4,6 +4,7 @@
  * and restrictions contact your company contract manager.
  */
 
+import classNames from "classnames";
 import * as React from "react";
 import { renderToString } from "react-dom/server";
 import "./Popover.scss";
@@ -32,14 +33,12 @@ const Popover: React.FC<Props> = (props) => {
   } = props;
 
   const renderPopover = () => {
-    const popoverClassName = "valid-field-text-popover-container";
-
     return {
       ref: tooltipRef,
       "data-html": true,
       "data-tip": React.isValidElement(content) ? renderToString(content) : content,
       "data-place": popoverPlacement,
-      "data-class": className ? `${popoverClassName} ${className}` : popoverClassName,
+      "data-class": classNames("popover-container", className),
       "data-type": popoverType,
       "data-event": popoverEvent,
       "data-event-off": popoverEventOff,

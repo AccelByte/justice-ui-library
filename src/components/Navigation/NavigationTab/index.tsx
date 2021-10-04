@@ -21,7 +21,7 @@ interface ItemTab {
 const NAVIGATION_OFFSET = 100;
 const UPDATE_INTERVAL = 100;
 
-interface NavigationTabProps {
+export interface NavigationTabProps {
   config: ItemTab[];
   changePage: (url: string) => void;
   isChangeRoute?: boolean;

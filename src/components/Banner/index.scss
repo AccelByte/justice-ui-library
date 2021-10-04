@@ -1,0 +1,57 @@
+/*
+* Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+* This is licensed software from AccelByte Inc, for limitations
+* and restrictions contact your company contract manager.
+*/
+
+@import "../../styles/variables.scss";
+
+.banner-notification {
+  width: 100%;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: $font-family-primary;
+
+  &.success {
+    background-color: $banner-backgroundColor--success;
+  }
+
+  &.error {
+    background-color: $banner-backgroundColor--error;
+  }
+
+  &.info {
+    background-color: $banner-backgroundColor--info;
+  }
+
+  &.warning {
+    background-color: $banner-backgroundColor--warning;
+  }
+
+  .notification-message,
+  .icon-x {
+    &.success {
+      color: $color--success--primary;
+    }
+
+    &.error {
+      color: $color--error--primary;
+    }
+
+    &.info {
+      color: $color--info--primary;
+    }
+
+    &.warning {
+      color: $color--warning--primary;
+    }
+  }
+
+  i {
+    float: right;
+  }
+}
