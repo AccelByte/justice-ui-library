@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import Banner, { APPEARANCE_TYPE, BannerProps } from ".";
+import { Banner, APPEARANCE_TYPE, BannerProps } from ".";
 
 export default {
   title: "Components/Banner",

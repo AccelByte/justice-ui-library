@@ -14,7 +14,7 @@ export interface AccordionProps {
   className?: string;
 }
 
-const Accordion = ({ title, className, children }: AccordionProps) => {
+export const Accordion = ({ title, className, children }: AccordionProps) => {
   const [isOpen, toggleAccordion] = React.useState(false);
   return (
     <div className={classNames("accordion", className)}>
@@ -28,5 +28,3 @@ const Accordion = ({ title, className, children }: AccordionProps) => {
     </div>
   );
 };
-
-export default Accordion;

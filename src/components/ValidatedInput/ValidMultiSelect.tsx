@@ -24,7 +24,7 @@ interface Props {
   tooltip?: string;
 }
 
-const ValidMultiSelect = ({
+export const ValidMultiSelect = ({
   label,
   placeholder,
   options = [],
@@ -57,5 +57,3 @@ const ValidMultiSelect = ({
     {!optionalLabel && isInvalid && <FieldErrorMessage message={errMessage} />}
   </>
 );
-
-export default ValidMultiSelect;

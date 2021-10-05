@@ -17,11 +17,7 @@ export interface BannerProps {
   dismissBanner?: (event: React.MouseEvent) => void;
 }
 
-const Banner: React.FC<BannerProps> = ({
-  appearance = APPEARANCE_TYPE.success,
-  message = "",
-  dismissBanner,
-}: BannerProps) => {
+export const Banner = ({ appearance = APPEARANCE_TYPE.success, message = "", dismissBanner }: BannerProps) => {
   return (
     <div
       className={classNames("banner-notification", {
@@ -55,5 +51,3 @@ const Banner: React.FC<BannerProps> = ({
     </div>
   );
 };
-
-export default Banner;

@@ -12,5 +12,4 @@ export interface BannerProps {
     message: React.ReactNode;
     dismissBanner?: (event: React.MouseEvent) => void;
 }
-declare const Banner: React.FC<BannerProps>;
-export default Banner;
+export declare const Banner: ({ appearance, message, dismissBanner }: BannerProps) => JSX.Element;

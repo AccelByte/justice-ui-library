@@ -12,5 +12,5 @@ interface Props {
     value?: SelectOption[] | null;
     tooltip?: string;
 }
-declare const ValidMultiSelect: ({ label, placeholder, options, onChange, errMessage, optionalLabel, isInvalid, value, isDisabled, tooltip, }: Props) => JSX.Element;
-export default ValidMultiSelect;
+export declare const ValidMultiSelect: ({ label, placeholder, options, onChange, errMessage, optionalLabel, isInvalid, value, isDisabled, tooltip, }: Props) => JSX.Element;
+export {};

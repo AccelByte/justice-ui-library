@@ -8,7 +8,7 @@ import * as React from "react";
 import { default as classNames } from "classnames";
 import { BreadcrumbSchema, Enum } from "../../../types";
 import { CONTAINER_SIZE } from "../../../constants";
-import Badge, { BadgeProps } from "../../Badge";
+import { Badge, BadgeProps } from "../../Badge";
 import "./index.scss";
 import "../../../styles/icons/index.scss";
 

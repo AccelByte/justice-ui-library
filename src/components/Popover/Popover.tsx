@@ -20,18 +20,16 @@ interface Props {
   children?: React.ReactNode;
 }
 
-const Popover: React.FC<Props> = (props) => {
-  const {
-    tooltipRef,
-    content,
-    popoverPlacement = "right",
-    className,
-    popoverType = "light",
-    popoverEvent = "mouseenter",
-    popoverEventOff = "mouseleave",
-    children,
-  } = props;
-
+export const Popover = ({
+  tooltipRef,
+  content,
+  popoverPlacement = "right",
+  className,
+  popoverType = "light",
+  popoverEvent = "mouseenter",
+  popoverEventOff = "mouseleave",
+  children,
+}: Props) => {
   const renderPopover = () => {
     return {
       ref: tooltipRef,
@@ -47,5 +45,3 @@ const Popover: React.FC<Props> = (props) => {
 
   return <div className={className} {...(!!content && renderPopover())}>{children}</div>;
 };
-
-export default Popover;

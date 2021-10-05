@@ -12,7 +12,7 @@ interface ButtonWithIconProps extends ButtonProps {
   buttonIcon?: string;
 }
 
-const ButtonWithIcon: React.FC<ButtonWithIconProps> = (props) => {
+export const ButtonWithIcon = (props: ButtonWithIconProps) => {
   const { buttonIcon, appearance = "primary", isDisabled, isLoading = false, className, ...buttonProps } = props;
   return (
     <Button
@@ -26,5 +26,3 @@ const ButtonWithIcon: React.FC<ButtonWithIconProps> = (props) => {
     </Button>
   );
 };
-
-export default ButtonWithIcon;

@@ -12,7 +12,7 @@ import * as ReactTooltip from "react-tooltip";
 import { default as FieldText } from "@atlaskit/field-text";
 import "./ValidFieldText.scss";
 import { FieldCounter, FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
-import Popover from "../Popover/Popover";
+import { Popover } from "../Popover/Popover";
 
 class Input extends FieldText {
   componentWillReceiveProps(nextProps: any, nextContext: any) {
@@ -141,10 +141,7 @@ export class ValidFieldText extends React.Component<Props, State> {
     } = this.props;
 
     return (
-      <div
-        className={classNames(className, "valid-field-text")}
-        ref={validFieldTextRef}
-      >
+      <div className={classNames(className, "valid-field-text")} ref={validFieldTextRef}>
         <div
           className={classNames("fieldHeader", {
             pushRight: !label && optionalLabel,

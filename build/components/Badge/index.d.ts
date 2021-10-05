@@ -20,5 +20,4 @@ export interface BadgeProps {
     type?: Enum<typeof BADGE_TYPE>;
     className?: string;
 }
-declare const Badge: ({ text, appearance, className: customClassName, type, }: BadgeProps) => JSX.Element;
-export default Badge;
+export declare const Badge: ({ text, appearance, className: customClassName, type, }: BadgeProps) => JSX.Element;

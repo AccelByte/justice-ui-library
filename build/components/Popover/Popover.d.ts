@@ -10,5 +10,5 @@ interface Props {
     popoverEventOff?: string;
     children?: React.ReactNode;
 }
-declare const Popover: React.FC<Props>;
-export default Popover;
+export declare const Popover: ({ tooltipRef, content, popoverPlacement, className, popoverType, popoverEvent, popoverEventOff, children, }: Props) => JSX.Element;
+export {};

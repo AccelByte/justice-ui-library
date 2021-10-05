@@ -18,7 +18,7 @@ export interface BadgeProps {
   className?: string;
 }
 
-const Badge = ({
+export const Badge = ({
   text,
   appearance = BADGE_APPEARANCE.GENERAL,
   className: customClassName,
@@ -48,5 +48,3 @@ const Badge = ({
     </span>
   );
 };
-
-export default Badge;

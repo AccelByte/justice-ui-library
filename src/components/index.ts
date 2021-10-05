@@ -45,3 +45,4 @@ export * from "./Tooltip";
 export * from "./Accordion";
 export * from "./Banner";
 export * from "./ButtonWithIcon";
+export * from "./Box";

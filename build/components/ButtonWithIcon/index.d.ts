@@ -1,7 +1,7 @@
-import React from "react";
+/// <reference types="react" />
 import { ButtonProps } from "../styled-atlaskit/Button/Button";
 interface ButtonWithIconProps extends ButtonProps {
     buttonIcon?: string;
 }
-declare const ButtonWithIcon: React.FC<ButtonWithIconProps>;
-export default ButtonWithIcon;
+export declare const ButtonWithIcon: (props: ButtonWithIconProps) => JSX.Element;
+export {};
