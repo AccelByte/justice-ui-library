@@ -1,0 +1,59 @@
+/*
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+.justice-search-no-result {
+  height: 40vh;
+  min-height: fit-content;
+  text-align: center;
+  display: flex;
+  background-color: $backgroundColor--primary;
+  font-family: $font-family-primary;
+  &.boxShadow {
+    box-shadow: 0px 3px 5px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .justice-search-no-result-wrapper {
+    margin: auto;
+    color: $base-80;
+    &.boxShadow {
+      box-shadow: 0px 3px 5px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+      width: 73px;
+      margin-bottom: 25px;
+    }
+
+    &.inModal {
+      padding: 30px 10px;
+      border-top: 0;
+      box-shadow: none;
+      background-color: $backgroundColor--secondary;
+      margin-top: 10px;
+    }
+
+    h4 {
+      padding: 0;
+      margin: 0;
+      font-size: $font-size-h3;
+      font-weight: 500;
+      line-height: 1.4;
+      color: $base-80;
+    }
+
+    p {
+      font-size: $font-size-h5;
+      line-height: 1.63;
+      text-align: center;
+      color: $base-80;
+      padding: 0;
+      margin: 0;
+      margin-top: 10px;
+    }
+  }
+}

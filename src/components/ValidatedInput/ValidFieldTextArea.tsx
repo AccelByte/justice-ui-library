@@ -6,8 +6,8 @@
  *
  */
 
-import * as React from "react";
-import * as ReactTooltip from "react-tooltip";
+import React from "react";
+import ReactTooltip from "react-tooltip";
 import { default as classNames } from "classnames";
 import { FieldTextAreaStateless, FieldTextAreaStatelessProps } from "@atlaskit/field-text-area";
 import "./ValidFieldTextArea.scss";

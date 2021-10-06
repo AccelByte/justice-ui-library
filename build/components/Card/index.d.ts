@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import "./index.scss";
 import { ButtonAppearances } from "@atlaskit/button";
 export interface CardProps {
@@ -11,7 +11,7 @@ export interface CardProps {
     cardDataQa?: string | null;
     className?: string;
     buttonOnClick?: any;
-    buttonText?: string;
+    buttonText?: React.ReactNode;
     buttonIcon?: string;
     buttonDataQa?: string | null;
     buttonAppearance?: ButtonAppearances;
@@ -20,9 +20,11 @@ export interface CardProps {
     noHorizontalMargin?: boolean;
     noTitle?: boolean;
     titleTip?: any;
+    isAuthorized?: boolean;
     smallCard?: boolean;
     Tips?: string;
     customStyleTitleWrapper?: string;
+    noResultText?: React.ReactNode;
 }
 export declare class Card extends React.Component<CardProps> {
     componentDidMount(): void;

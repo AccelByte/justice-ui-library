@@ -6,9 +6,9 @@
  *
  */
 
-import * as React from "react";
+import React from "react";
 import classNames from "classnames";
-import * as ReactTooltip from "react-tooltip";
+import ReactTooltip from "react-tooltip";
 import { default as FieldText } from "@atlaskit/field-text";
 import "./ValidFieldText.scss";
 import { FieldCounter, FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";

@@ -1,15 +1,16 @@
 /*
- * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
  */
 
+import React from "react";
 import classNames from "classnames";
-import * as React from "react";
-import { Button } from "../styled-atlaskit/Button/Button";
+import { ButtonWithIcon } from "../ButtonWithIcon";
 import ReactTooltip from "react-tooltip";
 import "./index.scss";
 import { ButtonAppearances } from "@atlaskit/button";
+import { NoResultTip } from "../NoResultTip";
 
 export interface CardProps {
   children: React.ReactNode;
@@ -21,7 +22,7 @@ export interface CardProps {
   cardDataQa?: string | null;
   className?: string;
   buttonOnClick?: any;
-  buttonText?: string;
+  buttonText?: React.ReactNode;
   buttonIcon?: string;
   buttonDataQa?: string | null;
   buttonAppearance?: ButtonAppearances;
@@ -30,9 +31,11 @@ export interface CardProps {
   noHorizontalMargin?: boolean;
   noTitle?: boolean;
   titleTip?: any;
+  isAuthorized?: boolean;
   smallCard?: boolean;
   Tips?: string;
   customStyleTitleWrapper?: string;
+  noResultText?: React.ReactNode;
 }
 
 export class Card extends React.Component<CardProps> {
@@ -61,10 +64,12 @@ export class Card extends React.Component<CardProps> {
       noTitle = false,
       titleTip,
       children,
+      isAuthorized = true,
       Tips,
       smallCard = false,
       cardSubTitle,
       customStyleTitleWrapper,
+      noResultText,
     } = this.props;
     return (
       <div
@@ -77,11 +82,7 @@ export class Card extends React.Component<CardProps> {
         data-qa-id={cardDataQa}
       >
         {!noTitle && (
-          <div
-            className={classNames("card-title-wrap", {
-              [`${customStyleTitleWrapper}`]: !!customStyleTitleWrapper,
-            })}
-          >
+          <div className={classNames("card-title-wrap", customStyleTitleWrapper)}>
             {cardTitle && !buttonOnClick && !cardInfo && (
               <div>
                 <span>
@@ -105,14 +106,14 @@ export class Card extends React.Component<CardProps> {
                   })}
                   data-qa-id={buttonDataQa}
                 >
-                  <Button
-                    appearance={buttonAppearance}
-                    iconBefore={buttonIcon && <span className={buttonIcon} />}
+                  <ButtonWithIcon
+                    appearance={smallCard ? "link" : buttonAppearance}
+                    buttonIcon={buttonIcon}
                     onClick={buttonOnClick}
                     isDisabled={buttonDisabled}
                   >
                     {buttonText}
-                  </Button>
+                  </ButtonWithIcon>
                 </div>
               </div>
             )}
@@ -129,7 +130,11 @@ export class Card extends React.Component<CardProps> {
             {customHeader && customHeader}
           </div>
         )}
-        <div className="card-content">{children}</div>
+        {isAuthorized ? (
+          <div className="card-content">{children}</div>
+        ) : (
+          <NoResultTip primaryText={noResultText} boxShadow={false} />
+        )}
         {customFooter}
       </div>
     );

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import "./ValidFieldText.scss";
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
     onKeyDown?: (event: React.FormEvent<HTMLInputElement>) => void;

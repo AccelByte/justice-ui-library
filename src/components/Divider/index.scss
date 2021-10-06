@@ -1,0 +1,26 @@
+/*!
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+.horizontalDivider {
+  border-bottom: 1px solid $color--divider;
+  line-height: 0.05em;
+  margin: 10px 0;
+
+  .label {
+    background: $base-white;
+    color: $base-80;
+    font-size: $font-size-h6;
+    padding-right: 10px;
+  }
+
+  &.full-width {
+    left: 0;
+    right: 0;
+    position: absolute;
+  }
+}

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { FieldTextAreaStatelessProps } from "@atlaskit/field-text-area";
 import "./ValidFieldTextArea.scss";
 export interface ValidFieldTextAreaProps extends FieldTextAreaStatelessProps {
