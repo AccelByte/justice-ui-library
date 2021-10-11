@@ -10,8 +10,13 @@
   padding: 20px 0 10px 32px;
   position: relative;
   label {
-    display: block;
+    display: flex;
+    align-items: center;
     padding: 0;
+    > i {
+      display: block;
+      margin-left: 8px;
+    }
   }
   .field-helper-text {
     margin-top: 8px;

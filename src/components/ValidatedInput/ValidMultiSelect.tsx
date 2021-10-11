@@ -38,9 +38,7 @@ export const ValidMultiSelect = ({
 }: Props) => (
   <>
     {!!label && (
-      <FieldLabel label={label} optionalLabel={optionalLabel}>
-        {tooltip && <i className="icon-info" data-tip={tooltip} />}
-      </FieldLabel>
+      <FieldLabel label={label} optionalLabel={optionalLabel} tooltip={tooltip && tooltip} />
     )}
     <Select
       className="react-select"

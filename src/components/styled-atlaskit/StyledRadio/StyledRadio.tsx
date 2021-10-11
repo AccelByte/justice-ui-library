@@ -46,7 +46,7 @@ export const StyledRadio = ({
       {!!label && (
         <FieldLabel label={label}>
           &nbsp;
-          {tooltip && <i className="icon-info" data-tip={tooltip} />}
+          {tooltip && <i className="fa-icon-info" data-tip={tooltip} />}
         </FieldLabel>
       )}
       <div className={classNames(["horizontal-radio-group"], { "vertical-radio-group": !isHorizontal })}>

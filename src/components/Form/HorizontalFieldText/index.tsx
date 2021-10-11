@@ -8,6 +8,7 @@ import * as React from "react";
 import ReactTooltip from "react-tooltip";
 import { default as classNames } from "classnames";
 import "./index.scss";
+import { FieldLabel } from "../utility";
 
 export interface HorizontalFieldTextProps {
   children?: React.ReactNode;
@@ -88,7 +89,12 @@ export class HorizontalFieldText extends React.Component<HorizontalFieldTextProp
               {label}
               {!isRequired && ` ${optionalLabel}`}
             </span>
-            {tooltip && <i className="icon-info" data-tip={tooltip} ref={this.tooltipRef} />}
+            {tooltip && (
+              <>
+                <i ref={this.tooltipRef} className="fa-icon-info" data-for="field-label__tooltip" data-tip={tooltip} />
+                <ReactTooltip effect="solid" id="field-label__tooltip" />
+              </>
+            )}
           </div>
         )}
         <div className={classNames("cell-2", rightCellClassName)} data-qa-id={dataQa}>

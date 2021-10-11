@@ -8,6 +8,7 @@ import classNames from "classnames";
 import * as React from "react";
 import { renderToString } from "react-dom/server";
 import "./Popover.scss";
+import ReactTooltip from "react-tooltip";
 
 interface Props {
   tooltipRef: React.RefObject<HTMLDivElement>;
@@ -35,6 +36,7 @@ export const Popover = ({
   const renderPopover = () => {
     return {
       ref: tooltipRef,
+      "data-for": "popover-tooltip",
       "data-html": true,
       "data-tip": React.isValidElement(content) ? renderToString(content) : content,
       "data-place": popoverPlacement,
@@ -45,5 +47,12 @@ export const Popover = ({
     };
   };
 
-  return <div className={className} {...(!!content && renderPopover())}>{children}</div>;
+  return (
+    <>
+      <div className={className} {...(!!content && renderPopover())}>
+        {children}
+      </div>
+      <ReactTooltip effect="solid" id="popover-tooltip" />
+    </>
+  );
 };

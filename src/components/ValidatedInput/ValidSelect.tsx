@@ -56,9 +56,7 @@ export const ValidSelect = ({
 }: Props) => (
   <div className={classNames("valid-select-input", className)}>
     {!!label && (
-      <FieldLabel label={label} optionalLabel={optionalLabel}>
-        {tooltip && <i className="icon-info" data-tip={tooltip} />}
-      </FieldLabel>
+      <FieldLabel label={label} optionalLabel={optionalLabel} tooltip={tooltip && tooltip} />
     )}
     <Select
       options={options}

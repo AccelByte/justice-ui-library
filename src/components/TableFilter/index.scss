@@ -1,0 +1,34 @@
+/*
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+.table-filter {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  .table-filter-label {
+    margin-right: 20px;
+    font-size: $font-size-h5;
+    color: $color--text--secondary;
+  }
+
+  .styled-atlaskit-select {
+    width: 180px;
+    height: 40px;
+    &__control {
+      height: 100%;
+      font-size: 16px;
+      letter-spacing: 0.02em;
+      align-items: stretch;
+    }
+  }
+  &.isLarge {
+    .styled-atlaskit-select {
+      width: 280px;
+    }
+  }
+}

@@ -148,9 +148,7 @@ export class ValidFieldText extends React.Component<Props, State> {
           })}
         >
           {!isLabelHidden && (
-            <FieldLabel label={label} optionalLabel={optionalLabel}>
-              {tooltip && <i ref={this.toolTipRef} className="icon-info" data-tip={tooltip} />}
-            </FieldLabel>
+            <FieldLabel label={label} optionalLabel={optionalLabel} tooltip={tooltip} tooltipRef={this.toolTipRef} />
           )}
           {!!maxLength && <FieldCounter value={value} maxLength={maxLength} className="px-0" />}
         </div>

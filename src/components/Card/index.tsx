@@ -88,7 +88,12 @@ export class Card extends React.Component<CardProps> {
                 <span>
                   <span>{cardTitle}</span>
                   {cardSubTitle && <small className="card-sub-title">{cardSubTitle}</small>}
-                  {Tips && <i className="icon-info" data-tip={Tips} />}
+                  {Tips && (
+                    <>
+                      <i className="fa-icon-info" data-for="cardInfo__tooltip" data-tip={Tips} />
+                      <ReactTooltip effect="solid" id="cardInfo__tooltip" />
+                    </>
+                  )}
                   {titleTip}
                 </span>
               </div>
@@ -97,7 +102,12 @@ export class Card extends React.Component<CardProps> {
               <div>
                 <span>
                   <span>{cardTitle}</span>
-                  {Tips && <i className="icon-info" data-tip={Tips} />}
+                  {Tips && (
+                    <>
+                      <i className="fa-icon-info" data-for="cardInfo__tooltip" data-tip={Tips} />
+                      <ReactTooltip effect="solid" id="cardInfo__tooltip" />
+                    </>
+                  )}
                   {titleTip}
                 </span>
                 <div
@@ -121,7 +131,12 @@ export class Card extends React.Component<CardProps> {
               <div>
                 <span>
                   <span>{cardTitle}</span>
-                  {Tips && <i className="icon-info" data-tip={Tips} />}
+                  {Tips && (
+                    <>
+                      <i className="fa-icon-info" data-for="cardInfo__tooltip" data-tip={Tips} />
+                      <ReactTooltip effect="solid" id="cardInfo__tooltip" />
+                    </>
+                  )}
                   {titleTip}
                 </span>
                 <div className="card-info">{cardInfo}</div>

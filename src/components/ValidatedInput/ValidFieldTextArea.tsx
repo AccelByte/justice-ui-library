@@ -72,9 +72,7 @@ export const ValidFieldTextArea = ({
         })}
       >
         {label && (
-          <FieldLabel label={label} optionalLabel={optionalLabel}>
-            {tooltip && <i ref={tooltipRef} className="icon-info" data-tip={tooltip} />}
-          </FieldLabel>
+          <FieldLabel label={label} optionalLabel={optionalLabel} tooltipRef={tooltipRef} tooltip={tooltip && tooltip} />
         )}
         {!!maxLength && <FieldCounter value={value} maxLength={maxLength} />}
       </div>

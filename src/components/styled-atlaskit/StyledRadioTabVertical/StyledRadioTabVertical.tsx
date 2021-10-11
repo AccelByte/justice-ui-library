@@ -44,10 +44,7 @@ export const StyledRadioTabVertical = ({
   return (
     <div className={className}>
       {!!label && (
-        <FieldLabel label={label}>
-          &nbsp;
-          {tooltip && <i className="icon-info" data-tip={tooltip} />}
-        </FieldLabel>
+        <FieldLabel label={label} tooltip={tooltip && tooltip} />
       )}
       <div className={classNames(["styled-radio-tab-vertical"])}>
         {options.map((item) => (

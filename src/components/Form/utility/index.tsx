@@ -7,6 +7,8 @@
 import React from "react";
 import "./index.scss";
 import { addLineBreaks } from "../../Typography/typography";
+import ReactTooltip from "react-tooltip";
+import classNames from "classnames";
 
 export const FieldErrorMessage = ({ message = "" }: { message?: string }) => (
   <span className="field-error-message">{message}</span>
@@ -16,17 +18,27 @@ export const FieldLabel = ({
   label = "",
   children,
   optionalLabel,
+  tooltip,
+  tooltipRef
 }: {
   label?: string;
   children?: React.ReactNode;
   optionalLabel?: string;
+  tooltip?: string;
+  tooltipRef?: React.RefObject<HTMLElement>
 }) => (
-  <label className="field-label">
-    <span>
+  <label className={classNames("field-label", { "d-flex align-items-center": tooltip })}>
+    <div>
       {label ? `${label} ` : ""}
       {optionalLabel}
       {children ? children : ""}
-    </span>
+    </div>
+    {tooltip && (
+      <>
+        <i ref={tooltipRef} className="fa-icon-info ml-2" data-for="field-label__tooltip" data-tip={tooltip} />
+        <ReactTooltip effect="solid" id="field-label__tooltip" />
+      </>
+    )}
   </label>
 );
 
