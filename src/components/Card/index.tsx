@@ -4,7 +4,7 @@
  * and restrictions contact your company contract manager.
  */
 
-import React from "react";
+import * as React from "react";
 import classNames from "classnames";
 import { ButtonWithIcon } from "../ButtonWithIcon";
 import ReactTooltip from "react-tooltip";

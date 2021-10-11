@@ -82,4 +82,9 @@ button.styled-atlaskit-button {
       }
     }
   }
+  &.link {
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }

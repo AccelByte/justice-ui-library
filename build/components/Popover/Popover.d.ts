@@ -3,12 +3,13 @@ import "./Popover.scss";
 interface Props {
     tooltipRef: React.RefObject<HTMLDivElement>;
     content?: React.ReactNode | string;
-    popoverPlacement?: string;
     className?: string;
+    popoverPlacement?: string;
+    popoverClass?: string;
     popoverType?: string;
     popoverEvent?: string;
     popoverEventOff?: string;
     children?: React.ReactNode;
 }
-export declare const Popover: ({ tooltipRef, content, popoverPlacement, className, popoverType, popoverEvent, popoverEventOff, children, }: Props) => JSX.Element;
+export declare const Popover: ({ tooltipRef, content, className, popoverPlacement, popoverClass, popoverType, popoverEvent, popoverEventOff, children, }: Props) => JSX.Element;
 export {};

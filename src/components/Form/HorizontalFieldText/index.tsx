@@ -4,7 +4,7 @@
  * and restrictions contact your company contract manager.
  */
 
-import React from "react";
+import * as React from "react";
 import ReactTooltip from "react-tooltip";
 import { default as classNames } from "classnames";
 import "./index.scss";

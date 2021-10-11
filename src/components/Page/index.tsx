@@ -10,7 +10,7 @@ import { default as classNames } from "classnames";
 import { Enum } from "../../types";
 import { CONTAINER_SIZE } from "../../constants";
 
-interface PageProps {
+export interface PageProps {
   title?: React.ReactNode;
   className?: string;
   size?: Enum<typeof CONTAINER_SIZE>;

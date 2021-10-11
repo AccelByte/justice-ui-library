@@ -6,7 +6,7 @@
  *
  */
 
-import React from "react";
+import * as React from "react";
 import classNames from "classnames";
 import ReactTooltip from "react-tooltip";
 import { default as FieldText } from "@atlaskit/field-text";

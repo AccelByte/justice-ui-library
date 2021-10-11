@@ -12,8 +12,9 @@ import "./Popover.scss";
 interface Props {
   tooltipRef: React.RefObject<HTMLDivElement>;
   content?: React.ReactNode | string;
-  popoverPlacement?: string;
   className?: string;
+  popoverPlacement?: string;
+  popoverClass?: string;
   popoverType?: string;
   popoverEvent?: string;
   popoverEventOff?: string;
@@ -23,8 +24,9 @@ interface Props {
 export const Popover = ({
   tooltipRef,
   content,
-  popoverPlacement = "right",
   className,
+  popoverPlacement = "right",
+  popoverClass,
   popoverType = "light",
   popoverEvent = "mouseenter",
   popoverEventOff = "mouseleave",
@@ -36,7 +38,7 @@ export const Popover = ({
       "data-html": true,
       "data-tip": React.isValidElement(content) ? renderToString(content) : content,
       "data-place": popoverPlacement,
-      "data-class": classNames("popover-container", className),
+      "data-class": classNames("popover-container", popoverClass),
       "data-type": popoverType,
       "data-event": popoverEvent,
       "data-event-off": popoverEventOff,

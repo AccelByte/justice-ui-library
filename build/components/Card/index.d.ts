@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import "./index.scss";
 import { ButtonAppearances } from "@atlaskit/button";
 export interface CardProps {

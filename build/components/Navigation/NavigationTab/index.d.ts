@@ -10,7 +10,7 @@ interface ItemTab {
 }
 export interface NavigationTabProps {
     config: ItemTab[];
-    changePage: (url: string) => void;
+    changePage?: (url: string) => void;
     isChangeRoute?: boolean;
     changePageKey?: (url: string) => void;
     isVertical?: boolean;

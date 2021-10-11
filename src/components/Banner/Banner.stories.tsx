@@ -19,7 +19,11 @@ export const Success = Template.bind({});
 Success.args = { appearance: APPEARANCE_TYPE.success, message: "Success banner" };
 
 export const Error = Template.bind({});
-Error.args = { appearance: APPEARANCE_TYPE.error, message: "Error banner" };
+Error.args = {
+  appearance: APPEARANCE_TYPE.error,
+  message: "Error banner",
+  dismissBanner: () => {},
+};
 
 export const Info = Template.bind({});
 Info.args = { appearance: APPEARANCE_TYPE.info, message: "Info banner" };

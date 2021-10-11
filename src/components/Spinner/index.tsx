@@ -10,7 +10,7 @@ import * as React from "react";
 import { default as classNames } from "classnames";
 import "./index.scss";
 
-interface SpinnerProps {
+export interface SpinnerProps {
   loadingText?: string;
   className?: string;
 }

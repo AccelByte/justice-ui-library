@@ -23,7 +23,7 @@ const UPDATE_INTERVAL = 100;
 
 export interface NavigationTabProps {
   config: ItemTab[];
-  changePage: (url: string) => void;
+  changePage?: (url: string) => void;
   isChangeRoute?: boolean;
   changePageKey?: (url: string) => void;
   isVertical?: boolean;
@@ -82,7 +82,7 @@ export const NavigationTab = (props: NavigationTabProps) => {
   };
 
   const onClickTab = (isChangeRoute: boolean, url: string) => {
-    isChangeRoute ? changePage(url) : changePageKey && changePageKey(url);
+    isChangeRoute ? changePage && changePage(url) : changePageKey && changePageKey(url);
   };
 
   const unhideActiveHiddenTab = (maxShown: number = maxShownTabs) => {

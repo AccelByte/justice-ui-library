@@ -8,7 +8,7 @@ import React from "react";
 import classNames from "classnames";
 import { Button, ButtonProps } from "../styled-atlaskit/Button/Button";
 
-interface ButtonWithIconProps extends ButtonProps {
+export interface ButtonWithIconProps extends ButtonProps {
   buttonIcon?: string;
 }
 

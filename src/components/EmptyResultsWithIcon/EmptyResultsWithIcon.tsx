@@ -13,12 +13,13 @@ interface Props {
   title: string;
   description?: string | React.ReactNode;
   children?: React.ReactChild;
+  dataQa?: string | null;
   isTaller?: boolean;
 }
 
-export const EmptyResultsWithIcon = ({ imgSrc, title, description, children, isTaller }: Props) => {
+export const EmptyResultsWithIcon = ({ imgSrc, title, description, children, isTaller, dataQa }: Props) => {
   return (
-    <div className={classNames("emptyResultsWithIcon", { taller: isTaller })}>
+    <div className={classNames("emptyResultsWithIcon", { taller: isTaller })} data-qa-id={dataQa}>
       <img src={imgSrc} />
       <div className="emptyResultsWithIconTitle mt-2">{title}</div>
       {description && <div className="emptyResultsWithIconDescription">{description}</div>}

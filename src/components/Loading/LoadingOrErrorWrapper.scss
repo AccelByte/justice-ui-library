@@ -17,7 +17,8 @@
   min-height: 160px;
   margin: auto;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   .loading-info {
     display: block;
     color: $base-black;
@@ -37,7 +38,8 @@
   justify-content: center;
   align-items: center;
   font-family: $font-family-primary;
-  &__button, button {
+  &__button,
+  button {
     display: block;
     width: fit-content;
     margin-top: 1rem;

@@ -2,7 +2,7 @@ import * as React from "react";
 import "./index.scss";
 import { Enum } from "../../types";
 import { CONTAINER_SIZE } from "../../constants";
-interface PageProps {
+export interface PageProps {
     title?: React.ReactNode;
     className?: string;
     size?: Enum<typeof CONTAINER_SIZE>;
@@ -11,4 +11,3 @@ interface PageProps {
     noSidebar?: boolean;
 }
 export declare const Page: ({ className, size, title, children, dataQa, headerRightElement, noSidebar, }: React.PropsWithChildren<PageProps>) => JSX.Element;
-export {};
