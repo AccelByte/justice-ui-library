@@ -420,7 +420,7 @@
   }
 
   &.no-padding {
-    .card-content {
+    > .card-content {
       padding: 0;
     }
   }
