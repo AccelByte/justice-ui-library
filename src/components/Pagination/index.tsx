@@ -15,15 +15,26 @@ export interface PaginationProps {
     last?: string;
   };
   changePage: (page?: string) => void;
+  prevText?: string;
+  nextText?: string;
+  prevDataQa?: string;
+  nextDataQa?: string;
 }
 
-const pagination: React.FunctionComponent<PaginationProps> = ({ paging, changePage }) => {
+const pagination: React.FunctionComponent<PaginationProps> = ({
+  paging,
+  changePage,
+  prevText = "Prev",
+  nextText = "Next",
+  prevDataQa,
+  nextDataQa,
+}) => {
   const renderPrev = () => {
     const onClick = () => changePage(paging.previous);
     const paginationClass = paging.previous ? "navigation" : "disabled";
     return (
-      <a className={paginationClass} onClick={onClick}>
-        <i className="fa-icon-chevron-left page-icon" /> Prev
+      <a className={paginationClass} onClick={onClick} data-qa-id={prevDataQa && prevDataQa}>
+        <i className="fa-icon-chevron-left page-icon" /> {prevText}
       </a>
     );
   };
@@ -32,8 +43,8 @@ const pagination: React.FunctionComponent<PaginationProps> = ({ paging, changePa
     const onClick = () => changePage(paging.next);
     const paginationClass = paging.next ? "navigation" : "disabled";
     return (
-      <a className={paginationClass} onClick={onClick}>
-        Next <i className="fa-icon-chevron-right page-icon" />
+      <a className={paginationClass} onClick={onClick} data-qa-id={nextDataQa && nextDataQa}>
+        {nextText} <i className="fa-icon-chevron-right page-icon" />
       </a>
     );
   };

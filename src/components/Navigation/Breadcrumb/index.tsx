@@ -18,6 +18,7 @@ export interface BreadcrumbProps {
   pageTitleBadge?: BadgeProps;
   containerSize?: Enum<typeof CONTAINER_SIZE>;
   className?: string;
+  renderLink?: (item: BreadcrumbSchema, useBackButton: boolean) => JSX.Element;
 }
 
 export class Breadcrumb extends React.Component<BreadcrumbProps> {
@@ -28,6 +29,7 @@ export class Breadcrumb extends React.Component<BreadcrumbProps> {
       containerSize = CONTAINER_SIZE.FULLWIDTH,
       className,
       pageTitleBadge,
+      renderLink,
     } = this.props;
     const lastItemKey = breadcrumbLists.length - 1;
     const useBackButton = breadcrumbLists.length === 1;
@@ -46,14 +48,15 @@ export class Breadcrumb extends React.Component<BreadcrumbProps> {
             {breadcrumbLists.map((item, key: number) => {
               return (
                 <li key={key} className="breadcrumb-nav__item">
-                  {item.onClick && (
+                  {item.onClick && !item.link && (
                     <span onClick={item.onClick} className={"breadcrumb-nav__item__link"}>
                       {useBackButton && <i className="back-button-icon icon-ab-arrow-left" />}
                       {item.text}
                     </span>
                   )}
+                  {item.link && !item.onClick && renderLink && renderLink(item, useBackButton)}
                   {key !== lastItemKey && <span className="item-separator">/</span>}
-                  {!item.onClick && <span className={"breadcrumb-nav__item__no-link"}>{item.text}</span>}
+                  {!item.onClick && !item.link && <span className={"breadcrumb-nav__item__no-link"}>{item.text}</span>}
                 </li>
               );
             })}

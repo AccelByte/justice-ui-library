@@ -10,6 +10,7 @@ export interface BreadcrumbProps {
     pageTitleBadge?: BadgeProps;
     containerSize?: Enum<typeof CONTAINER_SIZE>;
     className?: string;
+    renderLink?: (item: BreadcrumbSchema, useBackButton: boolean) => JSX.Element;
 }
 export declare class Breadcrumb extends React.Component<BreadcrumbProps> {
     render(): JSX.Element;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 AccelByte Inc. All Rights Reserved.
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
  */
@@ -8,7 +8,7 @@ import * as React from "react";
 import "./EmptyResultsWithIcon.scss";
 import { default as classNames } from "classnames";
 
-interface Props {
+export interface EmptyResultsProps {
   imgSrc: string;
   title: string;
   description?: string | React.ReactNode;
@@ -17,7 +17,7 @@ interface Props {
   isTaller?: boolean;
 }
 
-export const EmptyResultsWithIcon = ({ imgSrc, title, description, children, isTaller, dataQa }: Props) => {
+export const EmptyResultsWithIcon = ({ imgSrc, title, description, children, isTaller, dataQa }: EmptyResultsProps) => {
   return (
     <div className={classNames("emptyResultsWithIcon", { taller: isTaller })} data-qa-id={dataQa}>
       <img src={imgSrc} />

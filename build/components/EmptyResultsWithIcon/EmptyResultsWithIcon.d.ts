@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./EmptyResultsWithIcon.scss";
-interface Props {
+export interface EmptyResultsProps {
     imgSrc: string;
     title: string;
     description?: string | React.ReactNode;
@@ -8,5 +8,4 @@ interface Props {
     dataQa?: string | null;
     isTaller?: boolean;
 }
-export declare const EmptyResultsWithIcon: ({ imgSrc, title, description, children, isTaller, dataQa }: Props) => JSX.Element;
-export {};
+export declare const EmptyResultsWithIcon: ({ imgSrc, title, description, children, isTaller, dataQa }: EmptyResultsProps) => JSX.Element;
