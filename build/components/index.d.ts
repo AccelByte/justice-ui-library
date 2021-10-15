@@ -46,3 +46,4 @@ export * from "./Box";
 export * from "./Divider";
 export * from "./TableFilter";
 export * from "./ScrollSpy";
+export * from "./Popover/InlinePopover";

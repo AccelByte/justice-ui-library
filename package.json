@@ -1,6 +1,6 @@
 {
   "name": "justice-ui-library",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "author": "AccelByte Inc",
   "license": "AccelByte License",
   "main": "./build/index.js",
@@ -17,6 +17,7 @@
     "@atlaskit/dynamic-table": "^13.0.0",
     "@atlaskit/field-text": "^11.0.6",
     "@atlaskit/field-text-area": "^8.0.7",
+    "@atlaskit/inline-dialog": "^12.1.7",
     "@atlaskit/modal-dialog": "^10.1.6",
     "@atlaskit/select": "^13.0.2",
     "@atlaskit/tag": "^11.1.3",
