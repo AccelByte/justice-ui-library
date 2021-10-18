@@ -25,171 +25,177 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-ab-cloud-save:before {
+.icon-ab-sidebar-game:before {
   content: "\e900";
 }
-.icon-ab-info-filled:before {
+.icon-ab-cloud-save:before {
   content: "\e901";
 }
-.icon-ab-exclamation-mark-filled:before {
+.icon-ab-info-filled:before {
   content: "\e902";
 }
-.icon-ab-arrow-left:before {
+.icon-ab-exclamation-mark-filled:before {
   content: "\e903";
 }
-.icon-ab-check-square-filled:before {
+.icon-ab-arrow-left:before {
   content: "\e904";
 }
-.icon-ab-warning-triangle-filled:before {
+.icon-ab-check-square-filled:before {
   content: "\e905";
 }
-.icon-ab-sidebar-augments:before {
+.icon-ab-warning-triangle-filled:before {
   content: "\e906";
 }
-.icon-ab-x:before {
+.icon-ab-sidebar-augments:before {
   content: "\e907";
 }
-.icon-ab-namespace-check:before {
+.icon-ab-x:before {
   content: "\e908";
 }
-.icon-ab-namespace-publisher:before {
+.icon-ab-namespace-check:before {
   content: "\e909";
 }
-.icon-ab-namespace-home:before {
+.icon-ab-namespace-publisher:before {
   content: "\e90a";
 }
-.icon-ab-header-sign-out:before {
+.icon-ab-namespace-home:before {
   content: "\e90b";
 }
-.icon-ab-header-roles:before {
+.icon-ab-header-sign-out:before {
   content: "\e90c";
 }
-.icon-ab-header-profile-settings:before {
+.icon-ab-header-roles:before {
   content: "\e90d";
 }
-.icon-ab-header-personal-data-requests:before {
+.icon-ab-header-profile-settings:before {
   content: "\e90e";
 }
-.icon-ab-header-payment-configurations:before {
+.icon-ab-header-personal-data-requests:before {
   content: "\e90f";
 }
-.icon-ab-header-oauth-clients:before {
+.icon-ab-header-payment-configurations:before {
   content: "\e910";
 }
-.icon-ab-header-login:before {
+.icon-ab-header-oauth-clients:before {
   content: "\e911";
 }
-.icon-ab-header-legal-documents:before {
+.icon-ab-header-login:before {
   content: "\e912";
 }
-.icon-ab-header-app-distributions:before {
+.icon-ab-header-legal-documents:before {
   content: "\e913";
 }
-.icon-ab-header-age-restriction:before {
+.icon-ab-header-app-distributions:before {
   content: "\e914";
 }
-.icon-ab-header-admins:before {
+.icon-ab-header-age-restriction:before {
   content: "\e915";
 }
-.icon-ab-header-admin-email-notification:before {
+.icon-ab-header-admins:before {
   content: "\e916";
 }
-.icon-ab-header-account-deletion-requests:before {
+.icon-ab-header-admin-email-notification:before {
   content: "\e917";
 }
-.icon-ab-header-product-keys:before {
+.icon-ab-header-account-deletion-requests:before {
   content: "\e918";
 }
-.icon-ab-sidebar-achievements:before {
+.icon-ab-header-product-keys:before {
   content: "\e919";
 }
-.icon-ab-sidebar-analytics:before {
+.icon-ab-sidebar-achievements:before {
   content: "\e91a";
 }
-.icon-ab-sidebar-campaigns:before {
+.icon-ab-sidebar-analytics:before {
   content: "\e91b";
 }
-.icon-ab-sidebar-clans:before {
+.icon-ab-sidebar-campaigns:before {
   content: "\e91c";
 }
-.icon-ab-sidebar-configurations:before {
+.icon-ab-sidebar-clans:before {
   content: "\e91d";
 }
-.icon-ab-sidebar-currencies:before {
+.icon-ab-sidebar-configurations:before {
   content: "\e91e";
 }
-.icon-ab-sidebar-direct-payment-callback:before {
+.icon-ab-sidebar-currencies:before {
   content: "\e91f";
 }
-.icon-ab-sidebar-entitlements:before {
+.icon-ab-sidebar-direct-payment-callback:before {
   content: "\e920";
 }
-.icon-ab-sidebar-leaderboard:before {
+.icon-ab-sidebar-entitlements:before {
   content: "\e921";
 }
-.icon-ab-sidebar-matchmaking:before {
+.icon-ab-sidebar-leaderboard:before {
   content: "\e922";
 }
-.icon-ab-sidebar-monitoring:before {
+.icon-ab-sidebar-matchmaking:before {
   content: "\e923";
 }
-.icon-ab-sidebar-notifications:before {
+.icon-ab-sidebar-monitoring:before {
   content: "\e924";
 }
-.icon-ab-sidebar-in-app-purchase:before {
+.icon-ab-sidebar-notifications:before {
   content: "\e925";
 }
-.icon-ab-sidebar-payment-metadata:before {
+.icon-ab-sidebar-in-app-purchase:before {
   content: "\e926";
 }
-.icon-ab-sidebar-promotions:before {
+.icon-ab-sidebar-payment-metadata:before {
   content: "\e927";
 }
-.icon-ab-sidebar-servers:before {
+.icon-ab-sidebar-promotions:before {
   content: "\e928";
 }
-.icon-ab-sidebar-sessions:before {
+.icon-ab-sidebar-servers:before {
   content: "\e929";
 }
-.icon-ab-sidebar-statistics:before {
+.icon-ab-sidebar-sessions:before {
   content: "\e92a";
 }
-.icon-ab-sidebar-stores:before {
+.icon-ab-sidebar-statistics:before {
   content: "\e92b";
 }
-.icon-ab-sidebar-users:before {
+.icon-ab-sidebar-stores:before {
   content: "\e92c";
 }
-.icon-ab-sidebar-wallets:before {
+.icon-ab-sidebar-users:before {
   content: "\e92d";
 }
-.icon-ab-sidebar-achievement:before {
+.icon-ab-sidebar-wallets:before {
   content: "\e92e";
 }
-.icon-ab-header-agreement-records:before {
+.icon-ab-sidebar-achievement:before {
   content: "\e92f";
 }
-.icon-ab-sidebar-reward:before {
+.icon-ab-header-agreement-records:before {
   content: "\e930";
 }
-.icon-ab-sidebar-subscription:before {
+.icon-ab-sidebar-reward:before {
   content: "\e931";
 }
-.icon-ab-user-check:before {
+.icon-ab-sidebar-subscription:before {
   content: "\e932";
 }
-.icon-ab-sidebar-orders:before {
+.icon-ab-user-check:before {
   content: "\e933";
 }
-.icon-ab-sidebar-lock:before {
+.icon-ab-sidebar-orders:before {
   content: "\e934";
 }
-.icon-ab-sidebar-code-redemption:before {
+.icon-ab-sidebar-lock:before {
   content: "\e935";
 }
-.icon-ab-sidebar-ugc:before {
+.icon-ab-sidebar-code-redemption:before {
   content: "\e936";
 }
-.icon-ab-sidebar-season-pass:before {
+.icon-ab-sidebar-ugc:before {
   content: "\e937";
+}
+.icon-ab-sidebar-season-pass:before {
+  content: "\e938";
+}
+.icon-ab-download:before {
+  content: "\e939";
 }
