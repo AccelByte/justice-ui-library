@@ -14,7 +14,7 @@ import "./ValidFieldText.scss";
 import { FieldCounter, FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
 import { Popover } from "../Popover/Popover";
 
-class Input extends FieldText {
+export class Input extends FieldText {
   componentWillReceiveProps(nextProps: any, nextContext: any) {
     const isValueSame = this.props.value === nextProps.value;
     if (isValueSame) {

@@ -1,0 +1,71 @@
+/*!
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+.valid-dynamic-text {
+  &__input {
+    display: flex;
+    flex-direction: column;
+    label {
+      display: none;
+    }
+    &__field {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      &:hover {
+        background-color: transparent !important;
+      }
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+      &--focused {
+        [class|="Content__ChildWrapper"] > [class|="Content"] {
+          border: 2px solid $color--accent;
+        }
+      }
+      > div {
+        width: calc(100% - 40px);
+      }
+      &--disabled {
+        > div {
+          width: 100%;
+        }
+      }
+      button {
+        width: 40px;
+        color: $base-100 !important;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      input {
+        font-family: $font-family-primary;
+      }
+    }
+    &__add-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      width: calc(100% - 40px);
+      background-color: $base-10 !important;
+      border-radius: 4px;
+      button {
+        &:hover {
+          text-decoration: none;
+        }
+        &:disabled span {
+          color: $color--disabled;
+        }
+        span {
+          color: $color--accent;
+        }
+      }
+    }
+  }
+}

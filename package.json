@@ -1,6 +1,6 @@
 {
   "name": "justice-ui-library",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "author": "AccelByte Inc",
   "license": "AccelByte License",
   "main": "./build/index.js",
@@ -66,7 +66,8 @@
     "rollup-plugin-styles": "^3.14.1",
     "sass": "^1.38.1",
     "sass-loader": "10.1.1",
-    "style-loader": "2.0.0"
+    "style-loader": "2.0.0",
+    "tslib": "^2.3.1"
   },
   "peerDependencies": {
     "react": "^17.0.2",

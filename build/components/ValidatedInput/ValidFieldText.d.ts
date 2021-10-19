@@ -1,5 +1,9 @@
 import * as React from "react";
+import { default as FieldText } from "@atlaskit/field-text";
 import "./ValidFieldText.scss";
+export declare class Input extends FieldText {
+    componentWillReceiveProps(nextProps: any, nextContext: any): void;
+}
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
     onKeyDown?: (event: React.FormEvent<HTMLInputElement>) => void;
     label: string;
