@@ -1,0 +1,54 @@
+/*!
+ *
+ *  * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ *  * This is licensed software from AccelByte Inc, for limitations
+ *  * and restrictions contact your company contract manager.
+ *
+ */
+
+@import "src/styles/variables";
+
+.inline-popover {
+  & > div[data-testid~="InlinePopover"] {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    padding: 14px;
+    color: $color--text--secondary;
+    margin-left: 8px;
+    font-size: $font-size-h7;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    max-width: 320px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    background-color: $base-white;
+
+    &::before, &::after {
+      position: absolute;
+      height: 0px;
+      width: 0px;
+      content: "";
+      border: 6px solid transparent;
+      transform-origin: 0 0;
+      box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    }
+
+    &[data-testid*="right"] {
+      &::before {
+        left: 10px;
+        top: 50%;
+        transform: rotate(135deg);
+        border-color: transparent $base-white $base-white transparent;
+      }
+    }
+    &[data-testid*="bottom"] {
+      margin-top: 8px;
+
+      &[data-testid*="end"]::after {
+        left: 90%;
+        top: 10px;
+        transform: rotate(225deg);
+        border-color: transparent $base-white $base-white transparent;
+      }
+    }
+  }
+}

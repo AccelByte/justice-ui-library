@@ -188,6 +188,17 @@
     "@babel/runtime" "^7.0.0"
     "@emotion/core" "^10.0.9"
 
+"@atlaskit/inline-dialog@^12.1.7":
+  version "12.1.14"
+  resolved "https://registry.yarnpkg.com/@atlaskit/inline-dialog/-/inline-dialog-12.1.14.tgz#a0aac2158a40005e3661fbccb6eafaee10833223"
+  integrity sha512-uwnstsFiy5Avm5K2JaD6zMNc4i88RIncCg784eZvQyoJ115UDI7BGUwf4Cl0tLRY0uaFnNsoxZ7XTAyLGmWELA==
+  dependencies:
+    "@atlaskit/analytics-next" "^6.3.5"
+    "@atlaskit/popper" "^3.1.12"
+    "@atlaskit/theme" "^9.5.1"
+    react-node-resolver "^1.0.1"
+    tslib "^1.9.3"
+
 "@atlaskit/inline-dialog@^13.0.0":
   version "13.1.0"
   resolved "https://registry.yarnpkg.com/@atlaskit/inline-dialog/-/inline-dialog-13.1.0.tgz#bd68e868f8fa99363a8221666bd1acb9f153950d"
