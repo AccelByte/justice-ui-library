@@ -7,7 +7,7 @@
 import * as React from "react";
 import classNames from "classnames";
 import { SelectOption } from "../../../types";
-const { default: styles } = require("./index.module.scss");
+import styles from "./index.module.scss"
 
 export interface HorizontalSelectProps<T> {
   options: SelectOption<T>[];
