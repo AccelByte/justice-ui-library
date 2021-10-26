@@ -1,18 +1,19 @@
 /*
- * Copyright (c) 2020-2021 AccelByte Inc. All Rights Reserved
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
  */
 
-import classNames from "classnames";
 import * as React from "react";
+import classNames from "classnames";
+import { makeSafeReactInnerHTML } from "../../utils/makeSafeReactInnerHTML";
 
-interface Props {
+export interface LineBreakToListProps {
   text: string;
   className?: string;
 }
 
-export const LineBreakToList = ({ text, className = "" }: Props) => {
+export const LineBreakToList = ({ text, className = "" }: LineBreakToListProps) => {
   const list = text.split("\n").map((text, key) => {
     const isStartWithDash = text.startsWith("-");
     const displayedText = isStartWithDash ? text.slice(1) : text;
@@ -21,9 +22,8 @@ export const LineBreakToList = ({ text, className = "" }: Props) => {
       <li
         key={`${key}-${text}`}
         className={classNames("pl-1", { "ml-4": isStartWithDash })}
-      >
-        {displayedText}
-      </li>
+        dangerouslySetInnerHTML={makeSafeReactInnerHTML(displayedText)}
+      />
     );
   });
 

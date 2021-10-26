@@ -23,6 +23,8 @@ export * from "./Form/HorizontalFieldText";
 export * from "./Form/RadioButton";
 export * from "./Form/utility";
 export * from "./Form/Checkbox";
+export * from "./Form/HorizontalSelect";
+export * from "./Form/InlineCheckboxField";
 export * from "./Icon";
 export * from "./Loading/LoadingIndicator";
 export * from "./Loading/LoadingOrErrorWrapper";
@@ -51,5 +53,5 @@ export * from "./ButtonWithIcon";
 export * from "./Box";
 export * from "./Divider";
 export * from "./TableFilter";
-export * from "./ScrollSpy"
-export * from "./Popover/InlinePopover"
+export * from "./ScrollSpy";
+export * from "./Popover/InlinePopover";

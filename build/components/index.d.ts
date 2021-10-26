@@ -17,6 +17,8 @@ export * from "./Form/HorizontalFieldText";
 export * from "./Form/RadioButton";
 export * from "./Form/utility";
 export * from "./Form/Checkbox";
+export * from "./Form/HorizontalSelect";
+export * from "./Form/InlineCheckboxField";
 export * from "./Icon";
 export * from "./Loading/LoadingIndicator";
 export * from "./Loading/LoadingOrErrorWrapper";

@@ -1,7 +1,6 @@
 /// <reference types="react" />
-interface Props {
+export interface LineBreakToListProps {
     text: string;
     className?: string;
 }
-export declare const LineBreakToList: ({ text, className }: Props) => JSX.Element;
-export {};
+export declare const LineBreakToList: ({ text, className }: LineBreakToListProps) => JSX.Element;

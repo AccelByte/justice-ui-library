@@ -9,7 +9,7 @@
 .styled-atlaskit-tag {
   display: inline;
   margin-right: 0.5rem;
-  [class*="-BaseTag"] {
+  > span {
     margin: 0;
     background-color: $tag-backgroundColor;
     color: $color--text--tertiary;
@@ -21,7 +21,7 @@
         background-color: $tag-backgroundColor--hovered;
       }
     }
-    [class*="-Content"] {
+    > span {
       margin: auto 5px;
       padding-right: 0;
       &:hover {
@@ -45,6 +45,11 @@
           height: 24px;
         }
       }
+    }
+  }
+  &:not(.isRemovable) {
+    > span > span {
+      padding-right: 4px;
     }
   }
 }

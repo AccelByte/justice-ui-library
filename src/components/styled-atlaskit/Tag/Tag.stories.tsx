@@ -17,4 +17,4 @@ export default {
 const Template: Story<RemovableTagProps> = (args) => <Tag {...args} />;
 
 export const Example = Template.bind({});
-Example.args = { text: "My tag", isRemovable: true, appearance: "rounded" };
+Example.args = { text: "My tag", isRemovable: true, appearance: "default" };
