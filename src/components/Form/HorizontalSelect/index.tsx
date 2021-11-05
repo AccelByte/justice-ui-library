@@ -14,7 +14,7 @@ export interface HorizontalSelectProps<T> {
   value: T;
   onChange: (value: T) => void;
   className?: string;
-  dataQa?: string;
+  dataQa?: string | null;
 }
 
 function horizontalSelect<T = string>(props: HorizontalSelectProps<T>) {

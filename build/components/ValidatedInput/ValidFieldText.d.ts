@@ -1,16 +1,18 @@
 import * as React from "react";
 import { default as FieldText } from "@atlaskit/field-text";
 import "./ValidFieldText.scss";
+import { Placement } from "@atlaskit/inline-dialog/types";
 export declare class Input extends FieldText {
     componentWillReceiveProps(nextProps: any, nextContext: any): void;
 }
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface ValidFieldTextProps extends React.InputHTMLAttributes<HTMLInputElement> {
     onKeyDown?: (event: React.FormEvent<HTMLInputElement>) => void;
     label: string;
     name: string;
     value: string;
     errMessage?: string;
-    onChange: (event: React.FormEvent<HTMLInputElement>) => void;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    isRequired?: boolean;
     optionalLabel?: string;
     isLabelHidden?: boolean;
     type?: "number" | "text" | "password";
@@ -18,25 +20,30 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
     max?: number;
     helperText?: string;
     tooltip?: string;
-    popoverContent?: React.ReactNode | string;
+    dataQa?: string | null;
+    dataQaProps?: string | null;
     validFieldTextRef?: React.RefObject<HTMLDivElement>;
     rightIcon?: React.ReactNode;
+    isFloat?: boolean;
+    autoComplete?: "on" | "off";
+    showTooltipOnFocus?: boolean;
+    popoverContent?: React.ReactNode;
+    popoverPlacement?: Placement;
+    onFocus?: (event: React.FormEvent<HTMLInputElement>) => void;
 }
 interface State {
     isFocus: boolean;
 }
-export declare class ValidFieldText extends React.Component<Props, State> {
-    constructor(props: Props);
+export declare class ValidFieldText extends React.Component<ValidFieldTextProps, State> {
+    constructor(props: ValidFieldTextProps);
     toolTipRef: React.RefObject<HTMLElement>;
-    toolTipDivRef: React.RefObject<HTMLDivElement>;
-    toolTipIconEye: React.RefObject<HTMLElement>;
     componentDidMount(): void;
     componentWillUnmount(): void;
     hideTooltip: () => void;
     showTooltip: () => void;
-    resetTooltipIconEye: () => void;
     handleBlur: (event: React.FocusEvent<HTMLInputElement>) => void;
-    handleFocus: () => void;
+    handleFocus: (event: React.FormEvent<HTMLInputElement>) => void;
+    handleOnKeyDown: (event: React.KeyboardEvent<HTMLInputElement>) => void;
     render(): JSX.Element;
 }
 export {};

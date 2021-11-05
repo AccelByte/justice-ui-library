@@ -14,6 +14,7 @@ export interface HorizontalFieldTextProps {
     showTooltip?: boolean;
     isRequired?: boolean;
     optionalLabel?: string;
+    showTooltipOnFocus?: boolean;
 }
 export declare class HorizontalFieldText extends React.Component<HorizontalFieldTextProps> {
     constructor(props: HorizontalFieldTextProps);

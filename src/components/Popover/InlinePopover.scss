@@ -10,26 +10,27 @@
 
 .inline-popover {
   & > div[data-testid~="InlinePopover"] {
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-    padding: 14px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
+    padding: 16px;
     color: $color--text--secondary;
-    margin-left: 8px;
+    margin: 8px;
     font-size: $font-size-h7;
     line-height: 16px;
     letter-spacing: 0.03em;
-    max-width: 320px;
+    max-width: 290px;
     word-wrap: break-word;
     overflow-wrap: break-word;
     background-color: $base-white;
 
-    &::before, &::after {
+    &::before {
       position: absolute;
       height: 0px;
       width: 0px;
       content: "";
       border: 6px solid transparent;
+      border-color: transparent $base-white $base-white transparent;
       transform-origin: 0 0;
-      box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.08);
+      box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.10);
     }
 
     &[data-testid*="right"] {
@@ -37,17 +38,68 @@
         left: 10px;
         top: 50%;
         transform: rotate(135deg);
-        border-color: transparent $base-white $base-white transparent;
+      }
+    }
+    &[data-testid*="left"] {
+      &::before {
+        right: -2px;
+        top: 50%;
+        transform: rotate(315deg);
       }
     }
     &[data-testid*="bottom"] {
-      margin-top: 8px;
-
-      &[data-testid*="end"]::after {
-        left: 90%;
+      &::before {
+        left: 50%;
         top: 10px;
         transform: rotate(225deg);
-        border-color: transparent $base-white $base-white transparent;
+      }
+
+      &[data-testid*="start"]::before {
+        left: 10%;
+      }
+
+      &[data-testid*="end"]::before {
+        left: 90%;
+      }
+    }
+    &[data-testid*="top"] {
+      &::before {
+        left: 50%;
+        bottom: -1px;
+        transform: rotate(45deg);
+      }
+      &[data-testid*="start"]::before {
+        left: 10%;
+      }
+
+      &[data-testid*="end"]::before {
+        left: 90%;
+      }
+    }
+    &[data-testid*="auto"] {
+      &::before {
+        border: 0;
+        box-shadow: none;
+      }
+    }
+
+    ul {
+      padding-left: 16px;
+      margin: 0;
+
+      & li+li {
+        margin-top: 8px;
+      }
+    }
+
+    code {
+      font-weight: 500;
+      font-size: $font-size-h6;
+      &.allow {
+        color: $brand-80;
+      }
+      &.not-allow {
+        color: $semantic-red-90;
       }
     }
   }
