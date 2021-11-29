@@ -5,6 +5,7 @@ export interface HorizontalSelectProps<T> {
     value: T;
     onChange: (value: T) => void;
     className?: string;
+    dataQa?: string;
 }
 declare function horizontalSelect<T = string>(props: HorizontalSelectProps<T>): JSX.Element;
 export { horizontalSelect as HorizontalSelect };

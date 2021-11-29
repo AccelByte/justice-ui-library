@@ -7,26 +7,26 @@
 import * as React from "react";
 import classNames from "classnames";
 import { SelectOption } from "../../../types";
-import styles from "./index.module.scss"
+import styles from "./index.module.scss";
 
 export interface HorizontalSelectProps<T> {
   options: SelectOption<T>[];
   value: T;
   onChange: (value: T) => void;
   className?: string;
+  dataQa?: string;
 }
 
 function horizontalSelect<T = string>(props: HorizontalSelectProps<T>) {
-  const { options, className, onChange, value } = props;
+  const { options, className, onChange, value, dataQa } = props;
   return (
-    <div className={classNames(styles.horizontalSelect, className)}>
+    <div className={classNames(styles.horizontalSelect, className)} data-qa-id={dataQa}>
       {options.map((option) => (
         <div
           key={`${option.label}-${option.value}`}
-          className={classNames(styles.horizontalSelectOption, {
-            [`${styles.isSelected}`]: option.value === value,
-          })}
+          className={classNames(styles.horizontalSelectOption, { [styles.isSelected]: option.value === value })}
           onClick={() => onChange(option.value)}
+          data-qa-props={option.label}
         >
           {option.label}
         </div>
