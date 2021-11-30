@@ -1,6 +1,6 @@
 {
   "name": "justice-ui-library",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "author": "AccelByte Inc",
   "license": "AccelByte License",
   "main": "./build/index.js",
@@ -65,6 +65,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "postcss": "^8.3.6",
+    "postcss-url": "^10.1.3",
     "prettier": "^2.3.2",
     "react-dom": "^17.0.2",
     "rollup": "^2.56.2",
