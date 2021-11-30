@@ -11,6 +11,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import typescript from "@rollup/plugin-typescript";
 import postcss from "rollup-plugin-postcss";
+import postcssurl from "postcss-url";
 
 import packageJson from "./package.json";
 
@@ -30,9 +31,14 @@ export default {
     commonjs(),
     typescript({ tsconfig: "./tsconfig.json" }),
     postcss({
-      extract: true,
+      extract: false,
       modules: { generateScopedName: "[local]___[hash:base64:5]" },
       use: ["sass"],
+      plugins: [
+        postcssurl({
+          url: "inline",
+        }),
+      ],
       minimize: {
         preset: [
           "default",

@@ -6,13 +6,12 @@
 
 import * as React from "react";
 import classNames from "classnames";
-import "../../styles/icons/index.scss";
 
 interface IconProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
-  name: string,
-  className?: string
+  name: string;
+  className?: string;
 }
 
-export const Icon = ({ name, className, ...props }: IconProps ) => {
-  return (<i className={classNames(name, className)} {...props} />)
-}
+export const Icon = ({ name, className, ...props }: IconProps) => {
+  return <i className={classNames(name, className)} {...props} />;
+};

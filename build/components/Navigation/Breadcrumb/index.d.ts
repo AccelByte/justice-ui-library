@@ -3,7 +3,6 @@ import { BreadcrumbSchema, Enum } from "../../../types";
 import { CONTAINER_SIZE } from "../../../constants";
 import { BadgeProps } from "../../Badge";
 import "./index.scss";
-import "../../../styles/icons/index.scss";
 export interface BreadcrumbProps {
     breadcrumbLists: BreadcrumbSchema[];
     pageTitle: string;
