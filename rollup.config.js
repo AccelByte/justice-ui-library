@@ -10,7 +10,7 @@ import json from "@rollup/plugin-json";
 import resolve from "@rollup/plugin-node-resolve";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import typescript from "@rollup/plugin-typescript";
-import styles from "rollup-plugin-styles";
+import postcss from "rollup-plugin-postcss";
 
 import packageJson from "./package.json";
 
@@ -29,7 +29,21 @@ export default {
     resolve(),
     commonjs(),
     typescript({ tsconfig: "./tsconfig.json" }),
-    styles(),
+    postcss({
+      extract: true,
+      modules: { generateScopedName: "[local]___[hash:base64:5]" },
+      use: ["sass"],
+      minimize: {
+        preset: [
+          "default",
+          {
+            discardComments: {
+              removeAll: true,
+            },
+          },
+        ],
+      },
+    }),
     json({
       compact: true,
     }),
