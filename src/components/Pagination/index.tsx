@@ -5,6 +5,7 @@
  */
 
 import * as React from "react";
+import { translation } from "../../utils/i18n";
 import "./index.scss";
 
 export interface PaginationProps {
@@ -15,17 +16,13 @@ export interface PaginationProps {
     last?: string;
   };
   changePage: (page?: string) => void;
-  prevText?: string;
-  nextText?: string;
-  prevDataQa?: string;
-  nextDataQa?: string;
+  prevDataQa?: string | null;
+  nextDataQa?: string | null;
 }
 
 const pagination: React.FunctionComponent<PaginationProps> = ({
   paging,
   changePage,
-  prevText = "Prev",
-  nextText = "Next",
   prevDataQa,
   nextDataQa,
 }) => {
@@ -34,7 +31,7 @@ const pagination: React.FunctionComponent<PaginationProps> = ({
     const paginationClass = paging.previous ? "navigation" : "disabled";
     return (
       <a className={paginationClass} onClick={onClick} data-qa-id={prevDataQa && prevDataQa}>
-        <i className="fa-icon-chevron-left page-icon" /> {prevText}
+        <i className="fa-icon-chevron-left page-icon" /> {translation("pagination.prev")}
       </a>
     );
   };
@@ -44,7 +41,7 @@ const pagination: React.FunctionComponent<PaginationProps> = ({
     const paginationClass = paging.next ? "navigation" : "disabled";
     return (
       <a className={paginationClass} onClick={onClick} data-qa-id={nextDataQa && nextDataQa}>
-        {nextText} <i className="fa-icon-chevron-right page-icon" />
+        {translation("pagination.next")} <i className="fa-icon-chevron-right page-icon" />
       </a>
     );
   };

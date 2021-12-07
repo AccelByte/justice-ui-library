@@ -2,7 +2,7 @@
 import { Enum } from "../../../types";
 import { CONTAINER_SIZE } from "../../../constants";
 import "./index.scss";
-interface ItemTab {
+export interface ItemTab {
     tabName: string;
     url: string;
     isActive: boolean;
@@ -15,7 +15,5 @@ export interface NavigationTabProps {
     changePageKey?: (url: string) => void;
     isVertical?: boolean;
     containerSize?: Enum<typeof CONTAINER_SIZE>;
-    textMore?: string;
 }
 export declare const NavigationTab: (props: NavigationTabProps) => JSX.Element;
-export {};

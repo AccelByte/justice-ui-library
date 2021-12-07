@@ -10,6 +10,8 @@ import { addLineBreaks } from "../../Typography/typography";
 import ReactTooltip from "react-tooltip";
 import classNames from "classnames";
 import { renderToString } from "react-dom/server";
+import { translation } from "../../../utils/i18n";
+import { MAX_SHORT_TEXT_LENGTH } from "../../../constants";
 
 export const FieldErrorMessage = ({ message = "", dataQa }: { message?: string | null; dataQa?: string }) => (
   <span className="field-error-message" data-qa-id={dataQa && dataQa}>
@@ -26,12 +28,19 @@ export interface FieldLabelProps {
   isRequired?: boolean;
 }
 
-export const FieldLabel = ({ label = "", children, isRequired = true, optionalLabel, tooltip, tooltipRef }: FieldLabelProps) => (
-  <label className={classNames("field-label", { "withTooltip": tooltip })}>
+export const FieldLabel = ({
+  label = "",
+  children,
+  isRequired = true,
+  optionalLabel = ` ${translation("common.optionalFieldLabel")}`,
+  tooltip,
+  tooltipRef
+}: FieldLabelProps) => (
+  <label className={classNames("field-label", { withTooltip: tooltip })}>
     <div>
       {label}
       {!isRequired && optionalLabel}
-      {children ? children : ""}
+      {children}
     </div>
     {tooltip && (
       <>
@@ -53,7 +62,7 @@ export interface FieldCounterProps {
   className?: string;
 }
 
-export const FieldCounter = ({ value = "", maxLength, className }: FieldCounterProps) => (
+export const FieldCounter = ({ value = "", maxLength = MAX_SHORT_TEXT_LENGTH, className }: FieldCounterProps) => (
   <span className={classNames("field-counter", className)}>
     {value && value.length ? value.length : 0}/{maxLength}
   </span>

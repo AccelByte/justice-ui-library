@@ -8,10 +8,8 @@ export interface PaginationProps {
         last?: string;
     };
     changePage: (page?: string) => void;
-    prevText?: string;
-    nextText?: string;
-    prevDataQa?: string;
-    nextDataQa?: string;
+    prevDataQa?: string | null;
+    nextDataQa?: string | null;
 }
 declare const pagination: React.FunctionComponent<PaginationProps>;
 export { pagination as Pagination };

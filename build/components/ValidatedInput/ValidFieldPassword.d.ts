@@ -4,11 +4,7 @@ import "./ValidFieldPassword.scss";
 import { strengthLevelOrder } from "../../constants";
 export interface ValidFieldPasswordProps extends ValidFieldTextProps {
     strengthLevelIndicator?: keyof typeof strengthLevelOrder;
-    translateStrengthLevel?: (level: keyof typeof strengthLevelOrder) => string;
-    passHideText?: string;
-    passVisibleText?: string;
     hasGeneratePassword?: boolean;
-    defaultGenerateText?: string;
     customPattern?: string;
 }
 interface State {

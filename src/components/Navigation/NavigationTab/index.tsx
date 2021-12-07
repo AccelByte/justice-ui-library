@@ -10,8 +10,9 @@ import { Enum } from "../../../types";
 import { CONTAINER_SIZE } from "../../../constants";
 import DropdownMenu, { DropdownItem, DropdownItemGroup } from "@atlaskit/dropdown-menu";
 import "./index.scss";
+import { translation } from "../../../utils/i18n";
 
-interface ItemTab {
+export interface ItemTab {
   tabName: string;
   url: string;
   isActive: boolean;
@@ -28,7 +29,6 @@ export interface NavigationTabProps {
   changePageKey?: (url: string) => void;
   isVertical?: boolean;
   containerSize?: Enum<typeof CONTAINER_SIZE>;
-  textMore?: string;
 }
 
 export const NavigationTab = (props: NavigationTabProps) => {
@@ -39,7 +39,6 @@ export const NavigationTab = (props: NavigationTabProps) => {
     config,
     changePageKey,
     changePage,
-    textMore,
   } = props;
   const [shownTabs, setShownTabs] = React.useState<ItemTab[]>(config);
   const [hiddenTabs, setHiddenTabs] = React.useState<ItemTab[]>([]);
@@ -152,7 +151,7 @@ export const NavigationTab = (props: NavigationTabProps) => {
         position="bottom right"
         trigger={
           <span className="d-flex align-items-center">
-            {textMore ? textMore : "More"}
+            {translation("common.more")}
             <i className="icon-chevron-down ml-1" />
           </span>
         }

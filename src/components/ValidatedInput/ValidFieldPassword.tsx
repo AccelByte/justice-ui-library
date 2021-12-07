@@ -13,16 +13,13 @@ import ReactTooltip from "react-tooltip";
 import "./ValidFieldPassword.scss";
 import { generatePassword } from "../../utils";
 import { DEFAULT_PASSWORD_AND_SECRET_REGEX } from "../../constants";
-import { strengthLevelOrder, translatedStrengthLevelOrder } from "../../constants";
+import { strengthLevelOrder } from "../../constants";
 import { Button } from "../styled-atlaskit/Button/Button";
+import { translation } from "../../utils/i18n";
 
 export interface ValidFieldPasswordProps extends ValidFieldTextProps {
   strengthLevelIndicator?: keyof typeof strengthLevelOrder;
-  translateStrengthLevel?: (level: keyof typeof strengthLevelOrder) => string;
-  passHideText?: string;
-  passVisibleText?: string;
   hasGeneratePassword?: boolean;
-  defaultGenerateText?: string;
   customPattern?: string;
 }
 
@@ -88,14 +85,13 @@ export class ValidFieldPassword extends React.Component<ValidFieldPasswordProps,
   };
 
   handleEyeIcon = () => {
-    const { passHideText, passVisibleText } = this.props;
     const { isIconEyeOff } = this.state;
     return (
       <>
         <i
           ref={this.toolTipIconEye}
           data-for="eyeInfo__tooltip"
-          data-tip={isIconEyeOff ? passHideText : passVisibleText}
+          data-tip={isIconEyeOff ? translation("password.viewPassword") : translation("password.hiddenPassword")}
           data-place="top"
           className={classNames("password-eye-icon", {
             "fa-icon-eye": !isIconEyeOff,
@@ -123,22 +119,17 @@ export class ValidFieldPassword extends React.Component<ValidFieldPasswordProps,
   };
 
   handleGenerateText = () => {
-    const { hasGeneratePassword, defaultGenerateText, strengthLevelIndicator, translateStrengthLevel, customField } =
-      this.props;
+    const { hasGeneratePassword, strengthLevelIndicator, customField } = this.props;
     const { levelColor } = this.state;
     return (
       <>
         {hasGeneratePassword && (
           <Button appearance="link" spacing="none" className="generate-password" onClick={this.handleGeneratePassword}>
-            {defaultGenerateText}
+            {translation("password.generateNew")}
           </Button>
         )}
         {strengthLevelIndicator && (
-          <span className={classNames("level", levelColor)}>
-            {!!translateStrengthLevel
-              ? translateStrengthLevel(strengthLevelIndicator)
-              : translatedStrengthLevelOrder[strengthLevelIndicator]}
-          </span>
+          <span className={classNames("level", levelColor)}>{translation(`password.${strengthLevelIndicator}`)}</span>
         )}
         {customField}
       </>

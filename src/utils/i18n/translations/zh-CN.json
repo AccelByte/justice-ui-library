@@ -1,0 +1,18 @@
+{
+  "unauthorized.message": "您无权查看或修改它。",
+  "common.optionalFieldLabel": "(可选的)",
+  "common.add": "添加",
+  "common.refreshPage": "刷新页面",
+  "common.more": "更多",
+  "common.loading": "加载",
+  "pagination.prev": "上一步",
+  "pagination.next": "下一步",
+  "password.hiddenPassword": "隐藏密码",
+  "password.viewPassword": "查看密码",
+  "password.generateNew": "生成新密码",
+  "password.poor": "差！",
+  "password.weak": "弱！",
+  "password.average": "一般！",
+  "password.good": "好！",
+  "password.excellent": "极好！"
+  }

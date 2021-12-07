@@ -21,11 +21,12 @@ interface Props {
     isInvalid?: boolean;
     isDisabled?: boolean;
     dataQa?: string | null;
+    isRequired?: boolean;
     isClearable?: boolean;
     tooltip?: string;
     selectDataQa?: string;
     isMulti?: boolean;
     className?: string;
 }
-export declare const ValidSelect: ({ label, placeholder, options, name, value, onChange, errMessage, optionalLabel, isInvalid, isDisabled, isClearable, tooltip, selectDataQa, isMulti, className, }: Props) => JSX.Element;
+export declare const ValidSelect: ({ label, placeholder, options, name, value, onChange, errMessage, optionalLabel, isInvalid, isDisabled, isRequired, isClearable, tooltip, selectDataQa, isMulti, className, }: Props) => JSX.Element;
 export {};

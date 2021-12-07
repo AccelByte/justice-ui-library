@@ -8,8 +8,8 @@ import * as React from "react";
 import ReactTooltip from "react-tooltip";
 import { default as classNames } from "classnames";
 import "./index.scss";
-import { FieldLabel } from "../utility";
 import { renderToString } from "react-dom/server";
+import { translation } from "../../../utils/i18n";
 
 export interface HorizontalFieldTextProps {
   children?: React.ReactNode;
@@ -75,7 +75,7 @@ export class HorizontalFieldText extends React.Component<HorizontalFieldTextProp
       dataQa,
       labelAlignment,
       isRequired = true,
-      optionalLabel,
+      optionalLabel = translation("common.optionalFieldLabel"),
     } = this.props;
     const dataTip = React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip;
 

@@ -10,6 +10,7 @@ import { default as classNames } from "classnames";
 import { FieldErrorMessage, FieldLabel } from "../Form/utility";
 import { Button } from "../styled-atlaskit/Button/Button";
 import { Input } from "./ValidFieldText";
+import { translation } from "../../utils/i18n";
 
 export interface ValidDynamicTextProps {
   label?: string;
@@ -34,7 +35,7 @@ export const ValidDynamicText = ({
   label,
   errMessage,
   maxField,
-  addText = "Add",
+  addText = translation("common.add"),
 }: ValidDynamicTextProps) => {
   const [isFocused, setIsFocused] = React.useState<number | null>(null);
 

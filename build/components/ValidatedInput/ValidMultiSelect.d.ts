@@ -9,8 +9,9 @@ interface Props {
     optionalLabel?: string;
     isInvalid?: boolean;
     isDisabled?: boolean;
+    isRequired?: boolean;
     value?: SelectOption[] | null;
     tooltip?: string;
 }
-export declare const ValidMultiSelect: ({ label, placeholder, options, onChange, errMessage, optionalLabel, isInvalid, value, isDisabled, tooltip, }: Props) => JSX.Element;
+export declare const ValidMultiSelect: ({ label, placeholder, options, onChange, errMessage, optionalLabel, isInvalid, isRequired, value, isDisabled, tooltip, }: Props) => JSX.Element;
 export {};
