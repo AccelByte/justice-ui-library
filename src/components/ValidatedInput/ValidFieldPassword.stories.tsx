@@ -28,10 +28,8 @@ export const Example: Story<ValidFieldPasswordProps> = (args) => {
 };
 
 Example.args = {
-  passHideText: "View Password",
-  passVisibleText: "Hide Password",
   label: "Field Label",
   name: "Field password",
-  defaultGenerateText: "Generate password",
   placeholder: "Field Placeholder",
+  strengthLevelIndicator: "average",
 };

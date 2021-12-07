@@ -46,7 +46,7 @@ export const StyledRadio = ({
   return (
     <div className={className}>
       {!!label && <FieldLabel label={label} isRequired={isRequired} tooltip={tooltip} />}
-      <div data-qa-id={dataQa} className={classNames(["horizontal-radio-group"], { "vertical-radio-group": !isHorizontal })}>
+      <div data-qa-id={dataQa} className={classNames("horizontal-radio-group", { "vertical-radio-group": !isHorizontal })}>
         {options.map((item) => (
           <div
             className={classNames("radio-item", {

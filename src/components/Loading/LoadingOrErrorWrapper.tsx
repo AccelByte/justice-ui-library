@@ -9,6 +9,7 @@ import React from "react";
 import { LoadingIndicator } from "./LoadingIndicator";
 import "./LoadingOrErrorWrapper.scss";
 import { ErrorWrapper } from "../Wrapper/ErrorWrapper";
+import { translation } from "../../utils/i18n";
 
 export interface LoadingOrErrorWrapperProps {
   isLoading?: boolean;
@@ -26,12 +27,12 @@ export interface LoadingOrErrorWrapperProps {
 export const LoadingOrErrorWrapper = ({
   children,
   isLoading = false,
-  loadingInfo,
+  loadingInfo = translation("common.loading"),
   error,
   errorImage,
   errorTitle = "",
   errorMessage,
-  errorButtonText = "",
+  errorButtonText = translation("common.refreshPage"),
   onErrorActionClick,
   isRefreshable,
 }: LoadingOrErrorWrapperProps) => {

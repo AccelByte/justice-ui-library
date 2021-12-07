@@ -1,13 +1,10 @@
 /*
- *
- *  * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
- *  * This is licensed software from AccelByte Inc, for limitations
- *  * and restrictions contact your company contract manager.
- *
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
  */
 
 import React from "react";
-import ReactTooltip from "react-tooltip";
 import { default as classNames } from "classnames";
 import { FieldTextAreaStateless, FieldTextAreaStatelessProps } from "@atlaskit/field-text-area";
 import "./ValidFieldTextArea.scss";

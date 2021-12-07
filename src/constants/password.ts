@@ -9,10 +9,3 @@
 import { Enum } from "../types";
 
 export const strengthLevelOrder = Enum("poor", "weak", "average", "good", "excellent");
-export const translatedStrengthLevelOrder = {
-  poor: "Poor!",
-  weak: "Weak",
-  average: "Average!",
-  good: "Good!",
-  excellent: "Excellent!",
-};

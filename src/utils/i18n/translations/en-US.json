@@ -1,0 +1,18 @@
+{
+  "unauthorized.message": "You have no permission to view or modify it.",
+  "common.optionalFieldLabel": "(Optional)",
+  "common.add": "Add",
+  "common.refreshPage": "Refresh Page",
+  "common.more": "More",
+  "common.loading": "Loading",
+  "pagination.prev": "Prev",
+  "pagination.next": "Next",
+  "password.hiddenPassword": "Hide Password",
+  "password.viewPassword": "View Password",
+  "password.generateNew": "Generate new password",
+  "password.poor": "Poor!",
+  "password.weak": "Weak!",
+  "password.average": "Average!",
+  "password.good": "Good!",
+  "password.excellent": "Excellent!"
+}

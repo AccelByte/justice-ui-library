@@ -28,7 +28,7 @@ export class Input extends FieldText {
 
 export interface ValidFieldTextProps extends React.InputHTMLAttributes<HTMLInputElement> {
   onKeyDown?: (event: React.FormEvent<HTMLInputElement>) => void;
-  label: string;
+  label?: string;
   name: string;
   value: string;
   errMessage?: string;
@@ -149,7 +149,7 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
 
   render() {
     const {
-      label,
+      label = "",
       value,
       maxLength,
       className,
@@ -179,7 +179,7 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
       >
         <div
           className={classNames("fieldHeader", {
-            pushRight: !label && optionalLabel,
+            pushRight: !label && !isRequired,
           })}
         >
           {!isLabelHidden && (

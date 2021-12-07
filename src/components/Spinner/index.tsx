@@ -9,6 +9,7 @@
 import * as React from "react";
 import { default as classNames } from "classnames";
 import "./index.scss";
+import { translation } from "../../utils/i18n";
 
 export interface SpinnerProps {
   loadingText?: string;
@@ -16,7 +17,7 @@ export interface SpinnerProps {
 }
 
 export const Spinner = (props: SpinnerProps) => {
-  const { loadingText, className } = props;
+  const { loadingText = translation("common.loading"), className } = props;
   return (
     <div className={classNames("loader-wrapper show", className)}>
       <div className="loading-flag">

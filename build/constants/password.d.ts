@@ -5,10 +5,3 @@ export declare const strengthLevelOrder: Readonly<{
     good: "good";
     excellent: "excellent";
 }>;
-export declare const translatedStrengthLevelOrder: {
-    poor: string;
-    weak: string;
-    average: string;
-    good: string;
-    excellent: string;
-};

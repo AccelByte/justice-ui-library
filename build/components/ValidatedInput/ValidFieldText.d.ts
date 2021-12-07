@@ -8,7 +8,7 @@ export declare class Input extends FieldText {
 }
 export interface ValidFieldTextProps extends React.InputHTMLAttributes<HTMLInputElement> {
     onKeyDown?: (event: React.FormEvent<HTMLInputElement>) => void;
-    label: string;
+    label?: string;
     name: string;
     value: string;
     errMessage?: string;

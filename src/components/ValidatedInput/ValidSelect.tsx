@@ -30,6 +30,7 @@ interface Props {
   isInvalid?: boolean;
   isDisabled?: boolean;
   dataQa?: string | null;
+  isRequired?: boolean;
   isClearable?: boolean;
   tooltip?: string;
   selectDataQa?: string;
@@ -48,6 +49,7 @@ export const ValidSelect = ({
   optionalLabel,
   isInvalid,
   isDisabled = false,
+  isRequired = true,
   isClearable,
   tooltip,
   selectDataQa,
@@ -55,9 +57,7 @@ export const ValidSelect = ({
   className,
 }: Props) => (
   <div className={classNames("valid-select-input", className)}>
-    {!!label && (
-      <FieldLabel label={label} optionalLabel={optionalLabel} tooltip={tooltip && tooltip} />
-    )}
+    {!!label && <FieldLabel label={label} optionalLabel={optionalLabel} isRequired={isRequired} tooltip={tooltip} />}
     <Select
       options={options}
       placeholder={placeholder}
@@ -69,6 +69,6 @@ export const ValidSelect = ({
       isMulti={isMulti}
       dataQa={selectDataQa}
     />
-    {!optionalLabel && isInvalid && <FieldErrorMessage message={errMessage} />}
+    {isInvalid && <FieldErrorMessage message={errMessage} />}
   </div>
 );

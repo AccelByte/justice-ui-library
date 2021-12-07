@@ -20,6 +20,7 @@ interface Props {
   optionalLabel?: string;
   isInvalid?: boolean;
   isDisabled?: boolean;
+  isRequired?: boolean;
   value?: SelectOption[] | null;
   tooltip?: string;
 }
@@ -32,14 +33,13 @@ export const ValidMultiSelect = ({
   errMessage,
   optionalLabel,
   isInvalid,
+  isRequired = true,
   value,
   isDisabled,
   tooltip,
 }: Props) => (
   <>
-    {!!label && (
-      <FieldLabel label={label} optionalLabel={optionalLabel} tooltip={tooltip && tooltip} />
-    )}
+    {!!label && <FieldLabel label={label} optionalLabel={optionalLabel} isRequired={isRequired} tooltip={tooltip} />}
     <Select
       className="react-select"
       isDisabled={isDisabled}
@@ -52,6 +52,6 @@ export const ValidMultiSelect = ({
       value={value}
       menuPlacement="auto"
     />
-    {!optionalLabel && isInvalid && <FieldErrorMessage message={errMessage} />}
+    {isInvalid && <FieldErrorMessage message={errMessage} />}
   </>
 );

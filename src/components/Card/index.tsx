@@ -12,6 +12,7 @@ import "./index.scss";
 import { ButtonAppearances } from "@atlaskit/button";
 import { NoResultTip } from "../NoResultTip";
 import { renderToString } from "react-dom/server";
+import { translation } from "../../utils/i18n";
 
 export interface CardProps {
   children: React.ReactNode;
@@ -70,7 +71,7 @@ export class Card extends React.Component<CardProps> {
       smallCard = false,
       cardSubTitle,
       customStyleTitleWrapper,
-      noResultText,
+      noResultText = translation("unauthorized.message"),
     } = this.props;
     const dataTip = React.isValidElement(Tips) ? renderToString(Tips) : Tips;
 
