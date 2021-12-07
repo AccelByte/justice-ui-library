@@ -24,6 +24,7 @@ export interface HorizontalFieldTextProps {
   showTooltip?: boolean;
   isRequired?: boolean;
   optionalLabel?: string;
+  showTooltipOnFocus?: boolean;
 }
 
 export class HorizontalFieldText extends React.Component<HorizontalFieldTextProps> {
@@ -52,7 +53,7 @@ export class HorizontalFieldText extends React.Component<HorizontalFieldTextProp
 
   componentWillUpdate(nextProps: Readonly<HorizontalFieldTextProps>): void {
     if (nextProps.showTooltip !== this.props.showTooltip) {
-      if (nextProps.showTooltip) {
+      if (nextProps.showTooltip && this.props.showTooltipOnFocus) {
         this.showToolTips();
       } else {
         this.hideToolTips();
@@ -71,7 +72,7 @@ export class HorizontalFieldText extends React.Component<HorizontalFieldTextProp
       tooltip,
       isValueMultiLine = false,
       dataQa,
-      labelAlignment = "right",
+      labelAlignment,
       isRequired = true,
       optionalLabel,
     } = this.props;
@@ -91,8 +92,13 @@ export class HorizontalFieldText extends React.Component<HorizontalFieldTextProp
             </span>
             {tooltip && (
               <>
-                <i ref={this.tooltipRef} className="fa-icon-info" data-for="field-label__tooltip" data-tip={tooltip} />
-                <ReactTooltip effect="solid" id="field-label__tooltip" />
+                <i
+                  ref={this.tooltipRef}
+                  className="fa-icon-info"
+                  data-for="horizontal-field-text-label__tooltip"
+                  data-tip={tooltip}
+                />
+                <ReactTooltip effect="solid" id="horizontal-field-text-label__tooltip" />
               </>
             )}
           </div>

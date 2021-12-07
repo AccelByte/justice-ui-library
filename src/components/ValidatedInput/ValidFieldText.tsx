@@ -1,9 +1,7 @@
 /*
- *
- *  * Copyright (c) 2018-2021 AccelByte Inc. All Rights Reserved.
- *  * This is licensed software from AccelByte Inc, for limitations
- *  * and restrictions contact your company contract manager.
- *
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
  */
 
 import * as React from "react";
@@ -12,7 +10,9 @@ import ReactTooltip from "react-tooltip";
 import { default as FieldText } from "@atlaskit/field-text";
 import "./ValidFieldText.scss";
 import { FieldCounter, FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
-import { Popover } from "../Popover/Popover";
+import { Placement } from "@atlaskit/inline-dialog/types";
+import { InlinePopover } from "../Popover/InlinePopover";
+import { isForbiddenKey } from "../../utils/input";
 
 export class Input extends FieldText {
   componentWillReceiveProps(nextProps: any, nextContext: any) {
@@ -26,13 +26,14 @@ export class Input extends FieldText {
   }
 }
 
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface ValidFieldTextProps extends React.InputHTMLAttributes<HTMLInputElement> {
   onKeyDown?: (event: React.FormEvent<HTMLInputElement>) => void;
   label: string;
   name: string;
   value: string;
   errMessage?: string;
-  onChange: (event: React.FormEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  isRequired?: boolean;
   optionalLabel?: string;
   isLabelHidden?: boolean;
   type?: "number" | "text" | "password";
@@ -40,17 +41,24 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   max?: number;
   helperText?: string;
   tooltip?: string;
-  popoverContent?: React.ReactNode | string;
+  dataQa?: string | null;
+  dataQaProps?: string | null;
   validFieldTextRef?: React.RefObject<HTMLDivElement>;
   rightIcon?: React.ReactNode;
+  isFloat?: boolean;
+  autoComplete?: "on" | "off";
+  showTooltipOnFocus?: boolean;
+  popoverContent?: React.ReactNode;
+  popoverPlacement?: Placement;
+  onFocus?: (event: React.FormEvent<HTMLInputElement>) => void;
 }
 
 interface State {
   isFocus: boolean;
 }
 
-export class ValidFieldText extends React.Component<Props, State> {
-  constructor(props: Props) {
+export class ValidFieldText extends React.Component<ValidFieldTextProps, State> {
+  constructor(props: ValidFieldTextProps) {
     super(props);
     this.state = {
       isFocus: false,
@@ -62,8 +70,6 @@ export class ValidFieldText extends React.Component<Props, State> {
   }
 
   toolTipRef = React.createRef<HTMLElement>();
-  toolTipDivRef = React.createRef<HTMLDivElement>();
-  toolTipIconEye = React.createRef<HTMLElement>();
 
   componentDidMount() {
     setTimeout(() => {
@@ -79,27 +85,11 @@ export class ValidFieldText extends React.Component<Props, State> {
     if (this.toolTipRef && this.toolTipRef.current) {
       ReactTooltip.hide(this.toolTipRef.current);
     }
-    if (this.toolTipDivRef && this.toolTipDivRef.current) {
-      ReactTooltip.hide(this.toolTipDivRef.current);
-    }
-    if (this.toolTipIconEye && this.toolTipIconEye.current) {
-      ReactTooltip.hide(this.toolTipIconEye.current);
-    }
   };
 
   showTooltip = () => {
-    if (this.toolTipRef && this.toolTipRef.current) {
+    if (this.toolTipRef && this.toolTipRef.current && this.props.showTooltipOnFocus) {
       ReactTooltip.show(this.toolTipRef.current);
-    }
-    if (this.toolTipDivRef && this.toolTipDivRef.current) {
-      ReactTooltip.show(this.toolTipDivRef.current);
-    }
-  };
-
-  resetTooltipIconEye = () => {
-    if (this.toolTipIconEye && this.toolTipIconEye.current) {
-      ReactTooltip.hide(this.toolTipIconEye.current);
-      ReactTooltip.show(this.toolTipIconEye.current);
     }
   };
 
@@ -113,9 +103,22 @@ export class ValidFieldText extends React.Component<Props, State> {
     this.setState({ isFocus: false });
   };
 
-  handleFocus = () => {
+  handleFocus = (event: React.FormEvent<HTMLInputElement>) => {
+    const { onFocus } = this.props;
+    if (onFocus) onFocus(event);
     this.showTooltip();
     this.setState({ isFocus: true });
+  };
+
+  handleOnKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    const { onKeyDown, type, min, isFloat } = this.props;
+    const { key, ctrlKey } = event;
+
+    if (type === "number" && !ctrlKey && isForbiddenKey(key, min, isFloat)) {
+      event.preventDefault();
+    }
+
+    !!onKeyDown && onKeyDown(event);
   };
 
   render() {
@@ -126,6 +129,7 @@ export class ValidFieldText extends React.Component<Props, State> {
       placeholder,
       value,
       disabled,
+      type,
       min,
       max,
       maxLength,
@@ -135,13 +139,23 @@ export class ValidFieldText extends React.Component<Props, State> {
       isLabelHidden,
       helperText,
       tooltip,
-      popoverContent,
-      onKeyDown,
+      dataQa,
+      dataQaProps,
+      rightIcon,
+      autoComplete,
       validFieldTextRef,
+      popoverContent,
+      popoverPlacement,
     } = this.props;
+    const { isFocus } = this.state;
 
     return (
-      <div className={classNames(className, "valid-field-text")} ref={validFieldTextRef}>
+      <div
+        className={classNames(className, "valid-field-text")}
+        data-qa-id={dataQa}
+        data-qa-props={dataQaProps}
+        ref={validFieldTextRef}
+      >
         <div
           className={classNames("fieldHeader", {
             pushRight: !label && optionalLabel,
@@ -152,28 +166,29 @@ export class ValidFieldText extends React.Component<Props, State> {
           )}
           {!!maxLength && <FieldCounter value={value} maxLength={maxLength} className="px-0" />}
         </div>
-
-        <Popover
-          className={classNames("valid-field-text-input-container", { focusedFieldText: this.state.isFocus })}
-          content={popoverContent}
-          tooltipRef={this.toolTipDivRef}
-        >
-          <Input
-            isLabelHidden={false}
-            onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
-            placeholder={placeholder}
-            name={name}
-            value={value}
-            onChange={onChange}
-            disabled={disabled}
-            min={min}
-            max={max}
-            shouldFitContainer={true}
-            onKeyDown={onKeyDown}
-            maxLength={maxLength}
-          />
-        </Popover>
+        <div className={classNames("valid-field-text-input-container", { focusedFieldText: this.state.isFocus })}>
+          <InlinePopover isOpen={isFocus} placement={popoverPlacement} content={popoverContent}>
+            <Input
+              isLabelHidden={false}
+              onFocus={this.handleFocus}
+              onBlur={this.handleBlur}
+              placeholder={placeholder}
+              name={name}
+              value={value}
+              // @ts-ignore
+              onChange={onChange}
+              disabled={disabled}
+              type={type}
+              min={min}
+              max={max}
+              shouldFitContainer={true}
+              onKeyDown={this.handleOnKeyDown}
+              maxLength={maxLength}
+              autoComplete={autoComplete}
+            />
+          </InlinePopover>
+          <div className="rightIcon">{rightIcon}</div>
+        </div>
         {errMessage && <FieldErrorMessage message={errMessage} />}
         {helperText && <FieldHelperText message={helperText} />}
       </div>

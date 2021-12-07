@@ -39,17 +39,25 @@
     position: relative;
     [class|="Content__ChildWrapper"] > [class|="Content"] {
       border: 1px solid $base-40;
+      &:hover {
+        border: 1px solid $base-80;
+      }
     }
     &.focusedFieldText {
       [class|="Content__ChildWrapper"] > [class|="Content"] {
-        border: 2px solid $brand-80;
+        border: 2px solid $color--accent;
       }
     }
-  }
-}
 
-.password-field-text {
-  input {
-    padding-right: 24px;
+    .rightIcon {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      right: 0;
+      top: 0;
+      height: 100%;
+      padding: 0 10px;
+    }
   }
 }

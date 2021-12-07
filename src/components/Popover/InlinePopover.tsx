@@ -11,7 +11,7 @@ import { Placement } from "@atlaskit/inline-dialog/types";
 import classNames from "classnames";
 
 export interface InlinePopoverProps {
-  content?: React.ReactNode | string;
+  content: React.ReactNode;
   isOpen: boolean;
   children: React.ReactNode;
   placement?: Placement;
@@ -19,7 +19,7 @@ export interface InlinePopoverProps {
 
 export const InlinePopover: React.FC<InlinePopoverProps> = (props) => {
   const { content, children, isOpen, placement } = props;
-  const popoverPlacement = placement ? placement : "right";
+  const popoverPlacement = placement || "right";
 
   return (
     <div className="inline-popover">

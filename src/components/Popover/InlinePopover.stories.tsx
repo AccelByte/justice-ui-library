@@ -7,7 +7,7 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { InlinePopover, InlinePopoverProps } from "./InlinePopover";
-import { ValidFieldText } from "../ValidatedInput/ValidFieldText";
+import { default as FieldText } from "@atlaskit/field-text";
 
 export default {
   title: "Components/InlinePopover",
@@ -20,10 +20,10 @@ export const Default = Template.bind({});
 
 Default.args = {
   isOpen: false,
-  content: "popOver example here",
+  content: "popOver example text",
   children: (
-    <div style={{ width: "50%" }}>
-      <ValidFieldText label={"popOver example: "} name={"popover-example"} value={""} onChange={() => {}} />
+    <div style={{ width: "50%", margin: "80px 180px" }}>
+      <FieldText placeholder={"field placeholder"} shouldFitContainer />
     </div>
   ),
 };

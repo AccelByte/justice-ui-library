@@ -9,20 +9,22 @@ import { Meta, Story } from "@storybook/react/types-6-0";
 import { ValidDynamicText, ValidDynamicTextProps } from "./ValidDynamicText";
 
 export default {
-  title: "Components/ValidDynamicText",
+  title: "Components/ValidatedInput/ValidDynamicText",
   component: ValidDynamicText,
 } as Meta;
 
 const Template: Story<ValidDynamicTextProps> = (args) => <ValidDynamicText {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
+export const Example = Template.bind({});
+Example.args = {
   label: "Field Label",
   placeholder: "Field placeholder",
   name: "field-name",
   values: ["first", "second", "third"],
-  onChange: (values: string[]) => { console.log(values) },
+  onChange: (values: string[]) => {
+    console.log(values);
+  },
   type: "text",
   maxField: 5,
-  addText: "Add"
+  addText: "Add",
 };
