@@ -66477,7 +66477,7 @@ var TextField = function (_a) {
 var css_248z$C = "@import url(\"https://fonts.googleapis.com/css?family=Roboto:400,500&family=Roboto+Mono:400&display=swap\");.styled-radio-tab-vertical{display:flex;flex-flow:column}.styled-radio-tab-vertical>div:hover{background-color:#fff!important}.styled-radio-tab-vertical .radio-container:not(:first-child){margin-top:20px}.styled-radio-tab-vertical .radio-container .render-content{margin-left:30px}.styled-radio-tab-vertical .radio-container .radio-item{cursor:pointer;margin-right:20px}.styled-radio-tab-vertical .radio-container .radio-item:hover{background-color:transparent}.styled-radio-tab-vertical .radio-container .radio-item:hover .radio-icon{border-color:#7b89a1}.styled-radio-tab-vertical .radio-container .radio-item .radio-helper{color:#687792;display:block;margin-left:30px;margin-top:8px}.styled-radio-tab-vertical .radio-container .radio-item.disabled{cursor:not-allowed}.styled-radio-tab-vertical .radio-container .radio-item.disabled .radio-label{color:#b8bfcd}.styled-radio-tab-vertical .radio-container .radio-item .radio-icon{border:1px solid #b8bfcd;border-radius:50%;display:inline-block;height:20px!important;margin-right:10px;position:relative;vertical-align:middle;width:20px!important}.styled-radio-tab-vertical .radio-container .radio-item.selected .radio-icon{border:5px solid #0b6cff}.styled-radio-tab-vertical .radio-container .radio-item.selected .radio-icon:before{display:none!important}.styled-radio-tab-vertical .radio-container .radio-item .radio-label{color:#232831;vertical-align:bottom}";
 styleInject(css_248z$C);
 
-var css_248z$B = "@import url(\"https://fonts.googleapis.com/css?family=Roboto:400,500&family=Roboto+Mono:400&display=swap\");.field-error-message{color:#cb1a1a;display:block;font-family:Roboto,sans-serif;font-size:14px;margin:4px 0}.field-label{color:#687792;display:block;font-size:16px;font-weight:400;line-height:1.3;margin-bottom:0;padding:20px 0 10px}.field-counter{color:#687792;display:block;font-size:14px}";
+var css_248z$B = "@import url(\"https://fonts.googleapis.com/css?family=Roboto:400,500&family=Roboto+Mono:400&display=swap\");.field-error-message{color:#cb1a1a;display:block;font-family:Roboto,sans-serif;font-size:14px;margin:4px 0}.field-label{color:#687792;display:block;font-size:16px;font-weight:400;line-height:1.3;margin-bottom:0;padding:20px 0 10px}.field-label .__react_component_tooltip{background-color:#232831;border-radius:4px;font-size:14px;line-height:1.63;opacity:1;padding:5px 10px}.field-counter{color:#687792;display:block;font-size:14px}";
 styleInject(css_248z$B);
 
 Enum("START", "MIDDLE", "END");
@@ -69024,11 +69024,11 @@ var css_248z$A = "@import url(\"https://fonts.googleapis.com/css?family=Roboto:4
 styleInject(css_248z$A);
 
 var StyledRadio = function (_a) {
-    var label = _a.label, _b = _a.options, options = _b === void 0 ? [] : _b, selectedRadio = _a.selectedRadio, onChange = _a.onChange, errMessage = _a.errMessage, isInvalid = _a.isInvalid, _c = _a.disabled, disabled = _c === void 0 ? false : _c, _d = _a.isRequired, isRequired = _d === void 0 ? false : _d, _e = _a.isList, isList = _e === void 0 ? false : _e, tooltip = _a.tooltip, _f = _a.isHorizontal, isHorizontal = _f === void 0 ? true : _f, className = _a.className;
-    return (jsxs("div", __assign$a({ className: className }, { children: [!!label && (jsx$1(FieldLabel, { label: label, tooltip: tooltip }, void 0)), jsx$1("div", __assign$a({ className: classNames$1(["horizontal-radio-group"], { "vertical-radio-group": !isHorizontal }) }, { children: options.map(function (item) { return (createElement("div", __assign$a({ className: classNames$1("radio-item", {
+    var label = _a.label, _b = _a.options, options = _b === void 0 ? [] : _b, selectedRadio = _a.selectedRadio, onChange = _a.onChange, errMessage = _a.errMessage, isInvalid = _a.isInvalid, _c = _a.disabled, disabled = _c === void 0 ? false : _c, _d = _a.isRequired, isRequired = _d === void 0 ? false : _d, _e = _a.isList, isList = _e === void 0 ? false : _e, tooltip = _a.tooltip, _f = _a.isHorizontal, isHorizontal = _f === void 0 ? true : _f, className = _a.className, dataQa = _a.dataQa, dataQaProps = _a.dataQaProps;
+    return (jsxs("div", __assign$a({ className: className }, { children: [!!label && jsx$1(FieldLabel, { label: label, tooltip: tooltip }, void 0), jsx$1("div", __assign$a({ className: classNames$1(["horizontal-radio-group"], { "vertical-radio-group": !isHorizontal }) }, { children: options.map(function (item) { return (createElement("div", __assign$a({ className: classNames$1("radio-item", {
                         disabled: disabled,
                         selected: item.value === selectedRadio,
-                    }) }, (!disabled && item.value !== selectedRadio && { onClick: onChange.bind(null, item) }), { key: String(item.value) }),
+                    }) }, (!disabled && item.value !== selectedRadio && { onClick: onChange.bind(null, item) }), { key: String(item.value), "data-qa": dataQa, "data-qa-props": dataQaProps }),
                     jsx$1("span", { className: "radio-icon" }, void 0),
                     jsx$1("span", __assign$a({ className: "radio-label" }, { children: item.label }), void 0),
                     !isHorizontal &&
@@ -90701,6 +90701,37 @@ var InlinePopover = function (props) {
 };
 
 /*
+ *  Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ *  This is licensed software from AccelByte Inc, for limitations
+ *  and restrictions contact your company contract manager.
+ */
+var debounce = function (func, delay) {
+    if (delay === void 0) { delay = 500; }
+    var timeout;
+    var inDebounce = function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        clearTimeout(timeout);
+        timeout = setTimeout(function () { return func.apply(void 0, args); }, delay);
+    };
+    return inDebounce;
+};
+
+/*
+ *  Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ *  This is licensed software from AccelByte Inc, for limitations
+ *  and restrictions contact your company contract manager.
+ */
+var formatDateForReactDateTimePicker = function (date) {
+    return moment$2.exports.utc(date).format("YYYY-MM-DD hh:mm a");
+};
+var formatDateForReactDatePicker = function (date) {
+    return moment$2.exports.utc(date).format("YYYY-MM-DD");
+};
+
+/*
  * Copyright (c) 2021 AccelByte Inc. All Rights Reserved
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
@@ -90718,6 +90749,281 @@ function isForbiddenKey(key, minimumValue, isFloat) {
     var isUtilityKey = key.length > 1; // for example Enter, Shift, F2, ArrowLeft
     return !(isNumber || isDotAllowed || isDashAllowed || isUtilityKey);
 }
+
+var randomatic$1 = {exports: {}};
+
+/*!
+ * is-number <https://github.com/jonschlinkert/is-number>
+ *
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+var isNumber$1 = function isNumber(num) {
+  var type = typeof num;
+
+  if (type === 'string' || num instanceof String) {
+    // an empty string would be coerced to true with the below logic
+    if (!num.trim()) return false;
+  } else if (type !== 'number' && !(num instanceof Number)) {
+    return false;
+  }
+
+  return (num - num + 1) >= 0;
+};
+
+var toString = Object.prototype.toString;
+
+var kindOf = function kindOf(val) {
+  if (val === void 0) return 'undefined';
+  if (val === null) return 'null';
+
+  var type = typeof val;
+  if (type === 'boolean') return 'boolean';
+  if (type === 'string') return 'string';
+  if (type === 'number') return 'number';
+  if (type === 'symbol') return 'symbol';
+  if (type === 'function') {
+    return isGeneratorFn(val) ? 'generatorfunction' : 'function';
+  }
+
+  if (isArray(val)) return 'array';
+  if (isBuffer(val)) return 'buffer';
+  if (isArguments(val)) return 'arguments';
+  if (isDate(val)) return 'date';
+  if (isError(val)) return 'error';
+  if (isRegexp(val)) return 'regexp';
+
+  switch (ctorName(val)) {
+    case 'Symbol': return 'symbol';
+    case 'Promise': return 'promise';
+
+    // Set, Map, WeakSet, WeakMap
+    case 'WeakMap': return 'weakmap';
+    case 'WeakSet': return 'weakset';
+    case 'Map': return 'map';
+    case 'Set': return 'set';
+
+    // 8-bit typed arrays
+    case 'Int8Array': return 'int8array';
+    case 'Uint8Array': return 'uint8array';
+    case 'Uint8ClampedArray': return 'uint8clampedarray';
+
+    // 16-bit typed arrays
+    case 'Int16Array': return 'int16array';
+    case 'Uint16Array': return 'uint16array';
+
+    // 32-bit typed arrays
+    case 'Int32Array': return 'int32array';
+    case 'Uint32Array': return 'uint32array';
+    case 'Float32Array': return 'float32array';
+    case 'Float64Array': return 'float64array';
+  }
+
+  if (isGeneratorObj(val)) {
+    return 'generator';
+  }
+
+  // Non-plain objects
+  type = toString.call(val);
+  switch (type) {
+    case '[object Object]': return 'object';
+    // iterators
+    case '[object Map Iterator]': return 'mapiterator';
+    case '[object Set Iterator]': return 'setiterator';
+    case '[object String Iterator]': return 'stringiterator';
+    case '[object Array Iterator]': return 'arrayiterator';
+  }
+
+  // other
+  return type.slice(8, -1).toLowerCase().replace(/\s/g, '');
+};
+
+function ctorName(val) {
+  return typeof val.constructor === 'function' ? val.constructor.name : null;
+}
+
+function isArray(val) {
+  if (Array.isArray) return Array.isArray(val);
+  return val instanceof Array;
+}
+
+function isError(val) {
+  return val instanceof Error || (typeof val.message === 'string' && val.constructor && typeof val.constructor.stackTraceLimit === 'number');
+}
+
+function isDate(val) {
+  if (val instanceof Date) return true;
+  return typeof val.toDateString === 'function'
+    && typeof val.getDate === 'function'
+    && typeof val.setDate === 'function';
+}
+
+function isRegexp(val) {
+  if (val instanceof RegExp) return true;
+  return typeof val.flags === 'string'
+    && typeof val.ignoreCase === 'boolean'
+    && typeof val.multiline === 'boolean'
+    && typeof val.global === 'boolean';
+}
+
+function isGeneratorFn(name, val) {
+  return ctorName(name) === 'GeneratorFunction';
+}
+
+function isGeneratorObj(val) {
+  return typeof val.throw === 'function'
+    && typeof val.return === 'function'
+    && typeof val.next === 'function';
+}
+
+function isArguments(val) {
+  try {
+    if (typeof val.length === 'number' && typeof val.callee === 'function') {
+      return true;
+    }
+  } catch (err) {
+    if (err.message.indexOf('callee') !== -1) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * If you need to support Safari 5-7 (8-10 yr-old browser),
+ * take a look at https://github.com/feross/is-buffer
+ */
+
+function isBuffer(val) {
+  if (val.constructor && typeof val.constructor.isBuffer === 'function') {
+    return val.constructor.isBuffer(val);
+  }
+  return false;
+}
+
+var node = {exports: {}};
+
+var crypto = require$$0$1;
+var max = Math.pow(2, 32);
+
+node.exports = random;
+node.exports.cryptographic = true;
+
+function random () {
+  var buf = crypto
+    .randomBytes(4)
+    .readUInt32BE(0);
+
+  return buf / max
+}
+
+/*!
+ * randomatic <https://github.com/jonschlinkert/randomatic>
+ *
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+var isNumber = isNumber$1;
+var typeOf = kindOf;
+var mathRandom = node.exports;
+
+/**
+ * Expose `randomatic`
+ */
+
+randomatic$1.exports = randomatic;
+randomatic$1.exports.isCrypto = !!mathRandom.cryptographic;
+
+/**
+ * Available mask characters
+ */
+
+var type = {
+  lower: 'abcdefghijklmnopqrstuvwxyz',
+  upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  number: '0123456789',
+  special: '~!@#$%^&()_+-={}[];\',.'
+};
+
+type.all = type.lower + type.upper + type.number + type.special;
+
+/**
+ * Generate random character sequences of a specified `length`,
+ * based on the given `pattern`.
+ *
+ * @param {String} `pattern` The pattern to use for generating the random string.
+ * @param {String} `length` The length of the string to generate.
+ * @param {String} `options`
+ * @return {String}
+ * @api public
+ */
+
+function randomatic(pattern, length, options) {
+  if (typeof pattern === 'undefined') {
+    throw new Error('randomatic expects a string or number.');
+  }
+
+  var custom = false;
+  if (arguments.length === 1) {
+    if (typeof pattern === 'string') {
+      length = pattern.length;
+
+    } else if (isNumber(pattern)) {
+      options = {};
+      length = pattern;
+      pattern = '*';
+    }
+  }
+
+  if (typeOf(length) === 'object' && length.hasOwnProperty('chars')) {
+    options = length;
+    pattern = options.chars;
+    length = pattern.length;
+    custom = true;
+  }
+
+  var opts = options || {};
+  var mask = '';
+  var res = '';
+
+  // Characters to be used
+  if (pattern.indexOf('?') !== -1) mask += opts.chars;
+  if (pattern.indexOf('a') !== -1) mask += type.lower;
+  if (pattern.indexOf('A') !== -1) mask += type.upper;
+  if (pattern.indexOf('0') !== -1) mask += type.number;
+  if (pattern.indexOf('!') !== -1) mask += type.special;
+  if (pattern.indexOf('*') !== -1) mask += type.all;
+  if (custom) mask += pattern;
+
+  // Characters to exclude
+  if (opts.exclude) {
+    var exclude = typeOf(opts.exclude) === 'string' ? opts.exclude : opts.exclude.join('');
+    exclude = exclude.replace(new RegExp('[\\]]+', 'g'), '');
+    mask = mask.replace(new RegExp('[' + exclude + ']+', 'g'), '');
+    
+    if(opts.exclude.indexOf(']') !== -1) mask = mask.replace(new RegExp('[\\]]+', 'g'), '');
+  }
+
+  while (length--) {
+    res += mask.charAt(parseInt(mathRandom() * mask.length, 10));
+  }
+  return res;
+}
+var randomize = randomatic$1.exports;
+
+/*
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+var generatePassword = function (pattern) {
+    return randomize(pattern, 32, { exclude: "'{}" });
+};
+var generateClientSecret = function (pattern) {
+    return randomize(pattern, 32, { exclude: "'{}" });
+};
 
 var Input = /** @class */ (function (_super) {
     __extends$d(Input, _super);
@@ -90790,13 +91096,13 @@ var ValidFieldText = /** @class */ (function (_super) {
         this.hideTooltip();
     };
     ValidFieldText.prototype.render = function () {
-        var _a = this.props, onChange = _a.onChange, name = _a.name, label = _a.label, placeholder = _a.placeholder, value = _a.value, disabled = _a.disabled, type = _a.type, min = _a.min, max = _a.max, maxLength = _a.maxLength, className = _a.className, optionalLabel = _a.optionalLabel, errMessage = _a.errMessage, isLabelHidden = _a.isLabelHidden, helperText = _a.helperText, tooltip = _a.tooltip, dataQa = _a.dataQa, dataQaProps = _a.dataQaProps, rightIcon = _a.rightIcon, autoComplete = _a.autoComplete, validFieldTextRef = _a.validFieldTextRef, popoverContent = _a.popoverContent, popoverPlacement = _a.popoverPlacement;
+        var _a = this.props, onChange = _a.onChange, name = _a.name, label = _a.label, placeholder = _a.placeholder, value = _a.value, disabled = _a.disabled, type = _a.type, min = _a.min, max = _a.max, maxLength = _a.maxLength, className = _a.className, optionalLabel = _a.optionalLabel, errMessage = _a.errMessage, isLabelHidden = _a.isLabelHidden, helperText = _a.helperText, tooltip = _a.tooltip, dataQa = _a.dataQa, dataQaProps = _a.dataQaProps, rightIcon = _a.rightIcon, autoComplete = _a.autoComplete, validFieldTextRef = _a.validFieldTextRef, popoverContent = _a.popoverContent, popoverPlacement = _a.popoverPlacement, customField = _a.customField;
         var isFocus = this.state.isFocus;
         return (jsxs("div", __assign$a({ className: classNames$1(className, "valid-field-text"), "data-qa-id": dataQa, "data-qa-props": dataQaProps, ref: validFieldTextRef }, { children: [jsxs("div", __assign$a({ className: classNames$1("fieldHeader", {
                         pushRight: !label && optionalLabel,
                     }) }, { children: [!isLabelHidden && (jsx$1(FieldLabel, { label: label, optionalLabel: optionalLabel, tooltip: tooltip, tooltipRef: this.toolTipRef }, void 0)), !!maxLength && jsx$1(FieldCounter, { value: value, maxLength: maxLength, className: "px-0" }, void 0)] }), void 0), jsxs("div", __assign$a({ className: classNames$1("valid-field-text-input-container", { focusedFieldText: this.state.isFocus }) }, { children: [jsx$1(InlinePopover, __assign$a({ isOpen: isFocus, placement: popoverPlacement, content: popoverContent }, { children: jsx$1(Input, { isLabelHidden: false, onFocus: this.handleFocus, onBlur: this.handleBlur, placeholder: placeholder, name: name, value: value, 
                                 // @ts-ignore
-                                onChange: onChange, disabled: disabled, type: type, min: min, max: max, shouldFitContainer: true, onKeyDown: this.handleOnKeyDown, maxLength: maxLength, autoComplete: autoComplete }, void 0) }), void 0), jsx$1("div", __assign$a({ className: "rightIcon" }, { children: rightIcon }), void 0)] }), void 0), errMessage && jsx$1(FieldErrorMessage, { message: errMessage }, void 0), helperText && jsx$1(FieldHelperText, { message: helperText }, void 0)] }), void 0));
+                                onChange: onChange, disabled: disabled, type: type, min: min, max: max, shouldFitContainer: true, onKeyDown: this.handleOnKeyDown, maxLength: maxLength, autoComplete: autoComplete }, void 0) }), void 0), jsx$1("div", __assign$a({ className: "rightIcon" }, { children: rightIcon }), void 0)] }), void 0), customField, errMessage && jsx$1(FieldErrorMessage, { message: errMessage }, void 0), helperText && jsx$1(FieldHelperText, { message: helperText }, void 0)] }), void 0));
     };
     return ValidFieldText;
 }(React$7.Component));
@@ -91514,308 +91820,14 @@ var ValidDynamicText = function (_a) {
                         }) }, { children: [jsx$1(Input, { isLabelHidden: true, placeholder: placeholder, name: name, value: value, onChange: function (e) { return onValuesChange(e, index); }, disabled: isDisabled, shouldFitContainer: true, type: type, onFocus: function () { return setIsFocused(index); }, onBlur: function () { return setIsFocused(null); } }, void 0), values.length > 1 && !isDisabled && (jsx$1(Button$6, __assign$a({ onClick: function () { return removeField(index); }, appearance: "link" }, { children: jsx$1("span", { className: "icon fa-icon-trash" }, void 0) }), void 0))] }), index)); }), !!errMessage && jsx$1(FieldErrorMessage, { message: errMessage }, void 0), jsx$1("div", __assign$a({ className: "valid-dynamic-text__input__add-btn", hidden: isDisabled }, { children: jsxs(Button$6, __assign$a({ onClick: addField, appearance: "link", isDisabled: values.length === maxField }, { children: [jsx$1("span", { className: "icon-plus" }, void 0), " ", addText + " (" + values.length + "/" + maxField + ")"] }), void 0) }), void 0)] }), void 0)] }), void 0));
 };
 
-var css_248z$8 = "@import url(\"https://fonts.googleapis.com/css?family=Roboto:400,500&family=Roboto+Mono:400&display=swap\");.valid-field-password{position:relative}.valid-field-password .password-field-text input{padding-right:24px}.valid-field-password .password-field-text .password-eye-icon{color:#687792;cursor:pointer}.valid-field-password .password-field-text .password-eye-icon:hover{color:#232831}.valid-field-password .generate-password{color:#0b6cff;cursor:pointer;display:inline-block;font-size:16px;margin-top:5px;text-decoration:none}.valid-field-password .generate-password :focus{outline:none}.valid-field-password .level{font-size:16px;margin-top:5px;position:absolute;right:0;text-transform:capitalize}.valid-field-password .level.poor{color:#e32626}.valid-field-password .level.weak{color:#f1a20a}.valid-field-password .level.good{color:#025896}.valid-field-password .level.average{color:#687792}.valid-field-password .level.excellent{color:#00642e}";
+var css_248z$8 = "@import url(\"https://fonts.googleapis.com/css?family=Roboto:400,500&family=Roboto+Mono:400&display=swap\");.valid-field-password{position:relative}.valid-field-password .password-field-text input{padding-right:24px}.valid-field-password .password-field-text .password-eye-icon{color:#687792;cursor:pointer}.valid-field-password .password-field-text .password-eye-icon:hover{color:#232831}.valid-field-password .generate-password{color:#0b6cff;cursor:pointer;display:inline-block;padding:0;text-decoration:none}.valid-field-password .generate-password :focus{outline:none}.valid-field-password .level{font-size:16px;margin-top:5px;position:absolute;right:0;text-transform:capitalize}.valid-field-password .level.poor{color:#e32626}.valid-field-password .level.weak{color:#f1a20a}.valid-field-password .level.good{color:#025896}.valid-field-password .level.average{color:#687792}.valid-field-password .level.excellent{color:#00642e}";
 styleInject(css_248z$8);
-
-var randomatic$1 = {exports: {}};
-
-/*!
- * is-number <https://github.com/jonschlinkert/is-number>
- *
- * Copyright (c) 2014-2017, Jon Schlinkert.
- * Released under the MIT License.
- */
-
-var isNumber$1 = function isNumber(num) {
-  var type = typeof num;
-
-  if (type === 'string' || num instanceof String) {
-    // an empty string would be coerced to true with the below logic
-    if (!num.trim()) return false;
-  } else if (type !== 'number' && !(num instanceof Number)) {
-    return false;
-  }
-
-  return (num - num + 1) >= 0;
-};
-
-var toString = Object.prototype.toString;
-
-var kindOf = function kindOf(val) {
-  if (val === void 0) return 'undefined';
-  if (val === null) return 'null';
-
-  var type = typeof val;
-  if (type === 'boolean') return 'boolean';
-  if (type === 'string') return 'string';
-  if (type === 'number') return 'number';
-  if (type === 'symbol') return 'symbol';
-  if (type === 'function') {
-    return isGeneratorFn(val) ? 'generatorfunction' : 'function';
-  }
-
-  if (isArray(val)) return 'array';
-  if (isBuffer(val)) return 'buffer';
-  if (isArguments(val)) return 'arguments';
-  if (isDate(val)) return 'date';
-  if (isError(val)) return 'error';
-  if (isRegexp(val)) return 'regexp';
-
-  switch (ctorName(val)) {
-    case 'Symbol': return 'symbol';
-    case 'Promise': return 'promise';
-
-    // Set, Map, WeakSet, WeakMap
-    case 'WeakMap': return 'weakmap';
-    case 'WeakSet': return 'weakset';
-    case 'Map': return 'map';
-    case 'Set': return 'set';
-
-    // 8-bit typed arrays
-    case 'Int8Array': return 'int8array';
-    case 'Uint8Array': return 'uint8array';
-    case 'Uint8ClampedArray': return 'uint8clampedarray';
-
-    // 16-bit typed arrays
-    case 'Int16Array': return 'int16array';
-    case 'Uint16Array': return 'uint16array';
-
-    // 32-bit typed arrays
-    case 'Int32Array': return 'int32array';
-    case 'Uint32Array': return 'uint32array';
-    case 'Float32Array': return 'float32array';
-    case 'Float64Array': return 'float64array';
-  }
-
-  if (isGeneratorObj(val)) {
-    return 'generator';
-  }
-
-  // Non-plain objects
-  type = toString.call(val);
-  switch (type) {
-    case '[object Object]': return 'object';
-    // iterators
-    case '[object Map Iterator]': return 'mapiterator';
-    case '[object Set Iterator]': return 'setiterator';
-    case '[object String Iterator]': return 'stringiterator';
-    case '[object Array Iterator]': return 'arrayiterator';
-  }
-
-  // other
-  return type.slice(8, -1).toLowerCase().replace(/\s/g, '');
-};
-
-function ctorName(val) {
-  return typeof val.constructor === 'function' ? val.constructor.name : null;
-}
-
-function isArray(val) {
-  if (Array.isArray) return Array.isArray(val);
-  return val instanceof Array;
-}
-
-function isError(val) {
-  return val instanceof Error || (typeof val.message === 'string' && val.constructor && typeof val.constructor.stackTraceLimit === 'number');
-}
-
-function isDate(val) {
-  if (val instanceof Date) return true;
-  return typeof val.toDateString === 'function'
-    && typeof val.getDate === 'function'
-    && typeof val.setDate === 'function';
-}
-
-function isRegexp(val) {
-  if (val instanceof RegExp) return true;
-  return typeof val.flags === 'string'
-    && typeof val.ignoreCase === 'boolean'
-    && typeof val.multiline === 'boolean'
-    && typeof val.global === 'boolean';
-}
-
-function isGeneratorFn(name, val) {
-  return ctorName(name) === 'GeneratorFunction';
-}
-
-function isGeneratorObj(val) {
-  return typeof val.throw === 'function'
-    && typeof val.return === 'function'
-    && typeof val.next === 'function';
-}
-
-function isArguments(val) {
-  try {
-    if (typeof val.length === 'number' && typeof val.callee === 'function') {
-      return true;
-    }
-  } catch (err) {
-    if (err.message.indexOf('callee') !== -1) {
-      return true;
-    }
-  }
-  return false;
-}
-
-/**
- * If you need to support Safari 5-7 (8-10 yr-old browser),
- * take a look at https://github.com/feross/is-buffer
- */
-
-function isBuffer(val) {
-  if (val.constructor && typeof val.constructor.isBuffer === 'function') {
-    return val.constructor.isBuffer(val);
-  }
-  return false;
-}
-
-var node = {exports: {}};
-
-var crypto = require$$0$1;
-var max = Math.pow(2, 32);
-
-node.exports = random;
-node.exports.cryptographic = true;
-
-function random () {
-  var buf = crypto
-    .randomBytes(4)
-    .readUInt32BE(0);
-
-  return buf / max
-}
-
-/*!
- * randomatic <https://github.com/jonschlinkert/randomatic>
- *
- * Copyright (c) 2014-2017, Jon Schlinkert.
- * Released under the MIT License.
- */
-
-var isNumber = isNumber$1;
-var typeOf = kindOf;
-var mathRandom = node.exports;
-
-/**
- * Expose `randomatic`
- */
-
-randomatic$1.exports = randomatic;
-randomatic$1.exports.isCrypto = !!mathRandom.cryptographic;
-
-/**
- * Available mask characters
- */
-
-var type = {
-  lower: 'abcdefghijklmnopqrstuvwxyz',
-  upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-  number: '0123456789',
-  special: '~!@#$%^&()_+-={}[];\',.'
-};
-
-type.all = type.lower + type.upper + type.number + type.special;
-
-/**
- * Generate random character sequences of a specified `length`,
- * based on the given `pattern`.
- *
- * @param {String} `pattern` The pattern to use for generating the random string.
- * @param {String} `length` The length of the string to generate.
- * @param {String} `options`
- * @return {String}
- * @api public
- */
-
-function randomatic(pattern, length, options) {
-  if (typeof pattern === 'undefined') {
-    throw new Error('randomatic expects a string or number.');
-  }
-
-  var custom = false;
-  if (arguments.length === 1) {
-    if (typeof pattern === 'string') {
-      length = pattern.length;
-
-    } else if (isNumber(pattern)) {
-      options = {};
-      length = pattern;
-      pattern = '*';
-    }
-  }
-
-  if (typeOf(length) === 'object' && length.hasOwnProperty('chars')) {
-    options = length;
-    pattern = options.chars;
-    length = pattern.length;
-    custom = true;
-  }
-
-  var opts = options || {};
-  var mask = '';
-  var res = '';
-
-  // Characters to be used
-  if (pattern.indexOf('?') !== -1) mask += opts.chars;
-  if (pattern.indexOf('a') !== -1) mask += type.lower;
-  if (pattern.indexOf('A') !== -1) mask += type.upper;
-  if (pattern.indexOf('0') !== -1) mask += type.number;
-  if (pattern.indexOf('!') !== -1) mask += type.special;
-  if (pattern.indexOf('*') !== -1) mask += type.all;
-  if (custom) mask += pattern;
-
-  // Characters to exclude
-  if (opts.exclude) {
-    var exclude = typeOf(opts.exclude) === 'string' ? opts.exclude : opts.exclude.join('');
-    exclude = exclude.replace(new RegExp('[\\]]+', 'g'), '');
-    mask = mask.replace(new RegExp('[' + exclude + ']+', 'g'), '');
-    
-    if(opts.exclude.indexOf(']') !== -1) mask = mask.replace(new RegExp('[\\]]+', 'g'), '');
-  }
-
-  while (length--) {
-    res += mask.charAt(parseInt(mathRandom() * mask.length, 10));
-  }
-  return res;
-}
-var randomize = randomatic$1.exports;
-
-/*
- * Copyright (c) 2021 AccelByte Inc. All Rights Reserved
- * This is licensed software from AccelByte Inc, for limitations
- * and restrictions contact your company contract manager.
- */
-var generatePassword = function (pattern) {
-    return randomize(pattern, 32, { exclude: "'{}" });
-};
-var generateClientSecret = function (pattern) {
-    return randomize(pattern, 32, { exclude: "'{}" });
-};
 
 var ValidFieldPassword = /** @class */ (function (_super) {
     __extends$d(ValidFieldPassword, _super);
     function ValidFieldPassword(props) {
         var _this = _super.call(this, props) || this;
         _this.toolTipIconEye = React$7.createRef();
-        _this.handleStrengthIndicator = function () {
-            var strengthLevelIndicator = _this.props.strengthLevelIndicator;
-            switch (strengthLevelIndicator) {
-                case strengthLevelOrder.poor:
-                    _this.setState({ levelColor: strengthLevelOrder.poor });
-                    break;
-                case strengthLevelOrder.weak:
-                    _this.setState({ levelColor: strengthLevelOrder.weak });
-                    break;
-                case strengthLevelOrder.average:
-                    _this.setState({ levelColor: strengthLevelOrder.average });
-                    break;
-                case strengthLevelOrder.good:
-                    _this.setState({ levelColor: strengthLevelOrder.good });
-                    break;
-                case strengthLevelOrder.excellent:
-                    _this.setState({ levelColor: strengthLevelOrder.excellent });
-            }
-        };
         _this.toggleIconEyeOff = function () {
             _this.setState(function (prevState) { return ({
                 isIconEyeOff: !prevState.isIconEyeOff,
@@ -91850,7 +91862,14 @@ var ValidFieldPassword = /** @class */ (function (_super) {
             var passwordPattern = customPattern || DEFAULT_PASSWORD_AND_SECRET_REGEX;
             var value = generatePassword(passwordPattern);
             // @ts-ignore
-            onChange({ currentTarget: { name: name, value: value } });
+            onChange({ target: { name: name, value: value } });
+        };
+        _this.handleGenerateText = function () {
+            var _a = _this.props, hasGeneratePassword = _a.hasGeneratePassword, defaultGenerateText = _a.defaultGenerateText, strengthLevelIndicator = _a.strengthLevelIndicator, translateStrengthLevel = _a.translateStrengthLevel, customField = _a.customField;
+            var levelColor = _this.state.levelColor;
+            return (jsxs(Fragment$2, { children: [hasGeneratePassword && (jsx$1(Button$6, __assign$a({ appearance: "link", spacing: "none", className: "generate-password", onClick: _this.handleGeneratePassword }, { children: defaultGenerateText }), void 0)), strengthLevelIndicator && (jsx$1("span", __assign$a({ className: classNames$1("level", levelColor) }, { children: !!translateStrengthLevel
+                            ? translateStrengthLevel(strengthLevelIndicator)
+                            : translatedStrengthLevelOrder[strengthLevelIndicator] }), void 0)), customField] }, void 0));
         };
         _this.state = {
             isIconEyeOff: true,
@@ -91859,8 +91878,6 @@ var ValidFieldPassword = /** @class */ (function (_super) {
         return _this;
     }
     ValidFieldPassword.prototype.componentDidMount = function () {
-        if (this.props.strengthLevelIndicator)
-            this.handleStrengthIndicator();
         setTimeout(function () {
             ReactTooltip.rebuild();
         }, 100);
@@ -91868,12 +91885,16 @@ var ValidFieldPassword = /** @class */ (function (_super) {
     ValidFieldPassword.prototype.componentWillUnmount = function () {
         this.hideTooltip();
     };
+    ValidFieldPassword.getDerivedStateFromProps = function (props, state) {
+        if (props.strengthLevelIndicator !== state.levelColor) {
+            return {
+                levelColor: props.strengthLevelIndicator,
+            };
+        }
+        return "";
+    };
     ValidFieldPassword.prototype.render = function () {
-        var _a = this.props, hasGeneratePassword = _a.hasGeneratePassword, defaultGenerateText = _a.defaultGenerateText, strengthLevelIndicator = _a.strengthLevelIndicator, translateStrengthLevel = _a.translateStrengthLevel;
-        var levelColor = this.state.levelColor;
-        return (jsxs("div", __assign$a({ className: "valid-field-password" }, { children: [jsx$1(ValidFieldText, __assign$a({}, this.props, { rightIcon: this.handleEyeIcon(), type: this.handleFieldType(), className: classNames$1(this.props.className, "password-field-text") }), void 0), hasGeneratePassword && (jsx$1("span", __assign$a({ className: "generate-password", onClick: this.handleGeneratePassword }, { children: defaultGenerateText }), void 0)), strengthLevelIndicator && (jsx$1("span", __assign$a({ className: classNames$1("level", levelColor) }, { children: !!translateStrengthLevel
-                        ? translateStrengthLevel(strengthLevelIndicator)
-                        : translatedStrengthLevelOrder[strengthLevelIndicator] }), void 0))] }), void 0));
+        return (jsx$1("div", __assign$a({ className: "valid-field-password" }, { children: jsx$1(ValidFieldText, __assign$a({}, this.props, { rightIcon: this.handleEyeIcon(), type: this.handleFieldType(), className: classNames$1(this.props.className, "password-field-text"), customField: this.handleGenerateText() }), void 0) }), void 0));
     };
     return ValidFieldPassword;
 }(React$7.Component));
@@ -92226,25 +92247,6 @@ var TableFilter = function (_a) {
     return (jsxs("div", __assign$a({ className: classNames$1("table-filter", { isLarge: isLarge }), style: customStyle }, { children: [!!label && jsx$1("div", __assign$a({ className: "table-filter-label" }, { children: label }), void 0), jsx$1(Select, { options: options, isMulti: false, name: "searchType", onChange: onFilterChange, value: currentValue, isDisabled: isDisabled }, void 0)] }), void 0));
 };
 
-/*
- *  Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
- *  This is licensed software from AccelByte Inc, for limitations
- *  and restrictions contact your company contract manager.
- */
-var debounce = function (func, delay) {
-    if (delay === void 0) { delay = 500; }
-    var timeout;
-    var inDebounce = function () {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i] = arguments[_i];
-        }
-        clearTimeout(timeout);
-        timeout = setTimeout(function () { return func.apply(void 0, args); }, delay);
-    };
-    return inDebounce;
-};
-
 var css_248z = "@import url(\"https://fonts.googleapis.com/css?family=Roboto:400,500&family=Roboto+Mono:400&display=swap\");.scrollSpyContainer{background-color:#fff;border-radius:4px;box-shadow:0 1px 2px rgba(0,0,0,.25);display:block;height:fit-content;list-style-type:none;padding:8px;position:sticky;top:0;width:240px}.scrollSpyContainer li{align-items:center;border-radius:4px;display:flex;font-family:Roboto,sans-serif;height:40px;padding:0 24px}.scrollSpyContainer li.active,.scrollSpyContainer li:hover{background-color:#eff5ff;color:#0b6cff;cursor:pointer;font-weight:500}";
 styleInject(css_248z);
 
@@ -92301,18 +92303,6 @@ var ScrollSpy = /** @class */ (function (_super) {
     };
     return ScrollSpy;
 }(React$7.Component));
-
-/*
- *  Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
- *  This is licensed software from AccelByte Inc, for limitations
- *  and restrictions contact your company contract manager.
- */
-var formatDateForReactDateTimePicker = function (date) {
-    return moment$2.exports.utc(date).format("YYYY-MM-DD hh:mm a");
-};
-var formatDateForReactDatePicker = function (date) {
-    return moment$2.exports.utc(date).format("YYYY-MM-DD");
-};
 
 export { APPEARANCE_TYPE, Accordion, BADGE_APPEARANCE, BADGE_TYPE, Badge, Banner, Box, Breadcrumb, Button$6 as Button, ButtonWithIcon, CONTAINER_SIZE, Card, CardInformationTable, Checkbox, DEFAULT_MIN_VALUE, DEFAULT_PASSWORD_AND_SECRET_REGEX, DateTimePicker, DropdownMenu$1 as DropDownMenu, DropdownItem, DropdownItemGroup$1 as DropdownItemGroup, DynamicTable, EmptyResultsWithIcon, Enum, ErrorWrapper, FieldCounter, FieldErrorMessage, FieldHelperText, FieldLabel, HighlightedText, HorizontalDivider, HorizontalFieldText, horizontalSelect as HorizontalSelect, Icon, InlineCheckboxField, InlinePopover, Input, LineBreakToList, LoadingIndicator, LoadingOrErrorWrapper, Modal, ModalForm, ModalMessage, ModalTitle, NavigationTab, NoResultTip, Page, pagination as Pagination, Popover, PureSearchPanel, RELOADSTATUS, RadioButton, RadioButtonItem, ScrollSpy, SearchIconPosition, Select, Spinner, StyledRadio, StyledRadioTabVertical, TableFilter, Tag, TagList, TextField, Tip, TipType, Tooltip, ValidDynamicText, ValidFieldPassword, ValidFieldText, ValidFieldTextArea, ValidMultiSelect, ValidSelect, WILDCARD_SIGN, debounce, formatDateForReactDatePicker, formatDateForReactDateTimePicker, generateClientSecret, generatePassword, isForbiddenKey, isKeyOfEnum, makeSafeReactInnerHTML, strengthLevelOrder, translatedStrengthLevelOrder };
 //# sourceMappingURL=index.es.js.map

@@ -30,6 +30,7 @@ export interface ValidFieldTextProps extends React.InputHTMLAttributes<HTMLInput
     popoverContent?: React.ReactNode;
     popoverPlacement?: Placement;
     onFocus?: (event: React.FormEvent<HTMLInputElement>) => void;
+    customField?: React.ReactNode;
 }
 interface State {
     isFocus: boolean;

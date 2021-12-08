@@ -11,7 +11,7 @@ import { ValidFieldPasswordProps, ValidFieldPassword } from "./ValidFieldPasswor
 export default {
   title: "Components/ValidatedInput/ValidFieldPassword",
   component: ValidFieldPassword,
-} as Meta;
+} as unknown as Meta;
 
 export const Example: Story<ValidFieldPasswordProps> = (args) => {
   const [value, setValue] = React.useState("");
