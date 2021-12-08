@@ -11,15 +11,16 @@ import { ValidFieldText, ValidFieldTextProps } from "./ValidFieldText";
 import classNames from "classnames";
 import ReactTooltip from "react-tooltip";
 import "./ValidFieldPassword.scss";
-import { generatePassword } from "../../utils/password";
-import { DEFAULT_PASSWORD_AND_SECRET_REGEX } from "../../constants/common";
-import { strengthLevelOrder, translatedStrengthLevelOrder } from "../../constants/password";
+import { generatePassword } from "../../utils";
+import { DEFAULT_PASSWORD_AND_SECRET_REGEX } from "../../constants";
+import { strengthLevelOrder, translatedStrengthLevelOrder } from "../../constants";
+import { Button } from "../styled-atlaskit/Button/Button";
 
 export interface ValidFieldPasswordProps extends ValidFieldTextProps {
   strengthLevelIndicator?: keyof typeof strengthLevelOrder;
   translateStrengthLevel?: (level: keyof typeof strengthLevelOrder) => string;
-  passHideText: string;
-  passVisibleText: string;
+  passHideText?: string;
+  passVisibleText?: string;
   hasGeneratePassword?: boolean;
   defaultGenerateText?: string;
   customPattern?: string;
@@ -42,7 +43,6 @@ export class ValidFieldPassword extends React.Component<ValidFieldPasswordProps,
   toolTipIconEye = React.createRef<HTMLElement>();
 
   componentDidMount() {
-    if (this.props.strengthLevelIndicator) this.handleStrengthIndicator();
     setTimeout(() => {
       ReactTooltip.rebuild();
     }, 100);
@@ -52,25 +52,18 @@ export class ValidFieldPassword extends React.Component<ValidFieldPasswordProps,
     this.hideTooltip();
   }
 
-  handleStrengthIndicator = () => {
-    const { strengthLevelIndicator } = this.props;
-    switch (strengthLevelIndicator) {
-      case strengthLevelOrder.poor:
-        this.setState({ levelColor: strengthLevelOrder.poor });
-        break;
-      case strengthLevelOrder.weak:
-        this.setState({ levelColor: strengthLevelOrder.weak });
-        break;
-      case strengthLevelOrder.average:
-        this.setState({ levelColor: strengthLevelOrder.average });
-        break;
-      case strengthLevelOrder.good:
-        this.setState({ levelColor: strengthLevelOrder.good });
-        break;
-      case strengthLevelOrder.excellent:
-        this.setState({ levelColor: strengthLevelOrder.excellent });
+  static getDerivedStateFromProps(
+    props: { strengthLevelIndicator: keyof typeof strengthLevelOrder },
+    state: { levelColor: string }
+  ) {
+    if (props.strengthLevelIndicator !== state.levelColor) {
+      return {
+        levelColor: props.strengthLevelIndicator,
+      };
     }
-  };
+
+    return "";
+  }
 
   toggleIconEyeOff = () => {
     this.setState(
@@ -126,25 +119,19 @@ export class ValidFieldPassword extends React.Component<ValidFieldPasswordProps,
     const passwordPattern = customPattern || DEFAULT_PASSWORD_AND_SECRET_REGEX;
     const value = generatePassword(passwordPattern);
     // @ts-ignore
-    onChange({ currentTarget: { name, value } });
+    onChange({ target: { name, value } });
   };
 
-  render() {
-    const { hasGeneratePassword, defaultGenerateText, strengthLevelIndicator, translateStrengthLevel } = this.props;
+  handleGenerateText = () => {
+    const { hasGeneratePassword, defaultGenerateText, strengthLevelIndicator, translateStrengthLevel, customField } =
+      this.props;
     const { levelColor } = this.state;
-
     return (
-      <div className="valid-field-password">
-        <ValidFieldText
-          {...this.props}
-          rightIcon={this.handleEyeIcon()}
-          type={this.handleFieldType()}
-          className={classNames(this.props.className, "password-field-text")}
-        />
+      <>
         {hasGeneratePassword && (
-          <span className="generate-password" onClick={this.handleGeneratePassword}>
+          <Button appearance="link" spacing="none" className="generate-password" onClick={this.handleGeneratePassword}>
             {defaultGenerateText}
-          </span>
+          </Button>
         )}
         {strengthLevelIndicator && (
           <span className={classNames("level", levelColor)}>
@@ -153,6 +140,21 @@ export class ValidFieldPassword extends React.Component<ValidFieldPasswordProps,
               : translatedStrengthLevelOrder[strengthLevelIndicator]}
           </span>
         )}
+        {customField}
+      </>
+    );
+  };
+
+  render() {
+    return (
+      <div className="valid-field-password">
+        <ValidFieldText
+          {...this.props}
+          rightIcon={this.handleEyeIcon()}
+          type={this.handleFieldType()}
+          className={classNames(this.props.className, "password-field-text")}
+          customField={this.handleGenerateText()}
+        />
       </div>
     );
   }

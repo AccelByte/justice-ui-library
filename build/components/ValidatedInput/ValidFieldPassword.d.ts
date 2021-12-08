@@ -1,12 +1,12 @@
 import * as React from "react";
 import { ValidFieldTextProps } from "./ValidFieldText";
 import "./ValidFieldPassword.scss";
-import { strengthLevelOrder } from "../../constants/password";
+import { strengthLevelOrder } from "../../constants";
 export interface ValidFieldPasswordProps extends ValidFieldTextProps {
     strengthLevelIndicator?: keyof typeof strengthLevelOrder;
     translateStrengthLevel?: (level: keyof typeof strengthLevelOrder) => string;
-    passHideText: string;
-    passVisibleText: string;
+    passHideText?: string;
+    passVisibleText?: string;
     hasGeneratePassword?: boolean;
     defaultGenerateText?: string;
     customPattern?: string;
@@ -20,13 +20,20 @@ export declare class ValidFieldPassword extends React.Component<ValidFieldPasswo
     toolTipIconEye: React.RefObject<HTMLElement>;
     componentDidMount(): void;
     componentWillUnmount(): void;
-    handleStrengthIndicator: () => void;
+    static getDerivedStateFromProps(props: {
+        strengthLevelIndicator: keyof typeof strengthLevelOrder;
+    }, state: {
+        levelColor: string;
+    }): "" | {
+        levelColor: "poor" | "weak" | "average" | "good" | "excellent";
+    };
     toggleIconEyeOff: () => void;
     resetTooltipIconEye: () => void;
     hideTooltip: () => void;
     handleEyeIcon: () => JSX.Element;
     handleFieldType: () => "text" | "password";
     handleGeneratePassword: () => void;
+    handleGenerateText: () => JSX.Element;
     render(): JSX.Element;
 }
 export {};

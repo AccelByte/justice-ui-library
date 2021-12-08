@@ -12,7 +12,7 @@ import "./ValidFieldText.scss";
 import { FieldCounter, FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
 import { Placement } from "@atlaskit/inline-dialog/types";
 import { InlinePopover } from "../Popover/InlinePopover";
-import { isForbiddenKey } from "../../utils/input";
+import { isForbiddenKey } from "../../utils";
 
 export class Input extends FieldText {
   componentWillReceiveProps(nextProps: any, nextContext: any) {
@@ -51,6 +51,7 @@ export interface ValidFieldTextProps extends React.InputHTMLAttributes<HTMLInput
   popoverContent?: React.ReactNode;
   popoverPlacement?: Placement;
   onFocus?: (event: React.FormEvent<HTMLInputElement>) => void;
+  customField?: React.ReactNode;
 }
 
 interface State {
@@ -146,6 +147,7 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
       validFieldTextRef,
       popoverContent,
       popoverPlacement,
+      customField,
     } = this.props;
     const { isFocus } = this.state;
 
@@ -189,6 +191,7 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
           </InlinePopover>
           <div className="rightIcon">{rightIcon}</div>
         </div>
+        {customField}
         {errMessage && <FieldErrorMessage message={errMessage} />}
         {helperText && <FieldHelperText message={helperText} />}
       </div>

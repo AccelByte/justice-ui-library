@@ -14,6 +14,8 @@ interface Props {
     isHorizontal?: boolean;
     isList?: boolean;
     className?: string;
+    dataQa?: string | null;
+    dataQaProps?: string | null;
 }
-export declare const StyledRadio: ({ label, options, selectedRadio, onChange, errMessage, isInvalid, disabled, isRequired, isList, tooltip, isHorizontal, className, }: Props) => JSX.Element;
+export declare const StyledRadio: ({ label, options, selectedRadio, onChange, errMessage, isInvalid, disabled, isRequired, isList, tooltip, isHorizontal, className, dataQa, dataQaProps, }: Props) => JSX.Element;
 export {};
