@@ -8,6 +8,7 @@ import * as React from "react";
 import { default as classNames } from "classnames";
 import "./index.scss";
 import ReactTooltip from "react-tooltip";
+import { renderToString } from "react-dom/server";
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
@@ -17,6 +18,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const Checkbox = ({ label, helperText, isChecked, tooltip, ...props }: Props) => {
+  const dataTip = React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip;
   return (
     <div className={classNames("styled-checkbox", { isChecked })}>
       <label>
@@ -25,8 +27,8 @@ export const Checkbox = ({ label, helperText, isChecked, tooltip, ...props }: Pr
         {label && <span className="styled-checkbox__label">{label}</span>}
         {tooltip && (
           <>
-            <i className="fa-icon-info" data-for="styled-checkbox__tooltip" data-tip={tooltip} />
-            <ReactTooltip effect="solid" id="styled-checkbox__tooltip" />
+            <i className="fa-icon-info" data-for="styled-checkbox__tooltip" data-tip={dataTip} />
+            <ReactTooltip effect="solid" id="styled-checkbox__tooltip" html={true} />
           </>
         )}
       </label>

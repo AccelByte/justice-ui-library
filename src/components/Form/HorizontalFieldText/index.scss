@@ -14,9 +14,15 @@
     align-items: center;
   }
 
-  .cell-1 .label {
-    margin-right: 5px;
-    font-size: $font-size-h5;
-    color: $color--text--secondary;
+  .cell-1 {
+    .label {
+      margin-right: 5px;
+      font-size: $font-size-h5;
+      color: $color--text--secondary;
+    }
+
+    #horizontal-field-text-label__tooltip {
+      text-align: left;
+    }
   }
 }

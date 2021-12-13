@@ -103,7 +103,7 @@ export class ValidFieldPassword extends React.Component<ValidFieldPasswordProps,
           })}
           onClick={this.toggleIconEyeOff}
         />
-        <ReactTooltip effect="solid" id="eyeInfo__tooltip" />
+        <ReactTooltip effect="solid" id="eyeInfo__tooltip" html={true} />
       </>
     );
   };

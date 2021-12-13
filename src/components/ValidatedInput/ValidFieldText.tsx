@@ -11,7 +11,7 @@ import { default as FieldText } from "@atlaskit/field-text";
 import "./ValidFieldText.scss";
 import { FieldCounter, FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
 import { Placement } from "@atlaskit/inline-dialog/types";
-import { InlinePopover } from "../Popover/InlinePopover";
+import { InlinePopover, InlinePopoverType } from "../Popover/InlinePopover";
 import { isForbiddenKey } from "../../utils";
 
 export class Input extends FieldText {
@@ -50,6 +50,7 @@ export interface ValidFieldTextProps extends React.InputHTMLAttributes<HTMLInput
   showTooltipOnFocus?: boolean;
   popoverContent?: React.ReactNode;
   popoverPlacement?: Placement;
+  popoverType?: InlinePopoverType
   onFocus?: (event: React.FormEvent<HTMLInputElement>) => void;
   customField?: React.ReactNode;
 }
@@ -147,6 +148,7 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
       validFieldTextRef,
       popoverContent,
       popoverPlacement,
+      popoverType,
       customField,
     } = this.props;
     const { isFocus } = this.state;
@@ -169,7 +171,7 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
           {!!maxLength && <FieldCounter value={value} maxLength={maxLength} className="px-0" />}
         </div>
         <div className={classNames("valid-field-text-input-container", { focusedFieldText: this.state.isFocus })}>
-          <InlinePopover isOpen={isFocus} placement={popoverPlacement} content={popoverContent}>
+          <InlinePopover isOpen={isFocus} placement={popoverPlacement} content={popoverContent} type={popoverType}>
             <Input
               isLabelHidden={false}
               onFocus={this.handleFocus}

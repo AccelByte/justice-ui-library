@@ -9,20 +9,25 @@ import "./InlinePopover.scss";
 import { default as InlineDialog } from "@atlaskit/inline-dialog";
 import { Placement } from "@atlaskit/inline-dialog/types";
 import classNames from "classnames";
+import { Enum } from "../../types";
+
+export const INLINE_POPOVER_TYPE = Enum("light", "dark")
+export type InlinePopoverType = keyof typeof INLINE_POPOVER_TYPE
 
 export interface InlinePopoverProps {
   content: React.ReactNode;
   isOpen: boolean;
   children: React.ReactNode;
   placement?: Placement;
+  type?: InlinePopoverType
 }
 
 export const InlinePopover: React.FC<InlinePopoverProps> = (props) => {
-  const { content, children, isOpen, placement } = props;
+  const { content, children, isOpen, placement, type } = props;
   const popoverPlacement = placement || "right";
 
   return (
-    <div className="inline-popover">
+    <div className={classNames("inline-popover", type)}>
       <InlineDialog
         isOpen={!!content && isOpen}
         content={content}

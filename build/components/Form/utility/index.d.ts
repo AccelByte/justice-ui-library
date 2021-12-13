@@ -19,5 +19,5 @@ export interface FieldCounterProps {
 }
 export declare const FieldCounter: ({ value, maxLength, className }: FieldCounterProps) => JSX.Element;
 export declare const FieldHelperText: ({ message }: {
-    message: string;
+    message: React.ReactNode;
 }) => JSX.Element;

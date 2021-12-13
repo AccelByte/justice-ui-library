@@ -11,6 +11,7 @@ import ReactTooltip from "react-tooltip";
 import "./index.scss";
 import { ButtonAppearances } from "@atlaskit/button";
 import { NoResultTip } from "../NoResultTip";
+import { renderToString } from "react-dom/server";
 
 export interface CardProps {
   children: React.ReactNode;
@@ -71,6 +72,8 @@ export class Card extends React.Component<CardProps> {
       customStyleTitleWrapper,
       noResultText,
     } = this.props;
+    const dataTip = React.isValidElement(Tips) ? renderToString(Tips) : Tips;
+
     return (
       <div
         className={classNames("card", className, {
@@ -90,8 +93,8 @@ export class Card extends React.Component<CardProps> {
                   {cardSubTitle && <small className="card-sub-title">{cardSubTitle}</small>}
                   {Tips && (
                     <>
-                      <i className="fa-icon-info" data-for="cardInfo__tooltip" data-tip={Tips} />
-                      <ReactTooltip effect="solid" id="cardInfo__tooltip" />
+                      <i className="fa-icon-info" data-for="cardInfo__tooltip" data-tip={dataTip} />
+                      <ReactTooltip effect="solid" id="cardInfo__tooltip" html={true} />
                     </>
                   )}
                   {titleTip}
@@ -104,8 +107,8 @@ export class Card extends React.Component<CardProps> {
                   <span>{cardTitle}</span>
                   {Tips && (
                     <>
-                      <i className="fa-icon-info" data-for="cardInfo__tooltip" data-tip={Tips} />
-                      <ReactTooltip effect="solid" id="cardInfo__tooltip" />
+                      <i className="fa-icon-info" data-for="cardInfo__tooltip" data-tip={dataTip} />
+                      <ReactTooltip effect="solid" id="cardInfo__tooltip" html={true} />
                     </>
                   )}
                   {titleTip}
@@ -133,8 +136,8 @@ export class Card extends React.Component<CardProps> {
                   <span>{cardTitle}</span>
                   {Tips && (
                     <>
-                      <i className="fa-icon-info" data-for="cardInfo__tooltip" data-tip={Tips} />
-                      <ReactTooltip effect="solid" id="cardInfo__tooltip" />
+                      <i className="fa-icon-info" data-for="cardInfo__tooltip" data-tip={dataTip} />
+                      <ReactTooltip effect="solid" id="cardInfo__tooltip" html={true} />
                     </>
                   )}
                   {titleTip}
