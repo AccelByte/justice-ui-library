@@ -12,7 +12,7 @@ import { FieldErrorMessage, FieldLabel } from "../../Form/utility";
 import { addLineBreaks } from "../../Typography/typography";
 import { LineBreakToList } from "../..";
 
-interface Props {
+export interface StyledRadioProps {
   label: string;
   options: RadioOption<string | boolean>[];
   selectedRadio: string | boolean;
@@ -44,7 +44,7 @@ export const StyledRadio = ({
   className,
   dataQa,
   dataQaProps,
-}: Props) => {
+}: StyledRadioProps) => {
   return (
     <div className={className}>
       {!!label && <FieldLabel label={label} tooltip={tooltip} />}

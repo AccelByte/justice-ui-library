@@ -27,6 +27,7 @@
       }
     }
     .radio-helper {
+      font-size: $font-size-h6;
       color: $color--text--secondary;
       display: block;
       margin-top: 8px;
@@ -57,12 +58,14 @@
       }
     }
     .radio-label {
+      font-size: $font-size-h6;
       color: $color--text--primary;
       vertical-align: bottom;
     }
   }
 }
 .horizontal-radio-helper {
+  font-size: $font-size-h6;
   padding: 16px 20px;
   background-color: $base-10;
   color: $base-120;

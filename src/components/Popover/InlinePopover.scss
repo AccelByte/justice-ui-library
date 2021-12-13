@@ -103,4 +103,15 @@
       }
     }
   }
+
+  &.dark {
+    & > div[data-testid~="InlinePopover"] {
+      background-color: $base-120;
+      color: white;
+
+      &::before {
+        border-color: transparent $base-120 $base-120 transparent;
+      }
+    }
+  }
 }

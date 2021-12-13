@@ -52,7 +52,7 @@ export const Popover = ({
       <div className={className} {...(!!content && renderPopover())}>
         {children}
       </div>
-      <ReactTooltip effect="solid" id="popover-tooltip" />
+      <ReactTooltip effect="solid" id="popover-tooltip" html={true} />
     </>
   );
 };

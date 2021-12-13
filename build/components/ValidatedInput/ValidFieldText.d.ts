@@ -2,6 +2,7 @@ import * as React from "react";
 import { default as FieldText } from "@atlaskit/field-text";
 import "./ValidFieldText.scss";
 import { Placement } from "@atlaskit/inline-dialog/types";
+import { InlinePopoverType } from "../Popover/InlinePopover";
 export declare class Input extends FieldText {
     componentWillReceiveProps(nextProps: any, nextContext: any): void;
 }
@@ -29,6 +30,7 @@ export interface ValidFieldTextProps extends React.InputHTMLAttributes<HTMLInput
     showTooltipOnFocus?: boolean;
     popoverContent?: React.ReactNode;
     popoverPlacement?: Placement;
+    popoverType?: InlinePopoverType;
     onFocus?: (event: React.FormEvent<HTMLInputElement>) => void;
     customField?: React.ReactNode;
 }

@@ -9,6 +9,7 @@ import ReactTooltip from "react-tooltip";
 import { default as classNames } from "classnames";
 import "./index.scss";
 import { FieldLabel } from "../utility";
+import { renderToString } from "react-dom/server";
 
 export interface HorizontalFieldTextProps {
   children?: React.ReactNode;
@@ -76,6 +77,8 @@ export class HorizontalFieldText extends React.Component<HorizontalFieldTextProp
       isRequired = true,
       optionalLabel,
     } = this.props;
+    const dataTip = React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip;
+
     return (
       <div
         className={classNames("horizontalFieldText", className, {
@@ -96,9 +99,9 @@ export class HorizontalFieldText extends React.Component<HorizontalFieldTextProp
                   ref={this.tooltipRef}
                   className="fa-icon-info"
                   data-for="horizontal-field-text-label__tooltip"
-                  data-tip={tooltip}
+                  data-tip={dataTip}
                 />
-                <ReactTooltip effect="solid" id="horizontal-field-text-label__tooltip" />
+                <ReactTooltip effect="solid" id="horizontal-field-text-label__tooltip" html={true} />
               </>
             )}
           </div>

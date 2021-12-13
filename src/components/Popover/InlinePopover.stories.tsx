@@ -21,6 +21,7 @@ export const Default = Template.bind({});
 Default.args = {
   isOpen: false,
   content: "popOver example text",
+  type: "dark",
   children: (
     <div style={{ width: "50%", margin: "80px 180px" }}>
       <FieldText placeholder={"field placeholder"} shouldFitContainer />
