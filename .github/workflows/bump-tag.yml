@@ -1,0 +1,16 @@
+
+name: bump-tag
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Github Tag Bump
+      uses: anothrNick/github-tag-action@1.36.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        DEFAULT_BUMP: patch
