@@ -360,7 +360,7 @@
         margin-top: -14px;
         padding-right: 20px;
         font-size: $font-size-h6 !important;
-        div {
+        div:not([data-testid~="InlinePopover"]) {
           font-size: $font-size-h5;
           color: $color--text--primary;
 

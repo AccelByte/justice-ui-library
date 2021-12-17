@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.scss";
 export declare const FieldErrorMessage: ({ message, dataQa }: {
-    message?: string | undefined;
+    message?: string | null | undefined;
     dataQa?: string | undefined;
 }) => JSX.Element;
 export interface FieldLabelProps {
@@ -10,8 +10,9 @@ export interface FieldLabelProps {
     optionalLabel?: string;
     tooltip?: string;
     tooltipRef?: React.RefObject<HTMLElement>;
+    isRequired?: boolean;
 }
-export declare const FieldLabel: ({ label, children, optionalLabel, tooltip, tooltipRef }: FieldLabelProps) => JSX.Element;
+export declare const FieldLabel: ({ label, children, isRequired, optionalLabel, tooltip, tooltipRef }: FieldLabelProps) => JSX.Element;
 export interface FieldCounterProps {
     value: string | null;
     maxLength: number;

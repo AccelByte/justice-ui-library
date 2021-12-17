@@ -14,46 +14,33 @@ import "./ValidFieldTextArea.scss";
 import { FieldCounter, FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
 
 export interface ValidFieldTextAreaProps extends FieldTextAreaStatelessProps {
-  label?: string;
   value: string;
   errMessage?: string;
-  isInvalid?: boolean;
-  optionalLabel?: string;
   helperText?: string;
   tooltip?: string;
-  shouldFitContainer?: boolean;
-  minimumRows?: number;
-  placeholder?: string;
-  onChange?: (event: React.FormEvent<HTMLTextAreaElement>) => void;
+  isRequired?: boolean;
+  dataQa?: string | null;
+  optionalLabel?: string;
 }
 
 export const ValidFieldTextArea = ({
   label = "",
+  placeholder,
   value,
   errMessage,
-  isInvalid,
-  optionalLabel,
   helperText,
   tooltip,
   shouldFitContainer = true,
+  isRequired = true,
   minimumRows,
   onBlur: onBlurProps,
-  placeholder,
   maxLength,
+  onChange,
+  dataQa,
+  optionalLabel,
   ...props
 }: ValidFieldTextAreaProps) => {
-  const tooltipRef = React.useRef<HTMLInputElement>(null);
   const [isInputFocused, setIsInputFocused] = React.useState<boolean>(false);
-
-  React.useEffect(() => {
-    if (tooltipRef && tooltipRef.current) {
-      if (isInputFocused) {
-        ReactTooltip.show(tooltipRef.current);
-      } else {
-        ReactTooltip.hide(tooltipRef.current);
-      }
-    }
-  }, [isInputFocused]);
 
   const onFocus = () => {
     setIsInputFocused(true);
@@ -65,21 +52,20 @@ export const ValidFieldTextArea = ({
   };
 
   return (
-    <div className="valid-field-text-area">
+    <div className="valid-field-text-area" data-qa-id={dataQa}>
       <div
         className={classNames("fieldHeader", {
           pushRight: !label && !!maxLength,
         })}
       >
-        {label && (
-          <FieldLabel label={label} optionalLabel={optionalLabel} tooltipRef={tooltipRef} tooltip={tooltip && tooltip} />
-        )}
+        {label && <FieldLabel label={label} optionalLabel={optionalLabel} isRequired={isRequired} tooltip={tooltip} />}
         {!!maxLength && <FieldCounter value={value} maxLength={maxLength} />}
       </div>
       <div className={classNames("valid-field-text-area-container", { focusedFieldText: isInputFocused })}>
         <FieldTextAreaStateless
           onFocus={onFocus}
           onBlur={onBlur}
+          onChange={onChange}
           isLabelHidden={true}
           value={value}
           shouldFitContainer={shouldFitContainer}
@@ -90,7 +76,7 @@ export const ValidFieldTextArea = ({
       </div>
       <div className={classNames("fieldInformationTextArea")}>
         <div>
-          {isInvalid && <FieldErrorMessage message={errMessage} />}
+          {errMessage && <FieldErrorMessage message={errMessage} />}
           {helperText && <FieldHelperText message={helperText} />}
         </div>
       </div>

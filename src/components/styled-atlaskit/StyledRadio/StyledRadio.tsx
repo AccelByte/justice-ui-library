@@ -26,7 +26,7 @@ export interface StyledRadioProps {
   isList?: boolean;
   className?: string;
   dataQa?: string | null;
-  dataQaProps?: string | null;
+  qaProps?: (...qaValue: any[]) => string | null
 }
 
 export const StyledRadio = ({
@@ -37,17 +37,17 @@ export const StyledRadio = ({
   errMessage,
   isInvalid,
   disabled = false,
-  isRequired = false,
+  isRequired = true,
   isList = false,
   tooltip,
   isHorizontal = true,
   className,
   dataQa,
-  dataQaProps,
+  qaProps,
 }: StyledRadioProps) => {
   return (
     <div className={className}>
-      {!!label && <FieldLabel label={label} tooltip={tooltip} />}
+      {!!label && <FieldLabel label={label} isRequired={isRequired} tooltip={tooltip} />}
       <div className={classNames(["horizontal-radio-group"], { "vertical-radio-group": !isHorizontal })}>
         {options.map((item) => (
           <div
@@ -58,7 +58,7 @@ export const StyledRadio = ({
             {...(!disabled && item.value !== selectedRadio && { onClick: onChange.bind(null, item) })}
             key={String(item.value)}
             data-qa={dataQa}
-            data-qa-props={dataQaProps}
+            data-qa-props={qaProps && qaProps(item.value)}
           >
             <span className="radio-icon" />
             <span className="radio-label">{item.label}</span>

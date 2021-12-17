@@ -23,6 +23,15 @@
   padding: 20px 0px 10px 0px;
   margin-bottom: 0;
 
+  &.withTooltip {
+    display: flex;
+    align-items: center;
+  }
+
+  .fa-icon-info {
+    margin-left: 8px;
+  }
+
   .__react_component_tooltip {
     padding: 5px 10px;
     font-size: $font-size-h6;

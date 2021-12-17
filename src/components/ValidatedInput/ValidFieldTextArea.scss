@@ -15,7 +15,7 @@
       min-height: 100px;
     }
   }
-  &.focusedFieldText {
+  .focusedFieldText {
     [class|="Content__ChildWrapper"] > [class|="Content"] {
       border: 2px solid $brand-80;
     }
