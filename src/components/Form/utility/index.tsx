@@ -11,7 +11,7 @@ import ReactTooltip from "react-tooltip";
 import classNames from "classnames";
 import { renderToString } from "react-dom/server";
 
-export const FieldErrorMessage = ({ message = "", dataQa }: { message?: string; dataQa?: string }) => (
+export const FieldErrorMessage = ({ message = "", dataQa }: { message?: string | null; dataQa?: string }) => (
   <span className="field-error-message" data-qa-id={dataQa && dataQa}>
     {message}
   </span>
@@ -23,20 +23,21 @@ export interface FieldLabelProps {
   optionalLabel?: string;
   tooltip?: string;
   tooltipRef?: React.RefObject<HTMLElement>;
+  isRequired?: boolean;
 }
 
-export const FieldLabel = ({ label = "", children, optionalLabel, tooltip, tooltipRef }: FieldLabelProps) => (
-  <label className={classNames("field-label", { "d-flex align-items-center": tooltip })}>
+export const FieldLabel = ({ label = "", children, isRequired = true, optionalLabel, tooltip, tooltipRef }: FieldLabelProps) => (
+  <label className={classNames("field-label", { "withTooltip": tooltip })}>
     <div>
       {label}
-      {optionalLabel}
+      {!isRequired && optionalLabel}
       {children ? children : ""}
     </div>
     {tooltip && (
       <>
         <i
           ref={tooltipRef}
-          className="fa-icon-info ml-2"
+          className="fa-icon-info"
           data-for="field-label__tooltip"
           data-tip={React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip}
         />

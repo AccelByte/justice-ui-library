@@ -50,7 +50,7 @@ export interface ValidFieldTextProps extends React.InputHTMLAttributes<HTMLInput
   showTooltipOnFocus?: boolean;
   popoverContent?: React.ReactNode;
   popoverPlacement?: Placement;
-  popoverType?: InlinePopoverType
+  popoverType?: InlinePopoverType;
   onFocus?: (event: React.FormEvent<HTMLInputElement>) => void;
   customField?: React.ReactNode;
 }
@@ -150,6 +150,7 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
       popoverPlacement,
       popoverType,
       customField,
+      isRequired = true,
     } = this.props;
     const { isFocus } = this.state;
 
@@ -166,7 +167,13 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
           })}
         >
           {!isLabelHidden && (
-            <FieldLabel label={label} optionalLabel={optionalLabel} tooltip={tooltip} tooltipRef={this.toolTipRef} />
+            <FieldLabel
+              label={label}
+              optionalLabel={optionalLabel}
+              isRequired={isRequired}
+              tooltip={tooltip}
+              tooltipRef={this.toolTipRef}
+            />
           )}
           {!!maxLength && <FieldCounter value={value} maxLength={maxLength} className="px-0" />}
         </div>
