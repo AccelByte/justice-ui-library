@@ -15,6 +15,9 @@
       min-height: 100px;
     }
   }
+  [class|="ValidationElement__WarningIcon"] {
+    display: none;
+  }
   .focusedFieldText {
     [class|="Content__ChildWrapper"] > [class|="Content"] {
       border: 2px solid $brand-80;
