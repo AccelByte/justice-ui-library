@@ -1,6 +1,6 @@
 {
   "name": "justice-ui-library",
-  "version": "0.1.27",
+  "version": "0.1.28",
   "author": "AccelByte Inc",
   "license": "AccelByte License",
   "main": "./build/index.js",
