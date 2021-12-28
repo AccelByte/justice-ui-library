@@ -26,3 +26,6 @@ You need common component for both AP and AP Extension
 - Upgrade justice-ui-library in AP
 - Refactor component import from AP to justice-ui-library
 - Remove component in AP once all the component imported from justice-ui-library
+
+## Note
+- CHANGELOG.md should be updated in every commit to master to keep track on what's updated in the repo

@@ -123,17 +123,34 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
     !!onKeyDown && onKeyDown(event);
   };
 
+  renderInput = () => {
+    const { placeholder, name, value, disabled, type, min, max, maxLength, autoComplete, onChange } = this.props;
+    return (
+      <Input
+        isLabelHidden={false}
+        onFocus={this.handleFocus}
+        onBlur={this.handleBlur}
+        placeholder={placeholder}
+        name={name}
+        value={value}
+        // @ts-ignore
+        onChange={onChange}
+        disabled={disabled}
+        type={type}
+        min={min}
+        max={max}
+        shouldFitContainer={true}
+        onKeyDown={this.handleOnKeyDown}
+        maxLength={maxLength}
+        autoComplete={autoComplete}
+      />
+    );
+  };
+
   render() {
     const {
-      onChange,
-      name,
       label,
-      placeholder,
       value,
-      disabled,
-      type,
-      min,
-      max,
       maxLength,
       className,
       optionalLabel,
@@ -144,7 +161,6 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
       dataQa,
       dataQaProps,
       rightIcon,
-      autoComplete,
       validFieldTextRef,
       popoverContent,
       popoverPlacement,
@@ -178,27 +194,14 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
           {!!maxLength && <FieldCounter value={value} maxLength={maxLength} className="px-0" />}
         </div>
         <div className={classNames("valid-field-text-input-container", { focusedFieldText: this.state.isFocus })}>
-          <InlinePopover isOpen={isFocus} placement={popoverPlacement} content={popoverContent} type={popoverType}>
-            <Input
-              isLabelHidden={false}
-              onFocus={this.handleFocus}
-              onBlur={this.handleBlur}
-              placeholder={placeholder}
-              name={name}
-              value={value}
-              // @ts-ignore
-              onChange={onChange}
-              disabled={disabled}
-              type={type}
-              min={min}
-              max={max}
-              shouldFitContainer={true}
-              onKeyDown={this.handleOnKeyDown}
-              maxLength={maxLength}
-              autoComplete={autoComplete}
-            />
-          </InlinePopover>
-          <div className="rightIcon">{rightIcon}</div>
+          {!!popoverContent ? (
+            <InlinePopover isOpen={isFocus} placement={popoverPlacement} content={popoverContent} type={popoverType}>
+              {this.renderInput()}
+            </InlinePopover>
+          ) : (
+            this.renderInput()
+          )}
+          {!!rightIcon && <div className="rightIcon">{rightIcon}</div>}
         </div>
         {customField}
         {errMessage && <FieldErrorMessage message={errMessage} />}

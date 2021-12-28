@@ -47,6 +47,7 @@ export declare class ValidFieldText extends React.Component<ValidFieldTextProps,
     handleBlur: (event: React.FocusEvent<HTMLInputElement>) => void;
     handleFocus: (event: React.FormEvent<HTMLInputElement>) => void;
     handleOnKeyDown: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+    renderInput: () => JSX.Element;
     render(): JSX.Element;
 }
 export {};

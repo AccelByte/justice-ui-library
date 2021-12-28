@@ -91083,6 +91083,12 @@ var ValidFieldText = /** @class */ (function (_super) {
             }
             !!onKeyDown && onKeyDown(event);
         };
+        _this.renderInput = function () {
+            var _a = _this.props, placeholder = _a.placeholder, name = _a.name, value = _a.value, disabled = _a.disabled, type = _a.type, min = _a.min, max = _a.max, maxLength = _a.maxLength, autoComplete = _a.autoComplete, onChange = _a.onChange;
+            return (jsx$1(Input, { isLabelHidden: false, onFocus: _this.handleFocus, onBlur: _this.handleBlur, placeholder: placeholder, name: name, value: value, 
+                // @ts-ignore
+                onChange: onChange, disabled: disabled, type: type, min: min, max: max, shouldFitContainer: true, onKeyDown: _this.handleOnKeyDown, maxLength: maxLength, autoComplete: autoComplete }, void 0));
+        };
         _this.state = {
             isFocus: false,
         };
@@ -91100,13 +91106,11 @@ var ValidFieldText = /** @class */ (function (_super) {
         this.hideTooltip();
     };
     ValidFieldText.prototype.render = function () {
-        var _a = this.props, onChange = _a.onChange, name = _a.name, label = _a.label, placeholder = _a.placeholder, value = _a.value, disabled = _a.disabled, type = _a.type, min = _a.min, max = _a.max, maxLength = _a.maxLength, className = _a.className, optionalLabel = _a.optionalLabel, errMessage = _a.errMessage, isLabelHidden = _a.isLabelHidden, helperText = _a.helperText, tooltip = _a.tooltip, dataQa = _a.dataQa, dataQaProps = _a.dataQaProps, rightIcon = _a.rightIcon, autoComplete = _a.autoComplete, validFieldTextRef = _a.validFieldTextRef, popoverContent = _a.popoverContent, popoverPlacement = _a.popoverPlacement, popoverType = _a.popoverType, customField = _a.customField, _b = _a.isRequired, isRequired = _b === void 0 ? true : _b;
+        var _a = this.props, label = _a.label, value = _a.value, maxLength = _a.maxLength, className = _a.className, optionalLabel = _a.optionalLabel, errMessage = _a.errMessage, isLabelHidden = _a.isLabelHidden, helperText = _a.helperText, tooltip = _a.tooltip, dataQa = _a.dataQa, dataQaProps = _a.dataQaProps, rightIcon = _a.rightIcon, validFieldTextRef = _a.validFieldTextRef, popoverContent = _a.popoverContent, popoverPlacement = _a.popoverPlacement, popoverType = _a.popoverType, customField = _a.customField, _b = _a.isRequired, isRequired = _b === void 0 ? true : _b;
         var isFocus = this.state.isFocus;
         return (jsxs("div", __assign$a({ className: classNames$1(className, "valid-field-text"), "data-qa-id": dataQa, "data-qa-props": dataQaProps, ref: validFieldTextRef }, { children: [jsxs("div", __assign$a({ className: classNames$1("fieldHeader", {
                         pushRight: !label && optionalLabel,
-                    }) }, { children: [!isLabelHidden && (jsx$1(FieldLabel, { label: label, optionalLabel: optionalLabel, isRequired: isRequired, tooltip: tooltip, tooltipRef: this.toolTipRef }, void 0)), !!maxLength && jsx$1(FieldCounter, { value: value, maxLength: maxLength, className: "px-0" }, void 0)] }), void 0), jsxs("div", __assign$a({ className: classNames$1("valid-field-text-input-container", { focusedFieldText: this.state.isFocus }) }, { children: [jsx$1(InlinePopover, __assign$a({ isOpen: isFocus, placement: popoverPlacement, content: popoverContent, type: popoverType }, { children: jsx$1(Input, { isLabelHidden: false, onFocus: this.handleFocus, onBlur: this.handleBlur, placeholder: placeholder, name: name, value: value, 
-                                // @ts-ignore
-                                onChange: onChange, disabled: disabled, type: type, min: min, max: max, shouldFitContainer: true, onKeyDown: this.handleOnKeyDown, maxLength: maxLength, autoComplete: autoComplete }, void 0) }), void 0), jsx$1("div", __assign$a({ className: "rightIcon" }, { children: rightIcon }), void 0)] }), void 0), customField, errMessage && jsx$1(FieldErrorMessage, { message: errMessage }, void 0), helperText && jsx$1(FieldHelperText, { message: helperText }, void 0)] }), void 0));
+                    }) }, { children: [!isLabelHidden && (jsx$1(FieldLabel, { label: label, optionalLabel: optionalLabel, isRequired: isRequired, tooltip: tooltip, tooltipRef: this.toolTipRef }, void 0)), !!maxLength && jsx$1(FieldCounter, { value: value, maxLength: maxLength, className: "px-0" }, void 0)] }), void 0), jsxs("div", __assign$a({ className: classNames$1("valid-field-text-input-container", { focusedFieldText: this.state.isFocus }) }, { children: [!!popoverContent ? (jsx$1(InlinePopover, __assign$a({ isOpen: isFocus, placement: popoverPlacement, content: popoverContent, type: popoverType }, { children: this.renderInput() }), void 0)) : (this.renderInput()), !!rightIcon && jsx$1("div", __assign$a({ className: "rightIcon" }, { children: rightIcon }), void 0)] }), void 0), customField, errMessage && jsx$1(FieldErrorMessage, { message: errMessage }, void 0), helperText && jsx$1(FieldHelperText, { message: helperText }, void 0)] }), void 0));
     };
     return ValidFieldText;
 }(React$7.Component));
