@@ -29,7 +29,7 @@ export default {
     peerDepsExternal(),
     resolve(),
     commonjs(),
-    typescript({ tsconfig: "./tsconfig.json" }),
+    typescript({ tsconfig: "./tsconfig.json", exclude: "**/*.stories.tsx" }),
     postcss({
       extract: false,
       modules: { generateScopedName: "[local]___[hash:base64:5]" },
