@@ -15,6 +15,5 @@ export interface StyledRadioProps {
     isList?: boolean;
     className?: string;
     dataQa?: string | null;
-    qaProps?: (...qaValue: any[]) => string | null;
 }
-export declare const StyledRadio: ({ label, options, selectedRadio, onChange, errMessage, isInvalid, disabled, isRequired, isList, tooltip, isHorizontal, className, dataQa, qaProps, }: StyledRadioProps) => JSX.Element;
+export declare const StyledRadio: ({ label, options, selectedRadio, onChange, errMessage, isInvalid, disabled, isRequired, isList, tooltip, isHorizontal, className, dataQa, }: StyledRadioProps) => JSX.Element;

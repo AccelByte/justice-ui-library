@@ -22,7 +22,8 @@ export interface ButtonProps
   type?: "button" | "submit" | "reset";
   shouldFitContainer?: boolean;
   autoFocus?: boolean;
-  appearance?: ButtonAppearances | "outline";
+  appearance?: ButtonAppearances | "outline" | "success";
+  dataQa?: string | null;
 }
 
 export const Button = ({
@@ -36,9 +37,10 @@ export const Button = ({
   autoFocus = false,
   appearance = "primary",
   className = "",
+  dataQa = null,
   ...props
 }: ButtonProps) => {
-  return (
+  const renderButton = () => (
     <AkButton
       className={classNames("styled-atlaskit-button", appearance, className)}
       isDisabled={isDisabled}
@@ -48,10 +50,11 @@ export const Button = ({
       type={type}
       shouldFitContainer={shouldFitContainer}
       autoFocus={autoFocus}
-      appearance={appearance !== "outline" ? appearance : undefined}
+      appearance={appearance !== "outline" && appearance !== "success" ? appearance : undefined}
       {...props}
     >
       {children}
     </AkButton>
   );
+  return !!dataQa ? <div data-qa-id={dataQa} className="styled-atlaskit-button-container">{renderButton()}</div> : renderButton();
 };

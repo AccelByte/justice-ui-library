@@ -10,6 +10,7 @@ export interface ButtonProps extends Omit<AkButtonProps, "isDisabled" | "isLoadi
     type?: "button" | "submit" | "reset";
     shouldFitContainer?: boolean;
     autoFocus?: boolean;
-    appearance?: ButtonAppearances | "outline";
+    appearance?: ButtonAppearances | "outline" | "success";
+    dataQa?: string | null;
 }
-export declare const Button: ({ children, isDisabled, isLoading, isSelected, spacing, type, shouldFitContainer, autoFocus, appearance, className, ...props }: ButtonProps) => JSX.Element;
+export declare const Button: ({ children, isDisabled, isLoading, isSelected, spacing, type, shouldFitContainer, autoFocus, appearance, className, dataQa, ...props }: ButtonProps) => JSX.Element;
