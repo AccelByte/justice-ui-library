@@ -5,7 +5,9 @@
  */
 
 @import "src/styles/variables";
-
+.styled-atlaskit-button-container {
+  display: inline-flex
+}
 button.styled-atlaskit-button {
   border-radius: $border-radius;
   height: 35px;
@@ -47,6 +49,19 @@ button.styled-atlaskit-button {
         span {
           color: $color--error--primary;
         }
+        &:hover {
+          background-color: $semantic-red-10;
+        }
+      }
+      &.success {
+        background-color: transparent;
+        border-color: $semantic-green-80;
+        span {
+          color: $color--success--primary;
+        }
+        &:hover {
+          background-color: $semantic-green-10;
+        }
       }
     }
     &.subtle {
@@ -68,7 +83,8 @@ button.styled-atlaskit-button {
     }
   }
   &:disabled {
-    &.primary {
+    &.primary,
+    &.success:not(.outline) {
       background-color: $button-backgroundColor--disabled;
       span {
         color: $color--text--tertiary;
@@ -85,6 +101,14 @@ button.styled-atlaskit-button {
   &.link {
     &:hover {
       text-decoration: none;
+    }
+  }
+  &.success:not(.outline) {
+    color: $color--text--tertiary !important;
+    background-color: $button-backgroundColor--green;
+    &:hover {
+      color: $color--text--tertiary !important;
+      background-color: $color--success--primary;
     }
   }
 }
