@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 AccelByte Inc. All Rights Reserved
+ * Copyright (c) 2021-2022 AccelByte Inc. All Rights Reserved
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
  */
@@ -19,6 +19,7 @@ export interface TooltipProps {
   medium?: boolean;
   isBoxed?: boolean;
   onCopySuccess?: () => void;
+  isTooltipShownOnOverflowOnly?: boolean;
 }
 
 export const Tooltip = ({
@@ -29,11 +30,28 @@ export const Tooltip = ({
   narrow = false,
   medium = false,
   isBoxed = false,
+  isTooltipShownOnOverflowOnly = false,
   onCopySuccess,
 }: TooltipProps) => {
+  const tooltipChildrenRef = React.useRef<HTMLSpanElement>(null);
+  const tooltipContentRef = React.useRef<HTMLSpanElement>(null);
+
+  React.useEffect(() => {
+    if (!isTooltipShownOnOverflowOnly || !tooltipContentRef.current || !tooltipChildrenRef.current) return;
+
+    const isOverflow = tooltipChildrenRef.current.scrollWidth > tooltipChildrenRef.current.clientWidth;
+    const HIDDEN_TOOLTIP_CLASSNAME = "common-tooltip-content-hidden";
+    if (isOverflow) {
+      tooltipContentRef.current.classList.remove(HIDDEN_TOOLTIP_CLASSNAME);
+    } else {
+      tooltipContentRef.current.classList.add(HIDDEN_TOOLTIP_CLASSNAME);
+    }
+  }, [content, children]);
+
   return (
     <div className="common-tooltip">
       <span
+        ref={tooltipContentRef}
         className={classNames("common-tooltip-content", {
           "position-right": positionRight,
           "tooltip-boxed": isBoxed,
@@ -42,6 +60,7 @@ export const Tooltip = ({
         {content}
       </span>
       <span
+        ref={tooltipChildrenRef}
         className={classNames("common-tooltip-children", {
           narrow,
           medium,
