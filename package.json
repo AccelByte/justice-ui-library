@@ -1,6 +1,6 @@
 {
   "name": "justice-ui-library",
-  "version": "0.1.30",
+  "version": "0.1.31",
   "author": "AccelByte Inc",
   "license": "AccelByte License",
   "main": "./build/index.js",
@@ -36,7 +36,6 @@
     "classnames": "^2.2.5",
     "dompurify": "^2.3.3",
     "moment": "^2.29.1",
-    "node-sass": "^6.0.1",
     "randomatic": "^3.1.1",
     "react-copy-to-clipboard": "^5.0.4",
     "react-datetime": "^2.16.3",
@@ -71,6 +70,7 @@
     "rollup": "^2.56.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.1",
+    "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.38.1",
     "sass-loader": "10.1.1",
     "style-loader": "2.0.0",

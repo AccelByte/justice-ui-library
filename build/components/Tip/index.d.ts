@@ -3,8 +3,8 @@ import "./index.scss";
 import { Enum } from "../../types";
 export declare const TipType: Readonly<{
     warning: "warning";
-    error: "error";
     success: "success";
+    error: "error";
     info: "info";
 }>;
 export interface TipProps {

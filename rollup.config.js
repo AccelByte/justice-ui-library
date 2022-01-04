@@ -12,6 +12,7 @@ import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import typescript from "@rollup/plugin-typescript";
 import postcss from "rollup-plugin-postcss";
 import postcssurl from "postcss-url";
+import { terser } from "rollup-plugin-terser";
 
 import packageJson from "./package.json";
 
@@ -53,5 +54,6 @@ export default {
     json({
       compact: true,
     }),
+    terser({ format: { comments: false } }),
   ],
 };

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 AccelByte Inc. All Rights Reserved
+ * Copyright (c) 2021-2022 AccelByte Inc. All Rights Reserved
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
  */
@@ -61,7 +61,7 @@
       transform: translateX(-8%);
     }
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       width: 0;
       height: 0;
@@ -72,9 +72,12 @@
       left: 50%;
       transform: translateX(-50%);
     }
-    &.tooltip-boxed{
+    &.tooltip-boxed {
       white-space: normal;
       width: 200px;
+    }
+    &-hidden {
+      display: none !important;
     }
   }
 

@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.1.31]
+### Added
+- Optional `isTooltipShownOnOverflowOnly` prop in `Tooltip` to control whether or not the tooltip should be displayed if there is no overflow
+- Config to minimize build size by removing comments
+
 ## [0.1.30]
 ### Added
 - `success` appearance and `dataQa` prop in `Button`

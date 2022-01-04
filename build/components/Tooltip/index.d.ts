@@ -9,5 +9,6 @@ export interface TooltipProps {
     medium?: boolean;
     isBoxed?: boolean;
     onCopySuccess?: () => void;
+    isTooltipShownOnOverflowOnly?: boolean;
 }
-export declare const Tooltip: ({ content, children, noClipboard, positionRight, narrow, medium, isBoxed, onCopySuccess, }: TooltipProps) => JSX.Element;
+export declare const Tooltip: ({ content, children, noClipboard, positionRight, narrow, medium, isBoxed, isTooltipShownOnOverflowOnly, onCopySuccess, }: TooltipProps) => JSX.Element;
