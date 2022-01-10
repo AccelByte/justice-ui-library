@@ -1,0 +1,89 @@
+/*
+ *  Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+ *  This is licensed software from AccelByte Inc, for limitations
+ *  and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+:local {
+  .modalWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 520;
+    background: $base-white;
+  }
+  .progressIndicator {
+    width: 28%;
+    max-width: 400px;
+    background-color: $base-10;
+    padding: 80px 48px;
+    font-family: $font-family-primary;
+
+    .title {
+      font-weight: 500;
+      font-size: $font-size-h1;
+      line-height: 36px;
+      color: $base-100;
+    }
+
+    .wrapper {
+      margin-top: 32px;
+      > .indicatorItem {
+        display: flex;
+        margin-left: 12px;
+        margin-bottom: 20px;
+
+        > .iconIndicator {
+          border: 4px solid $base-20;
+          border-radius: 50%;
+          background-color: $base-20;
+          color: $base-50;
+          width: 28px;
+          height: 28px;
+          text-align: center;
+          font-weight: 500;
+          font-size: $font-size-h7;
+          line-height: 22px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        > label {
+          color: $base-50;
+          line-height: 28px;
+          height: 28px;
+          margin-bottom: 0px;
+          font-weight: 500;
+          font-size: $font-size-h7;
+          margin-left: 12px;
+        }
+      }
+      .visited {
+        > .iconIndicator {
+          border: 4px solid $brand-40;
+          border-radius: 50%;
+          background-color: $brand-80;
+          color: $base-white;
+        }
+        > label {
+          color: $brand-80;
+        }
+      }
+    }
+  }
+  .contentContainer {
+    width: 100%;
+    padding-top: 80px;
+    overflow-y: auto;
+    .contentWrapper {
+      width: 100%;
+      max-width: 540px;
+      margin: auto;
+    }
+  }
+}

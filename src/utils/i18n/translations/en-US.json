@@ -14,5 +14,6 @@
   "password.weak": "Weak!",
   "password.average": "Average!",
   "password.good": "Good!",
-  "password.excellent": "Excellent!"
+  "password.excellent": "Excellent!",
+  "modalPage.esc": "Esc"
 }

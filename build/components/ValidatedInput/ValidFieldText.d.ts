@@ -16,6 +16,7 @@ export interface ValidFieldTextProps extends React.InputHTMLAttributes<HTMLInput
     isRequired?: boolean;
     optionalLabel?: string;
     isLabelHidden?: boolean;
+    isInvalid?: boolean;
     type?: "number" | "text" | "password";
     min?: number;
     max?: number;

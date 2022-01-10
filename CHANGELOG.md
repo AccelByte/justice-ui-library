@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.1.33]
+### Added
+- `ModalPage` and `ProgressModalPage` component
+- Bring back `isInvalid` prop to `ValidFieldText` and `ValidFieldTextArea` to conditionally show error message
+- Optional `isFullHeight` prop in `LoadingOrErrorWrapper` to set its height to 100%
+
 ## [0.1.32]
 ### Added
 - English and Chinese translation for commonly used copies

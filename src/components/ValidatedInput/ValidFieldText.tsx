@@ -36,6 +36,7 @@ export interface ValidFieldTextProps extends React.InputHTMLAttributes<HTMLInput
   isRequired?: boolean;
   optionalLabel?: string;
   isLabelHidden?: boolean;
+  isInvalid?: boolean;
   type?: "number" | "text" | "password";
   min?: number;
   max?: number;
@@ -167,6 +168,7 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
       popoverType,
       customField,
       isRequired = true,
+      isInvalid = true,
     } = this.props;
     const { isFocus } = this.state;
 
@@ -204,7 +206,7 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
           {!!rightIcon && <div className="rightIcon">{rightIcon}</div>}
         </div>
         {customField}
-        {errMessage && <FieldErrorMessage message={errMessage} />}
+        {isInvalid && errMessage && <FieldErrorMessage message={errMessage} />}
         {helperText && <FieldHelperText message={helperText} />}
       </div>
     );

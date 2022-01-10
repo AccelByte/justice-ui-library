@@ -10,4 +10,4 @@ export interface ValidFieldTextAreaProps extends FieldTextAreaStatelessProps {
     dataQa?: string | null;
     optionalLabel?: string;
 }
-export declare const ValidFieldTextArea: ({ label, placeholder, value, errMessage, helperText, tooltip, shouldFitContainer, isRequired, minimumRows, onBlur: onBlurProps, maxLength, onChange, dataQa, optionalLabel, ...props }: ValidFieldTextAreaProps) => JSX.Element;
+export declare const ValidFieldTextArea: ({ label, placeholder, value, errMessage, helperText, tooltip, shouldFitContainer, isRequired, isInvalid, minimumRows, onBlur: onBlurProps, maxLength, onChange, dataQa, optionalLabel, ...props }: ValidFieldTextAreaProps) => JSX.Element;
