@@ -29,6 +29,7 @@ export const ValidFieldTextArea = ({
   tooltip,
   shouldFitContainer = true,
   isRequired = true,
+  isInvalid = true,
   minimumRows,
   onBlur: onBlurProps,
   maxLength,
@@ -72,10 +73,8 @@ export const ValidFieldTextArea = ({
         />
       </div>
       <div className={classNames("fieldInformationTextArea")}>
-        <div>
-          {errMessage && <FieldErrorMessage message={errMessage} />}
-          {helperText && <FieldHelperText message={helperText} />}
-        </div>
+        {isInvalid && errMessage && <FieldErrorMessage message={errMessage} />}
+        {helperText && <FieldHelperText message={helperText} />}
       </div>
     </div>
   );

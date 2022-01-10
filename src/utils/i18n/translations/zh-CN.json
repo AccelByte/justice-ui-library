@@ -14,5 +14,6 @@
   "password.weak": "弱！",
   "password.average": "一般！",
   "password.good": "好！",
-  "password.excellent": "极好！"
-  }
+  "password.excellent": "极好！",
+  "modalPage.esc": "退出"
+}
