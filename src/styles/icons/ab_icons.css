@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2021-2022 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
 @font-face {
   font-family: 'accelicons';
   src:  url('../../assets/fonts/accelicons.eot?2rgpcc');
@@ -198,4 +204,7 @@
 }
 .icon-ab-download:before {
   content: "\e939";
+}
+.icon-ab-header-input-validation:before {
+  content: "\e93a";
 }

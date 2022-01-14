@@ -17,10 +17,10 @@ export interface ProgressModalPageProps extends Omit<ModalPageProps, "isFlex"> {
 }
 
 export const ProgressModalPage = (props: React.PropsWithChildren<ProgressModalPageProps>) => {
-  const { title, step, stepLabels, onClose, className, children, isFullWidth = true } = props;
+  const { title, step, stepLabels, onClose, className, children, isFullWidth = true, dataQa } = props;
 
   return (
-    <ModalPage onClose={onClose} className={classNames(styles.modalWrapper, className)} isFlex isFullWidth={isFullWidth}>
+    <ModalPage onClose={onClose} className={classNames(styles.modalWrapper, className)} isFlex isFullWidth={isFullWidth} dataQa={dataQa}>
       <aside className={styles.progressIndicator}>
         <h1 className={styles.title}>{title}</h1>
         <div className={styles.wrapper}>

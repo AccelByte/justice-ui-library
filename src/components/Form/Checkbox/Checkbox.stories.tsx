@@ -17,10 +17,10 @@ const Template: Story<CheckboxProps> = (args) => {
   const [isChecked, setIsChecked] = React.useState<boolean>(args.isChecked);
 
   const onChange = () => setIsChecked((prevState) => !prevState);
-  
+
   React.useEffect(() => {
-    setIsChecked(args.isChecked)
-  }, [args.isChecked])
+    setIsChecked(args.isChecked);
+  }, [args.isChecked]);
 
   return <Checkbox {...args} isChecked={isChecked} onChange={onChange} />;
 };
@@ -31,4 +31,5 @@ Example.args = {
   isChecked: true,
   helperText: "Some helper text",
   tooltip: "Some tooltip",
+  isDisabled: false,
 };

@@ -68,4 +68,20 @@
       }
     }
   }
+
+  &.isDisabled {
+    .styled-checkbox__label, .fa-icon-info {
+      color: $base-40;
+    }
+    .styled-checkbox__icon {
+      background-color: $base-10;
+      cursor: not-allowed;
+    }
+    &.isChecked {
+      .styled-checkbox__icon {
+        border-color: $base-40;
+        background-color: $base-40;
+      }
+    }
+  }
 }

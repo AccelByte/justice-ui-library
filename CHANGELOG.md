@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.1.35]
+### Added
+- Show all iconography to storybook
+- `value` and `isDisabled` props in `Checkbox` component
+- `dataQa` prop in `ModalPage`
+- `children` and `customComponent` props in `DynamicTable`
+
 ## [0.1.34]
 ### Added
 - Publish the components storybook to github page
