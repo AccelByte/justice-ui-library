@@ -9,8 +9,9 @@
 @import "src/styles/variables";
 
 .inline-popover {
+  font-family: $font-family-primary;
   & > div[data-testid~="InlinePopover"] {
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
     padding: 16px;
     color: $color--text--secondary;
     margin: 8px;
@@ -30,7 +31,7 @@
       border: 6px solid transparent;
       border-color: transparent $base-white $base-white transparent;
       transform-origin: 0 0;
-      box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.10);
+      box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
     }
 
     &[data-testid*="right"] {
@@ -87,7 +88,7 @@
       padding-left: 16px;
       margin: 0;
 
-      & li+li {
+      & li + li {
         margin-top: 8px;
       }
     }

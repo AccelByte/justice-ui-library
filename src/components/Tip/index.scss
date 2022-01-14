@@ -22,6 +22,7 @@
   z-index: 604;
   display: none;
   text-align: center;
+  font-family: $font-family-primary;
 
   &.show {
     display: inline-block;

@@ -7,24 +7,29 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { InlinePopover, InlinePopoverProps } from "./InlinePopover";
-import { default as FieldText } from "@atlaskit/field-text";
 
 export default {
-  title: "Components/InlinePopover",
+  title: "Components/Popover/InlinePopover",
   component: InlinePopover,
 } as Meta;
 
-const Template: Story<InlinePopoverProps> = (args) => <InlinePopover {...args} />;
+const Template: Story<InlinePopoverProps> = (args) => {
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
+
+  const togglePopover = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  return (
+    <InlinePopover {...args} isOpen={isOpen}>
+      <span onClick={togglePopover}>Click here to toggle the popover</span>
+    </InlinePopover>
+  );
+};
 
 export const Default = Template.bind({});
 
 Default.args = {
-  isOpen: false,
-  content: "popOver example text",
+  content: "inline popover content",
   type: "dark",
-  children: (
-    <div style={{ width: "50%", margin: "80px 180px" }}>
-      <FieldText placeholder={"field placeholder"} shouldFitContainer />
-    </div>
-  ),
 };

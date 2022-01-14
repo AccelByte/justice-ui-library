@@ -8,10 +8,10 @@
 
 .pageComponent {
   overflow-y: visible;
+  font-family: $font-family-primary;
   .pageComponentTitle {
     font-style: normal;
     font-weight: 500;
-    font-family: $font-family-primary;
     font-size: 24px;
     line-height: 32px;
     padding: 16px 32px;

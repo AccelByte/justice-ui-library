@@ -7,6 +7,7 @@
 @import "src/styles/variables";
 
 .radio-group-horizontal {
+  font-family: $font-family-primary;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;

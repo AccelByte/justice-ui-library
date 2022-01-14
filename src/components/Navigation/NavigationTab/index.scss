@@ -10,6 +10,7 @@
   margin: 0 0 30px;
   height: 60px;
   background-color: $backgroundColor--primary;
+  font-family: $font-family-primary;
   > .wrapper {
     display: flex;
     padding: 0 15px;
@@ -46,6 +47,9 @@
     &.tab-active {
       color: $base-120;
       border-bottom: 3.75px solid $color--accent;
+    }
+    .fa-icon-chevron-down {
+      margin-left: 4px;
     }
   }
 }

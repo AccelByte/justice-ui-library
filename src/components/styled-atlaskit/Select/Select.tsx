@@ -9,7 +9,7 @@ import { default as AkSelect, SelectProps as AkSelectProps } from "@atlaskit/sel
 import { SelectOption } from "../../../types";
 import "./Select.scss";
 
-interface SelectProps extends Omit<AkSelectProps<SelectOption, boolean>, "onChange"> {
+export interface SelectProps extends Omit<AkSelectProps<SelectOption, boolean>, "onChange"> {
   onChange?: (option: SelectOption) => void;
 }
 

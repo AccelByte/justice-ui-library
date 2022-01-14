@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.1.34]
+### Added
+- Publish the components storybook to github page
+- Add more stories file to the components that don't have it yet
+
 ## [0.1.33]
 ### Added
 - `ModalPage` and `ProgressModalPage` component

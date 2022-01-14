@@ -14,7 +14,7 @@ import { Select } from "..";
 
 export const RELOADSTATUS = Enum("LOADING", "FAILED", "SUCCESS");
 
-interface Props {
+export interface ValidSelectProps {
   label?: string;
   placeholder: string;
   options: SelectOption[];
@@ -55,7 +55,7 @@ export const ValidSelect = ({
   selectDataQa,
   isMulti = false,
   className,
-}: Props) => (
+}: ValidSelectProps) => (
   <div className={classNames("valid-select-input", className)}>
     {!!label && <FieldLabel label={label} optionalLabel={optionalLabel} isRequired={isRequired} tooltip={tooltip} />}
     <Select

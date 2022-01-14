@@ -10,7 +10,7 @@ import { Breadcrumb, BreadcrumbProps } from ".";
 import { BreadcrumbSchema } from "../../../types";
 
 export default {
-  title: "Components/Breadcrumb",
+  title: "Components/Navigation/Breadcrumb",
   component: Breadcrumb,
 } as Meta;
 

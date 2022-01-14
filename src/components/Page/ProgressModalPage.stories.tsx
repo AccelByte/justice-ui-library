@@ -7,10 +7,10 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { ProgressModalPage, ProgressModalPageProps } from "./ProgressModalPage";
-import "../../styles/icons/ab_icons.css"
+import "../../styles/icons/ab_icons.css";
 
 export default {
-  title: "Components/ProgressModalPage",
+  title: "Components/Page/ProgressModalPage",
   component: ProgressModalPage,
 } as Meta;
 

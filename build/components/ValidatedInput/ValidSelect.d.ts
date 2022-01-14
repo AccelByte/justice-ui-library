@@ -5,7 +5,7 @@ export declare const RELOADSTATUS: Readonly<{
     LOADING: "LOADING";
     FAILED: "FAILED";
 }>;
-interface Props {
+export interface ValidSelectProps {
     label?: string;
     placeholder: string;
     options: SelectOption[];
@@ -28,5 +28,4 @@ interface Props {
     isMulti?: boolean;
     className?: string;
 }
-export declare const ValidSelect: ({ label, placeholder, options, name, value, onChange, errMessage, optionalLabel, isInvalid, isDisabled, isRequired, isClearable, tooltip, selectDataQa, isMulti, className, }: Props) => JSX.Element;
-export {};
+export declare const ValidSelect: ({ label, placeholder, options, name, value, onChange, errMessage, optionalLabel, isInvalid, isDisabled, isRequired, isClearable, tooltip, selectDataQa, isMulti, className, }: ValidSelectProps) => JSX.Element;

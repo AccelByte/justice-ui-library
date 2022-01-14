@@ -1,8 +1,7 @@
 /// <reference types="react" />
-declare type Props = {
+export interface HighlightedTextProps {
     text: string;
     highlight: string;
     className?: string;
-};
-export declare const HighlightedText: ({ text, highlight, className }: Props) => JSX.Element;
-export {};
+}
+export declare const HighlightedText: ({ text, highlight, className }: HighlightedTextProps) => JSX.Element;
