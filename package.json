@@ -1,6 +1,6 @@
 {
   "name": "justice-ui-library",
-  "version": "0.1.33",
+  "version": "0.1.34",
   "author": "AccelByte Inc",
   "license": "AccelByte License",
   "main": "./build/index.js",
@@ -9,8 +9,9 @@
     "clean": "rimraf build",
     "build": "rollup -c",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o docs-build"
   },
+  "homepage": "https://accelbyte.github.io/justice-ui-library/",
   "dependencies": {
     "@atlaskit/button": "^11.0.11",
     "@atlaskit/dropdown-menu": "^9.0.0",

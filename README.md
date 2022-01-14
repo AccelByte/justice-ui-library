@@ -35,3 +35,7 @@ You need common component for both AP and AP Extension
 - Upgrade justice-ui-library in AP
 - Refactor component import from AP to justice-ui-library
 - Remove component in AP once all the component imported from justice-ui-library
+
+## Where are the published storybooks?
+Our storybooks are puslished using github page, the homepage is:
+https://accelbyte.github.io/justice-ui-library/
