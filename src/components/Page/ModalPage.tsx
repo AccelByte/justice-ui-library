@@ -14,6 +14,7 @@ export interface ModalPageProps {
   className?: string;
   isFlex?: boolean;
   isFullWidth?: boolean;
+  dataQa?: string | null;
 }
 
 export class ModalPage extends React.Component<ModalPageProps> {
@@ -38,11 +39,11 @@ export class ModalPage extends React.Component<ModalPageProps> {
   };
 
   render() {
-    const { onClose, children, className, isFlex, isFullWidth } = this.props;
+    const { onClose, children, className, isFlex, isFullWidth, dataQa } = this.props;
     return (
       <div className={classNames("modal-page-container", className)}>
         <div className="close-modal-page-container">
-          <div className="close" tabIndex={0} aria-disabled onClick={onClose}>
+          <div className="close" tabIndex={0} aria-disabled onClick={onClose} data-qa-id={dataQa}>
             <i className="icon-ab-x" />
           </div>
           <span>{translation("modalPage.esc")}</span>

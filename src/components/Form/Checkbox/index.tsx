@@ -9,22 +9,32 @@ import { default as classNames } from "classnames";
 import "./index.scss";
 import ReactTooltip from "react-tooltip";
 import { renderToString } from "react-dom/server";
-import { FieldHelperText } from "../utility";
 
-export interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface CheckboxProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "value"> {
   label: string;
   isChecked: boolean;
+  isDisabled?: boolean;
+  value?: string | number | boolean;
   helperText?: string;
   tooltip?: string;
 }
 
-export const Checkbox = ({ label, helperText, isChecked, tooltip, ...props }: CheckboxProps) => {
+export const Checkbox = ({ label, helperText, isChecked, tooltip, isDisabled, value, ...props }: CheckboxProps) => {
   const dataTip = React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip;
   return (
-    <div className={classNames("styled-checkbox", { isChecked })}>
+    <div className={classNames("styled-checkbox", { isChecked, isDisabled })}>
       <label>
-        <input className="styled-checkbox__input" type="checkbox" checked={isChecked} {...props} />
-        <span className="styled-checkbox__icon">{isChecked && <i className="fa-icon-check" />}</span>
+        <input
+          className="styled-checkbox__input"
+          type="checkbox"
+          value={String(value)}
+          checked={isChecked}
+          disabled={isDisabled}
+          {...props}
+        />
+        <span className="styled-checkbox__icon">
+          {isChecked && <i className="fa-icon-check" />}
+        </span>
         {label && <span className="styled-checkbox__label">{label}</span>}
         {tooltip && (
           <>
