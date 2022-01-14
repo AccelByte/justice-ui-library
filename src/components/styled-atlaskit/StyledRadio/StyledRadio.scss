@@ -9,6 +9,7 @@
 .horizontal-radio-group {
   display: flex;
   flex-wrap: wrap;
+  font-family: $font-family-primary;
 
   &.vertical-radio-group {
     display: block;

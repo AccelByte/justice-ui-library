@@ -1,0 +1,31 @@
+/*
+* Copyright (c) 2020 AccelByte Inc. All Rights Reserved.
+* This is licensed software from AccelByte Inc, for limitations
+* and restrictions contact your company contract manager.
+*/
+
+@import "src/styles/variables";
+
+.emptyResultsWithIcon {
+  text-align: center;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  color: $base-80;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin: 0 auto;
+  max-width: 531px;
+  &.taller{
+    padding-top: 125px;
+    padding-bottom: 125px;
+  }
+}
+.emptyResultsWithIconTitle {
+  line-height: 32px;
+  font-weight: 500;
+  font-size: $font-size-h3;
+}
+.emptyResultsWithIconDescription {
+  font-size: $font-size-h6;
+  margin-bottom: 16px;
+}

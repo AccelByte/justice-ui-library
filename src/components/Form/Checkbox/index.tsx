@@ -9,15 +9,16 @@ import { default as classNames } from "classnames";
 import "./index.scss";
 import ReactTooltip from "react-tooltip";
 import { renderToString } from "react-dom/server";
+import { FieldHelperText } from "../utility";
 
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
   isChecked: boolean;
   helperText?: string;
   tooltip?: string;
 }
 
-export const Checkbox = ({ label, helperText, isChecked, tooltip, ...props }: Props) => {
+export const Checkbox = ({ label, helperText, isChecked, tooltip, ...props }: CheckboxProps) => {
   const dataTip = React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip;
   return (
     <div className={classNames("styled-checkbox", { isChecked })}>
@@ -32,7 +33,7 @@ export const Checkbox = ({ label, helperText, isChecked, tooltip, ...props }: Pr
           </>
         )}
       </label>
-      <span className="field-helper-text">{helperText}</span>
+      {helperText && <span className="field-helper-text">{helperText}</span>}
     </div>
   );
 };

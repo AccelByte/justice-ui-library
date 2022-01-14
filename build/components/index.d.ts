@@ -42,7 +42,7 @@ export * from "./ValidatedInput/ValidMultiSelect";
 export * from "./ValidatedInput/ValidSelect";
 export * from "./ValidatedInput/ValidDynamicText";
 export * from "./ValidatedInput/ValidFieldPassword";
-export * from "./EmptyResultsWithIcon/EmptyResultsWithIcon";
+export * from "./EmptyResultsWithIcon";
 export * from "./Tooltip";
 export * from "./Accordion";
 export * from "./Banner";

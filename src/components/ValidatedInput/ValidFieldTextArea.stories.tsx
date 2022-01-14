@@ -13,7 +13,21 @@ export default {
   component: ValidFieldTextArea,
 } as Meta;
 
-export const Example: Story<ValidFieldTextAreaProps> = (args) => <ValidFieldTextArea {...args} />;
+export const Example: Story<ValidFieldTextAreaProps> = (args) => {
+  const [exampleValue, setExampleValue] = React.useState<string>(args.value);
+
+  const handleOnChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const { value } = event.target;
+    setExampleValue(value);
+  };
+
+  React.useEffect(() => {
+    setExampleValue(args.value);
+  }, [args.value]);
+
+  // @ts-ignore
+  return <ValidFieldTextArea {...args} value={exampleValue} onChange={handleOnChange} />
+};
 
 Example.args = {
   placeholder: "Field Placeholder",

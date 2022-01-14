@@ -6,13 +6,13 @@
 
 import * as React from "react";
 
-type Props = {
+export interface HighlightedTextProps {
   text: string;
   highlight: string;
   className?: string;
-};
+}
 
-export const HighlightedText = ({ text, highlight, className }: Props) => {
+export const HighlightedText = ({ text, highlight, className }: HighlightedTextProps) => {
   const escapeHighlight = highlight.replace(/[-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
   const findInText = text.split(new RegExp(`(${escapeHighlight})`, "gi"));
   return (

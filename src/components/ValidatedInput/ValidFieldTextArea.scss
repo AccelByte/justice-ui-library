@@ -9,6 +9,7 @@
 @import "src/styles/variables";
 
 .valid-field-text-area {
+  font-family: $font-family-primary;
   [class|="Content__ChildWrapper"] > [class|="Content"] {
     border: 1px solid $base-40;
     & > textarea {

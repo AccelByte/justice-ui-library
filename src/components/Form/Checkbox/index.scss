@@ -7,12 +7,14 @@
 @import "src/styles/variables";
 
 .styled-checkbox {
+  font-family: $font-family-primary;
   padding: 20px 0 10px 32px;
   position: relative;
   label {
     display: flex;
     align-items: center;
     padding: 0;
+    font-size: $font-size-h6;
     > i {
       display: block;
       margin-left: 8px;
@@ -20,6 +22,7 @@
   }
   .field-helper-text {
     margin-top: 8px;
+    margin-left: 4px;
   }
   &__input {
     width: 0;
@@ -41,6 +44,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     > i {
       font-size: $font-size-h5;
       display: block;
@@ -49,6 +53,8 @@
   &__label {
     line-height: 20px;
     display: block;
+    color: $base-120;
+    margin-left: 4px;
   }
 
   &.isChecked {
