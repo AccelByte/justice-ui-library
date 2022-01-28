@@ -23,9 +23,18 @@
       &:not(:last-child) {
         margin-bottom: 16px;
       }
+      [class|="Content__ChildWrapper"] > [class|="Content"] {
+        border: 1px solid $base-40;
+        &:hover {
+          border-color: $base-80;
+        }
+      }
       &--focused {
         [class|="Content__ChildWrapper"] > [class|="Content"] {
           border: 2px solid $color--accent;
+          &:hover {
+            border-color: $color--accent;
+          }
         }
       }
       > div {

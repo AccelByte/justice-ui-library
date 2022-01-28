@@ -45,6 +45,9 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    &:hover {
+      border-color: $base-80;
+    }
     > i {
       font-size: $font-size-h5;
       display: block;
@@ -62,6 +65,14 @@
       &__icon {
         border-color: $brand-80;
         background-color: $brand-80;
+        &:hover {
+          border-color: $brand-60;
+          background-color: $brand-60;
+        }
+        &:active {
+          border-color: $brand-100;
+          background-color: $brand-100;
+        }
         > i {
           color: $base-white;
         }
@@ -70,12 +81,16 @@
   }
 
   &.isDisabled {
-    .styled-checkbox__label, .fa-icon-info {
+    .styled-checkbox__label,
+    .fa-icon-info {
       color: $base-40;
     }
     .styled-checkbox__icon {
       background-color: $base-10;
       cursor: not-allowed;
+      &:hover {
+        border-color: $base-40;
+      }
     }
     &.isChecked {
       .styled-checkbox__icon {

@@ -16,6 +16,9 @@
     .radio-item {
       display: block;
     }
+    .radio-item:not(:last-child) {
+      margin-bottom: 10px;
+    }
   }
 
   .radio-item {
@@ -39,6 +42,22 @@
       .radio-label {
         color: $radio-color--disabled;
       }
+      .radio-icon {
+        &:hover {
+          border-color: $base-40;
+        }
+      }
+      &.selected {
+        .radio-icon {
+          border-color: $base-40;
+          &:hover {
+            border-color: $base-40;
+          }
+          &:active {
+            border-color: $base-40;
+          }
+        }
+      }
     }
     .radio-icon {
       display: inline-block;
@@ -53,6 +72,12 @@
     &.selected {
       .radio-icon {
         border: 5px solid $radio-borderColor--selected;
+        &:hover {
+          border-color: $brand-60;
+        }
+        &:active {
+          border-color: $brand-100;
+        }
         &::before {
           display: none !important;
         }

@@ -10,7 +10,7 @@
   display: flex;
   flex-flow: column;
 
-  >div:hover {
+  > div:hover {
     background-color: $base-white !important;
   }
   .radio-container {
@@ -40,6 +40,22 @@
         .radio-label {
           color: $radio-color--disabled;
         }
+        .radio-icon {
+          &:hover {
+            border-color: $base-40;
+          }
+        }
+        &.selected {
+          .radio-icon {
+            border-color: $base-40;
+            &:hover {
+              border-color: $base-40;
+            }
+            &:active {
+              border-color: $base-40;
+            }
+          }
+        }
       }
       .radio-icon {
         display: inline-block;
@@ -54,6 +70,12 @@
       &.selected {
         .radio-icon {
           border: 5px solid $radio-borderColor--selected;
+          &:hover {
+            border-color: $brand-60;
+          }
+          &:active {
+            border-color: $brand-100;
+          }
           &::before {
             display: none !important;
           }

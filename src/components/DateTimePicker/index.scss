@@ -15,6 +15,7 @@
   height: 40px;
   &:hover {
     background-color: $input-backgroundColor--hovered;
+    border-color: $base-80;
   }
   &:focus-within {
     border: 2px solid $input-borderColor--active;
@@ -43,12 +44,13 @@
     padding: 0 10px;
     color: $base-40;
   }
-  &.isDisabled{
+  &.isDisabled {
     background-color: $base-10;
     input {
       pointer-events: none;
     }
-    &:hover, input:hover {
+    &:hover,
+    input:hover {
       cursor: not-allowed;
     }
   }
@@ -59,5 +61,17 @@
   .rdtPicker {
     font-family: $font-family-primary;
     font-size: $font-size-h6;
+    .rdtDay,
+    .rdtMonth,
+    .rdtYear,
+    .rdtCounter .rdtBtn {
+      border-radius: 4px;
+    }
+    .rdtActive {
+      background-color: $brand-80;
+      &:hover {
+        background-color: $brand-60;
+      }
+    }
   }
 }

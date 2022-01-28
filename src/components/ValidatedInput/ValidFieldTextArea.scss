@@ -15,6 +15,9 @@
     & > textarea {
       min-height: 100px;
     }
+    &:hover {
+      border: 1px solid $base-80;
+    }
   }
   [class|="ValidationElement__WarningIcon"] {
     display: none;
@@ -25,7 +28,8 @@
     }
   }
 
-  .fieldInformationTextArea, .fieldHeader {
+  .fieldInformationTextArea,
+  .fieldHeader {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
