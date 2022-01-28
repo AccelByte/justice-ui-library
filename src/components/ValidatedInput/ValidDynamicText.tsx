@@ -23,6 +23,7 @@ export interface ValidDynamicTextProps {
   errMessage?: string;
   maxField: number;
   addText?: string;
+  dataQa?: string | null;
 }
 
 export const ValidDynamicText = ({
@@ -36,6 +37,7 @@ export const ValidDynamicText = ({
   errMessage,
   maxField,
   addText = translation("common.add"),
+  dataQa = null,
 }: ValidDynamicTextProps) => {
   const [isFocused, setIsFocused] = React.useState<number | null>(null);
 
@@ -58,7 +60,7 @@ export const ValidDynamicText = ({
     <div className="valid-dynamic-text">
       <FieldLabel label={label} />
 
-      <div className="valid-dynamic-text__input">
+      <div className="valid-dynamic-text__input" data-qa-id={dataQa}>
         {values.map((value, index) => (
           <div
             key={index}

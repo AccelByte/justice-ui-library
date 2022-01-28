@@ -9,13 +9,18 @@ import { default as FieldText, FieldTextProps } from "@atlaskit/field-text";
 import "./TextField.scss";
 import classNames from "classnames";
 
-export interface TextFieldProps extends FieldTextProps {}
+export interface TextFieldProps extends FieldTextProps {
+  dataQa?: string | null;
+}
 
 export const TextField = ({ ...props }: TextFieldProps) => {
   const [isFocused, setIsFocused] = React.useState(false);
 
   return (
-    <div className={classNames("styled-atlaskit-textfield", { "styled-atlaskit-textfield--isFocused": isFocused })}>
+    <div
+      className={classNames("styled-atlaskit-textfield", { "styled-atlaskit-textfield--isFocused": isFocused })}
+      data-qa-id={props.dataQa}
+    >
       <FieldText onFocus={() => setIsFocused(true)} onBlur={() => setIsFocused(false)} {...props} />
     </div>
   );

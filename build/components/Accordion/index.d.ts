@@ -4,5 +4,6 @@ export interface AccordionProps {
     title: React.ReactNode;
     children: React.ReactChild;
     className?: string;
+    dataQa?: string | null;
 }
-export declare const Accordion: ({ title, className, children }: AccordionProps) => JSX.Element;
+export declare const Accordion: ({ title, className, children, dataQa }: AccordionProps) => JSX.Element;

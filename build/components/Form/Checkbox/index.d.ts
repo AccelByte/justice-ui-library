@@ -7,5 +7,6 @@ export interface CheckboxProps extends Omit<React.InputHTMLAttributes<HTMLInputE
     value?: string | number | boolean;
     helperText?: string;
     tooltip?: string;
+    dataQa?: string | null;
 }
 export declare const Checkbox: ({ label, helperText, isChecked, tooltip, isDisabled, value, ...props }: CheckboxProps) => JSX.Element;

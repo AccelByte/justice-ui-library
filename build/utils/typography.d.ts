@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { Enum } from "../../types";
+import { Enum } from "../types";
 export declare const EllipsisCropPosition: Readonly<{
     START: "START";
     MIDDLE: "MIDDLE";

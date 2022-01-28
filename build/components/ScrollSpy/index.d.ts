@@ -3,6 +3,7 @@ import "./index.scss";
 export interface SpyItem {
     elementId: string;
     text: string;
+    dataQa?: string | null;
 }
 export interface ScrollSpyProps {
     items: SpyItem[];

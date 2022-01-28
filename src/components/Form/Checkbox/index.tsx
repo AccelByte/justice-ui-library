@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * Copyright (c) 2021-2022 AccelByte Inc. All Rights Reserved.
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
  */
@@ -17,12 +17,13 @@ export interface CheckboxProps extends Omit<React.InputHTMLAttributes<HTMLInputE
   value?: string | number | boolean;
   helperText?: string;
   tooltip?: string;
+  dataQa?: string | null;
 }
 
 export const Checkbox = ({ label, helperText, isChecked, tooltip, isDisabled, value, ...props }: CheckboxProps) => {
   const dataTip = React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip;
   return (
-    <div className={classNames("styled-checkbox", { isChecked, isDisabled })}>
+    <div className={classNames("styled-checkbox", { isChecked, isDisabled })} data-qa-id={props.dataQa}>
       <label>
         <input
           className="styled-checkbox__input"
@@ -32,9 +33,7 @@ export const Checkbox = ({ label, helperText, isChecked, tooltip, isDisabled, va
           disabled={isDisabled}
           {...props}
         />
-        <span className="styled-checkbox__icon">
-          {isChecked && <i className="fa-icon-check" />}
-        </span>
+        <span className="styled-checkbox__icon">{isChecked && <i className="fa-icon-check" />}</span>
         {label && <span className="styled-checkbox__label">{label}</span>}
         {tooltip && (
           <>

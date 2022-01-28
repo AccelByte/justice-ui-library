@@ -4,5 +4,6 @@ import "./DynamicTable.scss";
 export interface DynamicTableProps extends PropsWithChildren<StatelessProps> {
     className?: string;
     customContent?: React.ReactNode;
+    dataQa?: string | null;
 }
 export declare const DynamicTable: (props: DynamicTableProps) => JSX.Element;

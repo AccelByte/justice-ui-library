@@ -6,7 +6,7 @@
 
 import classNames from "classnames";
 import React from "react";
-import { addLineBreaks } from "../Typography/typography";
+import { addLineBreaks } from "../../utils";
 import "./index.scss";
 
 export interface NoResultTipProps {

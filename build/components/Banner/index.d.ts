@@ -11,5 +11,6 @@ export interface BannerProps {
     appearance: Enum<typeof APPEARANCE_TYPE>;
     message: React.ReactNode;
     dismissBanner?: (event: React.MouseEvent) => void;
+    dataQa?: string | null;
 }
-export declare const Banner: ({ appearance, message, dismissBanner }: BannerProps) => JSX.Element;
+export declare const Banner: ({ appearance, message, dismissBanner, dataQa }: BannerProps) => JSX.Element;

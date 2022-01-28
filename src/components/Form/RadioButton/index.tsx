@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * Copyright (c) 2021-2022 AccelByte Inc. All Rights Reserved.
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
  */
@@ -38,6 +38,7 @@ export interface RadioButtonProps {
   isDisabled?: boolean;
   isHorizontal?: boolean;
   className?: string;
+  dataQa?: string | null;
 }
 
 export const RadioButton = ({
@@ -47,6 +48,7 @@ export const RadioButton = ({
   isDisabled = false,
   isHorizontal = true,
   className,
+  dataQa,
 }: RadioButtonProps) => {
   return (
     <div
@@ -54,6 +56,7 @@ export const RadioButton = ({
         "radio-group-horizontal": isHorizontal,
         "radio-group-vertical": !isHorizontal,
       })}
+      data-qa-id={dataQa}
     >
       {options.map((item, index) => (
         <RadioButtonItem

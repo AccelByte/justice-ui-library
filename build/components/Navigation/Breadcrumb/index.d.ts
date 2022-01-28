@@ -10,6 +10,7 @@ export interface BreadcrumbProps {
     containerSize?: Enum<typeof CONTAINER_SIZE>;
     className?: string;
     renderLink?: (item: BreadcrumbSchema, useBackButton: boolean) => JSX.Element;
+    dataQa?: string | null;
 }
 export declare class Breadcrumb extends React.Component<BreadcrumbProps> {
     render(): JSX.Element;
