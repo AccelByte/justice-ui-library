@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * Copyright (c) 2021-2022 AccelByte Inc. All Rights Reserved.
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
  */
@@ -11,6 +11,7 @@ export interface InlineCheckboxFieldProps extends React.InputHTMLAttributes<HTML
   checked: boolean;
   isDisabled?: boolean;
   onClick?: () => void;
+  dataQa?: string | null;
 }
 
 export const InlineCheckboxField = ({
@@ -18,10 +19,11 @@ export const InlineCheckboxField = ({
   onClick,
   isDisabled,
   readOnly,
+  dataQa,
   ...checkboxProps
 }: InlineCheckboxFieldProps) => {
   return (
-    <div className="checkbox-container">
+    <div className="checkbox-container" data-qa-id={dataQa}>
       <input {...checkboxProps} type="checkbox" checked={checked} disabled={isDisabled} readOnly={readOnly} />
       <div className="checkmark" onClick={!isDisabled ? onClick : undefined} />
     </div>

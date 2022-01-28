@@ -11,5 +11,6 @@ export interface ValidDynamicTextProps {
     errMessage?: string;
     maxField: number;
     addText?: string;
+    dataQa?: string | null;
 }
-export declare const ValidDynamicText: ({ placeholder, name, values, onChange, isDisabled, type, label, errMessage, maxField, addText, }: ValidDynamicTextProps) => JSX.Element;
+export declare const ValidDynamicText: ({ placeholder, name, values, onChange, isDisabled, type, label, errMessage, maxField, addText, dataQa, }: ValidDynamicTextProps) => JSX.Element;

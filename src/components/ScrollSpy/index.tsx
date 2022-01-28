@@ -15,6 +15,7 @@ const DEFAULT_OFFSET = 100;
 export interface SpyItem {
   elementId: string;
   text: string;
+  dataQa?: string | null;
 }
 
 export interface ScrollSpyProps {
@@ -87,6 +88,7 @@ export class ScrollSpy extends React.Component<ScrollSpyProps, State> {
             className={classNames({ active: activeSessionId === item.elementId })}
             key={`${item.elementId}-${index}`}
             onClick={() => this.scrollTo(item.elementId)}
+            data-qa-id={item.dataQa}
           >
             {item.text}
           </li>

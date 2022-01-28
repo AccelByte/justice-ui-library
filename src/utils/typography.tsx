@@ -1,13 +1,11 @@
 /*
- *
- *  * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
- *  * This is licensed software from AccelByte Inc, for limitations
- *  * and restrictions contact your company contract manager.
- *
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
  */
 
 import * as React from "react";
-import { Enum } from "../../types";
+import { Enum } from "../types";
 
 export const EllipsisCropPosition = Enum("START", "MIDDLE", "END");
 interface EllipsisConfig {

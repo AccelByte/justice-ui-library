@@ -9,7 +9,7 @@ import { default as classNames } from "classnames";
 import "./StyledRadioTabVertical.scss";
 import { FieldErrorMessage, FieldLabel } from "../../Form/utility";
 import { RadioOption } from "../../../types";
-import { addLineBreaks } from "../../Typography/typography";
+import { addLineBreaks } from "../../../utils";
 
 export interface RadioOptionWithRenderAction<T = string> extends RadioOption<T> {
   render?: () => React.ReactNode;
@@ -43,9 +43,7 @@ export const StyledRadioTabVertical = ({
 }: Props) => {
   return (
     <div className={className}>
-      {!!label && (
-        <FieldLabel label={label} tooltip={tooltip && tooltip} />
-      )}
+      {!!label && <FieldLabel label={label} tooltip={tooltip && tooltip} />}
       <div className={classNames(["styled-radio-tab-vertical"])}>
         {options.map((item) => (
           <div key={`radio-tab-vertical-${item.value}`} className={"radio-container"}>

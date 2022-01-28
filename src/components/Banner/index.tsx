@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * Copyright (c) 2021-2022 AccelByte Inc. All Rights Reserved.
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
  */
@@ -15,9 +15,10 @@ export interface BannerProps {
   appearance: Enum<typeof APPEARANCE_TYPE>;
   message: React.ReactNode;
   dismissBanner?: (event: React.MouseEvent) => void;
+  dataQa?: string | null;
 }
 
-export const Banner = ({ appearance = APPEARANCE_TYPE.success, message = "", dismissBanner }: BannerProps) => {
+export const Banner = ({ appearance = APPEARANCE_TYPE.success, message = "", dismissBanner, dataQa }: BannerProps) => {
   return (
     <div
       className={classNames("banner-notification", {
@@ -26,6 +27,7 @@ export const Banner = ({ appearance = APPEARANCE_TYPE.success, message = "", dis
         info: appearance === APPEARANCE_TYPE.info,
         warning: appearance === APPEARANCE_TYPE.warning,
       })}
+      data-qa-id={dataQa}
     >
       <span
         className={classNames("notification-message", {

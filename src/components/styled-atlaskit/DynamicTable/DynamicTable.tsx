@@ -12,13 +12,14 @@ import "./DynamicTable.scss";
 
 export interface DynamicTableProps extends PropsWithChildren<StatelessProps> {
   className?: string;
-  customContent?: React.ReactNode
+  customContent?: React.ReactNode;
+  dataQa?: string | null;
 }
 
 export const DynamicTable = (props: DynamicTableProps) => {
-  const { className, children, customContent = null } = props
+  const { className, children, customContent = null, dataQa = null } = props;
   return (
-    <div className={classNames("styled-atlaskit-table", className)}>
+    <div className={classNames("styled-atlaskit-table", className)} data-qa-id={dataQa}>
       {customContent}
       <AkDynamicTable {...props} />
       {children}

@@ -9,7 +9,7 @@ import { default as classNames } from "classnames";
 import "./StyledRadio.scss";
 import { RadioOption } from "../../../types";
 import { FieldErrorMessage, FieldLabel } from "../../Form/utility";
-import { addLineBreaks } from "../../Typography/typography";
+import { addLineBreaks } from "../../../utils";
 import { LineBreakToList } from "../..";
 
 export interface StyledRadioProps {
@@ -46,7 +46,10 @@ export const StyledRadio = ({
   return (
     <div className={className}>
       {!!label && <FieldLabel label={label} isRequired={isRequired} tooltip={tooltip} />}
-      <div data-qa-id={dataQa} className={classNames("horizontal-radio-group", { "vertical-radio-group": !isHorizontal })}>
+      <div
+        data-qa-id={dataQa}
+        className={classNames("horizontal-radio-group", { "vertical-radio-group": !isHorizontal })}
+      >
         {options.map((item) => (
           <div
             className={classNames("radio-item", {

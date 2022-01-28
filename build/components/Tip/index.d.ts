@@ -16,5 +16,6 @@ export interface TipProps {
     onClose?: (event: React.MouseEvent) => void;
     style?: React.CSSProperties;
     className?: string;
+    dataQa?: string | null;
 }
 export declare const Tip: React.SFC<TipProps>;

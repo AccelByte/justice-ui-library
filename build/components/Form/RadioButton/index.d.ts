@@ -14,5 +14,6 @@ export interface RadioButtonProps {
     isDisabled?: boolean;
     isHorizontal?: boolean;
     className?: string;
+    dataQa?: string | null;
 }
-export declare const RadioButton: ({ options, selectedRadio, onChange, isDisabled, isHorizontal, className, }: RadioButtonProps) => JSX.Element;
+export declare const RadioButton: ({ options, selectedRadio, onChange, isDisabled, isHorizontal, className, dataQa, }: RadioButtonProps) => JSX.Element;

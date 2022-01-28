@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * Copyright (c) 2021-2022 AccelByte Inc. All Rights Reserved.
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
  */
@@ -18,6 +18,7 @@ export interface BreadcrumbProps {
   containerSize?: Enum<typeof CONTAINER_SIZE>;
   className?: string;
   renderLink?: (item: BreadcrumbSchema, useBackButton: boolean) => JSX.Element;
+  dataQa?: string | null;
 }
 
 export class Breadcrumb extends React.Component<BreadcrumbProps> {
@@ -29,6 +30,7 @@ export class Breadcrumb extends React.Component<BreadcrumbProps> {
       className,
       pageTitleBadge,
       renderLink,
+      dataQa,
     } = this.props;
     const lastItemKey = breadcrumbLists.length - 1;
     const useBackButton = breadcrumbLists.length === 1;
@@ -41,6 +43,7 @@ export class Breadcrumb extends React.Component<BreadcrumbProps> {
           containerSize === CONTAINER_SIZE.FULLWIDTH && "breadcrumb-nav-container--full",
           className
         )}
+        data-qa-id={dataQa}
       >
         <div className="wrapper">
           <ul className="breadcrumb-nav">

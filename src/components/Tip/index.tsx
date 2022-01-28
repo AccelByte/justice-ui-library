@@ -20,6 +20,7 @@ export interface TipProps {
   onClose?: (event: React.MouseEvent) => void;
   style?: React.CSSProperties;
   className?: string;
+  dataQa?: string | null;
 }
 
 export const Tip: React.SFC<TipProps> = ({
@@ -31,10 +32,12 @@ export const Tip: React.SFC<TipProps> = ({
   onClose,
   style,
   className,
+  dataQa = null,
 }: TipProps) => {
   return (
     <div
       style={style}
+      data-qa-id={dataQa}
       className={classNames("tip-notification", className, {
         show,
         relative: isPositionRelative,

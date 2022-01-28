@@ -12,7 +12,7 @@ export interface FieldLabelProps {
     tooltipRef?: React.RefObject<HTMLElement>;
     isRequired?: boolean;
 }
-export declare const FieldLabel: ({ label, children, isRequired, optionalLabel, tooltip, tooltipRef }: FieldLabelProps) => JSX.Element;
+export declare const FieldLabel: ({ label, children, isRequired, optionalLabel, tooltip, tooltipRef, }: FieldLabelProps) => JSX.Element;
 export interface FieldCounterProps {
     value: string | null;
     maxLength: number;

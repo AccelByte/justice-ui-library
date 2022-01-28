@@ -6,7 +6,7 @@
 
 import React from "react";
 import "./index.scss";
-import { addLineBreaks } from "../../Typography/typography";
+import { addLineBreaks } from "../../../utils";
 import ReactTooltip from "react-tooltip";
 import classNames from "classnames";
 import { renderToString } from "react-dom/server";
@@ -34,7 +34,7 @@ export const FieldLabel = ({
   isRequired = true,
   optionalLabel = ` ${translation("common.optionalFieldLabel")}`,
   tooltip,
-  tooltipRef
+  tooltipRef,
 }: FieldLabelProps) => (
   <label className={classNames("field-label", { withTooltip: tooltip })}>
     <div>
