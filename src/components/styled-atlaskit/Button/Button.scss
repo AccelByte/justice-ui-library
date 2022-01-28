@@ -6,7 +6,7 @@
 
 @import "src/styles/variables";
 .styled-atlaskit-button-container {
-  display: inline-flex
+  display: inline-flex;
 }
 button.styled-atlaskit-button {
   border-radius: $border-radius;
@@ -106,7 +106,7 @@ button.styled-atlaskit-button {
   &.success:not(.outline) {
     color: $color--text--tertiary !important;
     background-color: $button-backgroundColor--green;
-    &:hover {
+    &:not(:disabled):hover {
       color: $color--text--tertiary !important;
       background-color: $color--success--primary;
     }
