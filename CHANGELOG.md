@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.1.36]
+### Added
+- `dataQa` prop in components that trigger event (click, change, etc) and previously don't have the prop yet
+
+### Fixed
+- Update active and hover state in some input components and dropdown
+- Revamp background and text color of `Badge`
+- Fix `NavigationTab` won't update its UI when the active tab changes if `isVertical` is `true`
+- Fix `Button` background color is not greyed out on hover if `appearance` is `success`
+
+### Refactored
+- Change `DropDownMenu` to `DropdownMenu`
+
 ## [0.1.35]
 ### Added
 - Show all iconography to storybook

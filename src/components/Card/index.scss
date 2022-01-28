@@ -320,11 +320,9 @@
         margin-top: 4px;
       }
       .styled-atlaskit-button {
-        button {
-          height: 30px;
-          span {
-            font-size: $font-size-h6;
-          }
+        height: 30px;
+        span {
+          font-size: $font-size-h6;
         }
       }
       .styled-atlaskit-button-enable {
