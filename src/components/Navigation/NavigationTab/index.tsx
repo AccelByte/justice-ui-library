@@ -86,7 +86,7 @@ export const NavigationTab = (props: NavigationTabProps) => {
 
   const unhideActiveHiddenTab = (maxShown: number = maxShownTabs) => {
     setTimeout(() => {
-      const updatedConfig = config;
+      const updatedConfig = [...config];
       const activeIndex = updatedConfig.findIndex((configItem) => configItem.isActive);
 
       if (activeIndex >= maxShown && maxShown > 0) {
@@ -108,20 +108,24 @@ export const NavigationTab = (props: NavigationTabProps) => {
   };
 
   React.useEffect(() => {
-    if (!isVertical) {
-      updateNavigationWidthWithInterval();
-      window.addEventListener("resize", updateNavigationWidth);
-    }
+    if (isVertical) return;
+
+    updateNavigationWidthWithInterval();
+    window.addEventListener("resize", updateNavigationWidth);
+
     return () => window.removeEventListener("resize", updateNavigationWidth);
   }, []);
 
   React.useEffect(() => {
-    if (!isVertical) {
-      unhideActiveHiddenTab();
+    if (isVertical) {
+      setShownTabs(config);
+      return;
     }
+    unhideActiveHiddenTab();
   }, [config]);
 
   React.useEffect(() => {
+    if (isVertical) return;
     if (!!navigationWidth && !accumulativeNavWidth.length) {
       calculateAccumulativeNavigationWidth();
     }
