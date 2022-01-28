@@ -6,7 +6,8 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import DropdownMenu, { DropdownMenuStatefulProps, DropdownItemGroup, DropdownItem } from "@atlaskit/dropdown-menu";
+import { DropdownMenu, DropdownItemGroup, DropdownItem } from ".";
+import { DropdownMenuStatefulProps } from "@atlaskit/dropdown-menu";
 
 export default {
   title: "Components/Dropdown",
