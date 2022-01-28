@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * Copyright (c) 2021-2022 AccelByte Inc. All Rights Reserved.
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
  */
@@ -14,7 +14,7 @@ export * from "./styled-atlaskit/Tag/TagList";
 export * from "./styled-atlaskit/TextField/TextField";
 export * from "./styled-atlaskit/StyledRadioTabVertical/StyledRadioTabVertical";
 export * from "./styled-atlaskit/StyledRadio/StyledRadio";
-export { default as DropDownMenu, DropdownItem, DropdownItemGroup } from "@atlaskit/dropdown-menu";
+export { default as DropdownMenu, DropdownItem, DropdownItemGroup } from "@atlaskit/dropdown-menu";
 export * from "./Badge";
 export * from "./Card";
 export * from "./Card/utility";
