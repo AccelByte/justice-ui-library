@@ -7,6 +7,9 @@
 
  div[class|="Droplist__Content"]{
    span[role="menuitem"]{
+    &:not([aria-disabled="true"]):hover{
+      background-color: $base-10;
+    }
      &:not([aria-disabled="true"]):active{
        background-color: $base-20;
      }

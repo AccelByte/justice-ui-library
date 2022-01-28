@@ -8,7 +8,7 @@ export * from "./styled-atlaskit/Tag/TagList";
 export * from "./styled-atlaskit/TextField/TextField";
 export * from "./styled-atlaskit/StyledRadioTabVertical/StyledRadioTabVertical";
 export * from "./styled-atlaskit/StyledRadio/StyledRadio";
-export { default as DropDownMenu, DropdownItem, DropdownItemGroup } from "@atlaskit/dropdown-menu";
+export * from "./styled-atlaskit/Dropdown";
 export * from "./Badge";
 export * from "./Card";
 export * from "./Card/utility";

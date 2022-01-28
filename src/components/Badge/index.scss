@@ -7,25 +7,26 @@
 @import "../../styles/variables";
 
 .badge-container {
-  padding: 2px 5px;
+  padding: 2px 6px;
   color: $base-100;
   border-radius: 2px;
-  font-size: 10px;
+  font-size: $font-size-h9;
   font-weight: 500;
+  font-family: $font-family-primary;
   letter-spacing: 0.02em;
   &.basic{
     color: $base-white;
     &.error{
-      background-color: $semantic-red-90;
+      background-color: $semantic-red-80;
     }
     &.warning{
-      background-color: $semantic-yellow-100;
+      background-color: $semantic-yellow-80;
     }
     &.success{
-      background-color: $semantic-green-100;
+      background-color: $semantic-green-80;
     }
     &.info{
-      background-color: $semantic-blue-100;
+      background-color: $semantic-blue-80;
     }
     &.inactive{
       background-color: $base-80;
@@ -36,19 +37,19 @@
   }
   &.light{
     &.error{
-      color: $semantic-red-90;
+      color: $semantic-red-80;
       background-color: $semantic-red-10;
     }
     &.warning{
-      color:$base-120;
+      color:$semantic-yellow-80;
       background-color: $semantic-yellow-10;
     }
     &.success{
-      color: $semantic-green-100;
+      color: $semantic-green-80;
       background-color: $semantic-green-10;
     }
     &.info{
-      color: $semantic-blue-100;
+      color: $semantic-blue-80;
       background-color: $semantic-blue-10;
     }
     &.inactive{
@@ -63,21 +64,22 @@
   &.outline{
     border-width: 1px;
     border-style: solid;
+    border-radius: 4px;
     &.error{
-      color: $semantic-red-90;
-      border-color: $semantic-red-10;
+      color: $semantic-red-80;
+      border-color: $semantic-red-80;
     }
     &.warning{
-      color:$semantic-yellow-100;
-      border-color: $semantic-yellow-100;
+      color:$semantic-yellow-80;
+      border-color: $semantic-yellow-80;
     }
     &.success{
-      color: $semantic-green-100;
-      border-color: $semantic-green-100;
+      color: $semantic-green-80;
+      border-color: $semantic-green-80;
     }
     &.info{
-      color: $semantic-blue-100;
-      border-color: $semantic-blue-100;
+      color: $semantic-blue-80;
+      border-color: $semantic-blue-80;
     }
     &.inactive{
       color: $base-80;
