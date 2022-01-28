@@ -16,12 +16,27 @@ export default {
 
 const ExampleItemsEnum = Enum("First", "Second", "Third");
 
-const Template: Story<ScrollSpyProps> = (args) => <ScrollSpy {...args} />;
+const Template: Story<ScrollSpyProps> = (args) => (
+  <div style={{ display: "flex", flexDirection: "row" }}>
+    <ScrollSpy {...args} />
+    <main style={{ marginLeft: 16, width: "70%", maxWidth: 1000, fontFamily: "Roboto" }}>
+      <section id="first" style={{ height: 500, marginBottom: 20, backgroundColor: "#eff5ff", padding: 20 }}>
+        First section
+      </section>
+      <section id="second" style={{ height: 500, marginBottom: 20, backgroundColor: "#8dbaff", padding: 20 }}>
+        Second section
+      </section>
+      <section id="third" style={{ height: 500, marginBottom: 20, backgroundColor: "#4c93ff", padding: 20 }}>
+        Third section
+      </section>
+    </main>
+  </div>
+);
 
 export const Default = Template.bind({});
 Default.args = {
   items: Object.keys(ExampleItemsEnum).map((field) => ({
-    elementId: field,
+    elementId: field.toLowerCase(),
     text: field,
   })),
   className: "example-classname",
