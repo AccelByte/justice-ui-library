@@ -17,5 +17,5 @@ interface Props {
     dataQa?: string | null;
     className?: string;
 }
-export declare const StyledRadioTabVertical: ({ label, options, selectedRadio, onChange, errMessage, isInvalid, disabled, isRequired, tooltip, className, }: Props) => JSX.Element;
+export declare const StyledRadioTabVertical: ({ label, options, selectedRadio, onChange, errMessage, isInvalid, disabled, isRequired, tooltip, className, dataQa }: Props) => JSX.Element;
 export {};
