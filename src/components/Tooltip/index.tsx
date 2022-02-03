@@ -22,6 +22,8 @@ export interface TooltipProps {
   isTooltipShownOnOverflowOnly?: boolean;
 }
 
+const HIDDEN_TOOLTIP_CLASSNAME = "common-tooltip-content-hidden";
+
 export const Tooltip = ({
   content = "",
   children,
@@ -37,16 +39,21 @@ export const Tooltip = ({
   const tooltipContentRef = React.useRef<HTMLSpanElement>(null);
 
   React.useEffect(() => {
-    if (!isTooltipShownOnOverflowOnly || !tooltipContentRef.current || !tooltipChildrenRef.current) return;
+    const overflowHandler = () => { 
+      if (!isTooltipShownOnOverflowOnly || !tooltipContentRef.current || !tooltipChildrenRef.current) return;
 
-    const isOverflow = tooltipChildrenRef.current.scrollWidth > tooltipChildrenRef.current.clientWidth;
-    const HIDDEN_TOOLTIP_CLASSNAME = "common-tooltip-content-hidden";
-    if (isOverflow) {
-      tooltipContentRef.current.classList.remove(HIDDEN_TOOLTIP_CLASSNAME);
-    } else {
-      tooltipContentRef.current.classList.add(HIDDEN_TOOLTIP_CLASSNAME);
+      const isOverflow = tooltipChildrenRef.current.scrollWidth > tooltipChildrenRef.current.clientWidth;
+      if (isOverflow) {
+        tooltipContentRef.current.classList.remove(HIDDEN_TOOLTIP_CLASSNAME);
+      } else {
+        tooltipContentRef.current.classList.add(HIDDEN_TOOLTIP_CLASSNAME);
+      }
     }
-  }, [content, children]);
+
+    overflowHandler()
+    window.addEventListener("resize", overflowHandler)
+    return () => window.removeEventListener("resize", overflowHandler)
+  }, [content, children, isTooltipShownOnOverflowOnly]);
 
   return (
     <div className="common-tooltip">
