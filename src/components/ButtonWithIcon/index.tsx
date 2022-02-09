@@ -19,6 +19,7 @@ export const ButtonWithIcon = (props: ButtonWithIconProps) => {
       appearance={appearance}
       isLoading={isLoading}
       className={classNames(className, { disabled: isDisabled })}
+      isDisabled={isDisabled}
       {...buttonProps}
     >
       {!!buttonIcon && <span className={classNames("icon", buttonIcon)} />}
