@@ -12,7 +12,7 @@ export interface EmptyResultsProps {
   imgSrc: string;
   title: string;
   description?: string | React.ReactNode;
-  children?: React.ReactChild;
+  children?: React.ReactChild | null;
   dataQa?: string | null;
   isTaller?: boolean;
 }

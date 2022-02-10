@@ -11,7 +11,7 @@ import ReactTooltip from "react-tooltip";
 import { renderToString } from "react-dom/server";
 
 export interface CheckboxProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "value"> {
-  label: string;
+  label?: string;
   isChecked: boolean;
   isDisabled?: boolean;
   value?: string | number | boolean;

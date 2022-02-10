@@ -16,7 +16,7 @@ export interface RadioOptionWithRenderAction<T = string> extends RadioOption<T> 
 }
 
 interface Props {
-  label: string;
+  label?: string;
   options: RadioOptionWithRenderAction<string | boolean>[];
   selectedRadio: string | boolean;
   onChange: (item: RadioOption<string | boolean>) => void;

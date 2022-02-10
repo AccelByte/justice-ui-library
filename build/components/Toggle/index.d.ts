@@ -13,6 +13,7 @@ export interface ToggleProps {
     onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
     activeText?: string;
     inactiveText?: string;
+    className?: string;
     dataQa?: string;
 }
 export declare const Toggle: (props: ToggleProps) => JSX.Element;
