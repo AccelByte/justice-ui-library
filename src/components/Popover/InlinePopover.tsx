@@ -13,6 +13,7 @@ import { Enum } from "../../types";
 
 export const INLINE_POPOVER_TYPE = Enum("light", "dark")
 export type InlinePopoverType = keyof typeof INLINE_POPOVER_TYPE
+export type PopoverPlacement = Placement
 
 export interface InlinePopoverProps {
   content: React.ReactNode;
