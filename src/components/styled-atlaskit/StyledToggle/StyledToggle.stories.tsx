@@ -6,14 +6,14 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { ToggleProps, Toggle } from ".";
+import { StyledToggleProps, StyledToggle } from ".";
 
 export default {
-  title: "Components/Toggle",
-  component: Toggle,
+  title: "Components/StyledToggle",
+  component: StyledToggle,
 } as Meta;
 
-const Template: Story<ToggleProps> = (args) => {
+const Template: Story<StyledToggleProps> = (args) => {
   const [isChecked, setIsChecked] = React.useState<boolean>(args.isChecked || false);
 
   const toggleChecked = () => {
@@ -24,7 +24,7 @@ const Template: Story<ToggleProps> = (args) => {
     setIsChecked(args.isChecked || false)
   }, [args.isChecked])
 
-  return <Toggle {...args} isChecked={isChecked} onChange={toggleChecked} />;
+  return <StyledToggle {...args} isChecked={isChecked} onChange={toggleChecked} />;
 };
 
 export const Default = Template.bind({});

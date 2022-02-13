@@ -7,9 +7,9 @@
 import * as React from "react";
 import { default as classNames } from "classnames";
 import "./index.scss";
-import { Badge, BADGE_APPEARANCE, BADGE_TYPE } from "../Badge";
+import { Badge, BADGE_APPEARANCE, BADGE_TYPE } from "../../Badge";
 
-export interface ToggleProps {
+export interface StyledToggleProps {
   isChecked: boolean;
   isLoading?: boolean;
   isEditable?: boolean;
@@ -26,7 +26,7 @@ export interface ToggleProps {
   dataQa?: string;
 }
 
-export const Toggle = (props: ToggleProps) => {
+export const StyledToggle = (props: StyledToggleProps) => {
   const {
     isChecked,
     isLoading = false,

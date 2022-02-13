@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./index.scss";
-export interface ToggleProps {
+export interface StyledToggleProps {
     isChecked: boolean;
     isLoading?: boolean;
     isEditable?: boolean;
@@ -16,4 +16,4 @@ export interface ToggleProps {
     className?: string;
     dataQa?: string;
 }
-export declare const Toggle: (props: ToggleProps) => JSX.Element;
+export declare const StyledToggle: (props: StyledToggleProps) => JSX.Element;
