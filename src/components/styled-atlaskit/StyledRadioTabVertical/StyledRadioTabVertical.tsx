@@ -16,7 +16,7 @@ export interface RadioOptionWithRenderAction<T = string> extends RadioOption<T> 
 }
 
 interface Props {
-  label: string;
+  label?: string;
   options: RadioOptionWithRenderAction<string | boolean>[];
   selectedRadio: string | boolean;
   onChange: (item: RadioOption<string | boolean>) => void;
@@ -40,11 +40,12 @@ export const StyledRadioTabVertical = ({
   isRequired = false,
   tooltip,
   className,
+  dataQa = null
 }: Props) => {
   return (
     <div className={className}>
       {!!label && <FieldLabel label={label} tooltip={tooltip && tooltip} />}
-      <div className={classNames(["styled-radio-tab-vertical"])}>
+      <div className={classNames(["styled-radio-tab-vertical"])} data-qa-id={dataQa}>
         {options.map((item) => (
           <div key={`radio-tab-vertical-${item.value}`} className={"radio-container"}>
             <div

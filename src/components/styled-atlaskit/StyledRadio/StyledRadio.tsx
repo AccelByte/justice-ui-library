@@ -13,7 +13,7 @@ import { addLineBreaks } from "../../../utils";
 import { LineBreakToList } from "../..";
 
 export interface StyledRadioProps {
-  label: string;
+  label?: string;
   options: RadioOption<string | boolean>[];
   selectedRadio: string | boolean;
   onChange: (item: RadioOption<string | boolean>) => void;

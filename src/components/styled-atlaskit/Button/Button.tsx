@@ -9,6 +9,8 @@ import { default as AkButton, ButtonProps as AkButtonProps, ButtonAppearances } 
 import classNames from "classnames";
 import "./Button.scss";
 
+export type ButtonAppearance = ButtonAppearances | "outline" | "success";
+
 export interface ButtonProps
   extends Omit<
     AkButtonProps,
@@ -22,7 +24,7 @@ export interface ButtonProps
   type?: "button" | "submit" | "reset";
   shouldFitContainer?: boolean;
   autoFocus?: boolean;
-  appearance?: ButtonAppearances | "outline" | "success";
+  appearance?: ButtonAppearance;
   dataQa?: string | null;
 }
 

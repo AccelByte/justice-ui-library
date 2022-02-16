@@ -5,5 +5,6 @@ export interface DynamicTableProps extends PropsWithChildren<StatelessProps> {
     className?: string;
     customContent?: React.ReactNode;
     dataQa?: string | null;
+    noPadding?: boolean;
 }
 export declare const DynamicTable: (props: DynamicTableProps) => JSX.Element;

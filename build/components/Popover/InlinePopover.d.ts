@@ -6,6 +6,7 @@ export declare const INLINE_POPOVER_TYPE: Readonly<{
     dark: "dark";
 }>;
 export declare type InlinePopoverType = keyof typeof INLINE_POPOVER_TYPE;
+export declare type PopoverPlacement = Placement;
 export interface InlinePopoverProps {
     content: React.ReactNode;
     isOpen: boolean;

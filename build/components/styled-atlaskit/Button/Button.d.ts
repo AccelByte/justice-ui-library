@@ -1,6 +1,7 @@
 import React from "react";
 import { ButtonProps as AkButtonProps, ButtonAppearances } from "@atlaskit/button";
 import "./Button.scss";
+export declare type ButtonAppearance = ButtonAppearances | "outline" | "success";
 export interface ButtonProps extends Omit<AkButtonProps, "isDisabled" | "isLoading" | "isSelected" | "spacing" | "type" | "shouldFitContainer" | "autoFocus" | "appearance"> {
     children: React.ReactNode;
     isDisabled?: boolean;
@@ -10,7 +11,7 @@ export interface ButtonProps extends Omit<AkButtonProps, "isDisabled" | "isLoadi
     type?: "button" | "submit" | "reset";
     shouldFitContainer?: boolean;
     autoFocus?: boolean;
-    appearance?: ButtonAppearances | "outline" | "success";
+    appearance?: ButtonAppearance;
     dataQa?: string | null;
 }
 export declare const Button: ({ children, isDisabled, isLoading, isSelected, spacing, type, shouldFitContainer, autoFocus, appearance, className, dataQa, ...props }: ButtonProps) => JSX.Element;

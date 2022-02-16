@@ -14,7 +14,8 @@ export * from "./styled-atlaskit/Tag/TagList";
 export * from "./styled-atlaskit/TextField/TextField";
 export * from "./styled-atlaskit/StyledRadioTabVertical/StyledRadioTabVertical";
 export * from "./styled-atlaskit/StyledRadio/StyledRadio";
-export * from "./styled-atlaskit/Dropdown"
+export * from "./styled-atlaskit/Dropdown";
+export * from "./styled-atlaskit/StyledToggle";
 export * from "./Badge";
 export * from "./Card";
 export * from "./Card/utility";

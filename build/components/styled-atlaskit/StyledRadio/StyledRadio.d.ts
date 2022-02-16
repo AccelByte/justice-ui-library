@@ -2,7 +2,7 @@
 import "./StyledRadio.scss";
 import { RadioOption } from "../../../types";
 export interface StyledRadioProps {
-    label: string;
+    label?: string;
     options: RadioOption<string | boolean>[];
     selectedRadio: string | boolean;
     onChange: (item: RadioOption<string | boolean>) => void;

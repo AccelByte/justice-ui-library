@@ -14,12 +14,13 @@ export interface DynamicTableProps extends PropsWithChildren<StatelessProps> {
   className?: string;
   customContent?: React.ReactNode;
   dataQa?: string | null;
+  noPadding?: boolean;
 }
 
 export const DynamicTable = (props: DynamicTableProps) => {
-  const { className, children, customContent = null, dataQa = null } = props;
+  const { className, children, customContent = null, dataQa = null, noPadding = false } = props;
   return (
-    <div className={classNames("styled-atlaskit-table", className)} data-qa-id={dataQa}>
+    <div className={classNames("styled-atlaskit-table", { "no-padding": noPadding }, className)} data-qa-id={dataQa}>
       {customContent}
       <AkDynamicTable {...props} />
       {children}

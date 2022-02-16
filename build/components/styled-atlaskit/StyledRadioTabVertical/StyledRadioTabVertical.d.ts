@@ -5,7 +5,7 @@ export interface RadioOptionWithRenderAction<T = string> extends RadioOption<T> 
     render?: () => React.ReactNode;
 }
 interface Props {
-    label: string;
+    label?: string;
     options: RadioOptionWithRenderAction<string | boolean>[];
     selectedRadio: string | boolean;
     onChange: (item: RadioOption<string | boolean>) => void;
@@ -17,5 +17,5 @@ interface Props {
     dataQa?: string | null;
     className?: string;
 }
-export declare const StyledRadioTabVertical: ({ label, options, selectedRadio, onChange, errMessage, isInvalid, disabled, isRequired, tooltip, className, }: Props) => JSX.Element;
+export declare const StyledRadioTabVertical: ({ label, options, selectedRadio, onChange, errMessage, isInvalid, disabled, isRequired, tooltip, className, dataQa }: Props) => JSX.Element;
 export {};
