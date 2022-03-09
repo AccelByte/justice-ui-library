@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.1.40]
 ### Added
 - `StyledToggle` component
-- `noPadding` prop in `DynamicTable` to conditionally add `no-padding` class
+- `noPadding` prop in `DynamicTable` to conditionally add `no-padding` class 
+- More icons for `accelicons` font and sorted them based on figma design
 
 ### Refactored
 - Export `ButtonAppearance` from `Button` and `PopoverPlacement` from `InlinePopover`
