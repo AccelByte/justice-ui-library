@@ -2,6 +2,7 @@ import React from "react";
 import "./index.scss";
 export interface NoResultTipProps {
     title?: string;
+    tooltip?: string;
     primaryText: React.ReactNode;
     secondaryText?: string;
     boxShadow?: boolean;
@@ -12,4 +13,4 @@ export interface NoResultTipProps {
     dataQa?: string | null;
     additionalComponent?: React.ReactNode | string;
 }
-export declare const NoResultTip: ({ title, primaryText, secondaryText, className, errorImage, errorImageClass, boxShadow, inModal, dataQa, additionalComponent, }: NoResultTipProps) => JSX.Element;
+export declare const NoResultTip: ({ title, tooltip, primaryText, secondaryText, className, errorImage, errorImageClass, boxShadow, inModal, dataQa, additionalComponent, }: NoResultTipProps) => JSX.Element;
