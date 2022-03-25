@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.1.42] (Unreleased)
 ### Refactored
 - Use `useLayoutEffect` when calculating DOM element width in `NavigationTab`
+- Sort storybook alphabetically
+- `placeholder` prop in `ValidSelect` and `ValidMultiSelect` is made optional
 
 ### Added
 - UI in `Button` when `appearance` is `subtle` and `className` is `danger`
