@@ -16,7 +16,7 @@ export const RELOADSTATUS = Enum("LOADING", "FAILED", "SUCCESS");
 
 export interface ValidSelectProps {
   label?: string;
-  placeholder: string;
+  placeholder?: string;
   options: SelectOption[];
   name?: string;
   value: SelectOption | SelectOption[] | string | null;
