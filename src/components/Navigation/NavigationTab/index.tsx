@@ -50,34 +50,23 @@ export const NavigationTab = (props: NavigationTabProps) => {
   const moreButtonRef = React.useRef<HTMLDivElement>(null);
 
   const updateNavigationWidth = () => {
-    if (navigationWrapperRef.current) {
-      const { clientWidth } = navigationWrapperRef.current;
-      setNavigationWidth(clientWidth);
-    }
-  };
-
-  const updateNavigationWidthWithInterval = () => {
-    const updateWidthInterval = setInterval(() => {
-      if (navigationWrapperRef.current) {
-        const { clientWidth } = navigationWrapperRef.current;
-        setNavigationWidth(clientWidth);
-        if (clientWidth) clearInterval(updateWidthInterval);
-      }
-    }, UPDATE_INTERVAL);
+    if (!navigationWrapperRef.current) return;
+    const { clientWidth } = navigationWrapperRef.current;
+    setNavigationWidth(clientWidth);
   };
 
   const calculateAccumulativeNavigationWidth = () => {
-    if (navigationWrapperRef.current && !isVertical) {
-      const navigationItems = Array.from(navigationWrapperRef.current.children);
-      const navigationItemsWidth: number[] = [];
+    if (!navigationWrapperRef.current || isVertical) return;
 
-      navigationItems.forEach((item, index) => {
-        const previousWidth = index ? navigationItemsWidth[index - 1] : 0;
-        const currentWidth = item.clientWidth + previousWidth;
-        navigationItemsWidth.push(currentWidth);
-      });
-      setAccumulativeNavWidth(navigationItemsWidth);
-    }
+    const navigationItems = Array.from(navigationWrapperRef.current.children);
+    const navigationItemsWidth: number[] = [];
+
+    navigationItems.forEach((item, index) => {
+      const previousWidth = index ? navigationItemsWidth[index - 1] : 0;
+      const currentWidth = item.clientWidth + previousWidth;
+      navigationItemsWidth.push(currentWidth);
+    });
+    setAccumulativeNavWidth(navigationItemsWidth);
   };
 
   const onClickTab = (isChangeRoute: boolean, url: string) => {
@@ -97,43 +86,48 @@ export const NavigationTab = (props: NavigationTabProps) => {
 
       setShownTabs(updatedConfig.slice(0, maxShown));
       setHiddenTabs(updatedConfig.slice(maxShown));
-      if (navigationWrapperRef.current && moreButtonRef.current) {
-        const navWrapperRight = navigationWrapperRef.current.getBoundingClientRect().right;
-        const moreButtonRight = moreButtonRef.current.getBoundingClientRect().right;
-        if (moreButtonRight > navWrapperRight) {
-          unhideActiveHiddenTab(maxShown - 1);
-        }
+
+      if (!navigationWrapperRef.current || !moreButtonRef.current) return;
+
+      const navWrapperRight = navigationWrapperRef.current.getBoundingClientRect().right;
+      const moreButtonRight = moreButtonRef.current.getBoundingClientRect().right;
+      if (moreButtonRight > navWrapperRight) {
+        unhideActiveHiddenTab(maxShown - 1);
       }
     }, UPDATE_INTERVAL / 10);
   };
 
   React.useEffect(() => {
     if (isVertical) return;
-
-    updateNavigationWidthWithInterval();
     window.addEventListener("resize", updateNavigationWidth);
 
     return () => window.removeEventListener("resize", updateNavigationWidth);
   }, []);
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
+    updateNavigationWidth();
+  }, []);
+
+  React.useLayoutEffect(() => {
     if (isVertical) {
       setShownTabs(config);
+      setHiddenTabs([]);
       return;
     }
     unhideActiveHiddenTab();
-  }, [config]);
+  }, [config, isVertical]);
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     if (isVertical) return;
-    if (!!navigationWidth && !accumulativeNavWidth.length) {
+
+    if (!accumulativeNavWidth.length) {
       calculateAccumulativeNavigationWidth();
+      return;
     }
-    if (accumulativeNavWidth.length) {
-      const maxTabsToShow = accumulativeNavWidth.filter((width) => width + NAVIGATION_OFFSET < navigationWidth).length;
-      setMaxShownTabs(maxTabsToShow);
-      unhideActiveHiddenTab(maxTabsToShow);
-    }
+
+    const maxTabsToShow = accumulativeNavWidth.filter((width) => width + NAVIGATION_OFFSET < navigationWidth).length;
+    setMaxShownTabs(maxTabsToShow);
+    unhideActiveHiddenTab(maxTabsToShow);
   }, [navigationWidth, accumulativeNavWidth]);
 
   const renderedTabs = shownTabs.map((tab: ItemTab) => {
