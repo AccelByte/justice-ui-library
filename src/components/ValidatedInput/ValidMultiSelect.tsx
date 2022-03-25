@@ -13,7 +13,7 @@ import { Select } from "..";
 
 interface Props {
   label?: string;
-  placeholder: string;
+  placeholder?: string;
   options: SelectOption[];
   errMessage?: string;
   onChange: (option: SelectOption) => void;
