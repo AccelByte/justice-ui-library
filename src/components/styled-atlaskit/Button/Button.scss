@@ -74,6 +74,15 @@ button.styled-atlaskit-button {
       &:active {
         background-color: $button-backgroundColor--subtle--active;
       }
+      &.danger {
+        background-color: transparent;
+        span {
+          color: $color--error--primary;
+        }
+        &:hover {
+          background-color: $semantic-red-10;
+        }
+      }
     }
     &.danger {
       background-color: $button-backgroundColor--danger--enabled;
