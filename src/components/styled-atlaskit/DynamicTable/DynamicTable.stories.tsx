@@ -46,5 +46,6 @@ Example.args = {
     },
   ],
   children: <p>Some text below the table</p>,
-  customContent: <span>Some optional custom content above the table</span>
+  customContent: <span>Some optional custom content above the table</span>,
+  isLoading: false,
 };

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Refactored
 - Sort storybook alphabetically
 - `placeholder` prop in `ValidSelect` and `ValidMultiSelect` is made optional
+- Initialize storybook docs
 
 ### Added
 - UI in `Button` when `appearance` is `subtle` and `className` is `danger`

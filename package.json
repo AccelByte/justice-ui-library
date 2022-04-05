@@ -37,11 +37,14 @@
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
     "@rollup/plugin-typescript": "^8.2.5",
-    "@storybook/addon-actions": "^6.3.7",
-    "@storybook/addon-essentials": "^6.3.7",
-    "@storybook/addon-links": "^6.3.7",
+    "@storybook/addon-actions": "^6.4.20",
+    "@storybook/addon-docs": "^6.4.20",
+    "@storybook/addon-essentials": "^6.4.20",
+    "@storybook/addon-links": "^6.4.20",
+    "@storybook/addons": "^6.4.20",
     "@storybook/preset-scss": "^1.0.3",
-    "@storybook/react": "^6.3.7",
+    "@storybook/react": "^6.4.20",
+    "@storybook/theming": "^6.4.20",
     "@types/classnames": "^2.2.3",
     "@types/dompurify": "^2.3.1",
     "@types/flat": "^5.0.2",
@@ -80,5 +83,8 @@
   "peerDependencies": {
     "react": "^17.0.2",
     "styled-components": "^3.2.6"
+  },
+  "resolutions": {
+    "react": "17.0.2"
   }
 }

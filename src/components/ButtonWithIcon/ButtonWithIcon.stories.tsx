@@ -11,6 +11,13 @@ import { ButtonWithIcon, ButtonWithIconProps } from ".";
 export default {
   title: "Components/ButtonWithIcon",
   component: ButtonWithIcon,
+  argTypes: {
+    className: {
+      name: "className",
+      description:
+        "Add a classname to the button. You can set it to `danger` or `success` when the `appearance` is either `outline` or `subtle` to turn the button red or green respectively",
+    },
+  },
 } as Meta;
 
 const Template: Story<ButtonWithIconProps> = (args) => <ButtonWithIcon {...args} />;

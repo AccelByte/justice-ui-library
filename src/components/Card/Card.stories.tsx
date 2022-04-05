@@ -18,9 +18,12 @@ const Template: Story<CardProps> = (args) => <Card {...args} />;
 export const Example = Template.bind({});
 Example.args = {
   cardTitle: "card title",
+  cardSubTitle: "card subtitle",
   children: "card component example. you can customize further by running `yarn storybook`",
   buttonText: "card button",
+  buttonIcon: "fa-icon-search",
   buttonOnClick: () => {
     console.log("clicked");
   },
+  customFooter: <p>this is a custom footer</p>,
 };

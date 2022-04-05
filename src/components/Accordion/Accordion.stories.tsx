@@ -4,7 +4,6 @@
  * and restrictions contact your company contract manager.
  */
 
-import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { Accordion, AccordionProps } from ".";
 
@@ -16,4 +15,4 @@ export default {
 const Template: Story<AccordionProps> = (args) => <Accordion {...args} />;
 
 export const Default = Template.bind({});
-Default.args = { title: "Accordion Title", children: <p>Accordion Body</p> };
+Default.args = { title: "Accordion Title", children: <p>Accordion Body</p>, className: "some-classname", dataQa: "accordion-qa" };
