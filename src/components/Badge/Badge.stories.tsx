@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { Badge, BadgeProps } from ".";
+import { Badge, BadgeProps, BADGE_APPEARANCE, BADGE_TYPE } from ".";
 
 export default {
   title: "Components/Badge",
@@ -16,4 +16,4 @@ export default {
 const Template: Story<BadgeProps> = (args) => <Badge {...args} />;
 
 export const Default = Template.bind({});
-Default.args = { text: "Badge" };
+Default.args = { text: "Badge", appearance: BADGE_APPEARANCE.SUCCESS, type: BADGE_TYPE.LIGHT };

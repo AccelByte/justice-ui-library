@@ -33,7 +33,7 @@
   }
 
   .notification-message,
-  .icon-x {
+  .fa-icon-x {
     &.success {
       color: $color--success--primary;
     }
@@ -49,6 +49,10 @@
     &.warning {
       color: $color--warning--primary;
     }
+  }
+
+  .fa-icon-x {
+    cursor: pointer;
   }
 
   i {

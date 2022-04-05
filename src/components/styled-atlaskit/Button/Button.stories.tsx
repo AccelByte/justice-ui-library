@@ -11,6 +11,13 @@ import { Button, ButtonProps } from "./Button";
 export default {
   title: "Components/Button",
   component: Button,
+  argTypes: {
+    className: {
+      name: "className",
+      description:
+        "Add a classname to the button. You can set it to `danger` or `success` when the `appearance` is either `outline` or `subtle` to turn the button red or green respectively",
+    },
+  },
 } as Meta;
 
 const Template: Story<ButtonProps> = (args) => <Button {...args} />;

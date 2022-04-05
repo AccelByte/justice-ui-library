@@ -4,8 +4,8 @@ import { Enum } from "../../types";
 export declare const TipType: Readonly<{
     warning: "warning";
     success: "success";
-    error: "error";
     info: "info";
+    error: "error";
 }>;
 export interface TipProps {
     show: boolean;
