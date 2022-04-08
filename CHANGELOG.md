@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [0.1.42] (Unreleased)
+## [0.1.42]
 ### Refactored
 - Sort storybook alphabetically
 - `placeholder` prop in `ValidSelect` and `ValidMultiSelect` is made optional
@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 - UI in `Button` when `appearance` is `subtle` and `className` is `danger`
+- Focus, blur, click, close handler in `InlinePopover`
 
 ## [0.1.41]
 ### Added

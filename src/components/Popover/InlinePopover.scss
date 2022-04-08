@@ -23,6 +23,13 @@
     overflow-wrap: break-word;
     background-color: $base-white;
 
+    a {
+      color: $brand-80;
+      &:hover {
+        color: $brand-60;
+      }
+    }
+
     &::before {
       position: absolute;
       height: 0px;

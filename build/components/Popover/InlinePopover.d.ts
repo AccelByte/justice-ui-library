@@ -13,5 +13,9 @@ export interface InlinePopoverProps {
     children: React.ReactNode;
     placement?: Placement;
     type?: InlinePopoverType;
+    onContentBlur?: () => void;
+    onContentClick?: () => void;
+    onContentFocus?: () => void;
+    onClose?: () => void;
 }
 export declare const InlinePopover: React.FC<InlinePopoverProps>;
