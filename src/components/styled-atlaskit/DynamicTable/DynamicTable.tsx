@@ -12,13 +12,21 @@ import "./DynamicTable.scss";
 
 export interface DynamicTableProps extends PropsWithChildren<StatelessProps> {
   className?: string;
+  /** Any React element placed above the table */
   customContent?: React.ReactNode;
   dataQa?: string | null;
+  /** Whether to have a padding bottom for the table */
   noPadding?: boolean;
 }
 
-export const DynamicTable = (props: DynamicTableProps) => {
-  const { className, children, customContent = null, dataQa = null, noPadding = false } = props;
+export const DynamicTable = ({
+  className,
+  children,
+  customContent = null,
+  dataQa = null,
+  noPadding = false,
+  ...props
+}: DynamicTableProps) => {
   return (
     <div className={classNames("styled-atlaskit-table", { "no-padding": noPadding }, className)} data-qa-id={dataQa}>
       {customContent}

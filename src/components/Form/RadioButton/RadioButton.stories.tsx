@@ -10,7 +10,7 @@ import { RadioButton, RadioButtonProps } from ".";
 import { SelectOption } from "../../../types";
 
 export default {
-  title: "Components/Form/RadioButton",
+  title: "Components/RadioButton",
   component: RadioButton,
 } as Meta;
 
@@ -22,8 +22,8 @@ const Template: Story<RadioButtonProps> = (args) => {
   };
 
   React.useEffect(() => {
-    setOption(args.selectedRadio)
-  }, [args.selectedRadio])
+    setOption(args.selectedRadio);
+  }, [args.selectedRadio]);
 
   return <RadioButton {...args} selectedRadio={option} onChange={onOptionChange} />;
 };

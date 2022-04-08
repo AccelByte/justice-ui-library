@@ -4,16 +4,23 @@
  * and restrictions contact your company contract manager.
  */
 
-import React from "react";
 import classNames from "classnames";
 import { Button, ButtonProps } from "../styled-atlaskit/Button/Button";
 
 export interface ButtonWithIconProps extends ButtonProps {
   buttonIcon?: string;
+  iconPosition?: "left" | "right";
 }
 
-export const ButtonWithIcon = (props: ButtonWithIconProps) => {
-  const { buttonIcon, appearance = "primary", isDisabled, isLoading = false, className, ...buttonProps } = props;
+export const ButtonWithIcon = ({
+  buttonIcon,
+  iconPosition = "left",
+  appearance = "primary",
+  isDisabled,
+  isLoading = false,
+  className,
+  ...buttonProps
+}: ButtonWithIconProps) => {
   return (
     <Button
       appearance={appearance}
@@ -22,8 +29,9 @@ export const ButtonWithIcon = (props: ButtonWithIconProps) => {
       isDisabled={isDisabled}
       {...buttonProps}
     >
-      {!!buttonIcon && <span className={classNames("icon", buttonIcon)} />}
+      {!!buttonIcon && iconPosition === "left" && <span className={classNames("icon", buttonIcon)} />}
       {buttonProps.children}
+      {!!buttonIcon && iconPosition === "right" && <span className={classNames("icon icon-right", buttonIcon)} />}
     </Button>
   );
 };

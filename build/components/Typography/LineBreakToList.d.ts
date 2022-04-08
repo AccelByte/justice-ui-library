@@ -1,5 +1,6 @@
 /// <reference types="react" />
 export interface LineBreakToListProps {
+    /** This component is only useful when `text` contains `\n` */
     text: string;
     className?: string;
 }

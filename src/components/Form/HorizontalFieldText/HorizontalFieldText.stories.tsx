@@ -10,7 +10,7 @@ import { HorizontalFieldText, HorizontalFieldTextProps } from ".";
 import { Card } from "../../Card";
 
 export default {
-  title: "Components/Form/HorizontalFieldText",
+  title: "Components/HorizontalFieldText",
   component: HorizontalFieldText,
 } as Meta;
 

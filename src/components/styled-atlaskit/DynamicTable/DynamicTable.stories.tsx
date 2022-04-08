@@ -11,6 +11,24 @@ import { DynamicTable, DynamicTableProps } from "./DynamicTable";
 export default {
   title: "Components/DynamicTable",
   component: DynamicTable,
+  argTypes: {
+    head: {
+      table: {
+        type: {
+          summary: "HeadType",
+          detail: `cells: {
+            key?: string | number;
+            colSpan?: number;
+            content?: React.ReactNode | string;
+            testId?: string;
+            isSortable?: boolean;
+            width?: number;
+            shouldTruncate?: boolean;
+          }[]`,
+        },
+      },
+    },
+  },
 } as Meta;
 
 const Template: Story<DynamicTableProps> = (args) => <DynamicTable {...args} />;

@@ -9,6 +9,7 @@ import classNames from "classnames";
 import { makeSafeReactInnerHTML } from "../../utils/makeSafeReactInnerHTML";
 
 export interface LineBreakToListProps {
+  /** This component is only useful when `text` contains `\n` */
   text: string;
   className?: string;
 }

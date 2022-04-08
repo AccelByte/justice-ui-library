@@ -1,4 +1,4 @@
-import * as React from "react";
+/// <reference types="react" />
 import { BreadcrumbSchema, Enum } from "../../../types";
 import { CONTAINER_SIZE } from "../../../constants";
 import { BadgeProps } from "../../Badge";
@@ -12,6 +12,4 @@ export interface BreadcrumbProps {
     renderLink?: (item: BreadcrumbSchema, useBackButton: boolean) => JSX.Element;
     dataQa?: string | null;
 }
-export declare class Breadcrumb extends React.Component<BreadcrumbProps> {
-    render(): JSX.Element;
-}
+export declare const Breadcrumb: ({ breadcrumbLists, pageTitle, containerSize, className, pageTitleBadge, renderLink, dataQa, }: BreadcrumbProps) => JSX.Element;

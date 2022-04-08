@@ -7,10 +7,4 @@ export interface ModalPageProps {
     isFullWidth?: boolean;
     dataQa?: string | null;
 }
-export declare class ModalPage extends React.Component<ModalPageProps> {
-    constructor(props: ModalPageProps);
-    componentDidMount(): void;
-    componentWillUnmount(): void;
-    onEscPressed: (event: KeyboardEvent) => void;
-    render(): JSX.Element;
-}
+export declare const ModalPage: ({ onClose, children, className, isFlex, isFullWidth, dataQa, }: React.PropsWithChildren<ModalPageProps>) => JSX.Element;

@@ -9,6 +9,7 @@
 .common-tooltip {
   position: relative;
   cursor: pointer;
+  font-family: $font-family-primary;
 
   .common-tooltip-children {
     display: block;

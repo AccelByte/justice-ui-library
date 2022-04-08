@@ -4,9 +4,9 @@
  * and restrictions contact your company contract manager.
  */
 
-import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { ErrorWrapper, ErrorWrapperProps } from "./ErrorWrapper";
+import logo from "../../assets/headerLogo.svg";
 
 export default {
   title: "Components/ErrorWrapper",
@@ -17,7 +17,7 @@ const Template: Story<ErrorWrapperProps> = (args) => <ErrorWrapper {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {
-  image: "https://career.amikom.ac.id/images/company/logos/1605252097.png",
+  image: logo,
   title: "Title",
   subTitle: "Subtitle",
 };

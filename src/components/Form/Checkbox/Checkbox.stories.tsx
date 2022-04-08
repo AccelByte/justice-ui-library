@@ -9,7 +9,7 @@ import { Meta, Story } from "@storybook/react/types-6-0";
 import { Checkbox, CheckboxProps } from ".";
 
 export default {
-  title: "Components/Form/Checkbox",
+  title: "Components/Checkbox",
   component: Checkbox,
 } as Meta;
 

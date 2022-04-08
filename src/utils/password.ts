@@ -9,7 +9,3 @@ import randomize from "randomatic";
 export const generatePassword = (pattern: string) => {
   return randomize(pattern, 32, { exclude: "'{}" });
 };
-
-export const generateClientSecret = (pattern: string) => {
-  return randomize(pattern, 32, { exclude: "'{}" });
-};

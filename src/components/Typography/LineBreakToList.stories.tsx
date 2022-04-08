@@ -13,7 +13,11 @@ export default {
   component: LineBreakToList,
 } as Meta;
 
-const Template: Story<LineBreakToListProps> = (args) => <LineBreakToList {...args} />;
+const Template: Story<LineBreakToListProps> = (args) => (
+  <div style={{ fontFamily: "Roboto" }}>
+    <LineBreakToList {...args} />
+  </div>
+);
 
 export const Example = Template.bind({});
 Example.args = {

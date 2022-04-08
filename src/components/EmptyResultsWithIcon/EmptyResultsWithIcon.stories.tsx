@@ -4,9 +4,9 @@
  * and restrictions contact your company contract manager.
  */
 
-import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { EmptyResultsProps, EmptyResultsWithIcon } from ".";
+import logo from "../../assets/headerLogo.svg";
 
 export default {
   title: "Components/EmptyResultsWithIcon",
@@ -17,7 +17,7 @@ const Template: Story<EmptyResultsProps> = (args) => <EmptyResultsWithIcon {...a
 
 export const Example = Template.bind({});
 Example.args = {
-  imgSrc: "https://career.amikom.ac.id/images/company/logos/1605252097.png",
+  imgSrc: logo,
   title: "Empty Result",
   description: "There is no result",
 };

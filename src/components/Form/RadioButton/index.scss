@@ -17,6 +17,7 @@
 }
 
 .radio-group-vertical {
+  font-family: $font-family-primary;
   display: block;
   .radio-item:not(:last-child) {
     margin-bottom: 10px;

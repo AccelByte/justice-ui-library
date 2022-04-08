@@ -16,4 +16,4 @@ export interface NavigationTabProps {
     isVertical?: boolean;
     containerSize?: Enum<typeof CONTAINER_SIZE>;
 }
-export declare const NavigationTab: (props: NavigationTabProps) => JSX.Element;
+export declare const NavigationTab: ({ isVertical, isChangeRoute, containerSize, config, changePageKey, changePage, }: NavigationTabProps) => JSX.Element;

@@ -16,4 +16,4 @@ export interface StyledToggleProps {
     className?: string;
     dataQa?: string;
 }
-export declare const StyledToggle: (props: StyledToggleProps) => JSX.Element;
+export declare const StyledToggle: ({ isChecked, isLoading, isEditable, isDisabled, label, name, value, onBlur, onChange, onFocus, activeText, inactiveText, className, dataQa, }: StyledToggleProps) => JSX.Element;

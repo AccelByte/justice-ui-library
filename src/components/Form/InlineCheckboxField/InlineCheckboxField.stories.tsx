@@ -4,12 +4,11 @@
  * and restrictions contact your company contract manager.
  */
 
-import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { InlineCheckboxField, InlineCheckboxFieldProps } from ".";
 
 export default {
-  title: "Components/Form/InlineCheckboxField",
+  title: "Components/InlineCheckboxField",
   component: InlineCheckboxField,
 } as Meta;
 

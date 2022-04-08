@@ -12,10 +12,7 @@ import "./Button.scss";
 export type ButtonAppearance = ButtonAppearances | "outline" | "success";
 
 export interface ButtonProps
-  extends Omit<
-    AkButtonProps,
-    "isDisabled" | "isLoading" | "isSelected" | "spacing" | "type" | "shouldFitContainer" | "autoFocus" | "appearance"
-  > {
+  extends Pick<AkButtonProps, "className" | "onClick" | "href" | "target" | "id" | "tabIndex"> {
   children: React.ReactNode;
   /** Set if the button is disabled. */
   isDisabled?: boolean;

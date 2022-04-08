@@ -7,21 +7,20 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { HorizontalSelect, HorizontalSelectProps } from ".";
-import { SelectOption } from "../../../types";
 
 export default {
-  title: "Components/Form/HorizontalSelect",
+  title: "Components/HorizontalSelect",
   component: HorizontalSelect,
 } as Meta;
 
 const Template: Story<HorizontalSelectProps<string>> = (args) => {
   const [value, setValue] = React.useState<string>(args.value);
 
-  const onValueChange = (value: string) => setValue(value)
+  const onValueChange = (value: string) => setValue(value);
 
   React.useEffect(() => {
-    setValue(args.value)
-  }, [args.value])
+    setValue(args.value);
+  }, [args.value]);
 
   return <HorizontalSelect {...args} value={value} onChange={onValueChange} />;
 };
