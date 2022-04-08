@@ -1,5 +1,4 @@
 /// <reference types="react" />
-import { Enum } from "../../types";
 import "./index.scss";
 export declare const BADGE_TYPE: Readonly<{
     BASIC: "BASIC";
@@ -14,10 +13,17 @@ export declare const BADGE_APPEARANCE: Readonly<{
     SUCCESS: "SUCCESS";
     GENERAL: "GENERAL";
 }>;
+export declare const BADGE_SIZE: Readonly<{
+    SMALL: "SMALL";
+    LARGE: "LARGE";
+    MEDIUM: "MEDIUM";
+}>;
 export interface BadgeProps {
     text: string;
-    appearance?: Enum<typeof BADGE_APPEARANCE>;
-    type?: Enum<typeof BADGE_TYPE>;
+    appearance?: keyof typeof BADGE_APPEARANCE;
+    type?: keyof typeof BADGE_TYPE;
+    size?: keyof typeof BADGE_SIZE;
     className?: string;
+    isSemibold?: boolean;
 }
-export declare const Badge: ({ text, appearance, className: customClassName, type, }: BadgeProps) => JSX.Element;
+export declare const Badge: ({ text, appearance, className: customClassName, type, size, isSemibold, }: BadgeProps) => JSX.Element;

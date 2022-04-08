@@ -51,14 +51,14 @@
 
   label[data-checked="false"] {
     background-color: $base-40;
+    &::before {
+      background-color: $base-80;
+    }
+    &:hover {
       &::before {
-        background-color: $base-80;
+        background-color: $base-100;
       }
-      &:hover {
-        &::before {
-          background-color: $base-100;
-        }
-      }
+    }
   }
 
   label[data-checked="true"] {
@@ -108,6 +108,10 @@
     border-top-color: transparent;
     animation: animation-spin 1s linear infinite;
   }
+}
+
+.styled-toggle-uneditable {
+  font-family: $font-family-primary;
 }
 
 @keyframes animation-spin {

@@ -12,8 +12,10 @@ export interface EmptyResultsProps {
   imgSrc: string;
   title: string;
   description?: string | React.ReactNode;
+  /** Any React component rendered below `description` */
   children?: React.ReactChild | null;
   dataQa?: string | null;
+  /** If `true`, it gives more vertical padding */
   isTaller?: boolean;
 }
 

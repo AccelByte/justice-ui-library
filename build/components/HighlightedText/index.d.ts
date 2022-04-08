@@ -1,6 +1,7 @@
 /// <reference types="react" />
 export interface HighlightedTextProps {
     text: string;
+    /** Will be rendered bold if `text` containts it */
     highlight: string;
     className?: string;
 }

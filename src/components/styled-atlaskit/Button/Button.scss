@@ -19,7 +19,12 @@ button.styled-atlaskit-button {
     font-weight: normal;
   }
   .icon {
-    margin-right: 15px;
+    margin-right: 16px;
+
+    &.icon-right {
+      margin-right: 0;
+      margin-left: 16px;
+    }
   }
   &:not(:disabled) {
     &.primary {

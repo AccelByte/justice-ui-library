@@ -19,7 +19,7 @@ export interface BannerProps {
   dataQa?: string | null;
 }
 
-export const Banner = ({ appearance = APPEARANCE_TYPE.success, message = "", dismissBanner, dataQa }: BannerProps) => {
+export const Banner = ({ appearance = "success", message = "", dismissBanner, dataQa }: BannerProps) => {
   return (
     <div
       className={classNames("banner-notification", {

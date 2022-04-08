@@ -17,39 +17,38 @@ export interface ModalPageProps {
   dataQa?: string | null;
 }
 
-export class ModalPage extends React.Component<ModalPageProps> {
-  constructor(props: ModalPageProps) {
-    super(props);
-  }
+export const ModalPage = ({
+  onClose,
+  children,
+  className,
+  isFlex,
+  isFullWidth,
+  dataQa,
+}: React.PropsWithChildren<ModalPageProps>) => {
+  React.useEffect(() => {
+    window.addEventListener("keydown", onEscPressed, false);
 
-  componentDidMount(): void {
-    window.addEventListener("keydown", this.onEscPressed, false);
-  }
+    return () => {
+      window.removeEventListener("keydown", onEscPressed, false);
+    };
+  }, []);
 
-  componentWillUnmount(): void {
-    window.removeEventListener("keydown", this.onEscPressed, false);
-  }
-
-  onEscPressed = (event: KeyboardEvent) => {
-    const { onClose } = this.props;
+  const onEscPressed = (event: KeyboardEvent) => {
     if (!onClose) return;
     if (["Esc", "Escape"].includes(event.key)) {
       onClose();
     }
   };
 
-  render() {
-    const { onClose, children, className, isFlex, isFullWidth, dataQa } = this.props;
-    return (
-      <div className={classNames("modal-page-container", className)}>
-        <div className="close-modal-page-container">
-          <div className="close" tabIndex={0} aria-disabled onClick={onClose} data-qa-id={dataQa}>
-            <i className="icon-ab-x" />
-          </div>
-          <span>{translation("modalPage.esc")}</span>
+  return (
+    <div className={classNames("modal-page-container", className)}>
+      <div className="close-modal-page-container">
+        <div className="close" tabIndex={0} aria-disabled onClick={onClose} data-qa-id={dataQa}>
+          <i className="icon-ab-x" />
         </div>
-        <div className={classNames("content", { isFlex, isFullWidth })}>{children}</div>
+        <span>{translation("modalPage.esc")}</span>
       </div>
-    );
-  }
-}
+      <div className={classNames("content", { isFlex, isFullWidth })}>{children}</div>
+    </div>
+  );
+};

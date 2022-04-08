@@ -4,6 +4,7 @@
  * and restrictions contact your company contract manager.
  */
 
+declare module "*.svg";
 declare module "*.scss" {
   interface IClassNames {
     [className: string]: string;

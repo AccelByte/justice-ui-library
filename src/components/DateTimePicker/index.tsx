@@ -11,22 +11,21 @@ import Datetime from "react-datetime";
 import { FieldErrorMessage } from "../Form/utility";
 import "react-datetime/css/react-datetime.css";
 import "./index.scss";
-import "../../styles/icons/fa_icons.css"
+import "../../styles/icons/fa_icons.css";
 
 export interface DateTimePickerProps extends DatetimepickerProps {
   dataQa?: string | null;
   errorMessage?: string;
   className?: string;
   isDisabled?: boolean;
-  isReadOnly?: boolean;
 }
 
 class DateTimePicker extends React.Component<DateTimePickerProps> {
   renderInput = (props: any, openCalendar: any) => {
-    const { isDisabled, isReadOnly } = this.props;
+    const { isDisabled } = this.props;
     return (
       <div className={classNames("datepicker__input-field", { isDisabled })}>
-        <input {...props} readOnly={isReadOnly} />
+        <input {...props} />
         <i className="icon fa-icon-calendar" onClick={!isDisabled ? () => openCalendar() : undefined} />
       </div>
     );

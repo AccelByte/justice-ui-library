@@ -7,7 +7,7 @@
 import * as React from "react";
 import "./index.scss";
 
-export interface InlineCheckboxFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InlineCheckboxFieldProps extends Pick<React.InputHTMLAttributes<HTMLInputElement>, "readOnly"> {
   checked: boolean;
   isDisabled?: boolean;
   onClick?: () => void;

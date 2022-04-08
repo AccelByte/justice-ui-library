@@ -16,12 +16,4 @@ export interface HorizontalFieldTextProps {
     optionalLabel?: string;
     showTooltipOnFocus?: boolean;
 }
-export declare class HorizontalFieldText extends React.Component<HorizontalFieldTextProps> {
-    constructor(props: HorizontalFieldTextProps);
-    tooltipRef: React.RefObject<HTMLInputElement>;
-    showToolTips: () => void;
-    hideToolTips: () => void;
-    componentDidMount(): void;
-    componentWillUpdate(nextProps: Readonly<HorizontalFieldTextProps>): void;
-    render(): JSX.Element;
-}
+export declare const HorizontalFieldText: ({ children, className, tooltip, showTooltip, showTooltipOnFocus, label, isLabelHidden, isFlex, rightCellClassName, isValueMultiLine, dataQa, labelAlignment, isRequired, optionalLabel, }: HorizontalFieldTextProps) => JSX.Element;

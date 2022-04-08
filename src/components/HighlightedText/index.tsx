@@ -4,10 +4,9 @@
  * and restrictions contact your company contract manager.
  */
 
-import * as React from "react";
-
 export interface HighlightedTextProps {
   text: string;
+  /** Will be rendered bold if `text` containts it */
   highlight: string;
   className?: string;
 }

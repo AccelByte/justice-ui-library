@@ -17,33 +17,31 @@ export interface StyledToggleProps {
   label?: string;
   name?: string;
   value?: string;
-  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
-  onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
   activeText?: string;
   inactiveText?: string;
-  className?: string
+  className?: string;
   dataQa?: string;
 }
 
-export const StyledToggle = (props: StyledToggleProps) => {
-  const {
-    isChecked,
-    isLoading = false,
-    isEditable = true,
-    isDisabled = false,
-    label = "",
-    name = "",
-    value = "",
-    onBlur,
-    onChange,
-    onFocus,
-    activeText = "",
-    inactiveText = "",
-    className,
-    dataQa,
-  } = props;
-
+export const StyledToggle = ({
+  isChecked,
+  isLoading = false,
+  isEditable = true,
+  isDisabled = false,
+  label = "",
+  name = "",
+  value = "",
+  onBlur,
+  onChange,
+  onFocus,
+  activeText = "",
+  inactiveText = "",
+  className,
+  dataQa,
+}: StyledToggleProps) => {
   const isToggleDisabled = isLoading || isDisabled;
   const activeBadgeAppearance = isChecked ? BADGE_APPEARANCE.SUCCESS : BADGE_APPEARANCE.ERROR;
   return (
@@ -53,7 +51,12 @@ export const StyledToggle = (props: StyledToggleProps) => {
           {isLoading && <span className="styled-toggle__loading" />}
 
           <label data-checked={isChecked}>
-            <input type="checkbox" aria-label={label} {...{name, value, onChange, onFocus, onBlur}} disabled={isToggleDisabled} />
+            <input
+              type="checkbox"
+              aria-label={label}
+              {...{ name, value, onChange, onFocus, onBlur }}
+              disabled={isToggleDisabled}
+            />
           </label>
 
           {(activeText || inactiveText) && (
@@ -65,7 +68,9 @@ export const StyledToggle = (props: StyledToggleProps) => {
           )}
         </div>
       )}
-      {!isEditable && (activeText || inactiveText) && <div>{isChecked ? activeText : inactiveText}</div>}
+      {!isEditable && (activeText || inactiveText) && (
+        <div className="styled-toggle-uneditable">{isChecked ? activeText : inactiveText}</div>
+      )}
     </>
   );
 };

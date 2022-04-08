@@ -28,88 +28,82 @@ export interface HorizontalFieldTextProps {
   showTooltipOnFocus?: boolean;
 }
 
-export class HorizontalFieldText extends React.Component<HorizontalFieldTextProps> {
-  constructor(props: HorizontalFieldTextProps) {
-    super(props);
-  }
-  tooltipRef = React.createRef<HTMLInputElement>();
+export const HorizontalFieldText = ({
+  children,
+  className,
+  tooltip,
+  showTooltip,
+  showTooltipOnFocus,
+  label = "",
+  isLabelHidden = false,
+  isFlex = true,
+  rightCellClassName,
+  isValueMultiLine = false,
+  dataQa,
+  labelAlignment,
+  isRequired = true,
+  optionalLabel = translation("common.optionalFieldLabel"),
+}: HorizontalFieldTextProps) => {
+  const tooltipRef = React.useRef<HTMLLIElement>(null);
 
-  showToolTips = () => {
-    if (this.tooltipRef && this.tooltipRef.current) {
-      ReactTooltip.show(this.tooltipRef.current);
-    }
+  const showToolTips = () => {
+    if (!tooltipRef.current) return;
+    ReactTooltip.show(tooltipRef.current);
   };
 
-  hideToolTips = () => {
-    if (this.tooltipRef && this.tooltipRef.current) {
-      ReactTooltip.hide(this.tooltipRef.current);
-    }
+  const hideToolTips = () => {
+    if (!tooltipRef.current) return;
+    ReactTooltip.hide(tooltipRef.current);
   };
 
-  componentDidMount() {
-    setTimeout(() => {
+  React.useEffect(() => {
+    const timeout = setTimeout(() => {
       ReactTooltip.rebuild();
     }, 100);
-  }
 
-  componentWillUpdate(nextProps: Readonly<HorizontalFieldTextProps>): void {
-    if (nextProps.showTooltip !== this.props.showTooltip) {
-      if (nextProps.showTooltip && this.props.showTooltipOnFocus) {
-        this.showToolTips();
-      } else {
-        this.hideToolTips();
-      }
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, []);
+
+  React.useEffect(() => {
+    if (showTooltip && showTooltipOnFocus) {
+      showToolTips();
+    } else {
+      hideToolTips();
     }
-  }
+  }, [showTooltip]);
 
-  render() {
-    const {
-      children,
-      label = "",
-      isLabelHidden = false,
-      isFlex = true,
-      rightCellClassName,
-      className,
-      tooltip,
-      isValueMultiLine = false,
-      dataQa,
-      labelAlignment,
-      isRequired = true,
-      optionalLabel = translation("common.optionalFieldLabel"),
-    } = this.props;
-    const dataTip = React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip;
-
-    return (
-      <div
-        className={classNames("horizontalFieldText", className, {
-          "multi-line-row": isValueMultiLine,
-          "label-hidden": isLabelHidden,
-          row: isFlex,
-        })}
-      >
-        {!isLabelHidden && (
-          <div className={classNames("cell-1", labelAlignment)}>
-            <span className="label">
-              {label}
-              {!isRequired && ` ${optionalLabel}`}
-            </span>
-            {tooltip && (
-              <>
-                <i
-                  ref={this.tooltipRef}
-                  className="fa-icon-info"
-                  data-for="horizontal-field-text-label__tooltip"
-                  data-tip={dataTip}
-                />
-                <ReactTooltip effect="solid" id="horizontal-field-text-label__tooltip" html={true} />
-              </>
-            )}
-          </div>
-        )}
-        <div className={classNames("cell-2", rightCellClassName)} data-qa-id={dataQa}>
-          {children}
+  return (
+    <div
+      className={classNames("horizontalFieldText", className, {
+        "multi-line-row": isValueMultiLine,
+        "label-hidden": isLabelHidden,
+        row: isFlex,
+      })}
+    >
+      {!isLabelHidden && (
+        <div className={classNames("cell-1", labelAlignment)}>
+          <span className="label">
+            {label}
+            {!isRequired && ` ${optionalLabel}`}
+          </span>
+          {tooltip && (
+            <>
+              <i
+                ref={tooltipRef}
+                className="fa-icon-info"
+                data-for="horizontal-field-text-label__tooltip"
+                data-tip={React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip}
+              />
+              <ReactTooltip effect="solid" id="horizontal-field-text-label__tooltip" html={true} />
+            </>
+          )}
         </div>
+      )}
+      <div className={classNames("cell-2", rightCellClassName)} data-qa-id={dataQa}>
+        {children}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};

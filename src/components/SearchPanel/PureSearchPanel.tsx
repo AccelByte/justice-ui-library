@@ -13,7 +13,10 @@ import { Icon } from "../Icon";
 export const SearchIconPosition = Enum("LEFT", "RIGHT");
 
 export interface PureSearchPanelProps
-  extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+  extends Pick<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    "value" | "onChange" | "type" | "placeholder" | "autoComplete" | "onKeyPress"
+  > {
   onSearch?: () => void;
   fixedWidth?: boolean;
   searchIconPosition?: Enum<typeof SearchIconPosition>;
@@ -23,7 +26,7 @@ export interface PureSearchPanelProps
 export const PureSearchPanel = ({
   onSearch,
   fixedWidth = false,
-  searchIconPosition = SearchIconPosition.RIGHT,
+  searchIconPosition = "RIGHT",
   isDisabled = false,
   ...props
 }: PureSearchPanelProps) => {

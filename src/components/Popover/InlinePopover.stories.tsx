@@ -20,8 +20,12 @@ const Template: Story<InlinePopoverProps> = (args) => {
     setIsOpen((prev) => !prev);
   };
 
+  React.useEffect(() => {
+    setIsOpen(!!args.isOpen);
+  }, [args.isOpen]);
+
   return (
-    <InlinePopover {...args} isOpen={isOpen}>
+    <InlinePopover {...args} isOpen={isOpen} onClose={togglePopover}>
       <span onClick={togglePopover}>Click here to toggle the popover</span>
     </InlinePopover>
   );

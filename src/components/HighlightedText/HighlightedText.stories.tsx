@@ -13,7 +13,11 @@ export default {
   component: HighlightedText,
 } as Meta;
 
-const Template: Story<HighlightedTextProps> = (args) => <HighlightedText {...args} />;
+const Template: Story<HighlightedTextProps> = (args) => (
+  <div style={{ fontFamily: "Roboto" }}>
+    <HighlightedText {...args} />
+  </div>
+);
 
 export const Example = Template.bind({});
 Example.args = {

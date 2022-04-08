@@ -21,7 +21,7 @@ export interface PageProps {
 
 export const Page = ({
   className,
-  size = CONTAINER_SIZE.FULLWIDTH,
+  size = "FULLWIDTH",
   title,
   children,
   dataQa,

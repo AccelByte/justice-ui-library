@@ -11,81 +11,91 @@
   color: $base-100;
   border-radius: 2px;
   font-size: $font-size-h9;
-  font-weight: 500;
   font-family: $font-family-primary;
   letter-spacing: 0.02em;
-  &.basic{
+  &.semibold {
+    font-weight: 500;
+  }
+  &.medium {
+    font-size: $font-size-h7;
+    padding: 4px 8px;
+  }
+  &.large {
+    font-size: $font-size-h6;
+    padding: 6px 10px;
+  }
+  &.basic {
     color: $base-white;
-    &.error{
+    &.error {
       background-color: $semantic-red-80;
     }
-    &.warning{
+    &.warning {
       background-color: $semantic-yellow-80;
     }
-    &.success{
+    &.success {
       background-color: $semantic-green-80;
     }
-    &.info{
+    &.info {
       background-color: $semantic-blue-80;
     }
-    &.inactive{
+    &.inactive {
       background-color: $base-80;
     }
-    &.general{
+    &.general {
       background-color: $base-120;
     }
   }
-  &.light{
-    &.error{
+  &.light {
+    &.error {
       color: $semantic-red-80;
       background-color: $semantic-red-10;
     }
-    &.warning{
-      color:$semantic-yellow-80;
+    &.warning {
+      color: $semantic-yellow-80;
       background-color: $semantic-yellow-10;
     }
-    &.success{
+    &.success {
       color: $semantic-green-80;
       background-color: $semantic-green-10;
     }
-    &.info{
+    &.info {
       color: $semantic-blue-80;
       background-color: $semantic-blue-10;
     }
-    &.inactive{
+    &.inactive {
       color: $base-100;
       background-color: $base-20;
     }
-    &.general{
+    &.general {
       color: $base-120;
       background-color: $base-20;
     }
   }
-  &.outline{
+  &.outline {
     border-width: 1px;
     border-style: solid;
     border-radius: 4px;
-    &.error{
+    &.error {
       color: $semantic-red-80;
       border-color: $semantic-red-80;
     }
-    &.warning{
-      color:$semantic-yellow-80;
+    &.warning {
+      color: $semantic-yellow-80;
       border-color: $semantic-yellow-80;
     }
-    &.success{
+    &.success {
       color: $semantic-green-80;
       border-color: $semantic-green-80;
     }
-    &.info{
+    &.info {
       color: $semantic-blue-80;
       border-color: $semantic-blue-80;
     }
-    &.inactive{
+    &.inactive {
       color: $base-80;
       border-color: $base-80;
     }
-    &.general{
+    &.general {
       color: $base-120;
       border-color: $base-120;
     }

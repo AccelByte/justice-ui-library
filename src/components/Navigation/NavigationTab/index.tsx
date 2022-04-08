@@ -31,15 +31,14 @@ export interface NavigationTabProps {
   containerSize?: Enum<typeof CONTAINER_SIZE>;
 }
 
-export const NavigationTab = (props: NavigationTabProps) => {
-  const {
-    isVertical,
-    isChangeRoute = true,
-    containerSize = CONTAINER_SIZE.FULLWIDTH,
-    config,
-    changePageKey,
-    changePage,
-  } = props;
+export const NavigationTab = ({
+  isVertical,
+  isChangeRoute = true,
+  containerSize = "FULLWIDTH",
+  config,
+  changePageKey,
+  changePage,
+}: NavigationTabProps) => {
   const [shownTabs, setShownTabs] = React.useState<ItemTab[]>(config);
   const [hiddenTabs, setHiddenTabs] = React.useState<ItemTab[]>([]);
   const [accumulativeNavWidth, setAccumulativeNavWidth] = React.useState<number[]>([]);

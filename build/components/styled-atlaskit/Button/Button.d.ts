@@ -2,7 +2,7 @@ import React from "react";
 import { ButtonProps as AkButtonProps, ButtonAppearances } from "@atlaskit/button";
 import "./Button.scss";
 export declare type ButtonAppearance = ButtonAppearances | "outline" | "success";
-export interface ButtonProps extends Omit<AkButtonProps, "isDisabled" | "isLoading" | "isSelected" | "spacing" | "type" | "shouldFitContainer" | "autoFocus" | "appearance"> {
+export interface ButtonProps extends Pick<AkButtonProps, "className" | "onClick" | "href" | "target" | "id" | "tabIndex"> {
     children: React.ReactNode;
     /** Set if the button is disabled. */
     isDisabled?: boolean;
