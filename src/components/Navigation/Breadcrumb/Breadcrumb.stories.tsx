@@ -11,6 +11,37 @@ import { BreadcrumbSchema } from "../../../types";
 export default {
   title: "Components/Navigation/Breadcrumb",
   component: Breadcrumb,
+  argTypes: {
+    pageTitleBadge: {
+      table: {
+        type: {
+          summary: "BadgeProps",
+          detail: `
+          {
+            text: string;
+            appearance?: "INFO" | "INACTIVE" | "WARNING" | "ERROR" | "SUCCESS" | "GENERAL";
+            type?: "BASIC" | "LIGHT" | "OUTLINE";
+            size?: "SMALL" | "MEDIUM" | "LARGE";
+            isSemibold?: boolean;
+        }`,
+        },
+      },
+    },
+    breadcrumbLists: {
+      table: {
+        type: {
+          summary: "BreadcrumbSchema[]",
+          detail: `
+          {
+            text: string;
+            onClick?: () => void;
+            link?: string;
+            dataQa?: string | null;
+        }[]`,
+        },
+      },
+    },
+  },
 } as Meta;
 
 const Template: Story<BreadcrumbProps> = (args) => <Breadcrumb {...args} />;

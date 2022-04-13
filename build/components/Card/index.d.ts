@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./index.scss";
-import { ButtonAppearances } from "@atlaskit/button";
+import { ButtonAppearance } from "..";
 export interface CardProps {
     children: React.ReactNode;
     /** A custom element placed at the bottom of the card */
@@ -22,7 +22,7 @@ export interface CardProps {
     /** An icon displayed in the left side of `buttonText` */
     buttonIcon?: string;
     buttonDataQa?: string | null;
-    buttonAppearance?: ButtonAppearances;
+    buttonAppearance?: ButtonAppearance;
     buttonDisabled?: boolean;
     /** Set if the card has no padding */
     noPadding?: boolean;

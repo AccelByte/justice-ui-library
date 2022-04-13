@@ -7,10 +7,11 @@ export interface AccordionProps {
     children: React.ReactChild;
     /** Custom class name placed in the outermost wrapper of the component */
     className?: string;
-    /** Unique id passed to data-qa-id property of the outermost wrapper of the component. Used for automation testing  */
+    /** A testId prop is provided for specified elements, which is a unique string that appears as a data attribute `data-qa-id` in the rendered code, serving as a hook for automated tests.  */
     dataQa?: string | null;
+    /** If true, remove padding from .accordionContent */
     noPadding?: boolean;
-    /** To set toggleAccdion become disable and not open accordion when click accodionHead  */
+    /** To disable toggle upon clicking the accordion  */
     isToggleDisabled?: boolean;
 }
 export declare const Accordion: ({ title, className, children, dataQa, noPadding, isToggleDisabled, }: AccordionProps) => JSX.Element;

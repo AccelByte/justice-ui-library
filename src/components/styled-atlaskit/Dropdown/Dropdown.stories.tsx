@@ -4,7 +4,6 @@
  * and restrictions contact your company contract manager.
  */
 
-import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { DropdownMenu, DropdownItemGroup, DropdownItem } from ".";
 import { DropdownMenuStatefulProps } from "@atlaskit/dropdown-menu";

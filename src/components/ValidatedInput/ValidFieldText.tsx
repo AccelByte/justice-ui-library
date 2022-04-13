@@ -26,7 +26,11 @@ export class Input extends FieldText {
   }
 }
 
-export interface ValidFieldTextProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface ValidFieldTextProps
+  extends Pick<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    "maxLength" | "placeholder" | "disabled" | "onBlur" | "className"
+  > {
   onKeyDown?: (event: React.FormEvent<HTMLInputElement>) => void;
   label?: string;
   name: string;

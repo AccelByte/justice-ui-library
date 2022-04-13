@@ -16,14 +16,37 @@ export default {
       table: {
         type: {
           summary: "HeadType",
-          detail: `cells: {
-            key?: string | number;
-            colSpan?: number;
-            content?: React.ReactNode | string;
+          detail: `
+          {
+            cells: {
+              key?: string | number;
+              colSpan?: number;
+              content?: React.ReactNode | string;
+              testId?: string;
+              isSortable?: boolean;
+              width?: number;
+              shouldTruncate?: boolean;
+          }[]
+        }`,
+        },
+      },
+    },
+    rows: {
+      table: {
+        type: {
+          summary: "RowType[]",
+          detail: `
+          {
+            cells: {
+              key?: string | number;
+              colSpan?: number;
+              content?: React.ReactNode | string;
+              testId?: string;
+            }[];
+            key?: string;
+            onClick?: React.MouseEventHandler;
             testId?: string;
-            isSortable?: boolean;
-            width?: number;
-            shouldTruncate?: boolean;
+            innerRef?: RefObject<HTMLElement>;
           }[]`,
         },
       },
