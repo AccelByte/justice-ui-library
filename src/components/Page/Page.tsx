@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * Copyright (c) 2021-2022 AccelByte Inc. All Rights Reserved.
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
  */
@@ -17,6 +17,8 @@ export interface PageProps {
   dataQa?: string | null;
   headerRightElement?: React.ReactNode;
   noSidebar?: boolean;
+  noPadding?: boolean;
+  noMarginBottom?: boolean;
 }
 
 export const Page = ({
@@ -27,6 +29,8 @@ export const Page = ({
   dataQa,
   headerRightElement,
   noSidebar = false,
+  noMarginBottom = false,
+  noPadding = false,
 }: React.PropsWithChildren<PageProps>) => {
   return (
     <div
@@ -39,7 +43,7 @@ export const Page = ({
       )}
     >
       {title && (
-        <div className="pageComponentTitle" data-qa-id={dataQa}>
+        <div className={classNames("pageComponentTitle", { noMarginBottom })} data-qa-id={dataQa}>
           <div
             className={classNames("pageComponentTitleText", {
               noSidebar,
@@ -50,7 +54,7 @@ export const Page = ({
           {headerRightElement && <div className={"extraOptionsHeader"}>{headerRightElement}</div>}
         </div>
       )}
-      <div className="pageComponentContainer">{children}</div>
+      <div className={classNames("pageComponentContainer", { noPadding })}>{children}</div>
     </div>
   );
 };
