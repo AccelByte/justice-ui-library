@@ -12,6 +12,21 @@ import { Enum } from "../../types";
 export default {
   title: "Components/ScrollSpy",
   component: ScrollSpy,
+  argTypes: {
+    items: {
+      table: {
+        type: {
+          summary: "SpyItem[]",
+          detail: `
+          {
+            elementId: string;
+            text: string;
+            dataQa?: string | null;
+        }[]`,
+        },
+      },
+    },
+  },
 } as Meta;
 
 const ExampleItemsEnum = Enum("First", "Second", "Third");

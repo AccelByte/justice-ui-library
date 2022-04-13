@@ -11,6 +11,22 @@ import { NavigationTab, NavigationTabProps } from ".";
 export default {
   title: "Components/Navigation/NavigationTab",
   component: NavigationTab,
+  argTypes: {
+    config: {
+      table: {
+        type: {
+          summary: "ItemTab[]",
+          detail: `
+          {
+            tabName: string;
+            url: string;
+            isActive: boolean;
+            dataQa?: string | null;
+        }[]`,
+        },
+      },
+    },
+  },
 } as Meta;
 
 const Template: Story<NavigationTabProps> = (args) => {

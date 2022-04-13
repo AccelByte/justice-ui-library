@@ -14,7 +14,7 @@ export const APPEARANCE_TYPE = Enum("success", "error", "info", "warning");
 export interface BannerProps {
   appearance: Enum<typeof APPEARANCE_TYPE>;
   message: React.ReactNode;
-  /** Function to make the component disappear. To make it possible, show the component only on a certain condition or state, then use `dismissBanner` to set the state to a falsy value */
+  /** Function triggered by clicking `x` icon. Usually used for making the banner disappears */
   dismissBanner?: (event: React.MouseEvent) => void;
   dataQa?: string | null;
 }

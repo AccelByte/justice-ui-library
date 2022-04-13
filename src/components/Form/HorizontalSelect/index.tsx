@@ -4,7 +4,6 @@
  * and restrictions contact your company contract manager.
  */
 
-import * as React from "react";
 import classNames from "classnames";
 import { SelectOption } from "../../../types";
 import styles from "./index.module.scss";

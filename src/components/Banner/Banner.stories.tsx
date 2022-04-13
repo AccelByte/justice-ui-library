@@ -26,9 +26,11 @@ const Template: Story<BannerProps> = (args) => {
   return (
     <div style={{ maxWidth: 300 }}>
       {isShown && <Banner {...args} dismissBanner={dismissBanner} />}
-      <p style={{ fontFamily: "Roboto", cursor: "pointer" }} onClick={showBanner}>
-        Show Banner
-      </p>
+      {!isShown && (
+        <p style={{ fontFamily: "Roboto", cursor: "pointer" }} onClick={showBanner}>
+          Show Banner
+        </p>
+      )}
     </div>
   );
 };

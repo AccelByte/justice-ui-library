@@ -12,6 +12,22 @@ import { RadioOption } from "../../../types";
 export default {
   title: "Components/StyledRadio",
   component: StyledRadio,
+  argTypes: {
+    options: {
+      table: {
+        type: {
+          summary: "RadioOption<string | boolean>[]",
+          detail: `
+          {
+            label: string;
+            value: string | boolean;
+            helper?: string;
+            customChild?: React.ReactNode;
+        }[]`,
+        },
+      },
+    },
+  },
 } as Meta;
 
 const Template: Story<StyledRadioProps> = (args) => {
@@ -22,8 +38,8 @@ const Template: Story<StyledRadioProps> = (args) => {
   };
 
   React.useEffect(() => {
-    setValue(args.selectedRadio)
-  }, [args.selectedRadio])
+    setValue(args.selectedRadio);
+  }, [args.selectedRadio]);
 
   return <StyledRadio {...args} selectedRadio={value} onChange={onChange} />;
 };

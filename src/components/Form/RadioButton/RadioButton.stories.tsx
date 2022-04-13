@@ -12,6 +12,32 @@ import { SelectOption } from "../../../types";
 export default {
   title: "Components/RadioButton",
   component: RadioButton,
+  argTypes: {
+    options: {
+      table: {
+        type: {
+          summary: "SelectOption<string | boolean>[]",
+          detail: `
+          {
+            label: string;
+            value: string | boolean;
+        }[]`,
+        },
+      },
+    },
+    selectedRadio: {
+      table: {
+        type: {
+          summary: "SelectOption<string | boolean>",
+          detail: `
+          {
+            label: string;
+            value: string | boolean;
+        }`,
+        },
+      },
+    },
+  },
 } as Meta;
 
 const Template: Story<RadioButtonProps> = (args) => {

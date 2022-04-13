@@ -6,7 +6,7 @@ import { InlinePopoverType } from "../Popover/InlinePopover";
 export declare class Input extends FieldText {
     componentWillReceiveProps(nextProps: any, nextContext: any): void;
 }
-export interface ValidFieldTextProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface ValidFieldTextProps extends Pick<React.InputHTMLAttributes<HTMLInputElement>, "maxLength" | "placeholder" | "disabled" | "onBlur" | "className"> {
     onKeyDown?: (event: React.FormEvent<HTMLInputElement>) => void;
     label?: string;
     name: string;

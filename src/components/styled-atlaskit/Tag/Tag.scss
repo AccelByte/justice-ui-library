@@ -7,6 +7,7 @@
 @import "src/styles/variables";
 
 .styled-atlaskit-tag {
+  font-family: $font-family-primary;
   display: inline;
   margin-right: 0.5rem;
   > span {

@@ -11,6 +11,20 @@ import { HorizontalSelect, HorizontalSelectProps } from ".";
 export default {
   title: "Components/HorizontalSelect",
   component: HorizontalSelect,
+  argTypes: {
+    options: {
+      table: {
+        type: {
+          summary: "SelectOption<T>[]",
+          detail: `
+          {
+            label: string;
+            value: T;
+        }[]`,
+        },
+      },
+    },
+  },
 } as Meta;
 
 const Template: Story<HorizontalSelectProps<string>> = (args) => {

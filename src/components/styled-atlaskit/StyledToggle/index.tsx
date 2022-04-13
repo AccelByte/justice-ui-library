@@ -17,9 +17,7 @@ export interface StyledToggleProps {
   label?: string;
   name?: string;
   value?: string;
-  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
   activeText?: string;
   inactiveText?: string;
   className?: string;
@@ -34,9 +32,7 @@ export const StyledToggle = ({
   label = "",
   name = "",
   value = "",
-  onBlur,
   onChange,
-  onFocus,
   activeText = "",
   inactiveText = "",
   className,
@@ -51,12 +47,7 @@ export const StyledToggle = ({
           {isLoading && <span className="styled-toggle__loading" />}
 
           <label data-checked={isChecked}>
-            <input
-              type="checkbox"
-              aria-label={label}
-              {...{ name, value, onChange, onFocus, onBlur }}
-              disabled={isToggleDisabled}
-            />
+            <input type="checkbox" aria-label={label} {...{ name, value, onChange }} disabled={isToggleDisabled} />
           </label>
 
           {(activeText || inactiveText) && (

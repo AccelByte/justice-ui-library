@@ -21,13 +21,17 @@ const Template: Story<ProgressModalPageProps> = (args) => {
 
   const clickPrev = () => {
     if (step === 1) return;
-    setStep((prev) => prev - 1);
+    setStep((prev) => Math.min(args.stepLabels.length, prev - 1));
   };
 
   const clickNext = () => {
     if (step === args.stepLabels.length) return;
-    setStep((prev) => prev + 1);
+    setStep((prev) => Math.max(1, prev + 1));
   };
+
+  React.useEffect(() => {
+    setStep(args.step);
+  }, [args.step]);
 
   return (
     <div style={{ fontFamily: "Roboto" }}>
@@ -36,10 +40,12 @@ const Template: Story<ProgressModalPageProps> = (args) => {
         <ProgressModalPage {...args} onClose={() => setIsOpen(false)} step={step}>
           Click the X button to show the docs when you are in Docs section
           <div style={{ marginTop: 20 }}>
-            <Button appearance="subtle" onClick={clickPrev}>
+            <Button appearance="subtle" onClick={clickPrev} isDisabled={step <= 1}>
               Prev
             </Button>
-            <Button onClick={clickNext}>Next</Button>
+            <Button onClick={clickNext} isDisabled={step >= args.stepLabels.length}>
+              Next
+            </Button>
           </div>
         </ProgressModalPage>
       )}

@@ -9,10 +9,10 @@ import classNames from "classnames";
 import { ButtonWithIcon } from "../ButtonWithIcon";
 import ReactTooltip from "react-tooltip";
 import "./index.scss";
-import { ButtonAppearances } from "@atlaskit/button";
 import { NoResultTip } from "../NoResultTip";
 import { renderToString } from "react-dom/server";
 import { translation } from "../../utils/i18n";
+import { ButtonAppearance } from "..";
 
 export interface CardProps {
   children: React.ReactNode;
@@ -35,7 +35,7 @@ export interface CardProps {
   /** An icon displayed in the left side of `buttonText` */
   buttonIcon?: string;
   buttonDataQa?: string | null;
-  buttonAppearance?: ButtonAppearances;
+  buttonAppearance?: ButtonAppearance;
   buttonDisabled?: boolean;
   /** Set if the card has no padding */
   noPadding?: boolean;
