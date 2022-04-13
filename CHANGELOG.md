@@ -8,7 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.1.43]
 ### Added
 - `noPadding` and `noMarginBottom` props in `Page` component
+- `noPadding` props in `Accordion` component
 - `react-docgen-typescript`
+
+### Refactored
+- `Accordion` styling
 
 ## [0.1.42]
 ### Refactored

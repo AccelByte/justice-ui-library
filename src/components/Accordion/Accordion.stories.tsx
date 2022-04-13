@@ -12,7 +12,11 @@ export default {
   component: Accordion,
 } as Meta;
 
-const Template: Story<AccordionProps> = (args) => <Accordion {...args} />;
+const Template: Story<AccordionProps> = (args) => (
+  <div style={{maxWidth: 300}}>
+    <Accordion {...args} />
+  </div>
+);
 
 export const Default = Template.bind({});
 Default.args = { title: "Accordion Title", children: <p>Accordion Body</p>, className: "some-classname", dataQa: "accordion-qa" };
