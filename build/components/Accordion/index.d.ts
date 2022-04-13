@@ -9,5 +9,6 @@ export interface AccordionProps {
     className?: string;
     /** Unique id passed to data-qa-id property of the outermost wrapper of the component. Used for automation testing  */
     dataQa?: string | null;
+    noPadding?: boolean;
 }
-export declare const Accordion: ({ title, className, children, dataQa }: AccordionProps) => JSX.Element;
+export declare const Accordion: ({ title, className, children, dataQa, noPadding }: AccordionProps) => JSX.Element;

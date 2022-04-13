@@ -14,11 +14,21 @@
     justify-content: space-between;
     color: $brand-100;
     align-items: center;
+    &:hover,
+    &.isOpen {
+      background-color: $brand-10;
+      + .accordionBody {
+        background-color: $brand-10;
+      }
+      .accordionToggler {
+        opacity: 1;
+      }
+    }
   }
   .accordionHead,
   .accordionBody {
     padding: 12px;
-    background-color: $brand-10;
+    background-color: $base-white;
     border-radius: 3px;
   }
   .accordionBody {
@@ -30,6 +40,10 @@
     background: $base-white;
     border-radius: 3px;
     padding: 10px;
+
+    &.noPadding {
+      padding: 0;
+    }
   }
   .show {
     display: block;

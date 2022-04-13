@@ -17,9 +17,10 @@ export interface AccordionProps {
   className?: string;
   /** Unique id passed to data-qa-id property of the outermost wrapper of the component. Used for automation testing  */
   dataQa?: string | null;
+  noPadding?: boolean;
 }
 
-export const Accordion = ({ title, className, children, dataQa }: AccordionProps) => {
+export const Accordion = ({ title, className, children, dataQa, noPadding = false }: AccordionProps) => {
   const [isOpen, toggleAccordion] = React.useState(false);
   return (
     <div className={classNames("accordion", className)} data-qa-id={dataQa}>
@@ -30,7 +31,7 @@ export const Accordion = ({ title, className, children, dataQa }: AccordionProps
         />
       </div>
       <div className={classNames("accordionBody", { show: isOpen })}>
-        <div className="accordionContent">{children}</div>
+        <div className={classNames("accordionContent", {noPadding})}>{children}</div>
       </div>
     </div>
   );
