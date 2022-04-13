@@ -9,5 +9,7 @@ export interface PageProps {
     dataQa?: string | null;
     headerRightElement?: React.ReactNode;
     noSidebar?: boolean;
+    noPadding?: boolean;
+    noMarginBottom?: boolean;
 }
-export declare const Page: ({ className, size, title, children, dataQa, headerRightElement, noSidebar, }: React.PropsWithChildren<PageProps>) => JSX.Element;
+export declare const Page: ({ className, size, title, children, dataQa, headerRightElement, noSidebar, noMarginBottom, noPadding, }: React.PropsWithChildren<PageProps>) => JSX.Element;
