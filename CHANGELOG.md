@@ -14,6 +14,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Refactored
 - `Accordion` styling
 
+### Removed
+- Duplicate `styled-atlaskit-table` css in `Card`
+
+### Fixed
+- `DynamicTable` row max width is shrinked to 320px on drag
+
 ## [0.1.42]
 ### Refactored
 - Sort storybook alphabetically
