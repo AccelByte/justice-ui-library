@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * Copyright (c) 2021-2022 AccelByte Inc. All Rights Reserved.
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
  */
@@ -8,9 +8,12 @@
 
 .styled-atlaskit-table {
   font-family: $font-family-primary;
+  padding-bottom: 16px;
+
   > div {
     margin-bottom: 0;
   }
+
   &.no-padding {
     padding-bottom: 0;
     thead th,
@@ -95,6 +98,10 @@
     &:last-child {
       padding-right: 30px;
     }
+  }
+
+  tbody[data-rbd-droppable-id] tr[draggable] td {
+    max-width: unset;
   }
 
   tbody td {
