@@ -47,6 +47,7 @@ export * from "./ValidatedInput/ValidFieldText";
 export * from "./ValidatedInput/ValidFieldTextArea";
 export * from "./ValidatedInput/ValidMultiSelect";
 export * from "./ValidatedInput/ValidSelect";
+export * from "./ValidatedInput/ValidSelectAsync";
 export * from "./ValidatedInput/ValidDynamicText";
 export * from "./ValidatedInput/ValidFieldPassword";
 export * from "./EmptyResultsWithIcon";
