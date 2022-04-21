@@ -1,6 +1,6 @@
 {
   "name": "justice-ui-library",
-  "version": "0.1.43",
+  "version": "0.2.0",
   "author": "AccelByte Inc",
   "license": "AccelByte License",
   "main": "./build/index.js",
@@ -28,6 +28,7 @@
     "randomatic": "^3.1.1",
     "react-copy-to-clipboard": "^5.0.4",
     "react-datetime": "^2.16.3",
+    "react-select-async-paginate": "^0.6.1",
     "react-tooltip": "^3.6.1",
     "styled-components": "^3.2.6"
   },
