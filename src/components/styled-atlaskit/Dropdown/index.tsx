@@ -4,5 +4,6 @@
  * and restrictions contact your company contract manager.
  */
 
-import "./index.scss"
-export { default as DropdownMenu, DropdownItem, DropdownItemGroup } from "@atlaskit/dropdown-menu";
+import "./index.scss";
+export { DropdownItem, DropdownItemGroup } from "@atlaskit/dropdown-menu";
+export { DropdownMenu } from "./DropdownMenu";
