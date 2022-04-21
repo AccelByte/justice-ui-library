@@ -1,0 +1,44 @@
+/*
+ * Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+div[class|="Droplist__Trigger"] {
+  .styled-atlaskit-dropdown-menu {
+    border-radius: $border-radius;
+
+    &:not(:disabled) {
+      &.primary {
+        background-color: $button-backgroundColor--primary--enabled;
+
+        &:hover {
+          background-color: $button-backgroundColor--primary--hovered;
+        }
+
+        &:active {
+          background-color: $button-backgroundColor--primary--active;
+        }
+      }
+    }
+
+    &:disabled {
+      background-color: $base-white;
+
+      span {
+        color: $color--disabled;
+      }
+    }
+  }
+
+  button[aria-expanded="true"] {
+    background-color: $brand-80;
+
+    &:hover {
+      background-color: $button-backgroundColor--primary--hovered;
+    }
+  }
+}
+

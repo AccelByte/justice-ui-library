@@ -6,15 +6,15 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { DropdownMenu, DropdownItemGroup, DropdownItem } from ".";
-import { DropdownMenuStatefulProps } from "@atlaskit/dropdown-menu";
+import { DropdownItemGroup, DropdownItem } from ".";
+import { DropdownMenu, DropDownMenuProps } from "./DropdownMenu";
 
 export default {
   title: "Components/Dropdown",
   component: DropdownMenu,
 } as Meta;
 
-const Template: Story<DropdownMenuStatefulProps> = (args) => {
+const Template: Story<DropDownMenuProps> = (args) => {
   return (
     <div style={{ fontFamily: "Roboto" }}>
       <DropdownMenu {...args}>
@@ -34,8 +34,6 @@ const Template: Story<DropdownMenuStatefulProps> = (args) => {
 export const Example = Template.bind({});
 Example.args = {
   trigger: "Dropdown",
-  triggerType: "button",
-  triggerButtonProps: { appearance: "subtle" },
   position: "bottom right",
   defaultOpen: true,
   shouldFlip: false,
