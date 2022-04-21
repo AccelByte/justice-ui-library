@@ -14,16 +14,20 @@ export default {
   component: ValidSelectAsync,
 } as Meta;
 
-const options: SelectOption<number>[] = [];
-for (let i = 0; i < 50; ++i) {
-  options.push({
-    value: i + 1,
-    label: `Option ${i + 1}`,
-  });
-}
-
 const Template: Story<ValidSelectAsyncProps<number, any, any, boolean>> = (args) => {
   const [option, setOption] = React.useState<SelectOption | null>(null);
+
+  const options: SelectOption<number>[] = React.useMemo(() => {
+    const options = [];
+    for (let i = 0; i < 50; ++i) {
+      options.push({
+        value: i + 1,
+        label: `Option ${i + 1}`,
+      });
+    }
+    return options;
+  }, []);
+
   const onChange = (option: SelectOption) => {
     setOption(option);
   };
