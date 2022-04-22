@@ -1,0 +1,25 @@
+/*!
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+.valid-select-async-input {
+  font-family: $font-family-primary;
+  [class$="-menu"] {
+    > div {
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+      &::-webkit-scrollbar-track {
+        border-radius: 10px;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: $base-20;
+      }
+    }
+  }
+}
