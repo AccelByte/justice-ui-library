@@ -10,5 +10,7 @@ export interface AccordionProps {
     /** Unique id passed to data-qa-id property of the outermost wrapper of the component. Used for automation testing  */
     dataQa?: string | null;
     noPadding?: boolean;
+    /** To set toggleAccdion become disable and not open accordion when click accodionHead  */
+    isToggleDisabled?: boolean;
 }
-export declare const Accordion: ({ title, className, children, dataQa, noPadding }: AccordionProps) => JSX.Element;
+export declare const Accordion: ({ title, className, children, dataQa, noPadding, isToggleDisabled, }: AccordionProps) => JSX.Element;
