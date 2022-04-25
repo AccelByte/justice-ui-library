@@ -18,20 +18,36 @@ export interface AccordionProps {
   /** Unique id passed to data-qa-id property of the outermost wrapper of the component. Used for automation testing  */
   dataQa?: string | null;
   noPadding?: boolean;
+  /** To set toggleAccdion become disable and not open accordion when click accodionHead  */
+  isToggleDisabled?: boolean;
 }
 
-export const Accordion = ({ title, className, children, dataQa, noPadding = false }: AccordionProps) => {
+export const Accordion = ({
+  title,
+  className,
+  children,
+  dataQa,
+  noPadding = false,
+  isToggleDisabled,
+}: AccordionProps) => {
   const [isOpen, toggleAccordion] = React.useState(false);
+
+  const onToggleAccordion = () => {
+    if (isToggleDisabled) return;
+
+    toggleAccordion(!isOpen);
+  };
+
   return (
     <div className={classNames("accordion", className)} data-qa-id={dataQa}>
-      <div className={classNames("accordionHead", { isOpen })} onClick={() => toggleAccordion(!isOpen)}>
+      <div className={classNames("accordionHead", { isOpen })} onClick={onToggleAccordion}>
         <div className="accordionTitle">{title}</div>{" "}
         <i
           className={classNames("accordionToggler", { "fa-icon-chevron-down": !isOpen, "fa-icon-chevron-up": isOpen })}
         />
       </div>
       <div className={classNames("accordionBody", { show: isOpen })}>
-        <div className={classNames("accordionContent", {noPadding})}>{children}</div>
+        <div className={classNames("accordionContent", { noPadding })}>{children}</div>
       </div>
     </div>
   );

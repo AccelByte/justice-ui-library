@@ -23,9 +23,14 @@ export interface DateTimePickerProps extends DatetimepickerProps {
 class DateTimePicker extends React.Component<DateTimePickerProps> {
   renderInput = (props: any, openCalendar: any) => {
     const { isDisabled } = this.props;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      event.preventDefault();
+    };
+
     return (
       <div className={classNames("datepicker__input-field", { isDisabled })}>
-        <input {...props} />
+        <input {...props} onKeyDown={onKeyDown} />
         <i className="icon fa-icon-calendar" onClick={!isDisabled ? () => openCalendar() : undefined} />
       </div>
     );
