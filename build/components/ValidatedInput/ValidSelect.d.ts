@@ -1,11 +1,12 @@
 /// <reference types="react" />
 import { Enum, SelectOption } from "../../types";
+import { SelectProps } from "..";
 export declare const RELOADSTATUS: Readonly<{
     SUCCESS: "SUCCESS";
     LOADING: "LOADING";
     FAILED: "FAILED";
 }>;
-export interface ValidSelectProps {
+export interface ValidSelectProps extends SelectProps {
     label?: string;
     placeholder?: string;
     options: SelectOption[];
@@ -28,4 +29,4 @@ export interface ValidSelectProps {
     isMulti?: boolean;
     className?: string;
 }
-export declare const ValidSelect: ({ label, placeholder, options, name, value, onChange, errMessage, optionalLabel, isInvalid, isDisabled, isRequired, isClearable, tooltip, selectDataQa, isMulti, className, }: ValidSelectProps) => JSX.Element;
+export declare const ValidSelect: ({ label, placeholder, options, name, value, onChange, errMessage, optionalLabel, isInvalid, isDisabled, isRequired, isClearable, tooltip, selectDataQa, isMulti, className, ...props }: ValidSelectProps) => JSX.Element;
