@@ -10,11 +10,11 @@ import * as React from "react";
 import { default as classNames } from "classnames";
 import { Enum, SelectOption } from "../../types";
 import { FieldErrorMessage, FieldLabel } from "../Form/utility";
-import { Select } from "..";
+import { Select, SelectProps } from "..";
 
 export const RELOADSTATUS = Enum("LOADING", "FAILED", "SUCCESS");
 
-export interface ValidSelectProps {
+export interface ValidSelectProps extends SelectProps {
   label?: string;
   placeholder?: string;
   options: SelectOption[];
@@ -55,10 +55,12 @@ export const ValidSelect = ({
   selectDataQa,
   isMulti = false,
   className,
+  ...props
 }: ValidSelectProps) => (
   <div className={classNames("valid-select-input", className)}>
     {!!label && <FieldLabel label={label} optionalLabel={optionalLabel} isRequired={isRequired} tooltip={tooltip} />}
     <Select
+      {...props}
       options={options}
       placeholder={placeholder}
       name={name}
