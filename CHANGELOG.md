@@ -18,7 +18,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ### Refactored
 - Disable keydown input for `DateTimePicker`
-- `DropdownMenu` button have similar styling to the `Button` component
 
 ## [0.2.1]
 ### Fixed
