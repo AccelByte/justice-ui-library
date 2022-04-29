@@ -32,5 +32,12 @@ Example.args = {
   options: [
     { label: "Value 1", value: "value1" },
     { label: "Value 2", value: "value2" },
+    { label: "Value 3", value: "value3" },
+    { label: "Value 4", value: "value4" },
+    { label: "Value 5", value: "value5" },
+    { label: "Value 6", value: "value6" },
+    { label: "Value 7", value: "value7" },
+    { label: "Value 8", value: "value8" },
+    { label: "Value 9", value: "value9" },
   ],
 };

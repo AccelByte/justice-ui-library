@@ -21,6 +21,20 @@
       border: 2px solid $input-borderColor--active;
     }
   }
+  [class$="-menu"] {
+    > div {
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+      &::-webkit-scrollbar-track {
+        border-radius: 10px;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: $base-20;
+      }
+    }
+  }
   &__option {
     text-overflow: ellipsis;
     overflow: hidden;
