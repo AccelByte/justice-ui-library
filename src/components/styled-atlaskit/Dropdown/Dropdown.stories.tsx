@@ -10,7 +10,7 @@ import { DropdownMenu, DropdownItemGroup, DropdownItem } from ".";
 import { DropdownMenuStatefulProps } from "@atlaskit/dropdown-menu";
 
 export default {
-  title: "Components/Dropdown",
+  title: "Components/Dropdown/Dropdown",
   component: DropdownMenu,
 } as Meta;
 
