@@ -17,7 +17,7 @@ export default {
 
 const Template: Story<ProgressModalPageProps> = (args) => {
   const [isOpen, setIsOpen] = React.useState<boolean>(true);
-  const [step, setStep] = React.useState<number>(1);
+  const [step, setStep] = React.useState<number>(args.step);
 
   const clickPrev = () => {
     if (step === 1) return;
@@ -57,4 +57,5 @@ export const Example = Template.bind({});
 Example.args = {
   title: "Progress Indicator Title",
   stepLabels: ["Step 1", "Step 2", "Step 3"],
+  step: 1,
 };

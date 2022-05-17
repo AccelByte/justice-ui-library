@@ -17,7 +17,7 @@ import { Props } from "@atlaskit/dropdown-menu/dist/cjs/components/group/Dropdow
 
 // doing this only to populate all props and their description in storybook docs
 // otherwise we can simply export { default as DropdownMenu, DropdownItem, DropdownItemGroup } from "@atlaskit/dropdown-menu"
-export const DropdownMenu = (props: DropdownMenuStatefulProps) => <DM {...props} />;
+export const DropdownMenu = (props: Partial<DropdownMenuStatefulProps>) => <DM {...props} />;
 export const DropdownItem = (props: DropdownItemProps) => <DItem {...props} />;
 export const DropdownItemGroup = (props: Props) => <DIG {...props} />;
 export type { DropdownMenuStatefulProps as DropdownMenuProps, DropdownItemProps, Props as DropdownItemGroupProps };

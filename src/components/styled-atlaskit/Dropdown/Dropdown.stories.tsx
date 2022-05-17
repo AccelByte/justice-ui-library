@@ -9,7 +9,7 @@ import { DropdownMenu, DropdownItemGroup, DropdownItem } from ".";
 import { DropdownMenuStatefulProps } from "@atlaskit/dropdown-menu";
 
 export default {
-  title: "Components/Dropdown/Dropdown",
+  title: "Components/Dropdown/DropdownMenu",
   component: DropdownMenu,
 } as Meta;
 
@@ -19,11 +19,11 @@ const Template: Story<DropdownMenuStatefulProps> = (args) => {
       <DropdownMenu {...args}>
         <DropdownItemGroup title="Dropdown Group 1">
           <DropdownItem key="1">Dropdown Item 1</DropdownItem>
-          <DropdownItem key="1">Dropdown Item 2</DropdownItem>
+          <DropdownItem key="2">Dropdown Item 2</DropdownItem>
         </DropdownItemGroup>
         <DropdownItemGroup title="Dropdown Group 2">
-          <DropdownItem key="1">Dropdown Item 3</DropdownItem>
-          <DropdownItem key="1">Dropdown Item 4</DropdownItem>
+          <DropdownItem key="3">Dropdown Item 3</DropdownItem>
+          <DropdownItem key="4">Dropdown Item 4</DropdownItem>
         </DropdownItemGroup>
       </DropdownMenu>
     </div>
