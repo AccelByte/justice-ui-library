@@ -27,6 +27,6 @@ Example.args = {
   children: "Dropdown Item",
   description: "Dropdown description",
   autoFocus: false,
-  elemBefore: <i className="fa-icon-cloud-drizzle" style={{ marginRight: 8 }} />,
-  elemAfter: <i className="fa-icon-compass" style={{ marginLeft: 8 }} />,
+  elemBefore: <i className="fa-icon-calendar" style={{ marginRight: 8 }} />,
+  elemAfter: <i className="fa-icon-trash" style={{ marginLeft: 8 }} />,
 };

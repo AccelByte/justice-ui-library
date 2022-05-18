@@ -7,13 +7,13 @@
 @import "src/styles/variables";
 
 .table-filter {
+  font-family: $font-family-primary;
   margin-left: auto;
   display: flex;
   align-items: center;
-  .table-filter-label {
+  .field-label {
     margin-right: 20px;
-    font-size: $font-size-h5;
-    color: $color--text--secondary;
+    padding: 0;
   }
 
   .styled-atlaskit-select {

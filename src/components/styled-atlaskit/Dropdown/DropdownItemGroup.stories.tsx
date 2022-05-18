@@ -31,5 +31,5 @@ Example.args = {
       <DropdownItem key="2">Dropdown Item 2</DropdownItem>
     </>
   ),
-  elemAfter: <i className="fa-icon-scissors" style={{ marginLeft: 8 }} />,
+  elemAfter: <i className="fa-icon-clipboard" style={{ marginLeft: 8 }} />,
 };

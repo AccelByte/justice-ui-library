@@ -17,7 +17,7 @@ export default {
 
 export const AccelIcons: Story = () => {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", rowGap: 20, fontFamily: "Roboto" }}>
+    <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 16, fontFamily: "Roboto" }}>
       {AccelIconsList.map((icon, index) => (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }} key={index}>
           <i className={icon} style={{ fontSize: 24, marginBottom: 10 }} />

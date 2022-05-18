@@ -6,11 +6,7 @@
 
 @font-face {
   font-family: 'accelicons';
-  src:  url('../../assets/fonts/accelicons.eot?2rgpcc');
-  src:  url('../../assets/fonts/accelicons.eot?2rgpcc#iefix') format('embedded-opentype'),
-    url('../../assets/fonts/accelicons.ttf?2rgpcc') format('truetype'),
-    url('../../assets/fonts/accelicons.woff?2rgpcc') format('woff'),
-    url('../../assets/fonts/accelicons.svg?2rgpcc#accelicons') format('svg');
+  src: url('../../assets/fonts/accelicons.woff?2rgpcc') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;

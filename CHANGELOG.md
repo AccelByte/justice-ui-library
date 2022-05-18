@@ -15,6 +15,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ### Removed
 - `onFocus` and `onBlur` props from `StyledToggle`
+- Unused feather icons
+- Icon font formats other than `.woff`
+- `datetime` from `utils` folder
 
 ## [0.2.5]
 ### Added
