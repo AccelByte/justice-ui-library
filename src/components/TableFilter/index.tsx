@@ -8,7 +8,7 @@ import * as React from "react";
 import "./index.scss";
 import classNames from "classnames";
 import { SelectOption } from "../../types";
-import { Select } from "..";
+import { FieldLabel, Select } from "..";
 import ReactTooltip from "react-tooltip";
 import { renderToString } from "react-dom/server";
 
@@ -37,15 +37,7 @@ export const TableFilter = ({
   return (
     <div className={classNames("table-filter", { isLarge })} style={customStyle}>
       {!!label && (
-        <div className="table-filter-label">
-          {label}
-          {tooltip && (
-            <>
-              <i className="fa-icon-info" data-for="table-filter__tooltip" data-tip={dataTip} />
-              <ReactTooltip effect="solid" id="table-filter__tooltip" html={true} />
-            </>
-          )}
-        </div>
+        <FieldLabel label={label} tooltip={dataTip} />
       )}
       <Select
         options={options}
