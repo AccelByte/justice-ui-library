@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./index.scss";
-export interface CheckboxProps extends Pick<React.InputHTMLAttributes<HTMLInputElement>, "onChange"> {
+export interface CheckboxProps {
     label?: string;
     isChecked: boolean;
     isDisabled?: boolean;
@@ -8,5 +8,6 @@ export interface CheckboxProps extends Pick<React.InputHTMLAttributes<HTMLInputE
     helperText?: string;
     tooltip?: string;
     dataQa?: string | null;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 export declare const Checkbox: ({ label, helperText, isChecked, tooltip, isDisabled, value, ...props }: CheckboxProps) => JSX.Element;

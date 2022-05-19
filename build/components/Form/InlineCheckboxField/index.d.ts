@@ -6,4 +6,4 @@ export interface InlineCheckboxFieldProps extends Pick<React.InputHTMLAttributes
     onClick?: () => void;
     dataQa?: string | null;
 }
-export declare const InlineCheckboxField: ({ checked, onClick, isDisabled, readOnly, dataQa, ...checkboxProps }: InlineCheckboxFieldProps) => JSX.Element;
+export declare const InlineCheckboxField: ({ onClick, isDisabled, dataQa, ...checkboxProps }: InlineCheckboxFieldProps) => JSX.Element;
