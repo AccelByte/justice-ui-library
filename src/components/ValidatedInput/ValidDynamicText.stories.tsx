@@ -13,7 +13,21 @@ export default {
   component: ValidDynamicText,
 } as Meta;
 
-const Template: Story<ValidDynamicTextProps> = (args) => <ValidDynamicText {...args} />;
+const Template: Story<ValidDynamicTextProps> = (args) => {
+  const [values, setValues] = React.useState<string[]>(args.values);
+
+  const onChange = (value: string[]) => setValues(value);
+
+  React.useEffect(() => {
+    setValues(args.values);
+  }, [args.values]);
+
+  React.useEffect(() => {
+    setValues(args.values.slice(0, args.maxField));
+  }, [args.maxField]);
+
+  return <ValidDynamicText {...args} {...{ values, onChange }} />;
+};
 
 export const Example = Template.bind({});
 Example.args = {

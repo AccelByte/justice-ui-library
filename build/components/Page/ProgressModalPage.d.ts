@@ -6,4 +6,4 @@ export interface ProgressModalPageProps extends Omit<ModalPageProps, "isFlex"> {
     stepLabels: string[];
     onClose: () => void;
 }
-export declare const ProgressModalPage: ({ title, step, stepLabels, onClose, className, children, isFullWidth, dataQa, }: React.PropsWithChildren<ProgressModalPageProps>) => JSX.Element;
+export declare const ProgressModalPage: ({ title, step, stepLabels, className, children, isFullWidth, ...props }: React.PropsWithChildren<ProgressModalPageProps>) => JSX.Element;

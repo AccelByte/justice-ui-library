@@ -2,7 +2,7 @@ import * as React from "react";
 import { ValidFieldTextProps } from "./ValidFieldText";
 import "./ValidFieldPassword.scss";
 import { strengthLevelOrder } from "../../constants";
-export interface ValidFieldPasswordProps extends ValidFieldTextProps {
+export interface ValidFieldPasswordProps extends Omit<ValidFieldTextProps, "type" | "rightIcon" | "isFloat"> {
     strengthLevelIndicator?: keyof typeof strengthLevelOrder;
     hasGeneratePassword?: boolean;
     customPattern?: string;

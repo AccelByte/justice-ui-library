@@ -15,16 +15,14 @@ export interface InlineCheckboxFieldProps extends Pick<React.InputHTMLAttributes
 }
 
 export const InlineCheckboxField = ({
-  checked,
   onClick,
   isDisabled,
-  readOnly,
   dataQa,
   ...checkboxProps
 }: InlineCheckboxFieldProps) => {
   return (
     <div className="checkbox-container" data-qa-id={dataQa}>
-      <input {...checkboxProps} type="checkbox" checked={checked} disabled={isDisabled} readOnly={readOnly} />
+      <input {...checkboxProps} type="checkbox" disabled={isDisabled} />
       <div className="checkmark" onClick={!isDisabled ? onClick : undefined} />
     </div>
   );

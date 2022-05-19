@@ -17,7 +17,7 @@ import { strengthLevelOrder } from "../../constants";
 import { Button } from "../styled-atlaskit/Button/Button";
 import { translation } from "../../utils/i18n";
 
-export interface ValidFieldPasswordProps extends ValidFieldTextProps {
+export interface ValidFieldPasswordProps extends Omit<ValidFieldTextProps, "type" | "rightIcon" | "isFloat"> {
   strengthLevelIndicator?: keyof typeof strengthLevelOrder;
   hasGeneratePassword?: boolean;
   customPattern?: string;

@@ -20,17 +20,16 @@ export interface InlinePopoverProps extends Omit<Props, "testId"> {
   type?: InlinePopoverType;
 }
 
-export const InlinePopover: React.FC<InlinePopoverProps> = (props) => {
-  const { content, children, isOpen, placement, type } = props;
-  const popoverPlacement = placement || "right";
+export const InlinePopover: React.FC<InlinePopoverProps> = ({ placement = "right", ...props }) => {
+  const { content, children, isOpen, type } = props;
 
   return (
     <div className={classNames("inline-popover", type)}>
       <InlineDialog
         {...props}
         isOpen={!!content && isOpen}
-        placement={popoverPlacement}
-        testId={classNames("InlinePopover", popoverPlacement)}
+        placement={placement}
+        testId={classNames("InlinePopover", placement)}
       >
         {children}
       </InlineDialog>

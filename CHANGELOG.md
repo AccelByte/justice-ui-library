@@ -12,12 +12,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ### Refactored
 - Some prop descriptions in `Accordion`, `Banner`
 - Decrease the number of extended props from `InputHTMLAttributes<HTMLInputElement>` in `ValidFieldText` to only `maxLength`, `placeholder`, `disabled`, `onBlur`, and `className`
+- Make `ValidDynamicText` story more interactive
 
 ### Removed
 - `onFocus` and `onBlur` props from `StyledToggle`
 - Unused feather icons
 - Icon font formats other than `.woff`
 - `datetime` from `utils` folder
+- `type` prop from `ValidFieldPassword` and `PureSearchPanel`
+- `rightIcon` and `isFloat` prop from `ValidFieldPassword`
 
 ## [0.2.5]
 ### Added

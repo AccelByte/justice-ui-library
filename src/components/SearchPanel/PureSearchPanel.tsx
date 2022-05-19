@@ -15,7 +15,7 @@ export const SearchIconPosition = Enum("LEFT", "RIGHT");
 export interface PureSearchPanelProps
   extends Pick<
     React.InputHTMLAttributes<HTMLInputElement>,
-    "value" | "onChange" | "type" | "placeholder" | "autoComplete" | "onKeyPress"
+    "value" | "onChange" | "placeholder" | "autoComplete" | "onKeyPress"
   > {
   onSearch?: () => void;
   fixedWidth?: boolean;

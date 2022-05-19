@@ -20,20 +20,13 @@ export const ProgressModalPage = ({
   title,
   step,
   stepLabels,
-  onClose,
   className,
   children,
   isFullWidth = true,
-  dataQa,
+  ...props
 }: React.PropsWithChildren<ProgressModalPageProps>) => {
   return (
-    <ModalPage
-      onClose={onClose}
-      className={classNames(styles.modalWrapper, className)}
-      isFlex
-      isFullWidth={isFullWidth}
-      dataQa={dataQa}
-    >
+    <ModalPage className={classNames(styles.modalWrapper, className)} isFlex isFullWidth={isFullWidth} {...props}>
       <aside className={styles.progressIndicator}>
         <h1 className={styles.title}>{title}</h1>
         <div className={styles.wrapper}>
