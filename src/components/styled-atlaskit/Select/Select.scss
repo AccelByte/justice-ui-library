@@ -44,12 +44,16 @@
     line-height: 24px;
     &.styled-atlaskit-select__option--is-focused {
       background-color: $select-option--hovered;
+      box-shadow: none;
     }
     &.styled-atlaskit-select__option--is-selected {
       background-color: $select-option--selected;
+      color: $base-white;
     }
   }
-  &__placeholder, &__value-container div, div.styled-atlaskit-select__option {
+  &__placeholder,
+  &__value-container div,
+  div.styled-atlaskit-select__option {
     font-family: $font-family-primary;
     font-size: $font-size-h6;
   }

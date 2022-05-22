@@ -4,11 +4,11 @@
  * and restrictions contact your company contract manager.
  */
 
-import * as React from "react";
 import { default as classNames } from "classnames";
 import { SelectOption } from "../../../types";
 import "./index.scss";
 
+/** @deprecated Use StyledRadio instead */
 export const RadioButtonItem = ({
   isDisabled = false,
   isSelected = false,
@@ -31,6 +31,7 @@ export const RadioButtonItem = ({
   );
 };
 
+/** @deprecated Use StyledRadio instead */
 export interface RadioButtonProps {
   options: SelectOption<string | boolean>[];
   selectedRadio: SelectOption<string | boolean>;
@@ -41,6 +42,7 @@ export interface RadioButtonProps {
   dataQa?: string | null;
 }
 
+/** @deprecated Use StyledRadio instead */
 export const RadioButton = ({
   options = [],
   selectedRadio,

@@ -4,15 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [0.2.6] (Unreleased)
+## [0.3.0]
 ### Added
 - `DropdownItemGroup` and `DropdownItem` stories
 - Explanation of complex some prop types. For example, `SelectOption` is an object containing `{ label: string; value: string }`
+- `CheckboxSelect` component
 
 ### Refactored
-- Some prop descriptions in `Accordion`, `Banner`
+- Some prop descriptions in `Accordion` and `Banner`
 - Decrease the number of extended props from `InputHTMLAttributes<HTMLInputElement>` in `ValidFieldText` to only `maxLength`, `placeholder`, `disabled`, `onBlur`, and `className`
 - Make `ValidDynamicText` story more interactive
+- Deprecate `RadioButton` and `InlineCheckboxField` components
 
 ### Removed
 - `onFocus` and `onBlur` props from `StyledToggle`

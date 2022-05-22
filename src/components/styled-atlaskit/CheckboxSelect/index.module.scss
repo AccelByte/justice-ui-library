@@ -1,0 +1,124 @@
+/*
+ * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+:local(.checkboxSelectContainer) {
+  font-family: $font-family-primary;
+  position: relative;
+
+  :global(.value-replacement) {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+  }
+}
+
+:global {
+  .styled-atlaskit-checkbox-select {
+    &__control,
+    div[class*="-control"] {
+      background-color: transparent;
+      border-radius: $border-radius;
+      border: 1px solid $input-borderColor--inactive;
+      &:hover {
+        background-color: $input-backgroundColor--hovered;
+        border-color: $input-borderColor--hovered;
+      }
+      &.styled-atlaskit-checkbox-select__control--is-focused {
+        border: 2px solid $input-borderColor--active;
+      }
+    }
+
+    [class$="-menu"] {
+      > div {
+        &::-webkit-scrollbar {
+          width: 6px;
+        }
+        &::-webkit-scrollbar-track {
+          border-radius: 10px;
+        }
+        &::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          background: $base-20;
+        }
+      }
+    }
+    &__option {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      color: $color--text--primary;
+      height: 36px;
+      line-height: 24px;
+      &.styled-atlaskit-checkbox-select__option--is-focused {
+        background-color: $select-option--hovered;
+        box-shadow: none;
+      }
+    }
+    &__placeholder,
+    &__value-container div,
+    div.styled-atlaskit-checkbox-select__option {
+      font-family: $font-family-primary;
+      font-size: $font-size-h6;
+    }
+
+    .styled-atlaskit-checkbox-select__multi-value {
+      background-color: $select-option--selected;
+
+      &__label {
+        color: $base-white;
+      }
+
+      &__remove {
+        fill: $base-white;
+        &:hover {
+          background-color: $brand-60;
+        }
+      }
+    }
+
+    &__menu-list {
+      span[role="presentation"] {
+        margin-right: 8px;
+        font-family: "feather";
+        font-size: $font-size-h5;
+        position: relative;
+        &::before {
+          content: "\e92d";
+          color: $base-white;
+          position: absolute;
+          top: 2px;
+          left: 2px;
+        }
+        svg {
+          width: 20px;
+          height: 20px;
+          rect {
+            width: 100%;
+            height: 100%;
+            x: 0;
+            y: 0;
+          }
+          path {
+            display: none;
+          }
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    &.value-hidden {
+      .styled-atlaskit-checkbox-select__multi-value,
+      .styled-atlaskit-checkbox-select__placeholder {
+        visibility: hidden;
+      }
+    }
+  }
+}

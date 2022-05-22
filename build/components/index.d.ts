@@ -10,6 +10,7 @@ export * from "./styled-atlaskit/StyledRadioTabVertical/StyledRadioTabVertical";
 export * from "./styled-atlaskit/StyledRadio/StyledRadio";
 export * from "./styled-atlaskit/Dropdown";
 export * from "./styled-atlaskit/StyledToggle";
+export * from "./styled-atlaskit/CheckboxSelect";
 export * from "./Badge";
 export * from "./Card";
 export * from "./Card/utility";
