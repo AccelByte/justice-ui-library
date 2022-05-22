@@ -22,6 +22,7 @@ const Template: Story<TooltipProps> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   content: "Text",
-  isTooltipShownOnOverflowOnly: true,
+  isTooltipShownOnOverflowOnly: false,
   positionRight: true,
+  children: "Try hover this text",
 };

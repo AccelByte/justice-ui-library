@@ -7,6 +7,7 @@
 import * as React from "react";
 import "./index.scss";
 
+/** @deprecated Use Checkbox instead */
 export interface InlineCheckboxFieldProps extends Pick<React.InputHTMLAttributes<HTMLInputElement>, "readOnly"> {
   checked: boolean;
   isDisabled?: boolean;
@@ -14,12 +15,8 @@ export interface InlineCheckboxFieldProps extends Pick<React.InputHTMLAttributes
   dataQa?: string | null;
 }
 
-export const InlineCheckboxField = ({
-  onClick,
-  isDisabled,
-  dataQa,
-  ...checkboxProps
-}: InlineCheckboxFieldProps) => {
+/** @deprecated Use Checkbox instead */
+export const InlineCheckboxField = ({ onClick, isDisabled, dataQa, ...checkboxProps }: InlineCheckboxFieldProps) => {
   return (
     <div className="checkbox-container" data-qa-id={dataQa}>
       <input {...checkboxProps} type="checkbox" disabled={isDisabled} />
