@@ -57,4 +57,19 @@
     font-family: $font-family-primary;
     font-size: $font-size-h6;
   }
+  &__multi-value {
+    background-color: $brand-100 !important;
+  }
+  &__multi-value__label {
+    color: $base-white !important;
+  }
+  &__multi-value__remove{
+    &:hover {
+      background-color: transparent !important;
+    }
+    span {
+      --icon-primary-color: transparent;
+      --icon-secondary-color: #ffffff !important;
+    }
+  }
 }

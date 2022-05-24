@@ -19,6 +19,7 @@ export interface CheckboxProps {
   tooltip?: string;
   dataQa?: string | null;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onClick?: () => void;
 }
 
 export const Checkbox = ({
@@ -30,6 +31,7 @@ export const Checkbox = ({
   value,
   dataQa,
   onChange,
+  onClick,
 }: CheckboxProps) => {
   const dataTip = React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip;
   return (
@@ -42,6 +44,7 @@ export const Checkbox = ({
           checked={isChecked}
           disabled={isDisabled}
           onChange={onChange}
+          onClick={onClick}
         />
         <span className="styled-checkbox__icon">{isChecked && <i className="fa-icon-check" />}</span>
         {label && <span className="styled-checkbox__label">{label}</span>}

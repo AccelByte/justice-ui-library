@@ -9,5 +9,6 @@ export interface CheckboxProps {
     tooltip?: string;
     dataQa?: string | null;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onClick?: () => void;
 }
-export declare const Checkbox: ({ label, helperText, isChecked, tooltip, isDisabled, value, dataQa, onChange, }: CheckboxProps) => JSX.Element;
+export declare const Checkbox: ({ label, helperText, isChecked, tooltip, isDisabled, value, dataQa, onChange, onClick, }: CheckboxProps) => JSX.Element;
