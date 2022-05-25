@@ -7,6 +7,7 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { DynamicTable, DynamicTableProps } from "./DynamicTable";
+import { SelectOption } from "../../../types";
 
 export default {
   title: "Components/DynamicTable",
@@ -57,6 +58,9 @@ export default {
 const Template: Story<DynamicTableProps> = (args) => <DynamicTable {...args} />;
 
 export const Example = Template.bind({});
+const changePage = (page?: string) => {};
+const changePerPage = (option: SelectOption) => {};
+
 Example.args = {
   head: {
     cells: [
@@ -89,4 +93,17 @@ Example.args = {
   children: <p>Some text below the table</p>,
   customContent: <span>Some optional custom content above the table</span>,
   isLoading: false,
+  pagination: {
+    perPage: { label: "10", value: "10" },
+    perPageOptions: [
+      { label: "10", value: "10" },
+      { label: "20", value: "20" },
+      { label: "30", value: "30" },
+    ],
+    onChangePerPage: changePerPage,
+    paging: {
+      next: "next",
+    },
+    changePage,
+  },
 };

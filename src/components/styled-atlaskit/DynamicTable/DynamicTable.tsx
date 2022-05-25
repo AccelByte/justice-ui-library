@@ -8,6 +8,7 @@ import React, { PropsWithChildren } from "react";
 import { DynamicTableStateless as AkDynamicTable } from "@atlaskit/dynamic-table";
 import { StatelessProps } from "@atlaskit/dynamic-table/types";
 import classNames from "classnames";
+import DynamicTablePagination, { DynamicTablePaginationProps } from "./DynamicTablePagination";
 import "./DynamicTable.scss";
 
 export interface DynamicTableProps extends PropsWithChildren<StatelessProps> {
@@ -17,6 +18,7 @@ export interface DynamicTableProps extends PropsWithChildren<StatelessProps> {
   dataQa?: string | null;
   /** Whether to have a padding bottom for the table */
   noPadding?: boolean;
+  pagination?: DynamicTablePaginationProps;
 }
 
 export const DynamicTable = ({
@@ -25,12 +27,14 @@ export const DynamicTable = ({
   customContent = null,
   dataQa = null,
   noPadding = false,
+  pagination,
   ...props
 }: DynamicTableProps) => {
   return (
     <div className={classNames("styled-atlaskit-table", { "no-padding": noPadding }, className)} data-qa-id={dataQa}>
       {customContent}
       <AkDynamicTable {...props} />
+      {!!pagination && <DynamicTablePagination {...pagination} />}
       {children}
     </div>
   );

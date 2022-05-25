@@ -12,20 +12,13 @@ export interface PaginationProps {
   paging: {
     previous?: string;
     next?: string;
-    first?: string;
-    last?: string;
   };
   changePage: (page?: string) => void;
   prevDataQa?: string | null;
   nextDataQa?: string | null;
 }
 
-const pagination: React.FunctionComponent<PaginationProps> = ({
-  paging,
-  changePage,
-  prevDataQa,
-  nextDataQa,
-}) => {
+const pagination: React.FunctionComponent<PaginationProps> = ({ paging, changePage, prevDataQa, nextDataQa }) => {
   const renderPrev = () => {
     const onClick = () => changePage(paging.previous);
     const paginationClass = paging.previous ? "navigation" : "disabled";

@@ -29,6 +29,7 @@
   }
 
   thead {
+    background-color: $base-10;
     border-bottom: 1px solid $color--divider;
     > tr th {
       > span::before {
