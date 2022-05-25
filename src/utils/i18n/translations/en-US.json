@@ -5,6 +5,8 @@
   "common.refreshPage": "Refresh Page",
   "common.more": "More",
   "common.loading": "Loading",
+  "dynamicTablePagination.perPage.prefix": "Show",
+  "dynamicTablePagination.perPage.suffix": "records per page",
   "pagination.prev": "Prev",
   "pagination.next": "Next",
   "password.hiddenPassword": "Hide Password",

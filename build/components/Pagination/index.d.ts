@@ -4,8 +4,6 @@ export interface PaginationProps {
     paging: {
         previous?: string;
         next?: string;
-        first?: string;
-        last?: string;
     };
     changePage: (page?: string) => void;
     prevDataQa?: string | null;

@@ -5,6 +5,8 @@
   "common.refreshPage": "刷新页面",
   "common.more": "更多",
   "common.loading": "加载",
+  "dynamicTablePagination.perPage.prefix": "显示",
+  "dynamicTablePagination.perPage.suffix": "每页记录",
   "pagination.prev": "上一步",
   "pagination.next": "下一步",
   "password.hiddenPassword": "隐藏密码",
