@@ -1,56 +1,130 @@
 /*
- * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * Copyright (c) 2021-2022 AccelByte Inc. All Rights Reserved.
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
  */
 
+// Accelbyte color palette
+$soil: #141414;
+$gray-80: #f5f5f5;
+$secondary-50: #343447;
 $base-black: #000000;
-$base-120: #232831;
-$base-80: #687792;
-$semantic-red-100: #ac1616;
-$semantic-yellow-100: #b17707;
-$semantic-blue-100: #025896;
-$semantic-green-100: #00642e;
 $base-white: #ffffff;
-$base-20: #e1e4e9;
-$base-10: #f5f6f8;
+$base-dark-blue-150: #1e2749;
+$base-dark-blue-30: #141c34;
+$base-blue-10: #e8f0fe;
+
+$base-150: #07080a;
 $base-140: #15181d;
 $base-130: #1c2027;
+$base-120: #232831;
 $base-110: #373f4e;
 $base-100: #4c576b;
-$brand-80: #0b6cff;
-$brand-60: #4c93ff;
-$brand-100: #004ec3;
-$brand-10: #eff5ff;
-$brand-40: #8dbaff;
-$base-40: #b8bfcd;
-$semantic-blue-10: #eef6fb;
-$semantic-green-10: #eef7f2;
-$semantic-yellow-10: #fef9ee;
-$semantic-red-10: #fdf1f1;
 $base-90: #5a677f;
+$base-80: #687792;
 $base-70: #7b89a1;
 $base-60: #909bb0;
 $base-50: #a4adbe;
-$secondary-50: #343447;
-$semantic-red-90: #cb1a1a;
-$semantic-red-80: #e32626;
-$semantic-red-70: #de350b;
-$base-150: #1e2749;
-$base-30: #141c34;
-$semantic-yellow-90: #d18c09;
-$semantic-yellow-80: #f1a20a;
+$base-40: #b8bfcd;
+$base-30: #ccd2db;
+$base-20: #e1e4e9;
+$base-10: #f5f6f8;
+
+$brand-150: #000712;
+$brand-140: #001535;
+$brand-130: #002359;
+$brand-120: #00317c;
+$brand-110: #003fa0;
+$brand-100: #004ec3;
+$brand-90: #005ce7;
+$brand-80: #0b6cff;
+$brand-70: #2c80ff;
+$brand-60: #4c93ff;
+$brand-50: #6da7ff;
+$brand-40: #8dbaff;
+$brand-30: #aeceff;
+$brand-20: #cee2ff;
+$brand-10: #eff5ff;
+
+$semantic-green-150: #000904;
+$semantic-green-140: #001b0c;
+$semantic-green-130: #002d15;
+$semantic-green-120: #003f1d;
+$semantic-green-110: #005226;
+$semantic-green-100: #00642e;
 $semantic-green-90: #007637;
 $semantic-green-80: #008940;
-$semantic-blue-90: #0368b1;
-$semantic-blue-80: #0479cd;
-$blue-10: #e8f0fe;
+$semantic-green-70: #229859;
+$semantic-green-60: #44a872;
+$semantic-green-50: #66b88c;
+$semantic-green-40: #88c7a5;
+$semantic-green-30: #aad7bf;
+$semantic-green-20: #cce7d8;
+$semantic-green-10: #eef7f2;
 
+$semantic-yellow-150: #100b01;
+$semantic-yellow-140: #302002;
+$semantic-yellow-130: #503603;
+$semantic-yellow-120: #704c05;
+$semantic-yellow-110: #916106;
+$semantic-yellow-100: #b17707;
+$semantic-yellow-90: #d18c09;
+$semantic-yellow-80: #f1a20a;
+$semantic-yellow-70: #f6af27;
+$semantic-yellow-60: #f7bc49;
+$semantic-yellow-50: #f9c86a;
+$semantic-yellow-40: #fad48b;
+$semantic-yellow-30: #fce0ac;
+$semantic-yellow-20: #fdedcd;
+$semantic-yellow-10: #fef9ee;
+
+$semantic-red-150: #100202;
+$semantic-red-140: #2f0606;
+$semantic-red-130: #4e0a0a;
+$semantic-red-120: #6e0e0e;
+$semantic-red-110: #8d1212;
+$semantic-red-100: #ac1616;
+$semantic-red-90: #cb1a1a;
+$semantic-red-80: #e32626;
+$semantic-red-70: #e74343;
+$semantic-red-60: #ea6060;
+$semantic-red-50: #ee7d7d;
+$semantic-red-40: #f29a9a;
+$semantic-red-30: #f6b7b7;
+$semantic-red-20: #f9d4d4;
+$semantic-red-10: #fdf1f1;
+
+$semantic-purple-150: #0b0212;
+$semantic-purple-140: #220537;
+$semantic-purple-130: #39095c;
+$semantic-purple-120: #500c81;
+$semantic-purple-110: #6710a6;
 $semantic-purple-100: #7e13cb;
 $semantic-purple-90: #931ee9;
 $semantic-purple-80: #a542ed;
+$semantic-purple-70: #b15cef;
+$semantic-purple-60: #bd75f2;
+$semantic-purple-50: #c98ef4;
+$semantic-purple-40: #d5a7f7;
+$semantic-purple-30: #e1c0f9;
+$semantic-purple-20: #edd9fb;
 $semantic-purple-10: #f9f2fe;
-$gray-80: #f5f5f5;
+
+$semantic-blue-150: #00080d;
+$semantic-blue-140: #001829;
+$semantic-blue-130: #012844;
+$semantic-blue-120: #01385f;
+$semantic-blue-110: #02487b;
+$semantic-blue-100: #025896;
+$semantic-blue-90: #0368b1;
+$semantic-blue-80: #0479cd;
+$semantic-blue-70: #258ad3;
+$semantic-blue-60: #469cda;
+$semantic-blue-50: #68aee1;
+$semantic-blue-40: #89c0e7;
+$semantic-blue-30: #abd2ee;
+$semantic-blue-20: #cce4f5;
+$semantic-blue-10: #eef6fb;
 
 // Project Colors
 $color--accent: $brand-80;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * Copyright (c) 2021-2022 AccelByte Inc. All Rights Reserved.
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
  */
@@ -26,13 +26,21 @@ button.styled-atlaskit-button {
       margin-left: 16px;
     }
   }
+  &> span > span {
+   display: flex;
+  }
   &:not(:disabled) {
+    &.link, &[class^="subtle"]  {
+      span &[class^="Spinner"] svg {
+        stroke: $base-100;
+      }
+    }
     &.primary {
       background-color: $button-backgroundColor--primary--enabled;
       &:hover {
         background-color: $button-backgroundColor--primary--hovered;
       }
-      &:active {
+      &:active, &.selected {
         background-color: $button-backgroundColor--primary--active;
       }
     }
@@ -41,6 +49,9 @@ button.styled-atlaskit-button {
       border: 1px solid $button-borderColor--outline--enabled;
       span {
         color: $button-color--ghost--enabled;
+        &[class^="Spinner"] svg {
+            stroke: $brand-80;
+        }
       }
       &:hover {
         background-color: $button-backgroundColor--outline--hovered;
@@ -48,21 +59,14 @@ button.styled-atlaskit-button {
       &:active {
         background-color: $button-backgroundColor--outline--active;
       }
-      &.danger {
-        background-color: transparent;
-        border-color: $button-borderColor--danger--enabled;
-        span {
-          color: $color--error--primary;
-        }
-        &:hover {
-          background-color: $semantic-red-10;
-        }
-      }
       &.success {
         background-color: transparent;
         border-color: $semantic-green-80;
         span {
           color: $color--success--primary;
+          &[class^="Spinner"] svg {
+            stroke: $color--success--primary;
+          }
         }
         &:hover {
           background-color: $semantic-green-10;
@@ -76,29 +80,138 @@ button.styled-atlaskit-button {
       &:hover {
         background-color: $button-backgroundColor--subtle--hovered;
       }
-      &:active {
+      &:active, &.selected {
         background-color: $button-backgroundColor--subtle--active;
-      }
-      &.danger {
-        background-color: transparent;
         span {
-          color: $color--error--primary;
+          &[class^="Spinner"] svg {
+            stroke: $base-white;
+          }
         }
-        &:hover {
-          background-color: $semantic-red-10;
+      }
+      &-link {
+        span {
+          color: $base-80;
+        }
+        &:hover span {
+          color: $base-40;
+        }
+        &:active, &.selected {
+          background-color: transparent;
+          span {
+            color: $base-100;
+            &[class^="Spinner"] svg {
+              stroke: $base-100;
+            }
+          }
         }
       }
     }
-    &.danger {
-      background-color: $button-backgroundColor--danger--enabled;
+    &.link {
       span {
-        color: $color--text--tertiary;
+        color: $brand-100;
+      }
+      &:hover{
+        text-decoration: none;
+
+        span {
+          color: $brand-80;
+        }
+      }
+      &:active, &.selected {
+        background-color: transparent;
+        span {
+          color: $brand-110;
+        }
+      }
+    }
+    &.warning {
+      background-color: $semantic-yellow-80;
+      color: $base-120;
+      &:hover {
+        background-color: $semantic-yellow-40;
+      }
+      &:active, &.selected {
+        background-color: $semantic-yellow-100;
+      }
+    }
+    &.help {
+      background-color: $semantic-purple-80;
+      color: $color--text--tertiary !important;
+      &:hover {
+        background-color: $semantic-purple-40;
+      }
+      &:active, &.selected {
+        background-color: $semantic-purple-100;
+      }
+    }
+    &.success:not(.outline) {
+      color: $color--text--tertiary !important;
+      background-color: $button-backgroundColor--green;
+      span {
+        &[class^="Spinner"] svg {
+          stroke: $base-white;
+        }
+      }
+      &:hover {
+        color: $color--text--tertiary !important;
+        background-color: $semantic-green-60 !important;
+      }
+      &:active, &.selected {
+        background-color: $semantic-green-100;
+      }
+    }
+    &.danger {
+      background-color: transparent;
+      span {
+        color: $color--error--primary;
+        &.outline[class^="Spinner"] svg {
+          stroke: $color--error--primary;
+        }
+      }
+      &.subtle {
+        &:hover {
+          background-color: $semantic-red-10;
+        }
+        &:active, &.selected {
+          background-color: $semantic-red-40;
+        }
+      }
+      &.outline {
+        border-color: $button-borderColor--danger--enabled;
+        &:hover {
+          background-color: $semantic-red-10;
+        }
+        &:active {
+          background-color: $semantic-red-40;
+        }
+      }
+
+      &:not([class*="subtle"]):not(.link):not(.outline) {
+        background-color: $button-backgroundColor--danger--enabled;
+        span {
+          color: $color--text--tertiary;
+        }
+        &:hover {
+          background-color: $semantic-red-60;
+        }
+        &:active, &.selected {
+          background-color: $semantic-red-100;
+        }
+        &:disabled {
+          background-color: $button-backgroundColor--disabled;
+          color: $color--text--tertiary;
+        }
       }
     }
   }
   &:disabled {
+    span {
+      &[class^="Spinner"] svg {
+        stroke: $base-100;
+      }
+    }
     &.primary,
-    &.success:not(.outline) {
+    &.success:not(.outline), &.warning, &.help, &.success, &.danger:not([class*="subtle"]):not(.link):not(.outline) {
       background-color: $button-backgroundColor--disabled;
       span {
         color: $color--text--tertiary;
@@ -111,18 +224,13 @@ button.styled-atlaskit-button {
         color: $color--disabled;
       }
     }
-  }
-  &.link {
-    &:hover {
-      text-decoration: none;
+    &.link {
+      span {
+        color: $brand-40;
+      }
     }
-  }
-  &.success:not(.outline) {
-    color: $color--text--tertiary !important;
-    background-color: $button-backgroundColor--green;
-    &:not(:disabled):hover {
-      color: $color--text--tertiary !important;
-      background-color: $color--success--primary;
+    &.subtle, &.subtle-link {
+      color: $color--disabled;
     }
   }
 }

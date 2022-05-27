@@ -53,7 +53,7 @@ export const Button = ({
 }: ButtonProps) => {
   const renderButton = () => (
     <AkButton
-      className={classNames("styled-atlaskit-button", appearance, className)}
+      className={classNames("styled-atlaskit-button", appearance, className, { selected: isSelected })}
       isDisabled={isDisabled}
       isLoading={isLoading}
       isSelected={isSelected}
@@ -67,7 +67,7 @@ export const Button = ({
       {children}
     </AkButton>
   );
-  return !!dataQa ? (
+  return dataQa ? (
     <div data-qa-id={dataQa} className="styled-atlaskit-button-container">
       {renderButton()}
     </div>
