@@ -9,7 +9,7 @@
 import * as React from "react";
 import { default as classNames } from "classnames";
 import { Enum, SelectOption } from "../../types";
-import { FieldErrorMessage, FieldLabel } from "../Form/utility";
+import { FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
 import { Select, SelectProps } from "..";
 
 export const RELOADSTATUS = Enum("LOADING", "FAILED", "SUCCESS");
@@ -36,6 +36,7 @@ export interface ValidSelectProps extends SelectProps {
   selectDataQa?: string;
   isMulti?: boolean;
   className?: string;
+  helperText?: string;
 }
 
 export const ValidSelect = ({
@@ -55,6 +56,7 @@ export const ValidSelect = ({
   selectDataQa,
   isMulti = false,
   className,
+  helperText,
   ...props
 }: ValidSelectProps) => (
   <div className={classNames("valid-select-input", className)}>
@@ -72,5 +74,6 @@ export const ValidSelect = ({
       dataQa={selectDataQa}
     />
     {isInvalid && <FieldErrorMessage message={errMessage} />}
+    {helperText && <FieldHelperText message={helperText} />}
   </div>
 );
