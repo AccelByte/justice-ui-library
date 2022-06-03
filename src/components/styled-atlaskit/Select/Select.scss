@@ -20,6 +20,9 @@
     &.styled-atlaskit-select__control--is-focused {
       border: 2px solid $input-borderColor--active;
     }
+    &.styled-atlaskit-select__control--is-disabled {
+      background-color: $base-10;
+    }
   }
   [class$="-menu"] {
     > div {

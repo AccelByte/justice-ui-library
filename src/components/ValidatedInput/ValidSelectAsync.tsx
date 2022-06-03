@@ -16,6 +16,7 @@ export interface ValidSelectAsyncProps<OptionType, Group, Additional, isMulti ex
   optionalLabel?: string;
   isInvalid?: boolean;
   isRequired?: boolean;
+  isDisabled?: boolean;
   tooltip?: string;
   className?: string;
   dataQa?: string | null;
@@ -36,7 +37,7 @@ export const ValidSelectAsync = <OptionType, Group, Additional, isMulti extends 
 }: ValidSelectAsyncProps<OptionType, Group, Additional, isMulti>) => (
   <div className={classNames("valid-select-async-input", className)} data-qa-id={dataQa}>
     {!!label && <FieldLabel label={label} optionalLabel={optionalLabel} isRequired={isRequired} tooltip={tooltip} />}
-    <AsyncPaginate {...props} />
+    <AsyncPaginate {...props} classNamePrefix={"styled-atlaskit-select"} />
     {isInvalid && <FieldErrorMessage message={errMessage} />}
     {helperText && <FieldHelperText message={helperText} />}
   </div>

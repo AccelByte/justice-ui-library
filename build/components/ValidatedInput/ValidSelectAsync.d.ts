@@ -6,6 +6,7 @@ export interface ValidSelectAsyncProps<OptionType, Group, Additional, isMulti ex
     optionalLabel?: string;
     isInvalid?: boolean;
     isRequired?: boolean;
+    isDisabled?: boolean;
     tooltip?: string;
     className?: string;
     dataQa?: string | null;
