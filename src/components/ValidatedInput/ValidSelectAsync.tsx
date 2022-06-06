@@ -8,6 +8,7 @@ import * as React from "react";
 import { default as classNames } from "classnames";
 import { FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
 import { AsyncPaginate, AsyncPaginateProps } from "react-select-async-paginate";
+import "./ValidSelect.scss";
 
 export interface ValidSelectAsyncProps<OptionType, Group, Additional, isMulti extends boolean>
   extends AsyncPaginateProps<OptionType, Group, Additional, isMulti> {
@@ -20,7 +21,7 @@ export interface ValidSelectAsyncProps<OptionType, Group, Additional, isMulti ex
   tooltip?: string;
   className?: string;
   dataQa?: string | null;
-  helperText?: string;
+  helperText?: React.ReactNode;
 }
 
 export const ValidSelectAsync = <OptionType, Group, Additional, isMulti extends boolean>({
@@ -35,9 +36,9 @@ export const ValidSelectAsync = <OptionType, Group, Additional, isMulti extends 
   helperText,
   ...props
 }: ValidSelectAsyncProps<OptionType, Group, Additional, isMulti>) => (
-  <div className={classNames("valid-select-async-input", className)} data-qa-id={dataQa}>
+  <div className={classNames("valid-select-input", "valid-select-async-input", className)} data-qa-id={dataQa}>
     {!!label && <FieldLabel label={label} optionalLabel={optionalLabel} isRequired={isRequired} tooltip={tooltip} />}
-    <AsyncPaginate {...props} classNamePrefix={"styled-atlaskit-select"} />
+    <AsyncPaginate {...props} className="styled-atlaskit-select" classNamePrefix={"styled-atlaskit-select"} />
     {isInvalid && <FieldErrorMessage message={errMessage} />}
     {helperText && <FieldHelperText message={helperText} />}
   </div>

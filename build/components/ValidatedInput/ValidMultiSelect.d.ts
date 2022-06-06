@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import * as React from "react";
 import { SelectOption } from "../../types";
 interface Props {
     label?: string;
@@ -12,6 +12,7 @@ interface Props {
     isRequired?: boolean;
     value?: SelectOption[] | null;
     tooltip?: string;
+    helperText?: React.ReactNode;
 }
-export declare const ValidMultiSelect: ({ label, placeholder, options, onChange, errMessage, optionalLabel, isInvalid, isRequired, value, isDisabled, tooltip, }: Props) => JSX.Element;
+export declare const ValidMultiSelect: ({ label, placeholder, options, onChange, errMessage, optionalLabel, isInvalid, isRequired, value, isDisabled, tooltip, helperText, }: Props) => JSX.Element;
 export {};
