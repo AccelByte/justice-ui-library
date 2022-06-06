@@ -90,17 +90,17 @@ button.styled-atlaskit-button {
       }
       &-link {
         span {
-          color: $base-80;
+          color: $base-80 !important;
         }
         &:hover span {
-          color: $base-40;
+          color: $base-40 !important;
         }
         &:active, &.selected {
-          background-color: transparent;
+          background-color: transparent !important;
           span {
-            color: $base-100;
+            color: $base-100 !important;
             &[class^="Spinner"] svg {
-              stroke: $base-100;
+              stroke: $base-100 !important;
             }
           }
         }
@@ -138,7 +138,7 @@ button.styled-atlaskit-button {
       background-color: $semantic-purple-80;
       color: $color--text--tertiary !important;
       &:hover {
-        background-color: $semantic-purple-40;
+        background-color: $semantic-purple-60;
       }
       &:active, &.selected {
         background-color: $semantic-purple-100;
@@ -153,8 +153,8 @@ button.styled-atlaskit-button {
         }
       }
       &:hover {
-        color: $color--text--tertiary !important;
-        background-color: $semantic-green-60 !important;
+        color: $color--text--tertiary;
+        background-color: $semantic-green-60;
       }
       &:active, &.selected {
         background-color: $semantic-green-100;
@@ -164,9 +164,6 @@ button.styled-atlaskit-button {
       background-color: transparent;
       span {
         color: $color--error--primary;
-        &.outline[class^="Spinner"] svg {
-          stroke: $color--error--primary;
-        }
       }
       &.subtle {
         &:hover {
@@ -178,11 +175,28 @@ button.styled-atlaskit-button {
       }
       &.outline {
         border-color: $button-borderColor--danger--enabled;
+        span {
+          &[class^="Spinner"] svg {
+            stroke: $color--error--primary;
+          }
+        }
         &:hover {
           background-color: $semantic-red-10;
         }
         &:active {
           background-color: $semantic-red-40;
+        }
+      }
+      &.link {
+        &:hover {
+          span {
+            color: $color--error--primary;
+          }
+        }
+        &:active, &.selected {
+          span {
+            color: $semantic-red-100;
+          }
         }
       }
 
