@@ -8,7 +8,7 @@
 
 import * as React from "react";
 import { SelectOption } from "../../types";
-import { FieldErrorMessage, FieldLabel } from "../Form/utility";
+import { FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
 import { Select } from "..";
 
 interface Props {
@@ -23,6 +23,7 @@ interface Props {
   isRequired?: boolean;
   value?: SelectOption[] | null;
   tooltip?: string;
+  helperText?: React.ReactNode;
 }
 
 export const ValidMultiSelect = ({
@@ -37,6 +38,7 @@ export const ValidMultiSelect = ({
   value,
   isDisabled,
   tooltip,
+  helperText,
 }: Props) => (
   <>
     {!!label && <FieldLabel label={label} optionalLabel={optionalLabel} isRequired={isRequired} tooltip={tooltip} />}
@@ -53,5 +55,6 @@ export const ValidMultiSelect = ({
       menuPlacement="auto"
     />
     {isInvalid && <FieldErrorMessage message={errMessage} />}
+    {helperText && <FieldHelperText message={helperText} />}
   </>
 );

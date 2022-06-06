@@ -1,6 +1,7 @@
-/// <reference types="react" />
+import * as React from "react";
 import { Enum, SelectOption } from "../../types";
 import { SelectProps } from "..";
+import "./ValidSelect.scss";
 export declare const RELOADSTATUS: Readonly<{
     SUCCESS: "SUCCESS";
     LOADING: "LOADING";
@@ -28,6 +29,6 @@ export interface ValidSelectProps extends SelectProps {
     selectDataQa?: string;
     isMulti?: boolean;
     className?: string;
-    helperText?: string;
+    helperText?: React.ReactNode;
 }
 export declare const ValidSelect: ({ label, placeholder, options, name, value, onChange, errMessage, optionalLabel, isInvalid, isDisabled, isRequired, isClearable, tooltip, selectDataQa, isMulti, className, helperText, ...props }: ValidSelectProps) => JSX.Element;
