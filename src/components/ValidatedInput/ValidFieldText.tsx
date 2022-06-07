@@ -44,7 +44,7 @@ export interface ValidFieldTextProps
   type?: "number" | "text" | "password";
   min?: number;
   max?: number;
-  helperText?: string;
+  helperText?: React.ReactNode;
   tooltip?: string;
   dataQa?: string | null;
   dataQaProps?: string | null;

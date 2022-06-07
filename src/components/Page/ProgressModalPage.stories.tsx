@@ -55,6 +55,7 @@ const Template: Story<ProgressModalPageProps> = (args) => {
 export const Example = Template.bind({});
 Example.args = {
   title: "Progress Indicator Title",
+  subtitle: "Progress Indicator Subtitle",
   stepLabels: ["Step 1", "Step 2", "Step 3"],
   step: 1,
 };

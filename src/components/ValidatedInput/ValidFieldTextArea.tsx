@@ -13,7 +13,7 @@ import { FieldCounter, FieldErrorMessage, FieldHelperText, FieldLabel } from "..
 export interface ValidFieldTextAreaProps extends FieldTextAreaStatelessProps {
   value: string;
   errMessage?: string;
-  helperText?: string;
+  helperText?: React.ReactNode;
   tooltip?: string;
   isRequired?: boolean;
   dataQa?: string | null;
