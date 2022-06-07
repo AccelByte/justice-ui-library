@@ -46,7 +46,7 @@ export const StyledToggle = ({
         <div className={classNames("styled-toggle", className, { disabled: isToggleDisabled })} data-qa-id={dataQa}>
           {isLoading && <span className="styled-toggle__loading" />}
 
-          <label data-checked={isChecked}>
+          <label data-checked={isChecked} className="toggle-label">
             <input type="checkbox" aria-label={label} {...{ name, value, onChange }} disabled={isToggleDisabled} />
           </label>
 

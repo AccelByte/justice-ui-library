@@ -36,7 +36,7 @@ export const Checkbox = ({
   const dataTip = React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip;
   return (
     <div className={classNames("styled-checkbox", { isChecked, isDisabled })} data-qa-id={dataQa}>
-      <label>
+      <label className="checkbox-label">
         <input
           className="styled-checkbox__input"
           type="checkbox"
