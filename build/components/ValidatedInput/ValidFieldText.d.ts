@@ -20,7 +20,7 @@ export interface ValidFieldTextProps extends Pick<React.InputHTMLAttributes<HTML
     type?: "number" | "text" | "password";
     min?: number;
     max?: number;
-    helperText?: string;
+    helperText?: React.ReactNode;
     tooltip?: string;
     dataQa?: string | null;
     dataQaProps?: string | null;

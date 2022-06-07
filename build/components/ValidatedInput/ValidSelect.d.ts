@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Enum, SelectOption } from "../../types";
 import { SelectProps } from "..";
-import "./ValidSelect.scss";
 export declare const RELOADSTATUS: Readonly<{
     SUCCESS: "SUCCESS";
     LOADING: "LOADING";
