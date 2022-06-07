@@ -11,6 +11,7 @@ import { ModalPage, ModalPageProps } from "./ModalPage";
 
 export interface ProgressModalPageProps extends Omit<ModalPageProps, "isFlex"> {
   title: string;
+  subtitle?: string;
   step: number;
   stepLabels: string[];
   onClose: () => void;
@@ -18,6 +19,7 @@ export interface ProgressModalPageProps extends Omit<ModalPageProps, "isFlex"> {
 
 export const ProgressModalPage = ({
   title,
+  subtitle,
   step,
   stepLabels,
   className,
@@ -29,6 +31,7 @@ export const ProgressModalPage = ({
     <ModalPage className={classNames(styles.modalWrapper, className)} isFlex isFullWidth={isFullWidth} {...props}>
       <aside className={styles.progressIndicator}>
         <h1 className={styles.title}>{title}</h1>
+        <h6 className={styles.subtitle}>{subtitle}</h6>
         <div className={styles.wrapper}>
           {stepLabels.map((label, index) => (
             <div className={classNames(styles.indicatorItem, { [styles.visited]: step >= index + 1 })} key={index}>

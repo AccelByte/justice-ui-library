@@ -29,6 +29,14 @@
       font-size: $font-size-h1;
       line-height: 36px;
       color: $base-100;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: $font-size-h6;
+      font-weight: 400;
+      color: $base-80;
+      margin-top: 0;
     }
 
     .wrapper {
