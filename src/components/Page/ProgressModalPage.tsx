@@ -31,7 +31,7 @@ export const ProgressModalPage = ({
     <ModalPage className={classNames(styles.modalWrapper, className)} isFlex isFullWidth={isFullWidth} {...props}>
       <aside className={styles.progressIndicator}>
         <h1 className={styles.title}>{title}</h1>
-        <h6 className={styles.subtitle}>{subtitle}</h6>
+        {subtitle && <h6 className={styles.subtitle}>{subtitle}</h6>}
         <div className={styles.wrapper}>
           {stepLabels.map((label, index) => (
             <div className={classNames(styles.indicatorItem, { [styles.visited]: step >= index + 1 })} key={index}>

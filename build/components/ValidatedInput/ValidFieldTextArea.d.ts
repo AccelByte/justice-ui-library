@@ -1,10 +1,10 @@
-/// <reference types="react" />
+import React from "react";
 import { FieldTextAreaStatelessProps } from "@atlaskit/field-text-area";
 import "./ValidFieldTextArea.scss";
 export interface ValidFieldTextAreaProps extends FieldTextAreaStatelessProps {
     value: string;
     errMessage?: string;
-    helperText?: string;
+    helperText?: React.ReactNode;
     tooltip?: string;
     isRequired?: boolean;
     dataQa?: string | null;
