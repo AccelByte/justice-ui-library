@@ -17,6 +17,8 @@ export interface ItemTab {
   url: string;
   isActive: boolean;
   dataQa?: string | null;
+  dataQaProps?: string | null;
+  id?: string;
 }
 
 const NAVIGATION_OFFSET = 100;
@@ -29,12 +31,14 @@ export interface NavigationTabProps {
   changePageKey?: (url: string) => void;
   isVertical?: boolean;
   containerSize?: Enum<typeof CONTAINER_SIZE>;
+  noPadding?: boolean;
 }
 
 export const NavigationTab = ({
   isVertical,
   isChangeRoute = true,
   containerSize = "FULLWIDTH",
+  noPadding = false,
   config,
   changePageKey,
   changePage,
@@ -142,6 +146,8 @@ export const NavigationTab = ({
         className={classNames("tab-item", { "tab-active": tab.isActive })}
         onClick={() => onClickTab(isChangeRoute, tab.url)}
         data-qa-id={tab.dataQa}
+        data-qa-props={tab.dataQaProps}
+        id={tab.id}
       >
         {tab.tabName}
       </div>
@@ -181,7 +187,7 @@ export const NavigationTab = ({
         containerSize === CONTAINER_SIZE.FULLWIDTH && "tab-navigation--full"
       )}
     >
-      <div className="wrapper" ref={navigationWrapperRef}>
+      <div className={classNames("wrapper", { "no-padding": noPadding })} ref={navigationWrapperRef}>
         {renderedTabs}
         {!!hiddenTabs.length && renderMoreButton()}
       </div>

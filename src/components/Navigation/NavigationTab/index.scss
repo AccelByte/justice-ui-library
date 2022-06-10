@@ -21,6 +21,9 @@
     > .wrapper {
       padding: 0 30px;
       margin: 0 auto;
+      &.no-padding {
+        padding: 0;
+      }
     }
   }
   &--large {
