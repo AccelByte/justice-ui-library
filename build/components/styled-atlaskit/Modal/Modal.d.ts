@@ -1,4 +1,5 @@
 /// <reference types="react" />
+import { ModalHeader, ModalFooter } from "@atlaskit/modal-dialog";
 import { ScrollBehavior } from "@atlaskit/modal-dialog/types";
 import { WrapperProps } from "@atlaskit/modal-dialog/dist/es2019/components/ModalWrapper";
 import "./Modal.scss";
@@ -6,10 +7,13 @@ export interface ModalProps extends Omit<WrapperProps, "scrollBehavior" | "autoF
     isOpen?: boolean;
     scrollBehavior?: ScrollBehavior;
     autoFocus?: boolean;
-    cancelText: string;
-    submitText: string;
+    cancelText?: string;
+    submitText?: string;
     isLoading?: boolean;
     isDisabled?: boolean;
     onSubmit?: () => void;
+    withAction?: boolean;
 }
-export declare const Modal: ({ children, isOpen, scrollBehavior, autoFocus, cancelText, submitText, onClose, onSubmit, width, isLoading, isDisabled, ...props }: ModalProps) => JSX.Element | null;
+export { ModalHeader, ModalFooter };
+export type { ScrollBehavior as ModalScrollBehavior };
+export declare const Modal: ({ children, isOpen, scrollBehavior, autoFocus, cancelText, submitText, onClose, onSubmit, width, isLoading, isDisabled, withAction, ...props }: ModalProps) => JSX.Element;

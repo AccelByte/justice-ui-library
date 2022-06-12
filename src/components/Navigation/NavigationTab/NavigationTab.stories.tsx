@@ -22,6 +22,8 @@ export default {
             url: string;
             isActive: boolean;
             dataQa?: string | null;
+            dataQaProps?: string | null;
+            id?: string;
         }[]`,
         },
       },
