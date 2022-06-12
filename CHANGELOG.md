@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ### Added
 - `dataQaProps` and `id` in `NavigationTab`'s `config`
 - `noPadding` props in `NavigationTab`
+- Export `ModalFooter` and `ModalHeader` from `@atlaskit/modal-dialog`
+- `withAction` prop in `Modal`
 
 ## [0.4.7]
 ### Removed

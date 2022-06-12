@@ -1,11 +1,11 @@
 /*
- * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * Copyright (c) 2021-2022 AccelByte Inc. All Rights Reserved.
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
  */
 
 import * as React from "react";
-import { default as AkModal, ActionProps } from "@atlaskit/modal-dialog";
+import { default as AkModal, ActionProps, ModalHeader, ModalFooter, ModalTransition } from "@atlaskit/modal-dialog";
 import { ScrollBehavior } from "@atlaskit/modal-dialog/types";
 import { WrapperProps } from "@atlaskit/modal-dialog/dist/es2019/components/ModalWrapper";
 import "./Modal.scss";
@@ -14,12 +14,16 @@ export interface ModalProps extends Omit<WrapperProps, "scrollBehavior" | "autoF
   isOpen?: boolean;
   scrollBehavior?: ScrollBehavior;
   autoFocus?: boolean;
-  cancelText: string;
-  submitText: string;
+  cancelText?: string;
+  submitText?: string;
   isLoading?: boolean;
   isDisabled?: boolean;
   onSubmit?: () => void;
+  withAction?: boolean;
 }
+
+export { ModalHeader, ModalFooter };
+export type { ScrollBehavior as ModalScrollBehavior };
 
 export const Modal = ({
   children,
@@ -33,11 +37,12 @@ export const Modal = ({
   width = 400,
   isLoading = false,
   isDisabled = false,
+  withAction = true,
   ...props
 }: ModalProps) => {
-  if (!isOpen) return null;
-
   const getActions = React.useMemo(() => {
+    if (!withAction) return;
+
     const actions: ActionProps[] = [
       { text: cancelText, onClick: onClose, appearance: "subtle", className: "styled-atlaskit-button subtle" },
     ];
@@ -55,8 +60,12 @@ export const Modal = ({
   }, [isLoading, isDisabled]);
 
   return (
-    <AkModal actions={getActions} scrollBehavior={scrollBehavior} autoFocus={autoFocus} width={width} {...props}>
-      {children}
-    </AkModal>
+    <ModalTransition>
+      {isOpen && (
+        <AkModal actions={getActions} scrollBehavior={scrollBehavior} autoFocus={autoFocus} width={width} {...props}>
+          {children}
+        </AkModal>
+      )}
+    </ModalTransition>
   );
 };
