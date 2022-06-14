@@ -28,6 +28,7 @@ button.styled-atlaskit-button {
   }
   &> span > span {
    display: flex;
+   justify-content: center;
   }
   &:not(:disabled) {
     &.link, &[class^="subtle"]  {

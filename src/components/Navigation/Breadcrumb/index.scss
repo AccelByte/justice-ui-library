@@ -8,6 +8,7 @@
 
 .breadcrumb-nav-container {
   background-color: $base-white;
+  font-family: $font-family-primary;
   > .wrapper {
     padding: 16px 32px;
   }
@@ -35,7 +36,6 @@
   }
   .page-title {
     padding: 0;
-    font-family: $font-family-primary;
     font-size: 32px;
     font-weight: 500;
     line-height: 44px;
@@ -60,7 +60,6 @@
       letter-spacing: 0.02em;
       font-size: $font-size-h7;
       &__link {
-        font-family: $font-family-primary;
         box-sizing: border-box;
         height: 20px;
         display: block;
