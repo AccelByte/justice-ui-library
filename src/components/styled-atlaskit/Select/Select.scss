@@ -38,6 +38,11 @@
       }
     }
   }
+  &__menu-list {
+    &:hover {
+      background-color: $base-white;
+    }
+  }
   &__option {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -66,7 +71,7 @@
   &__multi-value__label {
     color: $base-white !important;
   }
-  &__multi-value__remove{
+  &__multi-value__remove {
     &:hover {
       background-color: transparent !important;
     }

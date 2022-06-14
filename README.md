@@ -17,7 +17,7 @@ Currently we have two GitHub actions that will automatically create a new tag an
 Things you should pay attention to before merging your work to master branch :
 - Make sure to update `CHANGELOG.md` to keep track on what's updated in the repo
 - Run `yarn build` at least once and include the changed files in your last commit before merge
-- Any 3rd party packages included in the build file will be based on the installed version of that package in your local. Make sure your installed packages are up to date to avoid unexpected behavior due to different version between your local and package.json.
+- Any 3rd party packages included in the build file will be based on their installed version in your local. Make sure your installed packages are up to date to avoid unexpected behavior AP due to different version between your local and package.json.
 - If you want to update the minor version, add `#minor` at the end of your commit message (ex: `feat(some_component): some message #minor`)
 - The same goes if you want to update the major or patch version, add `#major` or `#patch` at the end of your commit message
 - If you don't add one of those three to your commit message, the Github action will not add a new tag
