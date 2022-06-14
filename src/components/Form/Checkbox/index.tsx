@@ -9,6 +9,7 @@ import { default as classNames } from "classnames";
 import "./index.scss";
 import ReactTooltip from "react-tooltip";
 import { renderToString } from "react-dom/server";
+import { FieldHelperText } from "../utility";
 
 export interface CheckboxProps {
   label?: string;
@@ -55,7 +56,7 @@ export const Checkbox = ({
           </>
         )}
       </label>
-      {helperText && <span className="field-helper-text">{helperText}</span>}
+      {helperText && <FieldHelperText message={helperText} />}
     </div>
   );
 };

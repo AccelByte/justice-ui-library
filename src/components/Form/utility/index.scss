@@ -48,8 +48,9 @@
 .field-counter,
 .field-helper-text {
   display: block;
-  color: $base-80;
-  font-size: $font-size-h6;
+  color: $color--text--secondary;
+  font-size: $font-size-h7;
+  margin-top: 4px;
 }
 
 .field-helper-text {
