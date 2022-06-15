@@ -4,6 +4,7 @@
  * and restrictions contact your company contract manager.
  */
 
+import React from "react";
 import { default as classNames } from "classnames";
 import { BreadcrumbSchema, Enum } from "../../../types";
 import { CONTAINER_SIZE } from "../../../constants";
@@ -54,7 +55,11 @@ export const Breadcrumb = ({
                   </span>
                 )}
                 {item.link && !item.onClick && renderLink && renderLink(item, useBackButton)}
-                {key !== lastItemKey && <span className="item-separator">/</span>}
+                {key !== lastItemKey && (
+                  <span className="item-separator">
+                    <i className={"fa-icon-chevron-right"} />
+                  </span>
+                )}
                 {!item.onClick && !item.link && <span className={"breadcrumb-nav__item__no-link"}>{item.text}</span>}
               </li>
             );

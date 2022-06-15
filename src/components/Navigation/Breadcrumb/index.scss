@@ -36,14 +36,15 @@
   .page-title {
     padding: 0;
     font-family: $font-family-primary;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 500;
-    line-height: 1.33;
+    line-height: 44px;
     display: flex;
     align-items: center;
     justify-content: unset;
     .page-title-badge {
       margin-left: 12px;
+      line-height: 1.33;
     }
   }
   .breadcrumb-nav {
@@ -57,30 +58,30 @@
       align-items: center;
       margin-top: 0;
       letter-spacing: 0.02em;
+      font-size: $font-size-h7;
       &__link {
         font-family: $font-family-primary;
-        font-size: $font-size-h6;
         box-sizing: border-box;
         height: 20px;
         display: block;
-        color: $base-100;
+        color: $base-80;
         text-decoration: none;
         .back-button-icon {
           margin-right: 10px;
         }
         &:hover {
-          color: $base-120;
-          border-bottom: 0.7px solid $base-120;
+          color: $base-80;
+          border-bottom: 0.7px solid $base-100;
           cursor: pointer;
         }
       }
-      > &__no-link,
-      > .item-separator {
+      &__no-link,
+      .item-separator {
         display: block;
         font-weight: 500;
-        color: $base-120;
+        color: $base-80;
       }
-      > .item-separator {
+      .item-separator {
         margin: 0 4px;
       }
     }
