@@ -18,12 +18,12 @@ export interface LoadingOrErrorWrapperProps {
   error?: Error | null;
   errorTitle?: string;
   errorMessage?: React.ReactNode;
-  errorImage?: string;
+  errorImage?: React.ReactNode;
   isRefreshable?: boolean;
   onErrorActionClick?: () => void;
   errorButtonText?: string;
   children: React.ReactNode;
-  isFullHeight?: boolean
+  isFullHeight?: boolean;
 }
 
 export const LoadingOrErrorWrapper = ({
@@ -37,11 +37,11 @@ export const LoadingOrErrorWrapper = ({
   errorButtonText = translation("common.refreshPage"),
   onErrorActionClick,
   isRefreshable,
-  isFullHeight = false
+  isFullHeight = false,
 }: LoadingOrErrorWrapperProps) => {
   if (isLoading) {
     return (
-      <div className={classNames("loading-container", {"full-height": isFullHeight})}>
+      <div className={classNames("loading-container", { "full-height": isFullHeight })}>
         <LoadingIndicator />
         {loadingInfo && <span className="loading-info">{loadingInfo}</span>}
       </div>
@@ -66,5 +66,5 @@ export const LoadingOrErrorWrapper = ({
     );
   }
 
-  return <div className={classNames("content-container", {"full-height": isFullHeight})}>{children}</div>;
+  return <div className={classNames("content-container", { "full-height": isFullHeight })}>{children}</div>;
 };
