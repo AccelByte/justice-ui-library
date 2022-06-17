@@ -1,7 +1,7 @@
 import React from "react";
 import "./ErrorWrapper.scss";
 export interface ErrorWrapperProps {
-    image?: string;
+    image?: React.ReactNode;
     title: string;
     subTitle?: React.ReactNode;
     customComponent?: React.ReactNode;
