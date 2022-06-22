@@ -7,9 +7,9 @@
 export const addLineBreaks = (text: string, marginTop: string | number = 4) => {
   return text.split("\n").map((text, index) => {
     return (
-      <div key={`${index}-${text}`} style={{ marginTop: !!index ? marginTop : undefined }}>
+      <p key={`${index}-${text}`} style={{ margin: "unset", marginTop: !!index ? marginTop : "unset", }}>
         {text}
-      </div>
+      </p>
     );
   });
 };
