@@ -38,13 +38,15 @@
     }
   }
   &.without-limit {
+    display: flex;
+    justify-content: center;
     .paging-wrapper {
       justify-content: center;
       align-items: center;
-      padding: 25px;
     }
   }
   .paging-wrapper {
+    padding: 25px;
     display: flex;
     font-size: $font-size-h4;
     line-height: 1;
