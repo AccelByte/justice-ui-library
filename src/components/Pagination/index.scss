@@ -7,25 +7,60 @@
 @import "src/styles/variables";
 
 .pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 25px;
-  font-size: $font-size-h4;
-  line-height: 1;
   font-family: $font-family-primary;
-  a {
+  &.with-limit {
     display: flex;
-    align-items: center;
-    margin: 0 10px;
-    &.disabled {
-      cursor: not-allowed;
-      pointer-events: none;
-      color: $color--disabled;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @media screen and (max-width: 576px) {
+      justify-content: center;
+      .limit-wrapper,
+      .paging-wrapper {
+        margin-bottom: 12px;
+      }
     }
-    &.navigation {
-      cursor: pointer;
-      color: $color--icon;
+    .limit-wrapper {
+      display: flex;
+      align-items: center;
+      font-size: $font-size-h7;
+      color: $color--text--secondary;
+      .limit-prefix {
+        margin-right: 12px;
+      }
+      .styled-atlaskit-select {
+        margin-right: 12px;
+        .styled-atlaskit-select {
+          &__control {
+            min-width: 72px;
+          }
+        }
+      }
+    }
+  }
+  &.without-limit {
+    .paging-wrapper {
+      justify-content: center;
+      align-items: center;
+      padding: 25px;
+    }
+  }
+  .paging-wrapper {
+    display: flex;
+    font-size: $font-size-h4;
+    line-height: 1;
+    a {
+      display: flex;
+      align-items: center;
+      margin: 0 10px;
+      &.disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+        color: $color--disabled;
+      }
+      &.navigation {
+        cursor: pointer;
+        color: $color--icon;
+      }
     }
   }
 }

@@ -5,20 +5,31 @@
  */
 
 import * as React from "react";
+import classNames from "classnames";
 import { translation } from "../../utils/i18n";
+import { SelectOption } from "../../types";
+import { Select } from "../styled-atlaskit/Select/Select";
 import "./index.scss";
 
+interface PaginationLimit {
+  value: SelectOption;
+  options: SelectOption[];
+  onChange: (option: SelectOption) => void;
+}
 export interface PaginationProps {
   paging: {
     previous?: string;
     next?: string;
   };
   changePage: (page?: string) => void;
+  limit?: PaginationLimit;
   prevDataQa?: string | null;
   nextDataQa?: string | null;
 }
 
-const pagination: React.FunctionComponent<PaginationProps> = ({ paging, changePage, prevDataQa, nextDataQa }) => {
+const Pagination: React.FunctionComponent<PaginationProps> = (props) => {
+  const { paging, changePage, limit, prevDataQa, nextDataQa } = props;
+
   const renderPrev = () => {
     const onClick = () => changePage(paging.previous);
     const paginationClass = paging.previous ? "navigation" : "disabled";
@@ -40,11 +51,20 @@ const pagination: React.FunctionComponent<PaginationProps> = ({ paging, changePa
   };
 
   return (
-    <div className="pagination">
-      {renderPrev()}
-      {renderNext()}
+    <div className={classNames("pagination", { "without-limit": !limit, "with-limit": !!limit })}>
+      {!!limit && (
+        <div className="limit-wrapper">
+          <span className="limit-prefix">{translation("pagination.limit.prefix")}</span>
+          <Select {...limit} />
+          <span className="limit-suffix">{translation("pagination.limit.suffix")}</span>
+        </div>
+      )}
+      <div className="paging-wrapper">
+        {renderPrev()}
+        {renderNext()}
+      </div>
     </div>
   );
 };
 
-export { pagination as Pagination };
+export { Pagination };

@@ -13,9 +13,20 @@ export default {
   component: Pagination,
 } as Meta;
 
+const limitOptions = [{ label: "10", value: "10" }];
 const Template: Story<PaginationProps> = (args) => <Pagination {...args} />;
 
 export const Example = Template.bind({});
+export const ExampleWithLimit = Template.bind({});
 Example.args = {
   paging: { previous: "/prev" },
+};
+
+ExampleWithLimit.args = {
+  paging: { previous: "/prev" },
+  limit: {
+    options: limitOptions,
+    value: limitOptions[0],
+    onChange: () => {},
+  },
 };
