@@ -9,6 +9,8 @@
   "dynamicTablePagination.perPage.suffix": "records per page",
   "pagination.prev": "Prev",
   "pagination.next": "Next",
+  "pagination.limit.prefix": "Show",
+  "pagination.limit.suffix": "records per page",
   "password.hiddenPassword": "Hide Password",
   "password.viewPassword": "View Password",
   "password.generateNew": "Generate new password",
