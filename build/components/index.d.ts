@@ -3,6 +3,7 @@ export * from "./styled-atlaskit/DynamicTable/DynamicTable";
 export * from "./styled-atlaskit/Modal/Modal";
 export * from "./styled-atlaskit/Modal/utility";
 export * from "./styled-atlaskit/Select/Select";
+export * from "./styled-atlaskit/CreatableSelect/CreatableSelect";
 export * from "./styled-atlaskit/Tag/Tag";
 export * from "./styled-atlaskit/Tag/TagList";
 export * from "./styled-atlaskit/TextField/TextField";
