@@ -30,4 +30,4 @@ export interface ValidSelectProps extends SelectProps {
     className?: string;
     helperText?: React.ReactNode;
 }
-export declare const ValidSelect: ({ label, placeholder, options, name, value, onChange, errMessage, optionalLabel, isInvalid, isDisabled, isRequired, isClearable, tooltip, selectDataQa, isMulti, className, helperText, ...props }: ValidSelectProps) => JSX.Element;
+export declare const ValidSelect: ({ label, placeholder, options, name, value, onChange, errMessage, optionalLabel, isInvalid, isDisabled, isRequired, isClearable, tooltip, selectDataQa, isMulti, className, helperText, isCreatable, ...props }: ValidSelectProps) => JSX.Element;
