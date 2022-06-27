@@ -57,7 +57,6 @@ export const ValidSelect = ({
   isMulti = false,
   className,
   helperText,
-  isCreatable = false,
   ...props
 }: ValidSelectProps) => (
   <div className={classNames("valid-select-input", className)}>
@@ -72,7 +71,6 @@ export const ValidSelect = ({
       isDisabled={isDisabled}
       isClearable={isClearable}
       isMulti={isMulti}
-      isCreatable={isCreatable}
       dataQa={selectDataQa}
     />
     {isInvalid && <FieldErrorMessage message={errMessage} />}

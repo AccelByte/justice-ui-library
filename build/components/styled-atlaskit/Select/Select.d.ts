@@ -4,6 +4,5 @@ import { SelectOption } from "../../../types";
 import "./Select.scss";
 export interface SelectProps extends Omit<AkSelectProps<SelectOption, boolean>, "onChange"> {
     onChange?: (option: SelectOption) => void;
-    isCreatable?: boolean;
 }
-export declare const Select: ({ isMulti, isCreatable, onChange, ...props }: SelectProps) => JSX.Element;
+export declare const Select: ({ isMulti, onChange, ...props }: SelectProps) => JSX.Element;
