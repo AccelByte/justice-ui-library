@@ -22,7 +22,7 @@
     .limit-wrapper {
       display: flex;
       align-items: center;
-      font-size: $font-size-h7;
+      font-size: $font-size-h6;
       color: $color--text--secondary;
       .limit-prefix {
         margin-right: 12px;
@@ -48,8 +48,9 @@
   .paging-wrapper {
     padding: 25px;
     display: flex;
-    font-size: $font-size-h4;
-    line-height: 1;
+    font-size: $font-size-h6;
+    font-weight: 500;
+    line-height: 20px;
     a {
       display: flex;
       align-items: center;
