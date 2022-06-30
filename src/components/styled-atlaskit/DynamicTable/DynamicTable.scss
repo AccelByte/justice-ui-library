@@ -215,4 +215,10 @@
   div[class^="Droplist-"]:hover {
     cursor: pointer;
   }
+
+  .styled-atlaskit-button {
+    &.link {
+      font-size: $font-size-h6;
+    }
+  }
 }
