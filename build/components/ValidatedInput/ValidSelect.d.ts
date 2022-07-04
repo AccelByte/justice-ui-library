@@ -14,7 +14,7 @@ export interface ValidSelectProps extends SelectProps {
     value: SelectOption | SelectOption[] | string | null;
     reloaderStatus?: Enum<typeof RELOADSTATUS>;
     errMessage?: string;
-    onChange: (option: SelectOption) => void;
+    onChange: (option: SelectOption | SelectOption[]) => void;
     reloadMessage?: string;
     onReload?: () => void;
     optionalLabel?: string;
