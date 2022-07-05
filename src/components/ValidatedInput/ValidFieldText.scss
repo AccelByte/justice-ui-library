@@ -12,6 +12,11 @@
   position: relative;
   font-family: $font-family-primary;
 
+  .field-label {
+    font-size: $font-size-h6;
+    padding-bottom: 4px;
+  }
+
   .field-info {
     font-size: $font-size-h5;
     color: $input-color--placeholder;
@@ -48,6 +53,10 @@
       [class|="Content__ChildWrapper"] > [class|="Content"] {
         border: 2px solid $color--accent;
       }
+    }
+
+    input {
+      font-size: $font-size-h5;
     }
 
     .rightIcon {

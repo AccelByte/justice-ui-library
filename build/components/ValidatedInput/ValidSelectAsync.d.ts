@@ -1,5 +1,6 @@
 import * as React from "react";
 import { AsyncPaginateProps } from "react-select-async-paginate";
+import "./ValidSelect.scss";
 export interface ValidSelectAsyncProps<OptionType, Group, Additional, isMulti extends boolean> extends AsyncPaginateProps<OptionType, Group, Additional, isMulti> {
     label?: string;
     errMessage?: string;

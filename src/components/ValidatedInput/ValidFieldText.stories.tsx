@@ -39,5 +39,6 @@ Example.args = {
   value: "Example Value",
   label: "Field Label",
   name: "field-name",
-  popoverContent: "popover content"
+  popoverContent: "popover content",
+  helperText: "Some helper",
 };
