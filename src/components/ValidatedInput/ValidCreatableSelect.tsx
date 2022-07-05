@@ -6,10 +6,10 @@
  *
  */
 
-import * as React from "react";
 import { default as classNames } from "classnames";
 import { FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
 import { CreatableSelect, ValidSelectProps } from "..";
+import "./ValidSelect.scss";
 
 export const ValidCreatableSelect = ({
   label,

@@ -7,6 +7,10 @@
 @import "src/styles/variables";
 
 .valid-dynamic-text {
+  .field-label {
+    font-size: $font-size-h6;
+    padding-bottom: 4px;
+  }
   &__input {
     display: flex;
     flex-direction: column;
@@ -54,6 +58,7 @@
       }
       input {
         font-family: $font-family-primary;
+        font-size: $font-size-h5;
       }
     }
     &__add-btn {

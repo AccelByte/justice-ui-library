@@ -11,6 +11,7 @@ import { default as classNames } from "classnames";
 import { Enum, SelectOption } from "../../types";
 import { FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
 import { Select, SelectProps } from "..";
+import "./ValidSelect.scss";
 
 export const RELOADSTATUS = Enum("LOADING", "FAILED", "SUCCESS");
 
