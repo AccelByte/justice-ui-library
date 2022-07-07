@@ -8,9 +8,9 @@ import * as React from "react";
 import "./index.scss";
 import classNames from "classnames";
 import { SelectOption } from "../../types";
-import { FieldLabel, Select } from "..";
-import ReactTooltip from "react-tooltip";
 import { renderToString } from "react-dom/server";
+import { FieldLabel } from "../Form/utility";
+import { Select } from "../Select";
 
 export interface TableFilterProps {
   onFilterChange: (option: SelectOption) => void;
@@ -36,9 +36,7 @@ export const TableFilter = ({
   const dataTip = React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip;
   return (
     <div className={classNames("table-filter", { isLarge })} style={customStyle}>
-      {!!label && (
-        <FieldLabel label={label} tooltip={dataTip} />
-      )}
+      {!!label && <FieldLabel label={label} tooltip={dataTip} />}
       <Select
         options={options}
         isMulti={false}

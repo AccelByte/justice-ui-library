@@ -7,7 +7,7 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { TableFilter, TableFilterProps } from ".";
-import { SelectOption } from "../..";
+import { SelectOption } from "../../types";
 
 export default {
   title: "Components/TableFilter",

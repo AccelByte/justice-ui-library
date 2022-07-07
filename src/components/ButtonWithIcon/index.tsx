@@ -5,7 +5,7 @@
  */
 
 import classNames from "classnames";
-import { Button, ButtonProps } from "../styled-atlaskit/Button/Button";
+import { Button, ButtonProps } from "../Button";
 
 export interface ButtonWithIconProps extends ButtonProps {
   buttonIcon?: string;

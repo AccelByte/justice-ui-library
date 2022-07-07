@@ -17,7 +17,13 @@ export const HighlightedText = ({ text, highlight, className }: HighlightedTextP
   return (
     <span className={className}>
       {findInText.map((text, index) =>
-        text.toLowerCase() === highlight.toLowerCase() ? <b key={index}>{text}</b> : text
+        text.toLowerCase() === highlight.toLowerCase() ? (
+          <b key={index} style={{ fontWeight: 500 }}>
+            {text}
+          </b>
+        ) : (
+          text
+        )
       )}
     </span>
   );

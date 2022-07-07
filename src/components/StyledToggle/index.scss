@@ -1,0 +1,124 @@
+/*
+ * Copyright (c) 2022. AccelByte Inc. All Rights Reserved
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+.styled-toggle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-family: $font-family-primary;
+
+  .toggle-label {
+    box-sizing: content-box;
+    display: inline-block;
+    padding: 2px;
+    margin: 2px;
+    background-clip: content-box;
+    border-radius: 16px;
+    height: 16px;
+    width: 48px;
+    position: relative;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+
+    &:focus-within {
+      border-color: transparent;
+    }
+
+    &::before {
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      content: "";
+      border-radius: 50%;
+      transform: initial;
+      transition: transform 0.2s ease;
+    }
+
+    input {
+      opacity: 0;
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+  }
+
+  label[data-checked="false"] {
+    background-color: $base-40;
+    &::before {
+      background-color: $base-80;
+    }
+    &:hover {
+      &::before {
+        background-color: $base-100;
+      }
+    }
+  }
+
+  label[data-checked="true"] {
+    background-color: $brand-40;
+    &::before {
+      transform: translateX(28px);
+      background-color: $brand-80;
+    }
+    &:hover {
+      &::before {
+        background-color: $brand-100;
+      }
+    }
+  }
+
+  &.disabled {
+    opacity: 0.4;
+    label {
+      cursor: not-allowed;
+    }
+    label[data-checked="false"] {
+      background-color: $base-40;
+      &:hover {
+        background-color: $base-40;
+      }
+    }
+
+    label[data-checked="true"] {
+      background-color: $brand-40;
+      &:hover {
+        background-color: $brand-40;
+      }
+    }
+  }
+
+  .badge-container {
+    margin-left: 8px;
+  }
+
+  &__loading {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 3px solid $brand-80;
+    border-top-color: transparent;
+    animation: animation-spin 1s linear infinite;
+  }
+}
+
+.styled-toggle-uneditable {
+  font-family: $font-family-primary;
+}
+
+@keyframes animation-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
