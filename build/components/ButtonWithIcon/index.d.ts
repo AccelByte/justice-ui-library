@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { ButtonProps } from "../styled-atlaskit/Button/Button";
+import { ButtonProps } from "../Button";
 export interface ButtonWithIconProps extends ButtonProps {
     buttonIcon?: string;
     iconPosition?: "left" | "right";

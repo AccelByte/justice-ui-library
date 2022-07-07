@@ -14,7 +14,7 @@ import "./ValidFieldPassword.scss";
 import { generatePassword } from "../../utils";
 import { DEFAULT_PASSWORD_AND_SECRET_REGEX } from "../../constants";
 import { strengthLevelOrder } from "../../constants";
-import { Button } from "../styled-atlaskit/Button/Button";
+import { Button } from "../Button";
 import { translation } from "../../utils/i18n";
 
 export interface ValidFieldPasswordProps extends Omit<ValidFieldTextProps, "type" | "rightIcon" | "isFloat"> {

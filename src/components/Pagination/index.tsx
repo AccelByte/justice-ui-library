@@ -8,7 +8,7 @@ import * as React from "react";
 import classNames from "classnames";
 import { translation } from "../../utils/i18n";
 import { SelectOption } from "../../types";
-import { Select } from "../styled-atlaskit/Select/Select";
+import { Select } from "../Select";
 import "./index.scss";
 
 interface PaginationLimit {

@@ -8,7 +8,7 @@ import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
 import "../../styles/icons/ab_icons.css";
 import { AccelIconsList } from "./IconList";
-import { Button } from "../styled-atlaskit/Button/Button";
+import { Button } from "../Button";
 import { FieldLabel } from "../Form/utility";
 
 export default {
@@ -21,7 +21,7 @@ export const AccelIcons: Story = () => {
       {AccelIconsList.map((icon, index) => (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }} key={index}>
           <i className={icon} style={{ fontSize: 24, marginBottom: 10 }} />
-          <span style={{textAlign: "center"}}>{icon}</span>
+          <span style={{ textAlign: "center" }}>{icon}</span>
         </div>
       ))}
     </div>
