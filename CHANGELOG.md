@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ## [0.6.5] (Unreleased)
 ### Refactored
 - Remove `styled-atlaskit` folder and move its components up by one level
+- Remove `Form` folder and move its components up by one level
 
 ## [0.6.4]
 ### Fixed

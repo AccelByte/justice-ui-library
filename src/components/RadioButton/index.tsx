@@ -5,7 +5,7 @@
  */
 
 import { default as classNames } from "classnames";
-import { SelectOption } from "../../../types";
+import { SelectOption } from "../../types";
 import "./index.scss";
 
 /** @deprecated Use StyledRadio instead */
