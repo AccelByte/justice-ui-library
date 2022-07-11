@@ -1,0 +1,66 @@
+/*
+ * Copyright (c) 2022 AccelByte Inc. All Rights Reserved
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+.modal-page-container {
+  background-color: $base-white;
+  font-family: $font-family-primary;
+  .close-modal-page-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    right: 0;
+    top: 0;
+    margin: 32px;
+    color: $color--text--secondary;
+    z-index: 520;
+    .close {
+      border: 1px solid $input-borderColor;
+      border-radius: 56px;
+      box-sizing: border-box;
+      height: 48px;
+      width: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 8px;
+      cursor: pointer;
+      color: $base-80;
+      opacity: 1;
+      font-size: $font-size-h1;
+      &.disabled {
+        border: 1px solid $color--divider;
+        pointer-events: none;
+        i {
+          color: $color--disabled;
+        }
+      }
+      &:focus {
+        border: 2px solid $brand-40;
+        outline: none;
+      }
+      &:hover {
+        background-color: $backgroundColor--secondary;
+        color: $base-90;
+        opacity: 1;
+      }
+      &:active {
+        background-color: $base-20;
+      }
+      i {
+        color: $color--icon;
+      }
+    }
+  }
+  .isFlex {
+    display: flex;
+  }
+  .isFullWidth {
+    width: 100%;
+  }
+}

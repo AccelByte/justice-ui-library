@@ -2,10 +2,10 @@ import * as React from "react";
 import "./index.scss";
 import { Enum } from "../../types";
 export declare const TipType: Readonly<{
-    warning: "warning";
-    success: "success";
     info: "info";
+    warning: "warning";
     error: "error";
+    success: "success";
 }>;
 export interface TipProps {
     show: boolean;

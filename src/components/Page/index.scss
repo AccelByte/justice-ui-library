@@ -1,0 +1,64 @@
+/*
+ * Copyright (c) 2021-2022 AccelByte Inc. All Rights Reserved.
+ * This is licensed software from AccelByte Inc, for limitations
+ * and restrictions contact your company contract manager.
+ */
+
+@import "src/styles/variables";
+
+.pageComponent {
+  overflow-y: visible;
+  font-family: $font-family-primary;
+  .pageComponentTitle {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    padding: 16px 32px;
+    background-color: $base-white;
+    margin-bottom: 16px;
+    display: flex;
+    &.noMarginBottom {
+      margin-bottom: 0;
+    }
+    .pageComponentTitleText.noSidebar {
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .pageComponentTitleText {
+      flex: 1;
+    }
+    .extraOptionsHeader {
+      font-weight: normal;
+      font-size: 14px;
+    }
+  }
+  &--small,
+  &--large,
+  &--full {
+    .pageComponentContainer {
+      margin: 0 auto;
+      padding: 0 30px;
+
+      &.noPadding {
+        padding: 0;
+      }
+    }
+  }
+  &--large {
+    .pageComponentContainer {
+      max-width: $container-large;
+    }
+  }
+  &--small {
+    .pageComponentContainer {
+      max-width: $container-small;
+    }
+  }
+  &--full {
+    .pageComponentContainer {
+      max-width: $container-full;
+    }
+  }
+}

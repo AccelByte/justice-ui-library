@@ -11,7 +11,7 @@ import { default as FieldText } from "@atlaskit/field-text";
 import "./ValidFieldText.scss";
 import { FieldCounter, FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
 import { Placement } from "@atlaskit/inline-dialog/types";
-import { InlinePopover, InlinePopoverType } from "../Popover/InlinePopover";
+import { InlinePopover, InlinePopoverType } from "../InlinePopover";
 import { isForbiddenKey } from "../../utils";
 
 export class Input extends FieldText {
