@@ -6,10 +6,10 @@
 
 import React, { PropsWithChildren } from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { Page, PageProps } from "./Page";
+import { Page, PageProps } from ".";
 
 export default {
-  title: "Components/Page/Page",
+  title: "Components/Page",
   component: Page,
 } as Meta;
 

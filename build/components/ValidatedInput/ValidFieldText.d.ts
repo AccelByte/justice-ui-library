@@ -2,7 +2,7 @@ import * as React from "react";
 import { default as FieldText } from "@atlaskit/field-text";
 import "./ValidFieldText.scss";
 import { Placement } from "@atlaskit/inline-dialog/types";
-import { InlinePopoverType } from "../Popover/InlinePopover";
+import { InlinePopoverType } from "../InlinePopover";
 export declare class Input extends FieldText {
     componentWillReceiveProps(nextProps: any, nextContext: any): void;
 }

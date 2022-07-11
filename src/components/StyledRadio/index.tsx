@@ -9,7 +9,7 @@ import "./index.scss";
 import { RadioOption } from "../../types";
 import { FieldErrorMessage, FieldLabel } from "../Form/utility";
 import { addLineBreaks } from "../../utils";
-import { LineBreakToList } from "../..";
+import { LineBreakToList } from "../LineBreakToList";
 
 export interface StyledRadioProps {
   label?: string;

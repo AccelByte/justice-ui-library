@@ -27,7 +27,7 @@ export declare class ValidFieldPassword extends React.Component<ValidFieldPasswo
     resetTooltipIconEye: () => void;
     hideTooltip: () => void;
     handleEyeIcon: () => JSX.Element;
-    handleFieldType: () => "text" | "password";
+    handleFieldType: () => "password" | "text";
     handleGeneratePassword: () => void;
     handleGenerateText: () => JSX.Element;
     render(): JSX.Element;
