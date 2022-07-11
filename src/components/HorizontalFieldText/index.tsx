@@ -9,7 +9,7 @@ import ReactTooltip from "react-tooltip";
 import { default as classNames } from "classnames";
 import "./index.scss";
 import { renderToString } from "react-dom/server";
-import { translation } from "../../../utils/i18n";
+import { translation } from "../../utils/i18n";
 
 export interface HorizontalFieldTextProps {
   children?: React.ReactNode;

@@ -5,7 +5,7 @@
  */
 
 import classNames from "classnames";
-import { SelectOption } from "../../../types";
+import { SelectOption } from "../../types";
 import styles from "./index.module.scss";
 
 export interface HorizontalSelectProps<T> {

@@ -9,7 +9,7 @@ import { default as classNames } from "classnames";
 import "./index.scss";
 import ReactTooltip from "react-tooltip";
 import { renderToString } from "react-dom/server";
-import { FieldHelperText } from "../utility";
+import { FieldHelperText } from "../Form/utility";
 
 export interface CheckboxProps {
   label?: string;

@@ -4,10 +4,9 @@
  * and restrictions contact your company contract manager.
  */
 
-import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { HorizontalFieldText, HorizontalFieldTextProps } from ".";
-import { Card } from "../../Card";
+import { Card } from "../Card";
 
 export default {
   title: "Components/HorizontalFieldText",

@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { SelectOption } from "../../../types";
+import { SelectOption } from "../../types";
 import "./index.scss";
 /** @deprecated Use StyledRadio instead */
 export declare const RadioButtonItem: ({ isDisabled, isSelected, onChange, item, }: {
