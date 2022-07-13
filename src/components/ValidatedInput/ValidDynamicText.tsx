@@ -11,6 +11,7 @@ import { FieldErrorMessage, FieldLabel } from "../Form/utility";
 import { Button } from "../Button";
 import { Input } from "./ValidFieldText";
 import { translation } from "../../utils/i18n";
+import "../../styles/icons/fa_icons.css";
 
 export interface ValidDynamicTextProps {
   label?: string;

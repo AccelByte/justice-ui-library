@@ -2,6 +2,7 @@
 import { Enum } from "../../types";
 import { CONTAINER_SIZE } from "../../constants";
 import "./index.scss";
+import "../../styles/icons/fa_icons.css";
 export interface ItemTab {
     tabName: string;
     url: string;

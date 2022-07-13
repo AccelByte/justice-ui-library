@@ -5,15 +5,14 @@
  */
 
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { DropdownMenu, DropdownItemGroup, DropdownItem } from ".";
-import { DropdownMenuStatefulProps } from "@atlaskit/dropdown-menu";
+import { DropdownMenu, DropdownItemGroup, DropdownItem, DropdownMenuProps } from ".";
 
 export default {
   title: "Components/Dropdown/DropdownMenu",
   component: DropdownMenu,
 } as Meta;
 
-const Template: Story<DropdownMenuStatefulProps> = (args) => {
+const Template: Story<DropdownMenuProps> = (args) => {
   return (
     <div style={{ fontFamily: "Roboto" }}>
       <DropdownMenu {...args}>

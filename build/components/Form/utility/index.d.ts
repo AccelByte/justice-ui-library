@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.scss";
+import "../../../styles/icons/fa_icons.css";
 export declare const FieldErrorMessage: ({ message, dataQa }: {
     message?: string | null | undefined;
     dataQa?: string | undefined;

@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./index.scss";
-import { ButtonAppearance } from "..";
+import { ButtonAppearance } from "../Button";
+import "../../styles/icons/fa_icons.css";
 export interface CardProps {
     children: React.ReactNode;
     /** A custom element placed at the bottom of the card */

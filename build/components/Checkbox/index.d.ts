@@ -1,5 +1,6 @@
 import * as React from "react";
 import "./index.scss";
+import "../../styles/icons/fa_icons.css";
 export interface CheckboxProps {
     label?: string;
     isChecked: boolean;

@@ -8,6 +8,7 @@ import * as React from "react";
 import { default as classNames } from "classnames";
 import "./index.scss";
 import { Enum } from "../../types";
+import "../../styles/icons/fa_icons.css";
 
 export const APPEARANCE_TYPE = Enum("success", "error", "info", "warning");
 

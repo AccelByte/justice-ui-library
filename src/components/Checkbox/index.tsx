@@ -10,6 +10,7 @@ import "./index.scss";
 import ReactTooltip from "react-tooltip";
 import { renderToString } from "react-dom/server";
 import { FieldHelperText } from "../Form/utility";
+import "../../styles/icons/fa_icons.css";
 
 export interface CheckboxProps {
   label?: string;

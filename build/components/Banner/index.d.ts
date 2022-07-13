@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./index.scss";
 import { Enum } from "../../types";
+import "../../styles/icons/fa_icons.css";
 export declare const APPEARANCE_TYPE: Readonly<{
     info: "info";
     warning: "warning";

@@ -7,6 +7,7 @@
 import * as React from "react";
 import { default as classNames } from "classnames";
 import "./index.scss";
+import "../../styles/icons/fa_icons.css";
 
 export interface AccordionProps {
   /** Element which is always displayed in the UI */

@@ -2,6 +2,7 @@ import * as React from "react";
 import { ValidFieldTextProps } from "./ValidFieldText";
 import "./ValidFieldPassword.scss";
 import { strengthLevelOrder } from "../../constants";
+import "../../styles/icons/fa_icons.css";
 export interface ValidFieldPasswordProps extends Omit<ValidFieldTextProps, "type" | "rightIcon" | "isFloat"> {
     strengthLevelIndicator?: keyof typeof strengthLevelOrder;
     hasGeneratePassword?: boolean;

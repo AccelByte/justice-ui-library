@@ -10,6 +10,7 @@ import { translation } from "../../utils/i18n";
 import { SelectOption } from "../../types";
 import { Select } from "../Select";
 import "./index.scss";
+import "../../styles/icons/fa_icons.css";
 
 interface PaginationLimit {
   value: SelectOption;

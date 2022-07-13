@@ -6,13 +6,12 @@
 
 import classNames from "classnames";
 import "./ButtonDropdown.scss";
-import { default as AKDropdown } from "@atlaskit/dropdown-menu";
-import { DropdownMenuStatefulProps } from "@atlaskit/dropdown-menu/types";
-import { ButtonAppearances } from "@atlaskit/button";
+import { DropdownMenu, DropdownMenuProps } from ".";
+import { ButtonAppearance } from "../Button";
 
-type DropdownAppearance = Extract<ButtonAppearances, "subtle" | "primary">;
+type DropdownAppearance = Extract<ButtonAppearance, "subtle" | "primary">;
 
-export interface ButtonDropdownProps extends Partial<Omit<DropdownMenuStatefulProps, "triggerType">> {
+export interface ButtonDropdownProps extends Partial<Omit<DropdownMenuProps, "triggerType">> {
   /** Set if the dropdown menu button is disabled. */
   isDisabled?: boolean;
   /** The base styling to apply to the dropdown menu button. */
@@ -31,7 +30,7 @@ export const ButtonDropdown = ({
   ...props
 }: ButtonDropdownProps) => {
   const renderDropdownMenu = () => (
-    <AKDropdown
+    <DropdownMenu
       triggerType="button"
       triggerButtonProps={{
         isDisabled,
@@ -41,7 +40,7 @@ export const ButtonDropdown = ({
       {...props}
     >
       {children}
-    </AKDropdown>
+    </DropdownMenu>
   );
 
   if (dataQa) {
