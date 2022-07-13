@@ -16,6 +16,7 @@ import { DEFAULT_PASSWORD_AND_SECRET_REGEX } from "../../constants";
 import { strengthLevelOrder } from "../../constants";
 import { Button } from "../Button";
 import { translation } from "../../utils/i18n";
+import "../../styles/icons/fa_icons.css";
 
 export interface ValidFieldPasswordProps extends Omit<ValidFieldTextProps, "type" | "rightIcon" | "isFloat"> {
   strengthLevelIndicator?: keyof typeof strengthLevelOrder;

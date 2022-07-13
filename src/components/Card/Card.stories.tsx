@@ -7,6 +7,7 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { Card, CardProps } from ".";
+import "../../styles/icons/fa_icons.css";
 
 export default {
   title: "Components/Card",

@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.scss";
+import "../../styles/icons/fa_icons.css";
 export interface NoResultTipProps {
     title?: string;
     tooltip?: string;

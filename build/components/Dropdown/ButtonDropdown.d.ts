@@ -1,9 +1,9 @@
 /// <reference types="react" />
 import "./ButtonDropdown.scss";
-import { DropdownMenuStatefulProps } from "@atlaskit/dropdown-menu/types";
-import { ButtonAppearances } from "@atlaskit/button";
-declare type DropdownAppearance = Extract<ButtonAppearances, "subtle" | "primary">;
-export interface ButtonDropdownProps extends Partial<Omit<DropdownMenuStatefulProps, "triggerType">> {
+import { DropdownMenuProps } from ".";
+import { ButtonAppearance } from "../Button";
+declare type DropdownAppearance = Extract<ButtonAppearance, "subtle" | "primary">;
+export interface ButtonDropdownProps extends Partial<Omit<DropdownMenuProps, "triggerType">> {
     /** Set if the dropdown menu button is disabled. */
     isDisabled?: boolean;
     /** The base styling to apply to the dropdown menu button. */

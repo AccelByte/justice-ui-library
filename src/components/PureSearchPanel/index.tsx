@@ -9,6 +9,7 @@ import * as React from "react";
 import { Enum } from "../../types";
 import "./index.scss";
 import { Icon } from "../Icon";
+import "../../styles/icons/fa_icons.css";
 
 export const SearchIconPosition = Enum("LEFT", "RIGHT");
 

@@ -11,6 +11,7 @@ import { CONTAINER_SIZE } from "../../constants";
 import { DropdownItem, DropdownItemGroup, DropdownMenu } from "../Dropdown";
 import "./index.scss";
 import { translation } from "../../utils/i18n";
+import "../../styles/icons/fa_icons.css";
 
 export interface ItemTab {
   tabName: string;

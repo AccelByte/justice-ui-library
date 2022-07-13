@@ -10,6 +10,7 @@ import { renderToString } from "react-dom/server";
 import ReactTooltip from "react-tooltip";
 import { addLineBreaks } from "../../utils";
 import "./index.scss";
+import "../../styles/icons/fa_icons.css";
 
 export interface NoResultTipProps {
   title?: string;
@@ -49,7 +50,12 @@ export const NoResultTip = ({
             {title}
             {tooltip && (
               <>
-                <i className="fa-icon-info" data-for="justice-search-no-result__tooltip" data-tip={dataTip} data-place="right" />
+                <i
+                  className="fa-icon-info"
+                  data-for="justice-search-no-result__tooltip"
+                  data-tip={dataTip}
+                  data-place="right"
+                />
                 <ReactTooltip effect="solid" id="justice-search-no-result__tooltip" html={true} />
               </>
             )}

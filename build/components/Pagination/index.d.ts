@@ -1,6 +1,7 @@
 import * as React from "react";
 import { SelectOption } from "../../types";
 import "./index.scss";
+import "../../styles/icons/fa_icons.css";
 interface PaginationLimit {
     value: SelectOption;
     options: SelectOption[];

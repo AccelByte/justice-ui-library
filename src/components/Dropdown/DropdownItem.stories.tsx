@@ -6,6 +6,7 @@
 
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { DropdownItem, ButtonDropdown, DropdownItemProps } from ".";
+import "../../styles/icons/fa_icons.css";
 
 export default {
   title: "Components/Dropdown/DropdownItem",

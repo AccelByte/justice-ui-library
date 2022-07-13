@@ -1,5 +1,6 @@
 import * as React from "react";
 import "./index.scss";
+import "../../styles/icons/fa_icons.css";
 export interface HorizontalFieldTextProps {
     children?: React.ReactNode;
     label?: string;

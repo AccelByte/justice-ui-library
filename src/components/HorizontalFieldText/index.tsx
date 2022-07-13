@@ -10,6 +10,7 @@ import { default as classNames } from "classnames";
 import "./index.scss";
 import { renderToString } from "react-dom/server";
 import { translation } from "../../utils/i18n";
+import "../../styles/icons/fa_icons.css";
 
 export interface HorizontalFieldTextProps {
   children?: React.ReactNode;

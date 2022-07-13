@@ -12,7 +12,8 @@ import "./index.scss";
 import { NoResultTip } from "../NoResultTip";
 import { renderToString } from "react-dom/server";
 import { translation } from "../../utils/i18n";
-import { ButtonAppearance } from "..";
+import { ButtonAppearance } from "../Button";
+import "../../styles/icons/fa_icons.css";
 
 export interface CardProps {
   children: React.ReactNode;

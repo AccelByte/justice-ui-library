@@ -9,6 +9,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { default as classNames } from "classnames";
 import "./index.scss";
 import { Icon } from "../Icon";
+import "../../styles/icons/fa_icons.css";
 
 export interface TooltipProps {
   content: string;
@@ -39,7 +40,7 @@ export const Tooltip = ({
   const tooltipContentRef = React.useRef<HTMLSpanElement>(null);
 
   React.useEffect(() => {
-    const overflowHandler = () => { 
+    const overflowHandler = () => {
       if (!isTooltipShownOnOverflowOnly || !tooltipContentRef.current || !tooltipChildrenRef.current) return;
 
       const isOverflow = tooltipChildrenRef.current.scrollWidth > tooltipChildrenRef.current.clientWidth;
@@ -48,11 +49,11 @@ export const Tooltip = ({
       } else {
         tooltipContentRef.current.classList.add(HIDDEN_TOOLTIP_CLASSNAME);
       }
-    }
+    };
 
-    overflowHandler()
-    window.addEventListener("resize", overflowHandler)
-    return () => window.removeEventListener("resize", overflowHandler)
+    overflowHandler();
+    window.addEventListener("resize", overflowHandler);
+    return () => window.removeEventListener("resize", overflowHandler);
   }, [content, children, isTooltipShownOnOverflowOnly]);
 
   return (

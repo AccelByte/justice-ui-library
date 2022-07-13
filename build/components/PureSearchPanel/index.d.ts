@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Enum } from "../../types";
 import "./index.scss";
+import "../../styles/icons/fa_icons.css";
 export declare const SearchIconPosition: Readonly<{
     LEFT: "LEFT";
     RIGHT: "RIGHT";
