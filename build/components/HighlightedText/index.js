@@ -1,0 +1,1 @@
+import{jsx as e}from"react/jsx-runtime";const t=({text:t,highlight:r,className:s})=>{const a=r.replace(/[-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g,"\\$&"),o=t.split(new RegExp(`(${a})`,"gi"));return e("span",{className:s,children:o.map(((t,s)=>t.toLowerCase()===r.toLowerCase()?e("b",{style:{fontWeight:500},children:t},s):t))})};export{t as HighlightedText};

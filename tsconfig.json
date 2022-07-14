@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "target": "ESNext",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -21,10 +17,8 @@
     "jsx": "react-jsx",
     "declaration": true,
     "outDir": "build",
-    "declarationDir": "."
+    "rootDir": "src"
   },
-  "include": [
-    "src"
-  ],
-  "exclude": ["build"]
+  "include": ["src"],
+  "exclude": ["build", "node_modules/**", "src/**/*.stories.tsx"]
 }

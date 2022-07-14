@@ -1,0 +1,1 @@
+import{jsx as t}from"react/jsx-runtime";import{s}from"../../style-inject.es-1f59c1d0.js";s(".styled-atlaskit-tag-list{display:flex;flex-direction:row;flex-wrap:wrap}.styled-atlaskit-tag-list .styled-atlaskit-tag:not(:last-child){margin-right:8px}");const a=({children:s})=>t("div",{className:"styled-atlaskit-tag-list",children:s});export{a as TagList};
