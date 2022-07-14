@@ -1,0 +1,1 @@
+const a='^(?:(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\\d)(?=.*[^A-Za-z0-9])(?=.*[a-z])|(?=.*[^A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z])|(?=.*\\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9]))(?!.*(.)\\1{2,})[A-Za-z0-9!~<>,;:_=?*+#."&§%°()\\|\\[\\]\\-\\$\\^\\@\\/]{8,32}$',z=0,A="*",Z=256;export{z as DEFAULT_MIN_VALUE,a as DEFAULT_PASSWORD_AND_SECRET_REGEX,Z as MAX_SHORT_TEXT_LENGTH,A as WILDCARD_SIGN};

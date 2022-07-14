@@ -6,7 +6,7 @@
 
 import classNames from "classnames";
 import "./ButtonDropdown.scss";
-import { DropdownMenu, DropdownMenuProps } from ".";
+import { DropdownMenu, DropdownMenuProps } from "../Dropdown";
 import { ButtonAppearance } from "../Button";
 
 type DropdownAppearance = Extract<ButtonAppearance, "subtle" | "primary">;

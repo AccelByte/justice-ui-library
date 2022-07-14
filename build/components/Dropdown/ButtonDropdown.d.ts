@@ -1,6 +1,6 @@
 /// <reference types="react" />
 import "./ButtonDropdown.scss";
-import { DropdownMenuProps } from ".";
+import { DropdownMenuProps } from "../Dropdown";
 import { ButtonAppearance } from "../Button";
 declare type DropdownAppearance = Extract<ButtonAppearance, "subtle" | "primary">;
 export interface ButtonDropdownProps extends Partial<Omit<DropdownMenuProps, "triggerType">> {

@@ -1,10 +1,10 @@
 {
   "name": "justice-ui-library",
-  "version": "0.6.5",
+  "version": "0.7.0",
   "author": "AccelByte Inc",
   "license": "AccelByte License",
-  "main": "./build/index.js",
-  "module": "./build/index.es.js",
+  "module": "./build/index.js",
+  "repository": "git@github.com:AccelByte/justice-ui-library.git",
   "scripts": {
     "clean": "rimraf build",
     "build": "rollup -c",
@@ -37,6 +37,7 @@
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-replace": "^4.0.0",
     "@rollup/plugin-typescript": "^8.2.5",
     "@storybook/addon-actions": "^6.4.20",
     "@storybook/addon-docs": "^6.4.20",
@@ -72,6 +73,7 @@
     "react-dom": "^17.0.2",
     "react-i18next": "^11.14.3",
     "rollup": "^2.56.2",
+    "rollup-plugin-multi-input": "^1.3.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.1",
     "rollup-plugin-terser": "^7.0.2",
@@ -88,5 +90,10 @@
   },
   "resolutions": {
     "react": "17.0.2"
-  }
+  },
+  "sideEffects": [
+    "**/*.scss",
+    "**/*.css",
+    "**/*.scss.js"
+  ]
 }
