@@ -162,7 +162,7 @@ export const NavigationTab = ({
         trigger={
           <span className="d-flex align-items-center">
             {translation("common.more")}
-            <i className="fa-icon-chevron-down" />
+            <i className="icon-chevron-down" />
           </span>
         }
       >

@@ -47,7 +47,7 @@ export const FieldLabel = ({
       <>
         <i
           ref={tooltipRef}
-          className="fa-icon-info"
+          className="icon-info"
           data-for="field-label__tooltip"
           data-tip={React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip}
         />

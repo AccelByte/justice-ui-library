@@ -58,7 +58,7 @@ export const Breadcrumb = ({
                 {item.link && !item.onClick && renderLink && renderLink(item, useBackButton)}
                 {key !== lastItemKey && (
                   <span className="item-separator">
-                    <i className={"fa-icon-chevron-right"} />
+                    <i className={"icon-chevron-right"} />
                   </span>
                 )}
                 {!item.onClick && !item.link && <span className={"breadcrumb-nav__item__no-link"}>{item.text}</span>}

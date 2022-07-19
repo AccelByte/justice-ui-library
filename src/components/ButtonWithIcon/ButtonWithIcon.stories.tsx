@@ -24,4 +24,4 @@ export default {
 const Template: Story<ButtonWithIconProps> = (args) => <ButtonWithIcon {...args} />;
 
 export const Example = Template.bind({});
-Example.args = { appearance: "subtle", buttonIcon: "fa-icon-chevron-left", children: "Go Left" };
+Example.args = { appearance: "subtle", buttonIcon: "icon-chevron-left", children: "Go Left" };

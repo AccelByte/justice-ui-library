@@ -114,7 +114,7 @@ export const Card = ({
                 {cardSubTitle && <small className="card-sub-title">{cardSubTitle}</small>}
                 {Tips && (
                   <>
-                    <i className="fa-icon-info" data-for="cardInfo__tooltip" data-tip={dataTip} />
+                    <i className="icon-info" data-for="cardInfo__tooltip" data-tip={dataTip} />
                     <ReactTooltip effect="solid" id="cardInfo__tooltip" html={true} />
                   </>
                 )}
@@ -129,7 +129,7 @@ export const Card = ({
                 {cardSubTitle && <small className="card-sub-title">{cardSubTitle}</small>}
                 {Tips && (
                   <>
-                    <i className="fa-icon-info" data-for="cardInfo__tooltip" data-tip={dataTip} />
+                    <i className="icon-info" data-for="cardInfo__tooltip" data-tip={dataTip} />
                     <ReactTooltip effect="solid" id="cardInfo__tooltip" html={true} />
                   </>
                 )}
@@ -159,7 +159,7 @@ export const Card = ({
                 {cardSubTitle && <small className="card-sub-title">{cardSubTitle}</small>}
                 {Tips && (
                   <>
-                    <i className="fa-icon-info" data-for="cardInfo__tooltip" data-tip={dataTip} />
+                    <i className="icon-info" data-for="cardInfo__tooltip" data-tip={dataTip} />
                     <ReactTooltip effect="solid" id="cardInfo__tooltip" html={true} />
                   </>
                 )}

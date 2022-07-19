@@ -5,15 +5,16 @@
  */
 
 @font-face {
-  font-family: 'feather';
-  src: url('../../assets/fonts/feather.woff?1fs0h0') format('woff');
+  font-family: "feather";
+  src: url("../../assets/fonts/feather.woff?1fs0h0") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
-[class^="fa-icon-"], [class*=" fa-icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'feather' !important;
+  font-family: "feather" !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -26,42 +27,42 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.fa-icon-chevron-down:before {
+.icon-chevron-down:before {
   content: "\e92e";
 }
-.fa-icon-chevron-left:before {
+.icon-chevron-left:before {
   content: "\e92f";
 }
-.fa-icon-chevron-right:before {
+.icon-chevron-right:before {
   content: "\e930";
 }
-.fa-icon-chevron-up:before {
+.icon-chevron-up:before {
   content: "\e931";
 }
-.fa-icon-info:before {
+.icon-info:before {
   content: "\e97c";
 }
-.fa-icon-calendar:before {
+.icon-calendar:before {
   content: "\e927";
 }
-.fa-icon-check:before {
+.icon-check:before {
   content: "\e92d";
 }
-.fa-icon-clipboard:before {
+.icon-clipboard:before {
   content: "\e938";
 }
-.fa-icon-search:before {
+.icon-search:before {
   content: "\e9c1";
 }
-.fa-icon-trash:before {
+.icon-trash:before {
   content: "\e9e4";
 }
-.fa-icon-eye-off:before {
+.icon-eye-off:before {
   content: "\e95c";
 }
-.fa-icon-eye:before {
+.icon-eye:before {
   content: "\e95d";
 }
-.fa-icon-x:before {
+.icon-x:before {
   content: "\ea04";
 }

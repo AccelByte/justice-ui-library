@@ -95,8 +95,8 @@ export class ValidFieldPassword extends React.Component<ValidFieldPasswordProps,
           data-tip={isIconEyeOff ? translation("password.viewPassword") : translation("password.hiddenPassword")}
           data-place="top"
           className={classNames("password-eye-icon", {
-            "fa-icon-eye": !isIconEyeOff,
-            "fa-icon-eye-off": isIconEyeOff,
+            "icon-eye": !isIconEyeOff,
+            "icon-eye-off": isIconEyeOff,
           })}
           onClick={this.toggleIconEyeOff}
         />

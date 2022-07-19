@@ -43,7 +43,7 @@ export const Banner = ({ appearance = "success", message = "", dismissBanner, da
       </span>
       {dismissBanner && (
         <i
-          className={classNames("fa-icon-x", {
+          className={classNames("icon-x", {
             success: appearance === APPEARANCE_TYPE.success,
             error: appearance === APPEARANCE_TYPE.error,
             info: appearance === APPEARANCE_TYPE.info,

@@ -31,7 +31,7 @@ class DateTimePicker extends React.Component<DateTimePickerProps> {
     return (
       <div className={classNames("datepicker__input-field", { isDisabled })}>
         <input {...props} onKeyDown={onKeyDown} />
-        <i className="icon fa-icon-calendar" onClick={!isDisabled ? () => openCalendar() : undefined} />
+        <i className="icon icon-calendar" onClick={!isDisabled ? () => openCalendar() : undefined} />
       </div>
     );
   };

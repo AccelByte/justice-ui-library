@@ -44,9 +44,7 @@ export const Accordion = ({
     <div className={classNames("accordion", className)} data-qa-id={dataQa}>
       <div className={classNames("accordionHead", { isOpen })} onClick={onToggleAccordion}>
         <div className="accordionTitle">{title}</div>{" "}
-        <i
-          className={classNames("accordionToggler", { "fa-icon-chevron-down": !isOpen, "fa-icon-chevron-up": isOpen })}
-        />
+        <i className={classNames("accordionToggler", { "icon-chevron-down": !isOpen, "icon-chevron-up": isOpen })} />
       </div>
       <div className={classNames("accordionBody", { show: isOpen })}>
         <div className={classNames("accordionContent", { noPadding })}>{children}</div>
