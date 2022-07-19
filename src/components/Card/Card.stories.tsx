@@ -22,7 +22,7 @@ Example.args = {
   cardSubTitle: "card subtitle",
   children: "card component example. you can customize further by running `yarn storybook`",
   buttonText: "card button",
-  buttonIcon: "fa-icon-search",
+  buttonIcon: "icon-search",
   buttonOnClick: () => {
     console.log("clicked");
   },

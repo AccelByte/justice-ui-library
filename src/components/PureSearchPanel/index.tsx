@@ -34,10 +34,10 @@ export const PureSearchPanel = ({
   return (
     <div className={classNames("search-panel__container", { "fixed-width": fixedWidth, disabled: isDisabled })}>
       <div className={`search-panel__bar ${searchIconPosition === SearchIconPosition.LEFT ? "searchIconLeft" : ""}`}>
-        {searchIconPosition === SearchIconPosition.LEFT && <Icon name="fa-icon-search" onClick={onSearch} />}
+        {searchIconPosition === SearchIconPosition.LEFT && <Icon name="icon-search" onClick={onSearch} />}
         <input disabled={isDisabled} {...props} />
         {!searchIconPosition ||
-          (searchIconPosition === SearchIconPosition.RIGHT && <Icon name="fa-icon-search" onClick={onSearch} />)}
+          (searchIconPosition === SearchIconPosition.RIGHT && <Icon name="icon-search" onClick={onSearch} />)}
       </div>
     </div>
   );

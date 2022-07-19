@@ -36,7 +36,7 @@ const Pagination: React.FunctionComponent<PaginationProps> = (props) => {
     const paginationClass = paging.previous ? "navigation" : "disabled";
     return (
       <a className={paginationClass} onClick={onClick} data-qa-id={prevDataQa && prevDataQa}>
-        <i className="fa-icon-chevron-left page-icon" /> {translation("pagination.prev")}
+        <i className="icon-chevron-left page-icon" /> {translation("pagination.prev")}
       </a>
     );
   };
@@ -46,7 +46,7 @@ const Pagination: React.FunctionComponent<PaginationProps> = (props) => {
     const paginationClass = paging.next ? "navigation" : "disabled";
     return (
       <a className={paginationClass} onClick={onClick} data-qa-id={nextDataQa && nextDataQa}>
-        {translation("pagination.next")} <i className="fa-icon-chevron-right page-icon" />
+        {translation("pagination.next")} <i className="icon-chevron-right page-icon" />
       </a>
     );
   };

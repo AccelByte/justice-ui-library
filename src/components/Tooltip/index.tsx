@@ -79,7 +79,7 @@ export const Tooltip = ({
         {!noClipboard && (
           <span className="clipboard">
             <CopyToClipboard text={content} onCopy={onCopySuccess}>
-              <Icon name="icon fa-icon-clipboard" />
+              <Icon name="icon icon-clipboard" />
             </CopyToClipboard>
           </span>
         )}

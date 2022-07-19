@@ -93,7 +93,7 @@ export const HorizontalFieldText = ({
             <>
               <i
                 ref={tooltipRef}
-                className="fa-icon-info"
+                className="icon-info"
                 data-for="horizontal-field-text-label__tooltip"
                 data-tip={React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip}
               />

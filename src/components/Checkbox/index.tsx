@@ -48,11 +48,11 @@ export const Checkbox = ({
           onChange={onChange}
           onClick={onClick}
         />
-        <span className="styled-checkbox__icon">{isChecked && <i className="fa-icon-check" />}</span>
+        <span className="styled-checkbox__icon">{isChecked && <i className="icon-check" />}</span>
         {label && <span className="styled-checkbox__label">{label}</span>}
         {tooltip && (
           <>
-            <i className="fa-icon-info" data-for="styled-checkbox__tooltip" data-tip={dataTip} />
+            <i className="icon-info" data-for="styled-checkbox__tooltip" data-tip={dataTip} />
             <ReactTooltip effect="solid" id="styled-checkbox__tooltip" html={true} />
           </>
         )}

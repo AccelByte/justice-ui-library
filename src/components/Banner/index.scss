@@ -33,7 +33,7 @@
   }
 
   .notification-message,
-  .fa-icon-x {
+  .icon-x {
     &.success {
       color: $color--success--primary;
     }
@@ -51,7 +51,7 @@
     }
   }
 
-  .fa-icon-x {
+  .icon-x {
     cursor: pointer;
   }
 

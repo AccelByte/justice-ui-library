@@ -51,7 +51,7 @@ export const NoResultTip = ({
             {tooltip && (
               <>
                 <i
-                  className="fa-icon-info"
+                  className="icon-info"
                   data-for="justice-search-no-result__tooltip"
                   data-tip={dataTip}
                   data-place="right"

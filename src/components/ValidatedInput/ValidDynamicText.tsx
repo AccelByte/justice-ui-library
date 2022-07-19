@@ -84,7 +84,7 @@ export const ValidDynamicText = ({
             />
             {values.length > 1 && !isDisabled && (
               <Button onClick={() => removeField(index)} appearance="link">
-                <span className={"icon fa-icon-trash"} />
+                <span className={"icon icon-trash"} />
               </Button>
             )}
           </div>
