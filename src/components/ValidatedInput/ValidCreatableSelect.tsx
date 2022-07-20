@@ -9,7 +9,7 @@
 import { default as classNames } from "classnames";
 import { FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
 import { CreatableSelect, ValidSelectProps } from "..";
-import "./ValidSelect.scss";
+import "./ValidCreatableSelect.scss";
 
 export const ValidCreatableSelect = ({
   label,

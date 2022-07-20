@@ -4,11 +4,5 @@
  * and restrictions contact your company contract manager.
  */
 
-@import "src/styles/variables";
-
-.valid-select-input {
-  .field-label {
-    font-size: $font-size-h6;
-    padding-bottom: 4px;
-  }
-}
+ @import "src/components/Select/index";
+ 

@@ -26,7 +26,7 @@ export interface ValidSelectProps extends SelectProps {
     isRequired?: boolean;
     isClearable?: boolean;
     tooltip?: string;
-    selectDataQa?: string;
+    selectDataQa?: string | null;
     isMulti?: boolean;
     className?: string;
     helperText?: React.ReactNode;
