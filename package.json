@@ -1,13 +1,13 @@
 {
   "name": "justice-ui-library",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "author": "AccelByte Inc",
   "license": "AccelByte License",
   "module": "./build/index.js",
   "repository": "git@github.com:AccelByte/justice-ui-library.git",
   "scripts": {
     "clean": "rimraf build",
-    "build": "rollup -c",
+    "build": "yarn clean && rollup -c",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs-build"
   },
