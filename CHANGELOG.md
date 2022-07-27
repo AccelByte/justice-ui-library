@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.7.3]
+### Added
+- `position` prop in tooltip compononent, determines where the tooltip will be display
+- `isPositionFixed` prop will set styling for tooltip  to `position:fixed` and determine top and left coordinate using javascript
+
 ## [0.7.2]
 ### Fixed
 - Fix scss that's imported more than once is not injected to the DOM

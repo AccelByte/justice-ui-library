@@ -10,6 +10,7 @@
   position: relative;
   cursor: pointer;
   font-family: $font-family-primary;
+  width: fit-content;
 
   .common-tooltip-children {
     display: block;
@@ -20,6 +21,7 @@
     white-space: nowrap;
     padding-right: 16px;
     position: relative;
+    width: fit-content;
 
     &.no-clipboard {
       padding-right: 0;
@@ -58,27 +60,55 @@
     cursor: default;
     display: none;
     white-space: pre;
+    width: fit-content;
+    height: fit-content;
+
     &.position-right {
       transform: translateX(-8%);
     }
+
     &::after {
       content: "";
       position: absolute;
       width: 0;
       height: 0;
       border-style: solid;
-      border-width: 7px 5px 0 5px;
-      border-color: $tooltip-backgroundColor transparent transparent transparent;
-      top: 98%;
-      left: 50%;
       transform: translateX(-50%);
     }
+    &.top {
+      &::after {
+        border-width: 7px 5px 0 5px;
+        border-color: $tooltip-backgroundColor transparent transparent transparent;
+        top: 98%;
+        left: 50%;
+      }
+    }
+    &.right {
+      left: 100%;
+      top: 5%;
+      &::after {
+        border-width: 5px 7px 5px 0;
+        border-color: transparent $tooltip-backgroundColor transparent transparent;
+        top: 35%;
+        left: -3px;
+      }
+    }
+
+    &.with-clipboard {
+      &.right {
+        transform: translateX(20px);
+      }
+    }
+
     &.tooltip-boxed {
       white-space: normal;
       width: 200px;
     }
     &-hidden {
       display: none !important;
+    }
+    &.fixed {
+      position: fixed;
     }
   }
 
