@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { Tooltip, TooltipProps } from ".";
+import { Tooltip, TooltipProps, TOOLTIP_POSITION } from ".";
 
 export default {
   title: "Components/Tooltip",
@@ -25,4 +25,5 @@ Default.args = {
   isTooltipShownOnOverflowOnly: false,
   positionRight: true,
   children: "Try hover this text",
+  position: TOOLTIP_POSITION.top,
 };
