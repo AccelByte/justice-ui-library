@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { SelectProps as AkSelectProps } from "@atlaskit/select";
 import { SelectOption } from "../../types";
 import "./index.scss";

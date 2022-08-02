@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { BreadcrumbSchema, Enum } from "../../types";
 import { CONTAINER_SIZE } from "../../constants";
 import { BadgeProps } from "../Badge";

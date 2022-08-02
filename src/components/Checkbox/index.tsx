@@ -11,6 +11,7 @@ import ReactTooltip from "react-tooltip";
 import { renderToString } from "react-dom/server";
 import { FieldHelperText } from "../Form/utility";
 import "../../styles/icons/fa_icons.css";
+import DOMPurify from "dompurify";
 
 export interface CheckboxProps {
   label?: string;
@@ -52,8 +53,13 @@ export const Checkbox = ({
         {label && <span className="styled-checkbox__label">{label}</span>}
         {tooltip && (
           <>
-            <i className="icon-info" data-for="styled-checkbox__tooltip" data-tip={dataTip} />
-            <ReactTooltip effect="solid" id="styled-checkbox__tooltip" html={true} />
+            <i
+              className="icon-info"
+              data-for="styled-checkbox__tooltip"
+              data-tip={dataTip ? DOMPurify.sanitize(dataTip) : ""}
+              data-html={true}
+            />
+            <ReactTooltip effect="solid" id="styled-checkbox__tooltip" />
           </>
         )}
       </label>

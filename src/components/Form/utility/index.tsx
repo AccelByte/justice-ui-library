@@ -13,6 +13,7 @@ import { renderToString } from "react-dom/server";
 import { translation } from "../../../utils/i18n";
 import { MAX_SHORT_TEXT_LENGTH } from "../../../constants";
 import "../../../styles/icons/fa_icons.css";
+import DOMPurify from "dompurify";
 
 export const FieldErrorMessage = ({ message = "", dataQa }: { message?: string | null; dataQa?: string }) => (
   <span className="field-error-message" data-qa-id={dataQa && dataQa}>
@@ -49,9 +50,10 @@ export const FieldLabel = ({
           ref={tooltipRef}
           className="icon-info"
           data-for="field-label__tooltip"
-          data-tip={React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip}
+          data-tip={DOMPurify.sanitize(React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip)}
+          data-html={true}
         />
-        <ReactTooltip effect="solid" id="field-label__tooltip" html={true} />
+        <ReactTooltip effect="solid" id="field-label__tooltip" />
       </>
     )}
   </label>

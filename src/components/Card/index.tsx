@@ -14,6 +14,7 @@ import { renderToString } from "react-dom/server";
 import { translation } from "../../utils/i18n";
 import { ButtonAppearance } from "../Button";
 import "../../styles/icons/fa_icons.css";
+import DOMPurify from "dompurify";
 
 export interface CardProps {
   children: React.ReactNode;
@@ -114,8 +115,13 @@ export const Card = ({
                 {cardSubTitle && <small className="card-sub-title">{cardSubTitle}</small>}
                 {Tips && (
                   <>
-                    <i className="icon-info" data-for="cardInfo__tooltip" data-tip={dataTip} />
-                    <ReactTooltip effect="solid" id="cardInfo__tooltip" html={true} />
+                    <i
+                      className="icon-info"
+                      data-for="cardInfo__tooltip"
+                      data-tip={dataTip ? DOMPurify.sanitize(dataTip) : ""}
+                      data-html={true}
+                    />
+                    <ReactTooltip effect="solid" id="cardInfo__tooltip" />
                   </>
                 )}
                 {titleTip}
@@ -129,8 +135,13 @@ export const Card = ({
                 {cardSubTitle && <small className="card-sub-title">{cardSubTitle}</small>}
                 {Tips && (
                   <>
-                    <i className="icon-info" data-for="cardInfo__tooltip" data-tip={dataTip} />
-                    <ReactTooltip effect="solid" id="cardInfo__tooltip" html={true} />
+                    <i
+                      className="icon-info"
+                      data-for="cardInfo__tooltip"
+                      data-tip={dataTip ? DOMPurify.sanitize(dataTip) : ""}
+                      data-html={true}
+                    />
+                    <ReactTooltip effect="solid" id="cardInfo__tooltip" />
                   </>
                 )}
                 {titleTip}
@@ -159,8 +170,13 @@ export const Card = ({
                 {cardSubTitle && <small className="card-sub-title">{cardSubTitle}</small>}
                 {Tips && (
                   <>
-                    <i className="icon-info" data-for="cardInfo__tooltip" data-tip={dataTip} />
-                    <ReactTooltip effect="solid" id="cardInfo__tooltip" html={true} />
+                    <i
+                      className="icon-info"
+                      data-for="cardInfo__tooltip"
+                      data-tip={dataTip ? DOMPurify.sanitize(dataTip) : ""}
+                      data-html={true}
+                    />
+                    <ReactTooltip effect="solid" id="cardInfo__tooltip" />
                   </>
                 )}
                 {titleTip}

@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { ButtonProps } from "../Button";
 export interface ButtonWithIconProps extends ButtonProps {
     buttonIcon?: string;
