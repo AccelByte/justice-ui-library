@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { SelectOption } from "../../types";
 export interface HorizontalSelectProps<T> {
     options: SelectOption<T>[];

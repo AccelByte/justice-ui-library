@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import "./index.scss";
 import { RadioOption } from "../../types";
 export interface StyledRadioProps {

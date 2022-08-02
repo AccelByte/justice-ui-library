@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import "./index.scss";
 export { ButtonDropdown } from "./ButtonDropdown";
 import { DropdownMenuStatefulProps } from "@atlaskit/dropdown-menu";

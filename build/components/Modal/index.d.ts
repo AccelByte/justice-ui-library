@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { ModalHeader, ModalFooter } from "@atlaskit/modal-dialog";
 import { ScrollBehavior } from "@atlaskit/modal-dialog/types";
 import { WrapperProps } from "@atlaskit/modal-dialog/dist/es2019/components/ModalWrapper";

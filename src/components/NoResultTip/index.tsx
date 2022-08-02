@@ -11,6 +11,7 @@ import ReactTooltip from "react-tooltip";
 import { addLineBreaks } from "../../utils";
 import "./index.scss";
 import "../../styles/icons/fa_icons.css";
+import DOMPurify from "dompurify";
 
 export interface NoResultTipProps {
   title?: string;
@@ -53,10 +54,11 @@ export const NoResultTip = ({
                 <i
                   className="icon-info"
                   data-for="justice-search-no-result__tooltip"
-                  data-tip={dataTip}
+                  data-tip={dataTip ? DOMPurify.sanitize(dataTip) : ""}
+                  data-html={true}
                   data-place="right"
                 />
-                <ReactTooltip effect="solid" id="justice-search-no-result__tooltip" html={true} />
+                <ReactTooltip effect="solid" id="justice-search-no-result__tooltip" />
               </>
             )}
           </h4>

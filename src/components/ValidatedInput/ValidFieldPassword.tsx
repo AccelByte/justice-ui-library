@@ -17,6 +17,7 @@ import { strengthLevelOrder } from "../../constants";
 import { Button } from "../Button";
 import { translation } from "../../utils/i18n";
 import "../../styles/icons/fa_icons.css";
+import DOMPurify from "dompurify";
 
 export interface ValidFieldPasswordProps extends Omit<ValidFieldTextProps, "type" | "rightIcon" | "isFloat"> {
   strengthLevelIndicator?: keyof typeof strengthLevelOrder;
@@ -92,7 +93,10 @@ export class ValidFieldPassword extends React.Component<ValidFieldPasswordProps,
         <i
           ref={this.toolTipIconEye}
           data-for="eyeInfo__tooltip"
-          data-tip={isIconEyeOff ? translation("password.viewPassword") : translation("password.hiddenPassword")}
+          data-tip={DOMPurify.sanitize(
+            isIconEyeOff ? translation("password.viewPassword") : translation("password.hiddenPassword")
+          )}
+          data-html={true}
           data-place="top"
           className={classNames("password-eye-icon", {
             "icon-eye": !isIconEyeOff,
@@ -100,7 +104,7 @@ export class ValidFieldPassword extends React.Component<ValidFieldPasswordProps,
           })}
           onClick={this.toggleIconEyeOff}
         />
-        <ReactTooltip effect="solid" id="eyeInfo__tooltip" html={true} />
+        <ReactTooltip effect="solid" id="eyeInfo__tooltip" />
       </>
     );
   };

@@ -11,6 +11,7 @@ import "./index.scss";
 import { renderToString } from "react-dom/server";
 import { translation } from "../../utils/i18n";
 import "../../styles/icons/fa_icons.css";
+import DOMPurify from "dompurify";
 
 export interface HorizontalFieldTextProps {
   children?: React.ReactNode;
@@ -95,9 +96,10 @@ export const HorizontalFieldText = ({
                 ref={tooltipRef}
                 className="icon-info"
                 data-for="horizontal-field-text-label__tooltip"
-                data-tip={React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip}
+                data-tip={DOMPurify.sanitize(React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip)}
+                data-html={true}
               />
-              <ReactTooltip effect="solid" id="horizontal-field-text-label__tooltip" html={true} />
+              <ReactTooltip effect="solid" id="horizontal-field-text-label__tooltip" />
             </>
           )}
         </div>

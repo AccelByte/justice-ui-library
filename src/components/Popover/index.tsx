@@ -9,6 +9,7 @@ import * as React from "react";
 import { renderToString } from "react-dom/server";
 import "./index.scss";
 import ReactTooltip from "react-tooltip";
+import DOMPurify from "dompurify";
 
 interface Props {
   tooltipRef: React.RefObject<HTMLDivElement>;
@@ -38,7 +39,7 @@ export const Popover = ({
       ref: tooltipRef,
       "data-for": "popover-tooltip",
       "data-html": true,
-      "data-tip": React.isValidElement(content) ? renderToString(content) : content,
+      "data-tip": React.isValidElement(content) ? DOMPurify.sanitize(renderToString(content)) : content,
       "data-place": popoverPlacement,
       "data-class": classNames("popover-container", popoverClass),
       "data-type": popoverType,
@@ -52,7 +53,7 @@ export const Popover = ({
       <div className={className} {...(!!content && renderPopover())}>
         {children}
       </div>
-      <ReactTooltip effect="solid" id="popover-tooltip" html={true} />
+      <ReactTooltip effect="solid" id="popover-tooltip" />
     </>
   );
 };

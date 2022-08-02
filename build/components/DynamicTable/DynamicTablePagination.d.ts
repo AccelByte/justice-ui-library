@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { PaginationProps } from "../Pagination";
 import { SelectOption } from "../../types";
 import "./DynamicTablePagination.scss";
