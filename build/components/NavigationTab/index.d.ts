@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { Enum } from "../../types";
 import { CONTAINER_SIZE } from "../../constants";
 import "./index.scss";

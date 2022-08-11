@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { SelectOption } from "../../types";
 import "./index.scss";
 /** @deprecated Use StyledRadio instead */

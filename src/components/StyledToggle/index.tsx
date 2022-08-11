@@ -54,7 +54,7 @@ export const StyledToggle = ({
             <Badge
               text={isChecked ? activeText : inactiveText}
               type={BADGE_TYPE.LIGHT}
-              appearance={isToggleDisabled ? BADGE_APPEARANCE.INACTIVE : activeBadgeAppearance}
+              appearance={activeBadgeAppearance}
             />
           )}
         </div>

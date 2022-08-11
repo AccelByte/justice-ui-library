@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import "./index.scss";
 export interface SpinnerProps {
     loadingText?: string;
