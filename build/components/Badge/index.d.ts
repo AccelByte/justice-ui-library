@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import "./index.scss";
 export declare const BADGE_TYPE: Readonly<{
     BASIC: "BASIC";

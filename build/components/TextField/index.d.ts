@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { FieldTextProps } from "@atlaskit/field-text";
 import "./index.scss";
 export interface TextFieldProps extends FieldTextProps {

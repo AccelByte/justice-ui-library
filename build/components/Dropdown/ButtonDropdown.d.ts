@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import "./ButtonDropdown.scss";
 import { DropdownMenuProps } from "../Dropdown";
 import { ButtonAppearance } from "../Button";

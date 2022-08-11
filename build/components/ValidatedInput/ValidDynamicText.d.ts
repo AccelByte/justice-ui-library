@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import "./ValidDynamicText.scss";
 import "../../styles/icons/fa_icons.css";
 export interface ValidDynamicTextProps {
