@@ -12,6 +12,7 @@ import { Button } from "../Button";
 import { Input } from "./ValidFieldText";
 import { translation } from "../../utils/i18n";
 import "../../styles/icons/fa_icons.css";
+import { ButtonWithIcon } from "../ButtonWithIcon";
 
 export interface ValidDynamicTextProps {
   label?: string;
@@ -83,7 +84,7 @@ export const ValidDynamicText = ({
               onBlur={() => setIsFocused(null)}
             />
             {values.length > 1 && !isDisabled && (
-              <Button onClick={() => removeField(index)} appearance="link">
+              <Button onClick={() => removeField(index)} appearance="link" className="delete-button">
                 <span className={"icon icon-trash"} />
               </Button>
             )}
@@ -92,10 +93,18 @@ export const ValidDynamicText = ({
 
         {!!errMessage && <FieldErrorMessage message={errMessage} />}
 
-        <div className="valid-dynamic-text__input__add-btn" hidden={isDisabled}>
-          <Button onClick={addField} appearance="link" isDisabled={values.length === maxField}>
-            <span className={"icon-plus"} /> {`${addText} (${values.length}/${maxField})`}
-          </Button>
+        <div
+          className={classNames("valid-dynamic-text__input__add-btn", { shrink: values.length > 1 })}
+          hidden={isDisabled}
+        >
+          <ButtonWithIcon
+            buttonIcon="icon-plus"
+            onClick={addField}
+            appearance="link"
+            isDisabled={values.length === maxField}
+          >
+            {`${addText} (${values.length}/${maxField})`}
+          </ButtonWithIcon>
         </div>
       </div>
     </div>

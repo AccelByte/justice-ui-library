@@ -55,6 +55,12 @@
         &:hover {
           text-decoration: none;
         }
+
+        &.delete-button > span > span {
+          display: inline-block;
+          margin-right: 0 !important;
+          overflow: unset !important;
+        }
       }
       input {
         font-family: $font-family-primary;
@@ -66,9 +72,12 @@
       justify-content: center;
       align-items: center;
       height: 40px;
-      width: calc(100% - 40px);
+      width: 100%;
       background-color: $base-10 !important;
       border-radius: 4px;
+      &.shrink {
+        width: calc(100% - 40px);
+      }
       button {
         &:hover {
           text-decoration: none;
