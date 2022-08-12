@@ -39,7 +39,7 @@ export const StyledToggle = ({
   dataQa,
 }: StyledToggleProps) => {
   const isToggleDisabled = isLoading || isDisabled;
-  const activeBadgeAppearance = isChecked ? BADGE_APPEARANCE.SUCCESS : BADGE_APPEARANCE.ERROR;
+  const activeBadgeAppearance = isChecked ? BADGE_APPEARANCE.SUCCESS : BADGE_APPEARANCE.INACTIVE;
   return (
     <>
       {isEditable && (

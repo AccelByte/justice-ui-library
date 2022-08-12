@@ -19,19 +19,20 @@ button.styled-atlaskit-button {
     font-weight: normal;
   }
   .icon {
-    margin-right: 16px;
+    margin-right: 8px;
 
     &.icon-right {
       margin-right: 0;
-      margin-left: 16px;
+      margin-left: 8px;
     }
   }
-  &> span > span {
-   display: flex;
-   justify-content: center;
+  & > span > span {
+    display: flex;
+    justify-content: center;
   }
   &:not(:disabled) {
-    &.link, &[class^="subtle"]  {
+    &.link,
+    &[class^="subtle"] {
       span &[class^="Spinner"] svg {
         stroke: $base-100;
       }
@@ -41,7 +42,8 @@ button.styled-atlaskit-button {
       &:hover {
         background-color: $button-backgroundColor--primary--hovered;
       }
-      &:active, &.selected {
+      &:active,
+      &.selected {
         background-color: $button-backgroundColor--primary--active;
       }
     }
@@ -51,7 +53,7 @@ button.styled-atlaskit-button {
       span {
         color: $button-color--ghost--enabled;
         &[class^="Spinner"] svg {
-            stroke: $brand-80;
+          stroke: $brand-80;
         }
       }
       &:hover {
@@ -81,7 +83,8 @@ button.styled-atlaskit-button {
       &:hover {
         background-color: $button-backgroundColor--subtle--hovered;
       }
-      &:active, &.selected {
+      &:active,
+      &.selected {
         background-color: $button-backgroundColor--subtle--active;
         span {
           &[class^="Spinner"] svg {
@@ -96,7 +99,8 @@ button.styled-atlaskit-button {
         &:hover span {
           color: $base-40 !important;
         }
-        &:active, &.selected {
+        &:active,
+        &.selected {
           background-color: transparent !important;
           span {
             color: $base-100 !important;
@@ -111,14 +115,15 @@ button.styled-atlaskit-button {
       span {
         color: $brand-100;
       }
-      &:hover{
+      &:hover {
         text-decoration: none;
 
         span {
           color: $brand-80;
         }
       }
-      &:active, &.selected {
+      &:active,
+      &.selected {
         background-color: transparent;
         span {
           color: $brand-110;
@@ -131,7 +136,8 @@ button.styled-atlaskit-button {
       &:hover {
         background-color: $semantic-yellow-40;
       }
-      &:active, &.selected {
+      &:active,
+      &.selected {
         background-color: $semantic-yellow-100;
       }
     }
@@ -141,7 +147,8 @@ button.styled-atlaskit-button {
       &:hover {
         background-color: $semantic-purple-60;
       }
-      &:active, &.selected {
+      &:active,
+      &.selected {
         background-color: $semantic-purple-100;
       }
     }
@@ -157,7 +164,8 @@ button.styled-atlaskit-button {
         color: $color--text--tertiary;
         background-color: $semantic-green-60;
       }
-      &:active, &.selected {
+      &:active,
+      &.selected {
         background-color: $semantic-green-100;
       }
     }
@@ -170,7 +178,8 @@ button.styled-atlaskit-button {
         &:hover {
           background-color: $semantic-red-10;
         }
-        &:active, &.selected {
+        &:active,
+        &.selected {
           background-color: $semantic-red-40;
         }
       }
@@ -194,7 +203,8 @@ button.styled-atlaskit-button {
             color: $color--error--primary;
           }
         }
-        &:active, &.selected {
+        &:active,
+        &.selected {
           span {
             color: $semantic-red-100;
           }
@@ -209,7 +219,8 @@ button.styled-atlaskit-button {
         &:hover {
           background-color: $semantic-red-60;
         }
-        &:active, &.selected {
+        &:active,
+        &.selected {
           background-color: $semantic-red-100;
         }
         &:disabled {
@@ -226,7 +237,11 @@ button.styled-atlaskit-button {
       }
     }
     &.primary,
-    &.success:not(.outline), &.warning, &.help, &.success, &.danger:not([class*="subtle"]):not(.link):not(.outline) {
+    &.success:not(.outline),
+    &.warning,
+    &.help,
+    &.success,
+    &.danger:not([class*="subtle"]):not(.link):not(.outline) {
       background-color: $button-backgroundColor--disabled;
       span {
         color: $color--text--tertiary;
@@ -244,7 +259,8 @@ button.styled-atlaskit-button {
         color: $brand-40;
       }
     }
-    &.subtle, &.subtle-link {
+    &.subtle,
+    &.subtle-link {
       color: $color--disabled;
     }
   }

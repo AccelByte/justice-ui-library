@@ -68,6 +68,7 @@
       position: relative;
       vertical-align: middle;
       margin-right: 10px;
+      box-sizing: border-box;
     }
     &.selected {
       .radio-icon {

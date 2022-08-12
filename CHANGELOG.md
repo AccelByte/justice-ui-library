@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.8.2]
+### Changed
+- Change `Badge` color when `StyledToggle` is not checked from `ERROR` to `INACTIVE`
+
+### Fixed
+- `box-sizing` of `StyledRadio` is set to `border-box` to fix styling in storybook
+- Fix trash icon in `ValidDynamicText` is partially hidden
+
 ## [0.8.1]
 ### Fixed
 - Fix style toggle if toggle is disabled
