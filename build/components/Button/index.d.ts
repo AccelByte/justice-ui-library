@@ -25,5 +25,6 @@ export interface ButtonProps extends Pick<AkButtonProps, "className" | "onClick"
     /** The base styling to apply to the button. */
     appearance?: ButtonAppearance;
     dataQa?: string | null;
+    dataQaProps?: string | null;
 }
-export declare const Button: ({ children, isDisabled, isLoading, isSelected, spacing, type, shouldFitContainer, autoFocus, appearance, className, dataQa, ...props }: ButtonProps) => JSX.Element;
+export declare const Button: ({ children, isDisabled, isLoading, isSelected, spacing, type, shouldFitContainer, autoFocus, appearance, className, dataQa, dataQaProps, ...props }: ButtonProps) => JSX.Element;

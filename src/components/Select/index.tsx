@@ -10,16 +10,28 @@ import "./index.scss";
 
 export interface SelectProps extends Omit<AkSelectProps<SelectOption, boolean>, "onChange"> {
   onChange?: (option: SelectOption) => void;
+  dataQa?: string | null;
+  dataQaProps?: string | null;
 }
 
-export const Select = ({ isMulti = false, onChange, ...props }: SelectProps) => {
-  return (
-    <AkSelect
-      className="styled-atlaskit-select"
-      classNamePrefix={"styled-atlaskit-select"}
-      isMulti={isMulti}
-      onChange={onChange ? (item) => onChange(item as SelectOption) : undefined}
-      {...props}
-    />
-  );
+export const Select = ({ isMulti = false, onChange, dataQa = null, dataQaProps = null, ...props }: SelectProps) => {
+  const renderSelect = () => {
+    return (
+      <AkSelect
+        className="styled-atlaskit-select"
+        classNamePrefix={"styled-atlaskit-select"}
+        isMulti={isMulti}
+        onChange={onChange ? (item) => onChange(item as SelectOption) : undefined}
+        {...props}
+      />
+    );
+  };
+
+  if (!!dataQa)
+    return (
+      <div data-qa-id={dataQa} data-qa-props={dataQaProps}>
+        {renderSelect()}
+      </div>
+    );
+  return renderSelect();
 };

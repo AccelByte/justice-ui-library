@@ -35,6 +35,7 @@ export interface ButtonProps
   /** The base styling to apply to the button. */
   appearance?: ButtonAppearance;
   dataQa?: string | null;
+  dataQaProps?: string | null;
 }
 
 export const Button = ({
@@ -49,6 +50,7 @@ export const Button = ({
   appearance = "primary",
   className = "",
   dataQa = null,
+  dataQaProps = null,
   ...props
 }: ButtonProps) => {
   const renderButton = () => (
@@ -68,7 +70,7 @@ export const Button = ({
     </AkButton>
   );
   return dataQa ? (
-    <div data-qa-id={dataQa} className="styled-atlaskit-button-container">
+    <div data-qa-id={dataQa} data-qa-props={dataQaProps} className="styled-atlaskit-button-container">
       {renderButton()}
     </div>
   ) : (

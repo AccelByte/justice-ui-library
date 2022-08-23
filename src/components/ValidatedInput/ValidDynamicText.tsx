@@ -26,6 +26,10 @@ export interface ValidDynamicTextProps {
   maxField: number;
   addText?: string;
   dataQa?: string | null;
+  addDataQa?: string | null;
+  inputDataQa?: string | null;
+  deleteDataQa?: string | null;
+  dataQaProps?: string | null;
 }
 
 export const ValidDynamicText = ({
@@ -40,6 +44,10 @@ export const ValidDynamicText = ({
   maxField,
   addText = translation("common.add"),
   dataQa = null,
+  addDataQa = null,
+  inputDataQa = null,
+  deleteDataQa = null,
+  dataQaProps = null,
 }: ValidDynamicTextProps) => {
   const [isFocused, setIsFocused] = React.useState<number | null>(null);
 
@@ -58,6 +66,45 @@ export const ValidDynamicText = ({
     onChange(values);
   };
 
+  const renderInput = (value: string, index: number) => {
+    const input = (
+      <Input
+        isLabelHidden={true}
+        placeholder={placeholder}
+        name={name}
+        value={value}
+        onChange={(e: React.FormEvent<HTMLInputElement>) => onValuesChange(e, index)}
+        disabled={isDisabled}
+        shouldFitContainer={true}
+        type={type}
+        onFocus={() => setIsFocused(index)}
+        onBlur={() => setIsFocused(null)}
+      />
+    );
+
+    if (!inputDataQa) return input;
+    return (
+      <div data-qa-id={inputDataQa} data-qa-props={dataQaProps ? `${dataQaProps}_${index}` : null}>
+        {input}
+      </div>
+    );
+  };
+
+  const renderDeleteButton = (index: number) => {
+    const deleteButton = (
+      <Button onClick={() => removeField(index)} appearance="link" className="delete-button">
+        <span className={"icon icon-trash"} />
+      </Button>
+    );
+
+    if (!deleteDataQa) return deleteButton;
+    return (
+      <span data-qa-id={deleteDataQa} data-qa-props={dataQaProps ? `${dataQaProps}_${index}` : null}>
+        {deleteButton}
+      </span>
+    );
+  };
+
   return (
     <div className="valid-dynamic-text">
       <FieldLabel label={label} />
@@ -71,41 +118,30 @@ export const ValidDynamicText = ({
               "valid-dynamic-text__input__field--disabled": isDisabled,
             })}
           >
-            <Input
-              isLabelHidden={true}
-              placeholder={placeholder}
-              name={name}
-              value={value}
-              onChange={(e: React.FormEvent<HTMLInputElement>) => onValuesChange(e, index)}
-              disabled={isDisabled}
-              shouldFitContainer={true}
-              type={type}
-              onFocus={() => setIsFocused(index)}
-              onBlur={() => setIsFocused(null)}
-            />
-            {values.length > 1 && !isDisabled && (
-              <Button onClick={() => removeField(index)} appearance="link" className="delete-button">
-                <span className={"icon icon-trash"} />
-              </Button>
-            )}
+            {renderInput(value, index)}
+            {values.length > 1 && !isDisabled && renderDeleteButton(index)}
           </div>
         ))}
 
         {!!errMessage && <FieldErrorMessage message={errMessage} />}
 
-        <div
-          className={classNames("valid-dynamic-text__input__add-btn", { shrink: values.length > 1 })}
-          hidden={isDisabled}
-        >
-          <ButtonWithIcon
-            buttonIcon="icon-plus"
-            onClick={addField}
-            appearance="link"
-            isDisabled={values.length === maxField}
+        {!isDisabled && (
+          <div
+            className={classNames("valid-dynamic-text__input__add-btn", { shrink: values.length > 1 })}
+            hidden={isDisabled}
+            data-qa-id={addDataQa}
+            data-qa-props={dataQaProps}
           >
-            {`${addText} (${values.length}/${maxField})`}
-          </ButtonWithIcon>
-        </div>
+            <ButtonWithIcon
+              buttonIcon="icon-plus"
+              onClick={addField}
+              appearance="link"
+              isDisabled={values.length >= maxField}
+            >
+              {`${addText} (${values.length}/${maxField})`}
+            </ButtonWithIcon>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -42,12 +42,7 @@
         }
       }
       > div {
-        width: calc(100% - 40px);
-      }
-      &--disabled {
-        > div {
-          width: 100%;
-        }
+        width: 100%;
       }
       button {
         width: 40px;
@@ -79,6 +74,8 @@
         width: calc(100% - 40px);
       }
       button {
+        width: 100%;
+        justify-content: center;
         &:hover {
           text-decoration: none;
         }
