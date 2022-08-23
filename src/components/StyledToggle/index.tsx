@@ -21,7 +21,7 @@ export interface StyledToggleProps {
   activeText?: string;
   inactiveText?: string;
   className?: string;
-  dataQa?: string;
+  dataQa?: string | null;
 }
 
 export const StyledToggle = ({

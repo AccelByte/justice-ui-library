@@ -35,6 +35,7 @@ export interface ValidSelectProps extends SelectProps {
   isClearable?: boolean;
   tooltip?: string;
   selectDataQa?: string | null;
+  selectDataQaProps?: string | null;
   isMulti?: boolean;
   className?: string;
   helperText?: React.ReactNode;
@@ -55,12 +56,14 @@ export const ValidSelect = ({
   isClearable,
   tooltip,
   selectDataQa,
+  selectDataQaProps,
   isMulti = false,
   className,
+  dataQa,
   helperText,
   ...props
 }: ValidSelectProps) => (
-  <div className={classNames("valid-select-input", className)}>
+  <div className={classNames("valid-select-input", className)} data-qa-id={dataQa}>
     {!!label && <FieldLabel label={label} optionalLabel={optionalLabel} isRequired={isRequired} tooltip={tooltip} />}
     <Select
       {...props}
@@ -73,6 +76,7 @@ export const ValidSelect = ({
       isClearable={isClearable}
       isMulti={isMulti}
       dataQa={selectDataQa}
+      dataQaProps={selectDataQaProps}
     />
     {isInvalid && <FieldErrorMessage message={errMessage} />}
     {helperText && <FieldHelperText message={helperText} />}
