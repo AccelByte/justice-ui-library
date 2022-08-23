@@ -12,7 +12,7 @@ export const BADGE_TYPE = Enum("BASIC", "LIGHT", "OUTLINE");
 export const BADGE_APPEARANCE = Enum("INFO", "INACTIVE", "WARNING", "ERROR", "SUCCESS", "GENERAL");
 export const BADGE_SIZE = Enum("SMALL", "MEDIUM", "LARGE");
 export interface BadgeProps {
-  text: string;
+  text: React.ReactNode;
   appearance?: keyof typeof BADGE_APPEARANCE;
   type?: keyof typeof BADGE_TYPE;
   size?: keyof typeof BADGE_SIZE;

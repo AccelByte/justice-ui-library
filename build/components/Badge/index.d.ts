@@ -19,7 +19,7 @@ export declare const BADGE_SIZE: Readonly<{
     MEDIUM: "MEDIUM";
 }>;
 export interface BadgeProps {
-    text: string;
+    text: React.ReactNode;
     appearance?: keyof typeof BADGE_APPEARANCE;
     type?: keyof typeof BADGE_TYPE;
     size?: keyof typeof BADGE_SIZE;
