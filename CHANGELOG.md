@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.8.5]
+### Added
+- Fix `overflow-y:auto` in `card-content` to avoid spill out
+
 ## [0.8.4]
 ### Added
 - `dataQa` and `dataQaProps` props in `Button`, `Select`, `ValidDynamicText`, and `ValidSelect`
