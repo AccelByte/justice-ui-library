@@ -67,6 +67,10 @@
       font-size: $font-size-h6;
     }
 
+    &__placeholder {
+      color: $base-40 !important;
+    }
+
     .styled-atlaskit-checkbox-select__multi-value {
       background-color: $select-option--selected;
 
@@ -112,6 +116,13 @@
         &:hover {
           cursor: pointer;
         }
+      }
+    }
+
+    &__indicators {
+      .icon-chevron-down {
+        margin-right: 8px;
+        color: $base-80;
       }
     }
 

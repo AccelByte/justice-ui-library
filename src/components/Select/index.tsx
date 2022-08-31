@@ -14,12 +14,15 @@ export interface SelectProps extends Omit<AkSelectProps<SelectOption, boolean>, 
   dataQaProps?: string | null;
 }
 
+const DropdownIndicator = () => <i className="icon-chevron-down" />;
+
 export const Select = ({ isMulti = false, onChange, dataQa = null, dataQaProps = null, ...props }: SelectProps) => {
   const renderSelect = () => {
     return (
       <AkSelect
         className="styled-atlaskit-select"
-        classNamePrefix={"styled-atlaskit-select"}
+        classNamePrefix="styled-atlaskit-select"
+        components={{ DropdownIndicator }}
         isMulti={isMulti}
         onChange={onChange ? (item) => onChange(item as SelectOption) : undefined}
         {...props}

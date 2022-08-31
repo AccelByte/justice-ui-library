@@ -13,6 +13,7 @@ interface Props {
     value?: SelectOption[] | null;
     tooltip?: string;
     helperText?: React.ReactNode;
+    menuPortalTarget?: HTMLElement;
 }
-export declare const ValidMultiSelect: ({ label, placeholder, options, onChange, errMessage, optionalLabel, isInvalid, isRequired, value, isDisabled, tooltip, helperText, }: Props) => JSX.Element;
+export declare const ValidMultiSelect: ({ label, placeholder, options, onChange, errMessage, optionalLabel, isInvalid, isRequired, value, isDisabled, tooltip, helperText, menuPortalTarget, }: Props) => JSX.Element;
 export {};

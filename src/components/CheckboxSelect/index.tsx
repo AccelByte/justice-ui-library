@@ -24,6 +24,7 @@ export interface CheckboxSelectProps
     | "menuPosition"
     | "minMenuHeight"
     | "maxMenuHeight"
+    | "menuPortalTarget"
   > {
   onChange?: (option: SelectOption[]) => void;
   value: SelectOption[] | null;
@@ -31,6 +32,8 @@ export interface CheckboxSelectProps
   isValueHidden?: boolean;
   replacementText?: ReactNode;
 }
+
+const DropdownIndicator = () => <i className="icon-chevron-down" />;
 
 export const CheckboxSelect = ({
   onChange,
@@ -45,6 +48,7 @@ export const CheckboxSelect = ({
     <AkSelect
       className={classNames("styled-atlaskit-checkbox-select", className, { "value-hidden": isValueHidden })}
       classNamePrefix="styled-atlaskit-checkbox-select"
+      components={{ DropdownIndicator }}
       onChange={onChange ? (item) => onChange(item as SelectOption[]) : undefined}
       value={value}
       isClearable={isClearable}

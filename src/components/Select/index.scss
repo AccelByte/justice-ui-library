@@ -65,6 +65,12 @@
     font-family: $font-family-primary;
     font-size: $font-size-h5;
   }
+  &__single-value {
+    line-height: 20px !important;
+  }
+  &__placeholder {
+    color: $base-40 !important;
+  }
   &__multi-value {
     background-color: $brand-80 !important;
   }
@@ -78,6 +84,12 @@
     span {
       --icon-primary-color: transparent;
       --icon-secondary-color: #ffffff !important;
+    }
+  }
+  &__indicators {
+    .icon-chevron-down {
+      margin-right: 8px;
+      color: $base-80;
     }
   }
 }

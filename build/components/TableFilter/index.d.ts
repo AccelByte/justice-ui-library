@@ -10,5 +10,7 @@ export interface TableFilterProps {
     isLarge?: boolean;
     isDisabled?: boolean;
     customStyle?: React.CSSProperties;
+    className?: string;
+    menuPortalTarget?: HTMLElement;
 }
-export declare const TableFilter: ({ options, currentValue, onFilterChange, label, tooltip, isLarge, isDisabled, customStyle, }: TableFilterProps) => JSX.Element;
+export declare const TableFilter: ({ options, currentValue, onFilterChange, label, tooltip, isLarge, isDisabled, customStyle, className, menuPortalTarget, }: TableFilterProps) => JSX.Element;

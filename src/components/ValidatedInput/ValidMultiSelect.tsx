@@ -24,6 +24,7 @@ interface Props {
   value?: SelectOption[] | null;
   tooltip?: string;
   helperText?: React.ReactNode;
+  menuPortalTarget?: HTMLElement;
 }
 
 export const ValidMultiSelect = ({
@@ -39,6 +40,7 @@ export const ValidMultiSelect = ({
   isDisabled,
   tooltip,
   helperText,
+  menuPortalTarget,
 }: Props) => (
   <>
     {!!label && <FieldLabel label={label} optionalLabel={optionalLabel} isRequired={isRequired} tooltip={tooltip} />}
@@ -53,6 +55,7 @@ export const ValidMultiSelect = ({
       onChange={onChange}
       value={value}
       menuPlacement="auto"
+      menuPortalTarget={menuPortalTarget}
     />
     {isInvalid && <FieldErrorMessage message={errMessage} />}
     {helperText && <FieldHelperText message={helperText} />}
