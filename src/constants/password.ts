@@ -8,4 +8,4 @@
 
 import { Enum } from "../types";
 
-export const strengthLevelOrder = Enum("poor", "weak", "average", "good", "excellent");
+export const PASSWORD_STRENGTH_METER = Enum("veryWeak", "weak", "fair", "strong", "veryStrong");

@@ -11,11 +11,12 @@
   "pagination.next": "下一步",
   "password.hiddenPassword": "隐藏密码",
   "password.viewPassword": "查看密码",
+  "password.strength.label": "密码强度：",
+  "password.strength.level.veryWeak": "非常弱",
+  "password.strength.level.weak": "弱",
+  "password.strength.level.fair": "公平",
+  "password.strength.level.strong": "强",
+  "password.strength.level.veryStrong": "非常强",
   "password.generateNew": "生成新密码",
-  "password.poor": "差！",
-  "password.weak": "弱！",
-  "password.average": "一般！",
-  "password.good": "好！",
-  "password.excellent": "极好！",
   "modalPage.esc": "退出"
 }

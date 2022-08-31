@@ -1,7 +1,7 @@
-export declare const strengthLevelOrder: Readonly<{
-    poor: "poor";
+export declare const PASSWORD_STRENGTH_METER: Readonly<{
+    veryWeak: "veryWeak";
     weak: "weak";
-    average: "average";
-    good: "good";
-    excellent: "excellent";
+    fair: "fair";
+    strong: "strong";
+    veryStrong: "veryStrong";
 }>;

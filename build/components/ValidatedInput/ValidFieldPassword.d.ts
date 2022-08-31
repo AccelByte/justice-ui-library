@@ -1,29 +1,22 @@
 import * as React from "react";
 import { ValidFieldTextProps } from "./ValidFieldText";
 import "./ValidFieldPassword.scss";
-import { strengthLevelOrder } from "../../constants";
 import "../../styles/icons/fa_icons.css";
 export interface ValidFieldPasswordProps extends Omit<ValidFieldTextProps, "type" | "rightIcon" | "isFloat"> {
-    strengthLevelIndicator?: keyof typeof strengthLevelOrder;
     hasGeneratePassword?: boolean;
     customPattern?: string;
+    hasPasswordStrengthMeter?: boolean;
 }
 interface State {
     isIconEyeOff: boolean;
-    levelColor: string;
+    passwordStrengthScore: number | null;
 }
 export declare class ValidFieldPassword extends React.Component<ValidFieldPasswordProps, State> {
     constructor(props: ValidFieldPasswordProps);
     toolTipIconEye: React.RefObject<HTMLElement>;
     componentDidMount(): void;
     componentWillUnmount(): void;
-    static getDerivedStateFromProps(props: {
-        strengthLevelIndicator: keyof typeof strengthLevelOrder;
-    }, state: {
-        levelColor: string;
-    }): "" | {
-        levelColor: "poor" | "weak" | "average" | "good" | "excellent";
-    };
+    componentDidUpdate(prevProps: ValidFieldPasswordProps): void;
     toggleIconEyeOff: () => void;
     resetTooltipIconEye: () => void;
     hideTooltip: () => void;
@@ -31,6 +24,10 @@ export declare class ValidFieldPassword extends React.Component<ValidFieldPasswo
     handleFieldType: () => "password" | "text";
     handleGeneratePassword: () => void;
     handleGenerateText: () => JSX.Element;
+    getStrengthLevelBasedOnScore: (score: number | null) => "veryWeak" | "weak" | "fair" | "strong" | "veryStrong" | undefined;
+    calculatePasswordStrength: (password: string) => void;
+    debounceCalculatePasswordStrength: (password: string) => void;
+    onChangeWrapper: (event: React.ChangeEvent<HTMLInputElement>) => void;
     render(): JSX.Element;
 }
 export {};
