@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * Copyright (c) 2021-2022 AccelByte Inc. All Rights Reserved.
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
  */
@@ -21,6 +21,8 @@ export interface TableFilterProps {
   isLarge?: boolean;
   isDisabled?: boolean;
   customStyle?: React.CSSProperties;
+  className?: string;
+  menuPortalTarget?: HTMLElement;
 }
 
 export const TableFilter = ({
@@ -32,10 +34,12 @@ export const TableFilter = ({
   isLarge,
   isDisabled,
   customStyle,
+  className,
+  menuPortalTarget,
 }: TableFilterProps) => {
   const dataTip = React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip;
   return (
-    <div className={classNames("table-filter", { isLarge })} style={customStyle}>
+    <div className={classNames("table-filter", className, { isLarge })} style={customStyle}>
       {!!label && <FieldLabel label={label} tooltip={dataTip} />}
       <Select
         options={options}
@@ -44,6 +48,7 @@ export const TableFilter = ({
         onChange={onFilterChange}
         value={currentValue}
         isDisabled={isDisabled}
+        menuPortalTarget={menuPortalTarget}
       />
     </div>
   );

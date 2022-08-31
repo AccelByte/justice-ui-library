@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## Unreleased
+### Added
+- `className` prop in `TableFilter`
+- `menuPortalTarget` prop in `TableFilter` and `CheckboxSelect`
+
+### Refactored
+- `DropdownIndicator` component in `Select`-based components
+
 ## [0.9.4]
 ### Added
 - Enable adding `data-qa-id` to more button and tabs inside dropdown in `NavigationTab`

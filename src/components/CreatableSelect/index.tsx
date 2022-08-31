@@ -9,11 +9,14 @@ import { SelectOption } from "../../types";
 import "./index.scss";
 import { SelectProps } from "../Select";
 
+const DropdownIndicator = () => <i className="icon-chevron-down" />;
+
 export const CreatableSelect = ({ isMulti = false, onChange, ...props }: SelectProps) => {
   return (
     <AkCreatableSelect
       className="styled-atlaskit-select"
-      classNamePrefix={"styled-atlaskit-select"}
+      classNamePrefix="styled-atlaskit-select"
+      components={{ DropdownIndicator }}
       isMulti={isMulti}
       onChange={onChange ? (item) => onChange(item as SelectOption) : undefined}
       {...props}
