@@ -13,55 +13,60 @@ import ReactTooltip from "react-tooltip";
 import "./ValidFieldPassword.scss";
 import { generatePassword } from "../../utils";
 import { DEFAULT_PASSWORD_AND_SECRET_REGEX } from "../../constants";
-import { strengthLevelOrder } from "../../constants";
+import { PASSWORD_STRENGTH_METER } from "../../constants";
 import { Button } from "../Button";
 import { translation } from "../../utils/i18n";
 import "../../styles/icons/fa_icons.css";
 import DOMPurify from "dompurify";
+import { debounce } from "../../utils/common";
+import { zxcvbn, zxcvbnOptions } from "@zxcvbn-ts/core";
+import unsafePassword from "../../constants/unsafePassword.json"
+import passwordGraph from "../../constants/passwordGraph.json"
 
 export interface ValidFieldPasswordProps extends Omit<ValidFieldTextProps, "type" | "rightIcon" | "isFloat"> {
-  strengthLevelIndicator?: keyof typeof strengthLevelOrder;
   hasGeneratePassword?: boolean;
   customPattern?: string;
+  hasPasswordStrengthMeter?: boolean;
 }
 
 interface State {
   isIconEyeOff: boolean;
-  levelColor: string;
+  passwordStrengthScore: number | null;
 }
+const CALCULATE_PASSWORD_STRENGTH_INTERVAL = 100;
 
 export class ValidFieldPassword extends React.Component<ValidFieldPasswordProps, State> {
   constructor(props: ValidFieldPasswordProps) {
     super(props);
     this.state = {
       isIconEyeOff: true,
-      levelColor: "",
+      passwordStrengthScore: 0,
     };
   }
-
   toolTipIconEye = React.createRef<HTMLElement>();
 
   componentDidMount() {
     setTimeout(() => {
       ReactTooltip.rebuild();
     }, 100);
+    const options = {
+      dictionary: {
+        password: unsafePassword,
+      },
+      graphs: passwordGraph,
+    };
+    zxcvbnOptions.setOptions(options);
   }
 
   componentWillUnmount() {
     this.hideTooltip();
   }
 
-  static getDerivedStateFromProps(
-    props: { strengthLevelIndicator: keyof typeof strengthLevelOrder },
-    state: { levelColor: string }
-  ) {
-    if (props.strengthLevelIndicator !== state.levelColor) {
-      return {
-        levelColor: props.strengthLevelIndicator,
-      };
+  componentDidUpdate(prevProps: ValidFieldPasswordProps) {
+    const { hasPasswordStrengthMeter } = this.props;
+    if (hasPasswordStrengthMeter && hasPasswordStrengthMeter !== prevProps.hasPasswordStrengthMeter) {
+      this.calculatePasswordStrength(prevProps.value);
     }
-
-    return "";
   }
 
   toggleIconEyeOff = () => {
@@ -120,25 +125,71 @@ export class ValidFieldPassword extends React.Component<ValidFieldPasswordProps,
     const passwordPattern = customPattern || DEFAULT_PASSWORD_AND_SECRET_REGEX;
     const value = generatePassword(passwordPattern);
     // @ts-ignore
-    onChange({ target: { name, value } });
+    this.onChangeWrapper({ target: { name, value } });
   };
 
   handleGenerateText = () => {
-    const { hasGeneratePassword, strengthLevelIndicator, customField } = this.props;
-    const { levelColor } = this.state;
+    const { hasGeneratePassword, customField, hasPasswordStrengthMeter } = this.props;
+    const { passwordStrengthScore } = this.state;
+    const strengtLevelText = this.getStrengthLevelBasedOnScore(passwordStrengthScore);
     return (
       <>
+        {hasPasswordStrengthMeter && passwordStrengthScore !== null && (
+          <div className="password-strength-meter">
+            <div className={classNames("strength-meter-bar", strengtLevelText)}>
+              {Object.keys(PASSWORD_STRENGTH_METER).map((strengthLevel, index) => (
+                <div
+                  key={`bar-${strengthLevel}`}
+                  className={classNames("bar", { fill: index <= passwordStrengthScore })}
+                />
+              ))}
+            </div>
+            <span className={classNames("strength-meter-label")}>{translation("password.strength.label")}</span>
+            <span className={classNames("strength-meter-level", strengtLevelText)}>
+              {translation(`password.strength.level.${strengtLevelText}`)}
+            </span>
+          </div>
+        )}
         {hasGeneratePassword && (
           <Button appearance="link" spacing="none" className="generate-password" onClick={this.handleGeneratePassword}>
             {translation("password.generateNew")}
           </Button>
         )}
-        {strengthLevelIndicator && (
-          <span className={classNames("level", levelColor)}>{translation(`password.${strengthLevelIndicator}`)}</span>
-        )}
         {customField}
       </>
     );
+  };
+
+  getStrengthLevelBasedOnScore = (score: number | null) => {
+    switch (score) {
+      case 0:
+        return PASSWORD_STRENGTH_METER["veryWeak"];
+      case 1:
+        return PASSWORD_STRENGTH_METER["weak"];
+      case 2:
+        return PASSWORD_STRENGTH_METER["fair"];
+      case 3:
+        return PASSWORD_STRENGTH_METER["strong"];
+      case 4:
+        return PASSWORD_STRENGTH_METER["veryStrong"];
+    }
+  };
+
+  calculatePasswordStrength = (password: string) => {
+    if (!password) return this.setState({ passwordStrengthScore: null });
+    const { score } = zxcvbn(password);
+    this.setState({ passwordStrengthScore: score });
+  };
+
+  debounceCalculatePasswordStrength = debounce(this.calculatePasswordStrength, CALCULATE_PASSWORD_STRENGTH_INTERVAL);
+
+  onChangeWrapper = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { onChange, hasPasswordStrengthMeter } = this.props;
+    if (!onChange) return;
+    onChange(event);
+    if (!hasPasswordStrengthMeter) return;
+    if (!event.target.value) return this.setState({ passwordStrengthScore: null });
+    this.debounceCalculatePasswordStrength(event.target.value);
   };
 
   render() {
@@ -146,6 +197,7 @@ export class ValidFieldPassword extends React.Component<ValidFieldPasswordProps,
       <div className="valid-field-password">
         <ValidFieldText
           {...this.props}
+          onChange={this.onChangeWrapper}
           rightIcon={this.handleEyeIcon()}
           type={this.handleFieldType()}
           className={classNames(this.props.className, "password-field-text")}

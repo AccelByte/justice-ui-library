@@ -13,11 +13,12 @@
   "pagination.limit.suffix": "records per page",
   "password.hiddenPassword": "Hide Password",
   "password.viewPassword": "View Password",
+  "password.strength.label": "Password strength: ",
+  "password.strength.level.veryWeak": "Very Weak",
+  "password.strength.level.weak": "Weak",
+  "password.strength.level.fair": "Fair",
+  "password.strength.level.strong": "Strong",
+  "password.strength.level.veryStrong": "Very Strong",
   "password.generateNew": "Generate new password",
-  "password.poor": "Poor!",
-  "password.weak": "Weak!",
-  "password.average": "Average!",
-  "password.good": "Good!",
-  "password.excellent": "Excellent!",
   "modalPage.esc": "Esc"
 }

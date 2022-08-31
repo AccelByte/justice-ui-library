@@ -31,5 +31,4 @@ Example.args = {
   label: "Field Label",
   name: "Field password",
   placeholder: "Field Placeholder",
-  strengthLevelIndicator: "average",
 };
