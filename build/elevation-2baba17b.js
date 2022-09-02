@@ -1,0 +1,1 @@
+import{Z as x,L as a,M as p,ae as s,af as o}from"./math-a65253e9.js";var h=x({light:"box-shadow: 0 4px 8px -2px "+a+", 0 0 1px "+p+";",dark:"box-shadow: 0 4px 8px -2px "+s+", 0 0 1px "+o+";"}),d=x({light:"box-shadow: 0 20px 32px -8px "+a+", 0 0 1px "+p+";",dark:"box-shadow: 0 20px 32px -8px "+s+", 0 0 1px "+o+";"});export{h as a,d as e};

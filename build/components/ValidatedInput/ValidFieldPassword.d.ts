@@ -2,10 +2,12 @@ import * as React from "react";
 import { ValidFieldTextProps } from "./ValidFieldText";
 import "./ValidFieldPassword.scss";
 import "../../styles/icons/fa_icons.css";
+import { OptionsType } from "@zxcvbn-ts/core/dist/types";
 export interface ValidFieldPasswordProps extends Omit<ValidFieldTextProps, "type" | "rightIcon" | "isFloat"> {
     hasGeneratePassword?: boolean;
     customPattern?: string;
     hasPasswordStrengthMeter?: boolean;
+    zxcvbnOption?: OptionsType;
 }
 interface State {
     isIconEyeOff: boolean;

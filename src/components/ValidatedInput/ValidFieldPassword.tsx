@@ -20,13 +20,13 @@ import "../../styles/icons/fa_icons.css";
 import DOMPurify from "dompurify";
 import { debounce } from "../../utils/common";
 import { zxcvbn, zxcvbnOptions } from "@zxcvbn-ts/core";
-import unsafePassword from "../../constants/unsafePassword.json"
-import passwordGraph from "../../constants/passwordGraph.json"
+import { OptionsType } from "@zxcvbn-ts/core/dist/types";
 
 export interface ValidFieldPasswordProps extends Omit<ValidFieldTextProps, "type" | "rightIcon" | "isFloat"> {
   hasGeneratePassword?: boolean;
   customPattern?: string;
   hasPasswordStrengthMeter?: boolean;
+  zxcvbnOption?: OptionsType;
 }
 
 interface State {
@@ -49,13 +49,9 @@ export class ValidFieldPassword extends React.Component<ValidFieldPasswordProps,
     setTimeout(() => {
       ReactTooltip.rebuild();
     }, 100);
-    const options = {
-      dictionary: {
-        password: unsafePassword,
-      },
-      graphs: passwordGraph,
-    };
-    zxcvbnOptions.setOptions(options);
+
+    const { zxcvbnOption } = this.props;
+    if (!zxcvbnOption) zxcvbnOptions.setOptions(zxcvbnOption);
   }
 
   componentWillUnmount() {
