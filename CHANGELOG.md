@@ -7,7 +7,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [0.9.1]
 ### Added
-- set `zxcvbnOption` as props for ValidFieldPassword and remove `passwordGraph.json` and `unsafePassword.json`
+- set `zxcvbnOption` as props for `ValidFieldPassword` and remove `passwordGraph.json` and `unsafePassword.json`
+- add `overflowXAuto`  props for `Card`
 
 ## [0.9.0]
 ### Added

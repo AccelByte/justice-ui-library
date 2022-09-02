@@ -57,6 +57,8 @@ export interface CardProps {
   customStyleTitleWrapper?: string;
   /** A text to show when `isAuthorized` is false */
   noResultText?: React.ReactNode;
+  /** Set styling for card to overflow-x to auto if it set to true */
+  overflowXAuto?: boolean;
 }
 
 export const Card = ({
@@ -83,6 +85,7 @@ export const Card = ({
   cardSubTitle,
   customStyleTitleWrapper,
   noResultText = translation("unauthorized.message"),
+  overflowXAuto = false,
 }: CardProps) => {
   const dataTip = React.isValidElement(Tips) ? renderToString(Tips) : Tips;
 
@@ -188,7 +191,13 @@ export const Card = ({
         </div>
       )}
       {isAuthorized ? (
-        <div className="card-content">{children}</div>
+        <div
+          className={classNames("card-content", {
+            "overflow-x-auto": overflowXAuto,
+          })}
+        >
+          {children}
+        </div>
       ) : (
         <NoResultTip primaryText={noResultText} boxShadow={false} />
       )}

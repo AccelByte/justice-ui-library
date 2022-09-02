@@ -102,9 +102,11 @@
   }
 
   .card-content {
-    overflow-x: auto;
     padding: 16px 32px;
     flex: 1;
+    &.overflow-x-auto {
+      overflow-x: auto;
+    }
     .table {
       padding-top: 10px;
       table {
@@ -348,7 +350,9 @@
         margin-top: -14px;
         padding-right: 20px;
         font-size: $font-size-h6 !important;
-        input, textarea, .editable-field-text-value {
+        input,
+        textarea,
+        .editable-field-text-value {
           font-size: $font-size-h5;
           color: $color--text--primary;
         }

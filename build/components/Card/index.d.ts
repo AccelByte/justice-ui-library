@@ -43,5 +43,7 @@ export interface CardProps {
     customStyleTitleWrapper?: string;
     /** A text to show when `isAuthorized` is false */
     noResultText?: React.ReactNode;
+    /** Set styling for card to overflow-x to auto if it set to true */
+    overflowXAuto?: boolean;
 }
-export declare const Card: ({ cardTitle, cardInfo, cardDataQa, className, customHeader, customFooter, buttonOnClick, buttonText, buttonIcon, buttonDataQa, buttonDisabled, buttonAppearance, noPadding, noHorizontalMargin, noTitle, titleTip, children, isAuthorized, Tips, smallCard, cardSubTitle, customStyleTitleWrapper, noResultText, }: CardProps) => JSX.Element;
+export declare const Card: ({ cardTitle, cardInfo, cardDataQa, className, customHeader, customFooter, buttonOnClick, buttonText, buttonIcon, buttonDataQa, buttonDisabled, buttonAppearance, noPadding, noHorizontalMargin, noTitle, titleTip, children, isAuthorized, Tips, smallCard, cardSubTitle, customStyleTitleWrapper, noResultText, overflowXAuto, }: CardProps) => JSX.Element;
