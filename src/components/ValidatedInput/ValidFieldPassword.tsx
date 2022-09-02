@@ -51,7 +51,7 @@ export class ValidFieldPassword extends React.Component<ValidFieldPasswordProps,
     }, 100);
 
     const { zxcvbnOption } = this.props;
-    if (!zxcvbnOption) zxcvbnOptions.setOptions(zxcvbnOption);
+    zxcvbnOptions.setOptions(zxcvbnOption);
   }
 
   componentWillUnmount() {
