@@ -29,7 +29,6 @@ export declare class ValidFieldPassword extends React.Component<ValidFieldPasswo
     getStrengthLevelBasedOnScore: (score: number | null) => "veryWeak" | "weak" | "fair" | "strong" | "veryStrong" | undefined;
     calculatePasswordStrength: (password: string) => void;
     debounceCalculatePasswordStrength: (password: string) => void;
-    onChangeWrapper: (event: React.ChangeEvent<HTMLInputElement>) => void;
     render(): JSX.Element;
 }
 export {};

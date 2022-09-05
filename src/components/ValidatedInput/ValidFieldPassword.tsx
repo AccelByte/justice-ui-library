@@ -59,10 +59,8 @@ export class ValidFieldPassword extends React.Component<ValidFieldPasswordProps,
   }
 
   componentDidUpdate(prevProps: ValidFieldPasswordProps) {
-    const { hasPasswordStrengthMeter } = this.props;
-    if (hasPasswordStrengthMeter && hasPasswordStrengthMeter !== prevProps.hasPasswordStrengthMeter) {
-      this.calculatePasswordStrength(prevProps.value);
-    }
+    const { hasPasswordStrengthMeter, value } = this.props;
+    if (hasPasswordStrengthMeter && prevProps.value !== value) this.debounceCalculatePasswordStrength(value);
   }
 
   toggleIconEyeOff = () => {
@@ -121,7 +119,7 @@ export class ValidFieldPassword extends React.Component<ValidFieldPasswordProps,
     const passwordPattern = customPattern || DEFAULT_PASSWORD_AND_SECRET_REGEX;
     const value = generatePassword(passwordPattern);
     // @ts-ignore
-    this.onChangeWrapper({ target: { name, value } });
+    onChange({ target: { name, value } });
   };
 
   handleGenerateText = () => {
@@ -179,21 +177,11 @@ export class ValidFieldPassword extends React.Component<ValidFieldPasswordProps,
 
   debounceCalculatePasswordStrength = debounce(this.calculatePasswordStrength, CALCULATE_PASSWORD_STRENGTH_INTERVAL);
 
-  onChangeWrapper = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { onChange, hasPasswordStrengthMeter } = this.props;
-    if (!onChange) return;
-    onChange(event);
-    if (!hasPasswordStrengthMeter) return;
-    if (!event.target.value) return this.setState({ passwordStrengthScore: null });
-    this.debounceCalculatePasswordStrength(event.target.value);
-  };
-
   render() {
     return (
       <div className="valid-field-password">
         <ValidFieldText
           {...this.props}
-          onChange={this.onChangeWrapper}
           rightIcon={this.handleEyeIcon()}
           type={this.handleFieldType()}
           className={classNames(this.props.className, "password-field-text")}
