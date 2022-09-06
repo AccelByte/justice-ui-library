@@ -33,6 +33,7 @@ export interface NavigationTabProps {
   isVertical?: boolean;
   containerSize?: Enum<typeof CONTAINER_SIZE>;
   noPadding?: boolean;
+  moreDataQa?: string | null;
 }
 
 export const NavigationTab = ({
@@ -41,6 +42,7 @@ export const NavigationTab = ({
   containerSize = "FULLWIDTH",
   noPadding = false,
   config,
+  moreDataQa = null,
   changePageKey,
   changePage,
 }: NavigationTabProps) => {
@@ -156,7 +158,7 @@ export const NavigationTab = ({
   });
 
   const renderMoreButton = () => (
-    <div className="tab-item" ref={moreButtonRef}>
+    <div className="tab-item" ref={moreButtonRef} data-qa-id={moreDataQa}>
       <DropdownMenu
         position="bottom right"
         trigger={
@@ -168,10 +170,17 @@ export const NavigationTab = ({
       >
         <DropdownItemGroup>
           {hiddenTabs.map((tab, index) => {
-            return (
+            const dropdownItem = (
               <DropdownItem key={`${tab.tabName}-${index}`} onClick={() => onClickTab(isChangeRoute, tab.url)}>
                 {tab.tabName}
               </DropdownItem>
+            );
+
+            if (!tab.dataQa) return dropdownItem;
+            return (
+              <div data-qa-id={tab.dataQa} data-qa-props={tab.dataQaProps}>
+                {dropdownItem}
+              </div>
             );
           })}
         </DropdownItemGroup>
