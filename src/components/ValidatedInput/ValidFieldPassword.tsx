@@ -60,7 +60,10 @@ export class ValidFieldPassword extends React.Component<ValidFieldPasswordProps,
 
   componentDidUpdate(prevProps: ValidFieldPasswordProps) {
     const { hasPasswordStrengthMeter, value } = this.props;
-    if (hasPasswordStrengthMeter && prevProps.value !== value) this.debounceCalculatePasswordStrength(value);
+    if ((value && value !== prevProps.value) || hasPasswordStrengthMeter !== prevProps.hasPasswordStrengthMeter) {
+      if (!hasPasswordStrengthMeter) return;
+      this.debounceCalculatePasswordStrength(value);
+    }
   }
 
   toggleIconEyeOff = () => {
