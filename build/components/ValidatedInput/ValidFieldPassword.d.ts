@@ -3,11 +3,17 @@ import { ValidFieldTextProps } from "./ValidFieldText";
 import "./ValidFieldPassword.scss";
 import "../../styles/icons/fa_icons.css";
 import { OptionsType } from "@zxcvbn-ts/core/dist/types";
+interface PasswordStrengthDataQa {
+    bar?: string | null;
+    barProps?: string | null;
+    label?: string | null;
+}
 export interface ValidFieldPasswordProps extends Omit<ValidFieldTextProps, "type" | "rightIcon" | "isFloat"> {
     hasGeneratePassword?: boolean;
     customPattern?: string;
     hasPasswordStrengthMeter?: boolean;
     zxcvbnOption?: OptionsType;
+    passwordStrengthDataQa?: PasswordStrengthDataQa;
 }
 interface State {
     isIconEyeOff: boolean;
