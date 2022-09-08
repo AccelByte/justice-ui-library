@@ -22,11 +22,17 @@ import { debounce } from "../../utils/common";
 import { zxcvbn, zxcvbnOptions } from "@zxcvbn-ts/core";
 import { OptionsType } from "@zxcvbn-ts/core/dist/types";
 
+interface PasswordStrengthDataQa {
+  bar?: string | null,
+  barProps?: string | null,
+  label?: string | null,
+}
 export interface ValidFieldPasswordProps extends Omit<ValidFieldTextProps, "type" | "rightIcon" | "isFloat"> {
   hasGeneratePassword?: boolean;
   customPattern?: string;
   hasPasswordStrengthMeter?: boolean;
   zxcvbnOption?: OptionsType;
+  passwordStrengthDataQa?: PasswordStrengthDataQa
 }
 
 interface State {
@@ -126,23 +132,24 @@ export class ValidFieldPassword extends React.Component<ValidFieldPasswordProps,
   };
 
   handleGenerateText = () => {
-    const { hasGeneratePassword, customField, hasPasswordStrengthMeter } = this.props;
+    const { hasGeneratePassword, customField, hasPasswordStrengthMeter, passwordStrengthDataQa } = this.props;
     const { passwordStrengthScore } = this.state;
     const strengtLevelText = this.getStrengthLevelBasedOnScore(passwordStrengthScore);
     return (
       <>
         {hasPasswordStrengthMeter && passwordStrengthScore !== null && (
           <div className="password-strength-meter">
-            <div className={classNames("strength-meter-bar", strengtLevelText)}>
+            <div className={classNames("strength-meter-bar", strengtLevelText)} data-qa-id={passwordStrengthDataQa?.bar}>
               {Object.keys(PASSWORD_STRENGTH_METER).map((strengthLevel, index) => (
                 <div
                   key={`bar-${strengthLevel}`}
                   className={classNames("bar", { fill: index <= passwordStrengthScore })}
+                  data-qa-props={passwordStrengthDataQa?.barProps && `${passwordStrengthDataQa.barProps}-${index}`}
                 />
               ))}
             </div>
             <span className={classNames("strength-meter-label")}>{translation("password.strength.label")}</span>
-            <span className={classNames("strength-meter-level", strengtLevelText)}>
+            <span className={classNames("strength-meter-level", strengtLevelText)} data-qa-id={passwordStrengthDataQa?.label}>
               {translation(`password.strength.level.${strengtLevelText}`)}
             </span>
           </div>
