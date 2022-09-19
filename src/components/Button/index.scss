@@ -8,7 +8,8 @@
 .styled-atlaskit-button-container {
   display: inline-flex;
 }
-button.styled-atlaskit-button {
+button.styled-atlaskit-button,
+a.styled-atlaskit-button {
   border-radius: $border-radius;
   height: 36px;
   padding: 0 10px;
