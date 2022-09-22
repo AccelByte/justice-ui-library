@@ -9,6 +9,8 @@
   "dynamicTablePagination.perPage.suffix": "每页记录",
   "pagination.prev": "上一步",
   "pagination.next": "下一步",
+  "pagination.limit.prefix": "显示",
+  "pagination.limit.suffix": "条记录每页",
   "password.hiddenPassword": "隐藏密码",
   "password.viewPassword": "查看密码",
   "password.strength.label": "密码强度：",

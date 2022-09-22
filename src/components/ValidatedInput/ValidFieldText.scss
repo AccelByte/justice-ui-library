@@ -68,6 +68,12 @@
       top: 0;
       height: 100%;
       padding: 0 10px;
+      color: $color--icon;
+      background-color: $base-10;
+      border-radius: 0px 4px 4px 0px;
+      border: 1px solid $base-40;
+      font-size: large;
+      box-sizing: border-box;
     }
   }
 }
