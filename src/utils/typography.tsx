@@ -13,3 +13,5 @@ export const addLineBreaks = (text: string, marginTop: string | number = 4) => {
     );
   });
 };
+
+export const trimExcessiveSpace = (text: string) => text.replace(/\s{2,}/g, ' ').trim()

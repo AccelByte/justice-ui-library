@@ -1,3 +1,4 @@
+import 'simplebar/dist/simplebar.min.css';
 export * from "./Accordion";
 export * from "./Badge";
 export * from "./Banner";
@@ -57,3 +58,5 @@ export * from "./ValidatedInput/ValidFieldTextArea";
 export * from "./ValidatedInput/ValidMultiSelect";
 export * from "./ValidatedInput/ValidSelect";
 export * from "./ValidatedInput/ValidSelectAsync";
+export * from "./ValidatedInput/ValidMultiCreatableFieldText";
+export * from "./Select/SelectWithLogo";

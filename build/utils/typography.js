@@ -1,1 +1,1 @@
-import{jsx as t}from"react/jsx-runtime";const n=(n,r=4)=>n.split("\n").map(((n,e)=>t("p",{style:{margin:"unset",marginTop:e?r:"unset"},children:n},`${e}-${n}`)));export{n as addLineBreaks};
+import{jsx as r}from"react/jsx-runtime";const t=(t,e=4)=>t.split("\n").map(((t,n)=>r("p",{style:{margin:"unset",marginTop:n?e:"unset"},children:t},`${n}-${t}`))),e=r=>r.replace(/\s{2,}/g," ").trim();export{t as addLineBreaks,e as trimExcessiveSpace};

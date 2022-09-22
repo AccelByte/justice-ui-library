@@ -1,0 +1,1 @@
+import{Z as x,L as a,M as p,ae as s,af as o}from"./math-bf9ecd01.js";var d=x({light:"box-shadow: 0 4px 8px -2px "+a+", 0 0 1px "+p+";",dark:"box-shadow: 0 4px 8px -2px "+s+", 0 0 1px "+o+";"}),h=x({light:"box-shadow: 0 20px 32px -8px "+a+", 0 0 1px "+p+";",dark:"box-shadow: 0 20px 32px -8px "+s+", 0 0 1px "+o+";"});export{d as a,h as e};

@@ -1,6 +1,6 @@
 {
   "name": "justice-ui-library",
-  "version": "0.10.2",
+  "version": "0.11.0",
   "author": "AccelByte Inc",
   "license": "AccelByte License",
   "module": "./build/index.js",
@@ -9,7 +9,7 @@
     "clean": "rimraf build",
     "build": "yarn clean && rollup -c",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o docs-build"
+    "build-storybook": "export SET NODE_OPTIONS=--openssl-legacy-provider && build-storybook -o docs-build"
   },
   "homepage": "https://accelbyte.github.io/justice-ui-library/",
   "dependencies": {
@@ -25,13 +25,15 @@
     "@zxcvbn-ts/core": "^2.0.4",
     "classnames": "^2.2.5",
     "dompurify": "^2.3.3",
+    "justice-js-common-utils": "git+https://github.com/AccelByte/justice-js-common-utils.git#1.35.4",
     "moment": "^2.29.1",
     "randomatic": "^3.1.1",
     "react-copy-to-clipboard": "^5.0.4",
     "react-datetime": "^2.16.3",
     "react-select-async-paginate": "^0.6.1",
     "react-tooltip": "^3.6.1",
-    "styled-components": "^3.2.6"
+    "styled-components": "^3.2.6",
+    "validator": "11.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
@@ -80,6 +82,8 @@
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.38.1",
     "sass-loader": "10.1.1",
+    "simplebar": "^4.0.0",
+    "simplebar-react": "^1.0.0",
     "style-loader": "2.0.0",
     "tslib": "^2.3.1",
     "typescript": "^4.1.2",

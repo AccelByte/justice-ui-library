@@ -3,10 +3,10 @@ import "./index.scss";
 import { Enum } from "../../types";
 import "../../styles/icons/fa_icons.css";
 export declare const APPEARANCE_TYPE: Readonly<{
-    info: "info";
-    warning: "warning";
-    error: "error";
     success: "success";
+    warning: "warning";
+    info: "info";
+    error: "error";
 }>;
 export interface BannerProps {
     appearance: Enum<typeof APPEARANCE_TYPE>;

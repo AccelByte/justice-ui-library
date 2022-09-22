@@ -3,7 +3,7 @@
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
  */
-
+import React from 'react'
 import { default as AkSelect, SelectProps as AkSelectProps } from "@atlaskit/select";
 import { SelectOption } from "../../types";
 import "./index.scss";
@@ -30,7 +30,7 @@ export const Select = ({ isMulti = false, onChange, dataQa = null, dataQaProps =
     );
   };
 
-  if (!!dataQa)
+  if (dataQa)
     return (
       <div data-qa-id={dataQa} data-qa-props={dataQaProps}>
         {renderSelect()}

@@ -18,5 +18,18 @@
   "password.strength.level.strong": "强",
   "password.strength.level.veryStrong": "非常强",
   "password.generateNew": "生成新密码",
-  "modalPage.esc": "退出"
+  "modalPage.esc": "退出",
+  "common.validationErrorMessage.empty": "{{fieldName}}是必填项",
+  "common.validationErrorMessage.lessThanLengthLimit": "为{{fieldName}}使用{{minLength}}个字符或更多字符",
+  "common.validationErrorMessage.exceedLengthLimit": "对于{{fieldName}}，请使用{{maxLength}}个字符或更少的字符",
+  "common.validationErrorMessage.invalidFormat": "请提供有效的{{fieldName}}格式",
+  "common.validationErrorMessage.lessThanMinimumValue": "{{fieldName}}的值不能小于{{min}}",
+  "common.validationErrorMessage.exceedMaximumValue": "{{fieldName}}的值不能超过限制（{{max}}）",
+  "common.validationErrorMessage.invalidValue": "{{fieldName}}的值无效",
+  "common.validationErrorMessage.invalidFileExtensions": "仅允许{{acceptedFileExtension}}个文件",
+  "common.validationErrorMessage.containsDecimal": "不允许使用小数。",
+  "common.validationErrorMessage.alreadyUsed": "{{fieldName}}已被使用。 尝试输入新的{{fieldName}}",
+  "common.validationErrorMessage.default": "无法验证输入，请联系客服",
+  "common.validationErrorMessage.containsForbiddenWords": "{{ fieldName }} 包含违禁词",
+  "common.validationErrorMessage.containsForbiddenWords.email": "电子邮件包含禁用词或使用被阻止的域"
 }
