@@ -13,6 +13,7 @@ import { addLineBreaks } from "../../utils";
 
 export interface RadioOptionWithRenderAction<T = string> extends RadioOption<T> {
   render?: () => React.ReactNode;
+  dataQaProps?: string | null;
 }
 
 interface Props {
@@ -44,7 +45,7 @@ export const StyledRadioTabVertical = ({
 }: Props) => {
   return (
     <div className={className}>
-      {!!label && <FieldLabel label={label} tooltip={tooltip && tooltip} />}
+      {!!label && <FieldLabel {...{ label, tooltip }} />}
       <div className={classNames(["styled-radio-tab-vertical"])} data-qa-id={dataQa}>
         {options.map((item) => (
           <div key={`radio-tab-vertical-${item.value}`} className={"radio-container"}>
@@ -53,6 +54,7 @@ export const StyledRadioTabVertical = ({
                 disabled,
                 selected: item.value === selectedRadio,
               })}
+              data-qa-props={item.dataQaProps}
               {...(!disabled && item.value !== selectedRadio && { onClick: onChange.bind(null, item) })}
               key={String(item.value)}
             >
