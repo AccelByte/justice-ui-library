@@ -9,7 +9,7 @@
     "clean": "rimraf build",
     "build": "yarn clean && rollup -c",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "export SET NODE_OPTIONS=--openssl-legacy-provider && build-storybook -o docs-build"
+    "build-storybook": "build-storybook -o docs-build"
   },
   "homepage": "https://accelbyte.github.io/justice-ui-library/",
   "dependencies": {
