@@ -9,7 +9,7 @@
 import * as React from "react";
 import { default as classNames } from "classnames";
 import { Enum, SelectOption } from "../../types";
-import { FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
+import { FieldErrorMessage, FieldHelperText, FieldLabel, FieldReloadMessage } from "../Form/utility";
 import { Select, SelectProps } from "..";
 import "./ValidSelect.scss";
 
@@ -61,6 +61,10 @@ export const ValidSelect = ({
   className,
   dataQa,
   helperText,
+  isShowReloadWhileFetchFailed,
+  reloadMessage,
+  onReload,
+  reloaderStatus,
   ...props
 }: ValidSelectProps) => (
   <div className={classNames("valid-select-input", className)} data-qa-id={dataQa}>
@@ -79,6 +83,9 @@ export const ValidSelect = ({
       dataQaProps={selectDataQaProps}
     />
     {isInvalid && <FieldErrorMessage message={errMessage} />}
+    {isShowReloadWhileFetchFailed && (
+      <FieldReloadMessage message={reloadMessage} onReload={() => onReload} reloaderStatus={reloaderStatus} />
+    )}
     {helperText && <FieldHelperText message={helperText} />}
   </div>
 );

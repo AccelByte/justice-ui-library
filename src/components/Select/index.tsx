@@ -3,8 +3,14 @@
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
  */
-import React from 'react'
-import { default as AkSelect, SelectProps as AkSelectProps } from "@atlaskit/select";
+import React from "react";
+import {
+  default as AkSelect,
+  SelectProps as AkSelectProps,
+  AsyncSelect,
+  MenuListComponentProps,
+} from "@atlaskit/select";
+import { components } from "react-select";
 import { SelectOption } from "../../types";
 import "./index.scss";
 
@@ -12,29 +18,128 @@ export interface SelectProps extends Omit<AkSelectProps<SelectOption, boolean>, 
   onChange?: (option: SelectOption) => void;
   dataQa?: string | null;
   dataQaProps?: string | null;
+  async?: boolean;
+  loadOptions?: (keyword: string) => Promise<SelectOption[]>;
+  onLoadMoreOptions?: (keyword: string, offset: number) => Promise<SelectOption[]>;
 }
 
 const DropdownIndicator = () => <i className="icon-chevron-down" />;
 
-export const Select = ({ isMulti = false, onChange, dataQa = null, dataQaProps = null, ...props }: SelectProps) => {
-  const renderSelect = () => {
-    return (
-      <AkSelect
-        className="styled-atlaskit-select"
-        classNamePrefix="styled-atlaskit-select"
-        components={{ DropdownIndicator }}
-        isMulti={isMulti}
-        onChange={onChange ? (item) => onChange(item as SelectOption) : undefined}
-        {...props}
-      />
-    );
+const MenuList = (props: MenuListComponentProps<SelectOption>) => (
+  <div className="styled-atlaskit-select__menu">
+    <components.MenuList className="styled-atlaskit-select__menu-list" {...props}>
+      {props.children}
+    </components.MenuList>
+  </div>
+);
+
+const RenderSelect = ({
+  isMulti = false,
+  onChange,
+  dataQa = null,
+  dataQaProps = null,
+  async,
+  loadOptions,
+  onLoadMoreOptions,
+  ...props
+}: SelectProps) => {
+  const asyncSelectRef = React.useRef<any>();
+  const loadMoreDebounceFuncRef = React.useRef<NodeJS.Timer>();
+
+  const initLoadMoreListener = () => {
+    if (!asyncSelectRef.current) return;
+
+    const selectOptionRef = asyncSelectRef.current.select.select.select.controlRef;
+    const parentSelectElement = selectOptionRef.parentElement.parentElement;
+    let selectMenu = parentSelectElement.querySelector(".styled-atlaskit-select__menu");
+    let selectMenuList = selectMenu ? selectMenu.querySelector(".styled-atlaskit-select__menu-list") : null;
+
+    const runLoadMoreFunc = () => {
+      // refetch element by query selector
+      selectMenu = parentSelectElement.querySelector(".styled-atlaskit-select__menu");
+      selectMenuList = selectMenu ? selectMenu.querySelector(".styled-atlaskit-select__menu-list") : null;
+
+      if (!selectMenuList) return;
+
+      selectMenuList.addEventListener("scroll", (event: React.UIEvent<HTMLElement>) => {
+        const { scrollHeight, scrollTop, offsetHeight } = event.currentTarget;
+
+        const asyncInnerRefState = asyncSelectRef.current.select.state;
+
+        const currentOptionState =
+          asyncInnerRefState.loadedOptions.length > 0
+            ? asyncInnerRefState.loadedOptions
+            : asyncInnerRefState.defaultOptions;
+        const currentOptionKey = asyncInnerRefState.loadedOptions.length > 0 ? "loadedOptions" : "defaultOptions";
+        const NUM_OF_THRESHOLD = 30;
+
+        if (scrollTop >= scrollHeight - (offsetHeight + NUM_OF_THRESHOLD)) {
+          if (loadMoreDebounceFuncRef.current) clearTimeout(loadMoreDebounceFuncRef.current);
+
+          loadMoreDebounceFuncRef.current = setTimeout(async () => {
+            if (!onLoadMoreOptions) return;
+            asyncSelectRef.current.select.setState({
+              isLoading: true,
+            });
+
+            const loadMoreData = await onLoadMoreOptions(asyncInnerRefState.inputValue, currentOptionState.length);
+
+            if (!asyncSelectRef.current || !asyncSelectRef.current.select) return;
+
+            asyncSelectRef.current.select.setState({
+              isLoading: false,
+              [`${currentOptionKey}`]: [...currentOptionState, ...loadMoreData],
+            });
+          }, 500);
+        }
+      });
+    };
+
+    if (selectMenuList) {
+      runLoadMoreFunc();
+      return;
+    }
+
+    selectOptionRef.onclick = runLoadMoreFunc;
   };
 
+  React.useLayoutEffect(() => {
+    if (async && onLoadMoreOptions) initLoadMoreListener();
+  }, [async, onLoadMoreOptions, asyncSelectRef]);
+
+  return async ? (
+    <AsyncSelect
+      className="styled-atlaskit-select"
+      classNamePrefix="styled-atlaskit-select"
+      components={{ DropdownIndicator, MenuList }}
+      loadOptions={loadOptions}
+      isMulti={isMulti}
+      onChange={onChange ? (item) => onChange(item as SelectOption) : undefined}
+      {...props}
+      ref={asyncSelectRef}
+    />
+  ) : (
+    <AkSelect
+      className="styled-atlaskit-select"
+      classNamePrefix="styled-atlaskit-select"
+      components={{ DropdownIndicator }}
+      isMulti={isMulti}
+      onChange={onChange ? (item) => onChange(item as SelectOption) : undefined}
+      {...props}
+    />
+  );
+};
+
+export const Select = ({
+  dataQa = null,
+  dataQaProps = null,
+  ...props
+}: SelectProps) => {
   if (dataQa)
     return (
       <div data-qa-id={dataQa} data-qa-props={dataQaProps}>
-        {renderSelect()}
+        <RenderSelect {...props} />
       </div>
     );
-  return renderSelect();
+  return <RenderSelect {...props} />;
 };

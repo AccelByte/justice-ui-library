@@ -1,6 +1,8 @@
 import React from "react";
 import "./index.scss";
 import "../../../styles/icons/fa_icons.css";
+import { Enum } from "../../../types";
+import { RELOADSTATUS } from "../../ValidatedInput/ValidSelect";
 export declare const FieldErrorMessage: ({ message, dataQa }: {
     message?: string | null | undefined;
     dataQa?: string | undefined;
@@ -23,3 +25,12 @@ export declare const FieldCounter: ({ value, maxLength, className }: FieldCounte
 export declare const FieldHelperText: ({ message }: {
     message: React.ReactNode;
 }) => JSX.Element;
+export declare const FieldReloadMessage: ({ message, onReload, reloaderStatus }: {
+    message?: string | undefined;
+    onReload?: (() => void) | undefined;
+    reloaderStatus?: Enum<Readonly<{
+        SUCCESS: "SUCCESS";
+        LOADING: "LOADING";
+        FAILED: "FAILED";
+    }>> | undefined;
+}) => JSX.Element | null;

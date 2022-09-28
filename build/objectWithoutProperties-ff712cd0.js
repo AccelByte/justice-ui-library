@@ -1,0 +1,1 @@
+import{a as e}from"./objectWithoutPropertiesLoose-1e1a7051.js";function r(r,t){if(null==r)return{};var o,n,p=e(r,t);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(r);for(n=0;n<a.length;n++)o=a[n],t.indexOf(o)>=0||Object.prototype.propertyIsEnumerable.call(r,o)&&(p[o]=r[o])}return p}export{r as _};

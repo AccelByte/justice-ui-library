@@ -14,6 +14,10 @@ import { translation } from "../../../utils/i18n";
 import { MAX_SHORT_TEXT_LENGTH } from "../../../constants";
 import "../../../styles/icons/fa_icons.css";
 import DOMPurify from "dompurify";
+import { Enum } from "../../../types";
+import { RELOADSTATUS } from "../../ValidatedInput/ValidSelect";
+import { Spinner } from "../../Spinner";
+import { Button } from "../../Button";
 
 export const FieldErrorMessage = ({ message = "", dataQa }: { message?: string | null; dataQa?: string }) => (
   <span className="field-error-message" data-qa-id={dataQa && dataQa}>
@@ -74,3 +78,37 @@ export const FieldCounter = ({ value = "", maxLength = MAX_SHORT_TEXT_LENGTH, cl
 export const FieldHelperText = ({ message = "" }: { message: React.ReactNode }) => (
   <span className="field-helper-text">{typeof message === "string" ? addLineBreaks(message) : message}</span>
 );
+
+export const FieldReloadMessage = ({
+  message = '',
+  onReload,
+  reloaderStatus
+}: {
+  message?: string
+  onReload?: () => void
+  reloaderStatus?: Enum<typeof RELOADSTATUS>
+}) => {
+  if (!reloaderStatus || reloaderStatus === RELOADSTATUS.SUCCESS) {
+    return null
+  }
+  return (
+    <div className="field-error-reloader">
+      {
+        {
+          LOADING: <Spinner />,
+          FAILED: (
+            <>
+              <i className="notification-icon icon-ab-exclamation-mark-filled" />
+              {' '}
+              {message}
+              {' '}
+              <Button appearance="link" onClick={() => onReload && onReload()}>
+                {translation('common.fieldReloadMessage.reload')}
+              </Button>
+            </>
+          )
+        }[reloaderStatus]
+      }
+    </div>
+  )
+}

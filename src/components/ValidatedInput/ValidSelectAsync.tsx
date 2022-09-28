@@ -6,10 +6,11 @@
 
 import * as React from "react";
 import { default as classNames } from "classnames";
-import { FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
+import { FieldErrorMessage, FieldHelperText, FieldLabel, FieldReloadMessage } from "../Form/utility";
 import { AsyncPaginate, AsyncPaginateProps, LoadOptions } from "react-select-async-paginate";
 import "./ValidSelectAsync.scss";
-import { SelectOption } from "../../types";
+import { Enum, SelectOption } from "../../types";
+import { RELOADSTATUS } from "./ValidSelect";
 
 export interface ValidSelectAsyncProps<OptionType, Group, Additional, isMulti extends boolean>
   extends AsyncPaginateProps<OptionType, Group, Additional, isMulti> {
@@ -23,9 +24,13 @@ export interface ValidSelectAsyncProps<OptionType, Group, Additional, isMulti ex
   className?: string;
   dataQa?: string | null;
   helperText?: React.ReactNode;
+  isShowReloadWhileFetchFailed: boolean;
+  reloadMessage?: string;
+  onReload?: () => void;
+  reloaderStatus?: Enum<typeof RELOADSTATUS>;
 }
 
-export type ValidSelectAsyncLoadOptions<OptionType> = LoadOptions<OptionType, unknown, unknown>
+export type ValidSelectAsyncLoadOptions<OptionType> = LoadOptions<OptionType, unknown, unknown>;
 
 export const ValidSelectAsync = <OptionType, Group, Additional, isMulti extends boolean>({
   label,
@@ -37,12 +42,19 @@ export const ValidSelectAsync = <OptionType, Group, Additional, isMulti extends 
   className,
   dataQa,
   helperText,
+  isShowReloadWhileFetchFailed,
+  reloadMessage,
+  onReload,
+  reloaderStatus,
   ...props
 }: ValidSelectAsyncProps<OptionType, Group, Additional, isMulti>) => (
   <div className={classNames("valid-select-input", "valid-select-async-input", className)} data-qa-id={dataQa}>
     {!!label && <FieldLabel label={label} optionalLabel={optionalLabel} isRequired={isRequired} tooltip={tooltip} />}
     <AsyncPaginate {...props} className="styled-atlaskit-select" classNamePrefix={"styled-atlaskit-select"} />
     {isInvalid && <FieldErrorMessage message={errMessage} />}
+    {isShowReloadWhileFetchFailed && (
+      <FieldReloadMessage message={reloadMessage} onReload={() => onReload} reloaderStatus={reloaderStatus} />
+    )}
     {helperText && <FieldHelperText message={helperText} />}
   </div>
 );
