@@ -9,8 +9,6 @@ import { default as classNames } from "classnames";
 import { FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
 import { AsyncPaginate, AsyncPaginateProps, LoadOptions } from "react-select-async-paginate";
 import "./ValidSelectAsync.scss";
-import { Enum, SelectOption } from "../../types";
-import { RELOADSTATUS } from "./ValidSelect";
 
 export interface ValidSelectAsyncProps<OptionType, Group, Additional, isMulti extends boolean>
   extends AsyncPaginateProps<OptionType, Group, Additional, isMulti> {

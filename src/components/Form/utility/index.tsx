@@ -14,10 +14,6 @@ import { translation } from "../../../utils/i18n";
 import { MAX_SHORT_TEXT_LENGTH } from "../../../constants";
 import "../../../styles/icons/fa_icons.css";
 import DOMPurify from "dompurify";
-import { Enum } from "../../../types";
-import { RELOADSTATUS } from "../../ValidatedInput/ValidSelect";
-import { Spinner } from "../../Spinner";
-import { Button } from "../../Button";
 
 export const FieldErrorMessage = ({ message = "", dataQa }: { message?: string | null; dataQa?: string }) => (
   <span className="field-error-message" data-qa-id={dataQa && dataQa}>
