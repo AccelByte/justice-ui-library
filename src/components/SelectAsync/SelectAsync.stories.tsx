@@ -20,6 +20,8 @@ const Template: Story<SelectAsyncProps> = (args) => {
     setOption(option);
   };
 
+  const [asyncOptions, setAsyncOption] = React.useState<SelectOption[]>([]);
+
   const options: SelectOption[] = React.useMemo(() => {
     const options: SelectOption[] = [];
     for (let i = 0; i < 50; ++i) {
@@ -51,6 +53,7 @@ const Template: Story<SelectAsyncProps> = (args) => {
     }
 
     const slicedOptions = filteredOptions.slice(offset, offset + 10);
+    setAsyncOption(slicedOptions)
 
     return slicedOptions;
   };
@@ -63,10 +66,12 @@ const Template: Story<SelectAsyncProps> = (args) => {
   return (
     <SelectAsync
       {...args}
+      options={asyncOptions}
       value={option}
       onChange={onChange}
       loadOptions={loadOptions}
       onLoadMoreOptions={loadMoreOptions}
+      defaultOptions
     />
   );
 };
