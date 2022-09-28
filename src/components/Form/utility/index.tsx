@@ -99,9 +99,7 @@ export const FieldReloadMessage = ({
           FAILED: (
             <>
               <i className="notification-icon icon-ab-exclamation-mark-filled" />
-              {' '}
-              {message}
-              {' '}
+              {` ${message} `}
               <Button appearance="link" onClick={() => onReload && onReload()}>
                 {translation('common.fieldReloadMessage.reload')}
               </Button>

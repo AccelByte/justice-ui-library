@@ -64,4 +64,4 @@ export * from "./ValidatedInput/ValidMultiSelect";
 export * from "./ValidatedInput/ValidSelect";
 export * from "./ValidatedInput/ValidSelectAsync";
 export * from "./ValidatedInput/ValidMultiCreatableFieldText";
-export * from "./Select/SelectWithLogo"
+export * from "./SelectWithLogo/SelectWithLogo"

@@ -41,7 +41,7 @@ const ControlComponent: React.FC<ControlProps<SelectItemWithLogo>> = ({ ...props
   const [isEllipsisShowed, setIsEllipsisShowed] = React.useState(false);
 
   React.useEffect(() => {
-    if (controlRef && controlRef.current) {
+    if (controlRef.current) {
       setIsEllipsisShowed(
         getDomWidthByRef(controlRef.current, ".react-select__single-value") >
           getDomWidthByRef(controlRef.current, ".custom-singleValue-label")
@@ -129,7 +129,7 @@ const OptionTemplateWithDataQa = (props: OptionTemplateWithDataQaProps) => {
   const optionRef = React.useRef<HTMLDivElement>(null);
   const [isEllipsisActive, setIsEllipsisActive] = React.useState(false);
   React.useEffect(() => {
-    if (optionRef && optionRef.current) {
+    if (optionRef.current) {
       setIsEllipsisActive(
         getDomWidthByRef(optionRef.current, ".optionLabel div span") >
           getDomWidthByRef(optionRef.current, ".optionLabel") -
@@ -197,7 +197,7 @@ export const SelectWithLogo: React.FC<SelectWithLogoProps> = (props) => {
         <SingleValue {...props} isMenuOpen={isMenuOpen} />
       ),
       Option:
-        props.components && props.components.Option
+        props.components?.Option
           ? props.components.Option
           : (optionProps: OptionTemplateWithDataQaProps) => (
               <OptionTemplateWithDataQa {...optionProps} dataQa={props.dataQa} dataQaProps={props.dataQaProps} />

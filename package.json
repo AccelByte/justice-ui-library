@@ -32,6 +32,8 @@
     "react-datetime": "^2.16.3",
     "react-select-async-paginate": "^0.6.1",
     "react-tooltip": "^3.6.1",
+    "simplebar": "^4.0.0",
+    "simplebar-react": "^1.0.0",
     "styled-components": "^3.2.6",
     "validator": "11.1.0"
   },
@@ -82,8 +84,6 @@
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.38.1",
     "sass-loader": "10.1.1",
-    "simplebar": "^4.0.0",
-    "simplebar-react": "^1.0.0",
     "style-loader": "2.0.0",
     "tslib": "^2.3.1",
     "typescript": "^4.1.2",
