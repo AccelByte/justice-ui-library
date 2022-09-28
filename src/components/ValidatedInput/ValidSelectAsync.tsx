@@ -6,7 +6,7 @@
 
 import * as React from "react";
 import { default as classNames } from "classnames";
-import { FieldErrorMessage, FieldHelperText, FieldLabel, FieldReloadMessage } from "../Form/utility";
+import { FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
 import { AsyncPaginate, AsyncPaginateProps, LoadOptions } from "react-select-async-paginate";
 import "./ValidSelectAsync.scss";
 import { Enum, SelectOption } from "../../types";

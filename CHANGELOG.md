@@ -7,9 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ## [0.11.0]
 ### Added
 - component `SelectWithLogo`
-- component `ValidMultiCreatableFieldText`
-- `async` prop for `Select` component
-- refactor `ValidSelect` & `ValidSelectAsync`
+- component `SelectAsync`
 
 ## [0.10.3]
 ### Added

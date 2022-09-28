@@ -1,6 +1,6 @@
 /*
  *
- *  * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ *  * Copyright (c) 2021 - 2022 AccelByte Inc. All Rights Reserved.
  *  * This is licensed software from AccelByte Inc, for limitations
  *  * and restrictions contact your company contract manager.
  *
@@ -9,7 +9,7 @@
 import * as React from "react";
 import { default as classNames } from "classnames";
 import { Enum, SelectOption } from "../../types";
-import { FieldErrorMessage, FieldHelperText, FieldLabel, FieldReloadMessage } from "../Form/utility";
+import { FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
 import { Select, SelectProps } from "..";
 import "./ValidSelect.scss";
 
