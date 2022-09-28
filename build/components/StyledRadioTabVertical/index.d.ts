@@ -3,6 +3,7 @@ import "./index.scss";
 import { RadioOption } from "../../types";
 export interface RadioOptionWithRenderAction<T = string> extends RadioOption<T> {
     render?: () => React.ReactNode;
+    dataQaProps?: string | null;
 }
 interface Props {
     label?: string;
