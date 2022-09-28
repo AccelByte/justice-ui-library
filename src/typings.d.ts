@@ -14,5 +14,3 @@ declare module "*.scss" {
 }
 
 declare module 'simplebar-react'
-
-declare module '@atlaskit/*'

@@ -6,9 +6,9 @@
  *
  */
 
-import 'simplebar/dist/simplebar.min.css'
+import "simplebar/dist/simplebar.min.css";
 import * as React from "react";
-import { ControlProps, default as AkSelect, MenuListComponentProps, OptionProps, SelectProps } from "@atlaskit/select";
+import Select, { ControlProps, MenuListComponentProps, OptionProps, SelectProps } from "@atlaskit/select";
 import { components, GroupTypeBase, SingleValueProps } from "react-select";
 import { default as classNames } from "classnames";
 import "./SelectWithLogo.scss";
@@ -26,12 +26,9 @@ export interface SelectItemWithLogo {
   optionClassName?: string;
 }
 
-export interface GroupedSelectItemWithLogo {
-  label: string;
-  options?: SelectItemWithLogo[];
-}
+export type GroupedSelectItemWithLogo = GroupTypeBase<SelectItemWithLogo>;
 
-const customizedGroupLabel = (data: GroupTypeBase<SelectItemWithLogo>) => {
+const customizedGroupLabel = (data: GroupedSelectItemWithLogo) => {
   return (
     <div className="custom-groupLabel-selectWithLogo">
       <span>{data.label}</span>
@@ -84,15 +81,13 @@ const SingleValue: React.FC<PropsSingleValue> = ({ ...props }) => {
   );
 };
 
-export interface MenuListProps extends MenuListComponentProps<SelectItemWithLogo> {
-  Simplebar: any
-}
+export type MenuListProps = MenuListComponentProps<SelectItemWithLogo>;
 
 const MenuList: React.FC<MenuListComponentProps<SelectItemWithLogo>> = ({ ...props }) => {
   return (
     <div className="custom-menuList-selectWithLogo">
       <SimpleBar autohide="true">
-        <components.MenuList {...props}>{props.children}</components.MenuList>
+        <div className="react-select__menu-list">{props.children}</div>
       </SimpleBar>
     </div>
   );
@@ -177,7 +172,6 @@ const OptionTemplateWithDataQa = (props: OptionTemplateWithDataQaProps) => {
 export interface SelectWithLogoProps extends SelectProps<SelectItemWithLogo> {
   dataQa?: string;
   dataQaProps?: string;
-  Simplebar: any;
 }
 
 export const SelectWithLogo: React.FC<SelectWithLogoProps> = (props) => {
@@ -212,7 +206,7 @@ export const SelectWithLogo: React.FC<SelectWithLogoProps> = (props) => {
     },
   };
   return (
-    <AkSelect
+    <Select
       {...newProps}
       formatGroupLabel={customizedGroupLabel}
       onMenuClose={onMenuClose}
@@ -222,7 +216,7 @@ export const SelectWithLogo: React.FC<SelectWithLogoProps> = (props) => {
       }
       noOptionsMessage={() => translation("common.select.noResults")}
       classNamePrefix="react-select"
-      className="react-select__container"
+      className="react-select"
     />
   );
 };

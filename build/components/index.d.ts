@@ -1,4 +1,3 @@
-import 'simplebar/dist/simplebar.min.css';
 export * from "./Accordion";
 export * from "./Badge";
 export * from "./Banner";

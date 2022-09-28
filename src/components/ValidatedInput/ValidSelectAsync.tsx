@@ -7,8 +7,9 @@
 import * as React from "react";
 import { default as classNames } from "classnames";
 import { FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
-import { AsyncPaginate, AsyncPaginateProps } from "react-select-async-paginate";
+import { AsyncPaginate, AsyncPaginateProps, LoadOptions } from "react-select-async-paginate";
 import "./ValidSelectAsync.scss";
+import { SelectOption } from "../../types";
 
 export interface ValidSelectAsyncProps<OptionType, Group, Additional, isMulti extends boolean>
   extends AsyncPaginateProps<OptionType, Group, Additional, isMulti> {
@@ -23,6 +24,8 @@ export interface ValidSelectAsyncProps<OptionType, Group, Additional, isMulti ex
   dataQa?: string | null;
   helperText?: React.ReactNode;
 }
+
+export type ValidSelectAsyncLoadOptions<OptionType> = LoadOptions<OptionType, unknown, unknown>
 
 export const ValidSelectAsync = <OptionType, Group, Additional, isMulti extends boolean>({
   label,

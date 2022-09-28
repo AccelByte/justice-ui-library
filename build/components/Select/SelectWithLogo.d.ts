@@ -1,5 +1,7 @@
+import "simplebar/dist/simplebar.min.css";
 import * as React from "react";
 import { MenuListComponentProps, OptionProps, SelectProps } from "@atlaskit/select";
+import { GroupTypeBase } from "react-select";
 import "./SelectWithLogo.scss";
 export interface SelectItemWithLogo {
     label: string;
@@ -7,13 +9,8 @@ export interface SelectItemWithLogo {
     logo: React.ReactNode;
     optionClassName?: string;
 }
-export interface GroupedSelectItemWithLogo {
-    label: string;
-    options?: SelectItemWithLogo[];
-}
-export interface MenuListProps extends MenuListComponentProps<SelectItemWithLogo> {
-    Simplebar: any;
-}
+export declare type GroupedSelectItemWithLogo = GroupTypeBase<SelectItemWithLogo>;
+export declare type MenuListProps = MenuListComponentProps<SelectItemWithLogo>;
 export interface OptionTemplateWithDataQaProps extends OptionProps<SelectItemWithLogo> {
     dataQa?: string;
     dataQaProps?: string;
@@ -21,6 +18,5 @@ export interface OptionTemplateWithDataQaProps extends OptionProps<SelectItemWit
 export interface SelectWithLogoProps extends SelectProps<SelectItemWithLogo> {
     dataQa?: string;
     dataQaProps?: string;
-    Simplebar: any;
 }
 export declare const SelectWithLogo: React.FC<SelectWithLogoProps>;
