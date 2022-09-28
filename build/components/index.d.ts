@@ -57,5 +57,5 @@ export * from "./ValidatedInput/ValidFieldTextArea";
 export * from "./ValidatedInput/ValidMultiSelect";
 export * from "./ValidatedInput/ValidSelect";
 export * from "./ValidatedInput/ValidSelectAsync";
-export * from "./ValidatedInput/ValidMultiCreatableFieldText";
+export * from "./SelectAsync";
 export * from "./SelectWithLogo/SelectWithLogo";

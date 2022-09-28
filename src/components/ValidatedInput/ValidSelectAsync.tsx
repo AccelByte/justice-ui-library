@@ -24,10 +24,6 @@ export interface ValidSelectAsyncProps<OptionType, Group, Additional, isMulti ex
   className?: string;
   dataQa?: string | null;
   helperText?: React.ReactNode;
-  isShowReloadWhileFetchFailed: boolean;
-  reloadMessage?: string;
-  onReload?: () => void;
-  reloaderStatus?: Enum<typeof RELOADSTATUS>;
 }
 
 export type ValidSelectAsyncLoadOptions<OptionType> = LoadOptions<OptionType, unknown, unknown>;
@@ -42,19 +38,12 @@ export const ValidSelectAsync = <OptionType, Group, Additional, isMulti extends 
   className,
   dataQa,
   helperText,
-  isShowReloadWhileFetchFailed,
-  reloadMessage,
-  onReload,
-  reloaderStatus,
   ...props
 }: ValidSelectAsyncProps<OptionType, Group, Additional, isMulti>) => (
   <div className={classNames("valid-select-input", "valid-select-async-input", className)} data-qa-id={dataQa}>
     {!!label && <FieldLabel label={label} optionalLabel={optionalLabel} isRequired={isRequired} tooltip={tooltip} />}
     <AsyncPaginate {...props} className="styled-atlaskit-select" classNamePrefix={"styled-atlaskit-select"} />
     {isInvalid && <FieldErrorMessage message={errMessage} />}
-    {isShowReloadWhileFetchFailed && (
-      <FieldReloadMessage message={reloadMessage} onReload={() => onReload} reloaderStatus={reloaderStatus} />
-    )}
     {helperText && <FieldHelperText message={helperText} />}
   </div>
 );

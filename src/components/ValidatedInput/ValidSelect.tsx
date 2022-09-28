@@ -21,13 +21,9 @@ export interface ValidSelectProps extends SelectProps {
   options: SelectOption[];
   name?: string;
   value: SelectOption | SelectOption[] | string | null;
-  reloaderStatus?: Enum<typeof RELOADSTATUS>;
   errMessage?: string;
   onChange: (option: SelectOption | SelectOption[]) => void;
-  reloadMessage?: string;
-  onReload?: () => void;
   optionalLabel?: string;
-  isShowReloadWhileFetchFailed?: boolean;
   isInvalid?: boolean;
   isDisabled?: boolean;
   dataQa?: string | null;
@@ -61,10 +57,6 @@ export const ValidSelect = ({
   className,
   dataQa,
   helperText,
-  isShowReloadWhileFetchFailed,
-  reloadMessage,
-  onReload,
-  reloaderStatus,
   ...props
 }: ValidSelectProps) => (
   <div className={classNames("valid-select-input", className)} data-qa-id={dataQa}>
@@ -83,9 +75,6 @@ export const ValidSelect = ({
       dataQaProps={selectDataQaProps}
     />
     {isInvalid && <FieldErrorMessage message={errMessage} />}
-    {isShowReloadWhileFetchFailed && (
-      <FieldReloadMessage message={reloadMessage} onReload={() => onReload} reloaderStatus={reloaderStatus} />
-    )}
     {helperText && <FieldHelperText message={helperText} />}
   </div>
 );

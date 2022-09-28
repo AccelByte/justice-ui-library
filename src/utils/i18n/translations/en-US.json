@@ -20,18 +20,5 @@
   "password.strength.level.strong": "Strong",
   "password.strength.level.veryStrong": "Very Strong",
   "password.generateNew": "Generate new password",
-  "modalPage.esc": "Esc",
-  "common.validationErrorMessage.empty": "{{ fieldName }} is required.",
-  "common.validationErrorMessage.lessThanLengthLimit": "Use {{ minLength }} characters or more for {{ fieldName }}",
-  "common.validationErrorMessage.exceedLengthLimit": "Use {{ maxLength }} characters or less for {{ fieldName }}",
-  "common.validationErrorMessage.invalidFormat": "Please provide a valid {{ fieldName }} format.",
-  "common.validationErrorMessage.lessThanMinimumValue": "The value for {{ fieldName }} cannot be less than {{ min }}",
-  "common.validationErrorMessage.exceedMaximumValue": "The value for {{ fieldName }} cannot exceed the limitation ({{ max }})",
-  "common.validationErrorMessage.invalidValue": "The value format for {{ fieldName }} is invalid.",
-  "common.validationErrorMessage.invalidFileExtensions": "Only {{ acceptedFileExtension }} files are allowed",
-  "common.validationErrorMessage.containsDecimal": "Decimal numbers are not allowed.",
-  "common.validationErrorMessage.default": "Unable to validate input, please contact customer service",
-  "common.validationErrorMessage.alreadyUsed": "The {{ fieldName }} is already used. Try to input a new {{ fieldName }}",
-  "common.validationErrorMessage.containsForbiddenWords": "{{ fieldName }} contains prohibited word",
-  "common.validationErrorMessage.containsForbiddenWords.email": "Email contains prohibited word or use blocked domain"
+  "modalPage.esc": "Esc"
 }
