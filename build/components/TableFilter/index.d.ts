@@ -1,16 +1,14 @@
 import * as React from "react";
 import "./index.scss";
 import { SelectOption } from "../../types";
-export interface TableFilterProps {
+import { SelectProps } from "../Select";
+export interface TableFilterProps extends Omit<SelectProps, "onChange" | "value" | "isMulti" | "name"> {
     onFilterChange: (option: SelectOption) => void;
-    options: SelectOption[];
     currentValue: SelectOption;
     label?: string;
     tooltip?: string;
     isLarge?: boolean;
-    isDisabled?: boolean;
     customStyle?: React.CSSProperties;
     className?: string;
-    menuPortalTarget?: HTMLElement;
 }
-export declare const TableFilter: ({ options, currentValue, onFilterChange, label, tooltip, isLarge, isDisabled, customStyle, className, menuPortalTarget, }: TableFilterProps) => JSX.Element;
+export declare const TableFilter: ({ currentValue, onFilterChange, label, tooltip, isLarge, customStyle, className, ...props }: TableFilterProps) => JSX.Element;
