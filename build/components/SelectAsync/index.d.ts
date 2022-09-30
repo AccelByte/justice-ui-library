@@ -1,7 +1,7 @@
 /// <reference types="react" />
 import { SelectProps as AkSelectProps } from "@atlaskit/select";
 import { SelectOption } from "../../types";
-import "../Select/index.scss";
+import "./index.scss";
 export declare const reactSelectComponents: import("react-select/src/components").Components;
 export interface SelectAsyncProps extends Omit<AkSelectProps<SelectOption, boolean>, "onChange"> {
     onChange?: (option: SelectOption) => void;

@@ -5,9 +5,9 @@
  */
 import React from "react";
 import { SelectProps as AkSelectProps, AsyncSelect, MenuListComponentProps } from "@atlaskit/select";
-import { components, FormatOptionLabelMeta, OptionTypeBase } from "react-select";
+import { components } from "react-select";
 import { SelectOption } from "../../types";
-import "../Select/index.scss";
+import "./index.scss";
 
 export const reactSelectComponents = components;
 
