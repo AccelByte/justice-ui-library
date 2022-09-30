@@ -10,10 +10,6 @@ import { SelectOption } from "../../types";
 import "../Select/index.scss";
 
 export const reactSelectComponents = components;
-export type ReactSelectFormatOptionLabelMeta<
-  OptionType extends OptionTypeBase,
-  isMulti extends boolean
-> = FormatOptionLabelMeta<OptionType, isMulti>;
 
 export interface SelectAsyncProps extends Omit<AkSelectProps<SelectOption, boolean>, "onChange"> {
   onChange?: (option: SelectOption) => void;
