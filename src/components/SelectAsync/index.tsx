@@ -5,9 +5,15 @@
  */
 import React from "react";
 import { SelectProps as AkSelectProps, AsyncSelect, MenuListComponentProps } from "@atlaskit/select";
-import { components } from "react-select";
+import { components, FormatOptionLabelMeta, OptionTypeBase } from "react-select";
 import { SelectOption } from "../../types";
 import "../Select/index.scss";
+
+export const reactSelectComponents = components;
+export type ReactSelectFormatOptionLabelMeta<
+  OptionType extends OptionTypeBase,
+  isMulti extends boolean
+> = FormatOptionLabelMeta<OptionType, isMulti>;
 
 export interface SelectAsyncProps extends Omit<AkSelectProps<SelectOption, boolean>, "onChange"> {
   onChange?: (option: SelectOption) => void;
