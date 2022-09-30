@@ -9,6 +9,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - component `SelectWithLogo`
 - component `SelectAsync`
 
+## [0.10.5]
+### Added
+- `dataQa` and `dataQaProps` in `TableFilter`
+
 ## [0.10.4]
 ### Added
 - `dataQaProps` for options in `StyledRadioTabVertical`

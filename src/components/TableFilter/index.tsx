@@ -10,46 +10,33 @@ import classNames from "classnames";
 import { SelectOption } from "../../types";
 import { renderToString } from "react-dom/server";
 import { FieldLabel } from "../Form/utility";
-import { Select } from "../Select";
+import { Select, SelectProps } from "../Select";
 
-export interface TableFilterProps {
+export interface TableFilterProps extends Omit<SelectProps, "onChange" | "value" | "isMulti" | "name"> {
   onFilterChange: (option: SelectOption) => void;
-  options: SelectOption[];
   currentValue: SelectOption;
   label?: string;
   tooltip?: string;
   isLarge?: boolean;
-  isDisabled?: boolean;
   customStyle?: React.CSSProperties;
   className?: string;
-  menuPortalTarget?: HTMLElement;
 }
 
 export const TableFilter = ({
-  options,
   currentValue,
   onFilterChange,
   label,
   tooltip,
   isLarge,
-  isDisabled,
   customStyle,
   className,
-  menuPortalTarget,
+  ...props
 }: TableFilterProps) => {
   const dataTip = React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip;
   return (
     <div className={classNames("table-filter", className, { isLarge })} style={customStyle}>
       {!!label && <FieldLabel label={label} tooltip={dataTip} />}
-      <Select
-        options={options}
-        isMulti={false}
-        name="searchType"
-        onChange={onFilterChange}
-        value={currentValue}
-        isDisabled={isDisabled}
-        menuPortalTarget={menuPortalTarget}
-      />
+      <Select isMulti={false} name="searchType" onChange={onFilterChange} value={currentValue} {...props} />
     </div>
   );
 };
