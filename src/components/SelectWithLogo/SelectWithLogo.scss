@@ -1,0 +1,120 @@
+/*!
+ *
+ *  * Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+ *  * This is licensed software from AccelByte Inc, for limitations
+ *  * and restrictions contact your company contract manager.
+ *
+ */
+
+ @import "../../styles/variables.scss";
+
+.custom-control-selectWithLogo {
+  .react-select__value-container {
+    padding: 8px 0 8px 8px;
+    overflow: hidden;
+  }
+  .react-select__single-value {
+    position: static;
+    font-size: $font-size-h5 !important;
+    display: inline;
+  }
+  .custom-singleValue-selectWithLogo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    .icon-with-background {
+      margin-right: 8px;
+    }
+    .custom-singleValue-label {
+      white-space: nowrap;
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    + div {
+      position: absolute;
+    }
+  }
+  .react-select__indicators {
+    max-height: 48px;
+  }
+}
+.custom-singleValue-selectWithLogo {
+  min-height: 19px;
+}
+.custom-menuList-selectWithLogo {
+  .react-select__menu-list {
+    max-height: none !important;
+  }
+  pointer-events: initial !important;
+  background-color: $base-white;
+  div[data-simplebar="init"] {
+    max-height: 364px;
+    display: inherit;
+  }
+  .react-select__group-heading {
+    height: 24px;
+    .custom-groupLabel-selectWithLogo {
+      color: $select-option-group-label;
+      font-size: 12px;
+      padding: 0px 20px;
+    }
+  }
+  .custom-option-selectWithLogo {
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 48px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    background: $base-white;
+    overflow: hidden;
+    padding: 8px 20px 8px 20px;
+    &.react-select__option--isFocused {
+      background-color: $input-backgroundColor--hovered;
+    }
+    &.react-select__option--isDisabled {
+      background-color: $input-backgroundColor--disabled;
+    }
+    > div {
+      width: 100%;
+    }
+    .optionWithLogo {
+      display: flex;
+      align-items: center;
+      height: 32px;
+      .icon-with-background {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+      }
+      .optionLabel {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+        height: 24px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        &.selected {
+          position: relative;
+          padding-right: 18px;
+        }
+        div {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          box-sizing: border-box;
+        }
+        i {
+          color: $color--accent;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}

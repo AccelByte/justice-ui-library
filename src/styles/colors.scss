@@ -157,6 +157,7 @@ $tip-backgroundColor--error: $color--error--secondary;
 
 // Input
 $input-backgroundColor: $base-white;
+$input-backgroundColor--disabled: $base-10;
 $input-backgroundColor--hovered: $base-10;
 $input-color--placeholder: $base-40;
 $input-borderColor: $base-40;
@@ -211,3 +212,6 @@ $banner-backgroundColor--info: $color--info--secondary;
 $banner-backgroundColor--success: $color--success--secondary;
 $banner-backgroundColor--warning: $color--warning--secondary;
 $banner-backgroundColor--error: $color--error--secondary;
+
+// Input Select
+$select-option-group-label: $base-100;

@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.11.0]
+### Added
+- component `SelectWithLogo`
+- component `SelectAsync`
+
 ## [0.10.5]
 ### Added
 - `dataQa` and `dataQaProps` in `TableFilter`
@@ -127,7 +132,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [0.6.3]
 ### Refactored
-- `ValidSelect` allow array of SelectOption as onChange argument type 
+- `ValidSelect` allow array of SelectOption as onChange argument type
 
 ## [0.6.2]
 ### Fixed
@@ -210,7 +215,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ### Refactored
 - Adjust `Button` styling according to the design
 - Change the imported font family url
- 
+
 ## [0.4.2]
 ### Added
 - `ValidSelectAsync` add `helperText` props
@@ -228,7 +233,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Change the style of selected options in `ValidSelect` with multiple options, the background color changed to blue (`$brand-100`) and the text color to white
 
 ### Added
-- `onClick` prop for `Checkbox` component 
+- `onClick` prop for `Checkbox` component
 
 ## [0.3.0]
 ### Added

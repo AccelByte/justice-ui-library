@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Enum, SelectOption } from "../../types";
+import { SelectOption } from "../../types";
 import { SelectProps } from "..";
 import "./ValidSelect.scss";
 export declare const RELOADSTATUS: Readonly<{
@@ -13,13 +13,9 @@ export interface ValidSelectProps extends SelectProps {
     options: SelectOption[];
     name?: string;
     value: SelectOption | SelectOption[] | string | null;
-    reloaderStatus?: Enum<typeof RELOADSTATUS>;
     errMessage?: string;
     onChange: (option: SelectOption | SelectOption[]) => void;
-    reloadMessage?: string;
-    onReload?: () => void;
     optionalLabel?: string;
-    isShowReloadWhileFetchFailed?: boolean;
     isInvalid?: boolean;
     isDisabled?: boolean;
     dataQa?: string | null;
