@@ -115,8 +115,8 @@ const renderOptionLabelWithLogo = (
 };
 
 export interface OptionTemplateWithDataQaProps extends OptionProps<SelectItemWithLogo> {
-  dataQa?: string;
-  dataQaProps?: string;
+  dataQa?: string | null;
+  dataQaProps?: (props: OptionTemplateWithDataQaProps) => string | null;
 }
 
 const OptionTemplateWithDataQa = (props: OptionTemplateWithDataQaProps) => {
@@ -150,7 +150,7 @@ const OptionTemplateWithDataQa = (props: OptionTemplateWithDataQaProps) => {
       {...innerProps}
       ref={innerRef}
       data-qa-id={dataQa}
-      data-qa-props={dataQaProps}
+      data-qa-props={dataQaProps ? dataQaProps(props) : `value:${props.data.value}`}
       className={classNames(
         "custom-option-selectWithLogo",
         "react-select__option",
@@ -170,8 +170,8 @@ const OptionTemplateWithDataQa = (props: OptionTemplateWithDataQaProps) => {
 };
 
 export interface SelectWithLogoProps extends SelectProps<SelectItemWithLogo> {
-  dataQa?: string;
-  dataQaProps?: string;
+  dataQa?: string | null;
+  dataQaProps?: (props: OptionTemplateWithDataQaProps) => string | null;
 }
 
 export const SelectWithLogo: React.FC<SelectWithLogoProps> = (props) => {

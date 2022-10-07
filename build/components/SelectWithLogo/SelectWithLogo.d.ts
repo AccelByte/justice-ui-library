@@ -12,11 +12,11 @@ export interface SelectItemWithLogo {
 export declare type GroupedSelectItemWithLogo = GroupTypeBase<SelectItemWithLogo>;
 export declare type MenuListProps = MenuListComponentProps<SelectItemWithLogo>;
 export interface OptionTemplateWithDataQaProps extends OptionProps<SelectItemWithLogo> {
-    dataQa?: string;
-    dataQaProps?: string;
+    dataQa?: string | null;
+    dataQaProps?: (props: OptionTemplateWithDataQaProps) => string | null;
 }
 export interface SelectWithLogoProps extends SelectProps<SelectItemWithLogo> {
-    dataQa?: string;
-    dataQaProps?: string;
+    dataQa?: string | null;
+    dataQaProps?: (props: OptionTemplateWithDataQaProps) => string | null;
 }
 export declare const SelectWithLogo: React.FC<SelectWithLogoProps>;
