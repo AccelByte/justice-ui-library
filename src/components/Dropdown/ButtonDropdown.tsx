@@ -25,7 +25,7 @@ export const ButtonDropdown = ({
   children,
   isDisabled,
   dataQa,
-  buttonAppearance = "primary",
+  buttonAppearance,
   buttonClassName,
   ...props
 }: ButtonDropdownProps) => {
