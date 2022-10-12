@@ -6,6 +6,7 @@ interface PaginationLimit {
     value: SelectOption;
     options: SelectOption[];
     onChange: (option: SelectOption) => void;
+    dataQa?: string | null;
 }
 export interface PaginationProps {
     paging: {

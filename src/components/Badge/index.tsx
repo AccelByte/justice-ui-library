@@ -18,6 +18,7 @@ export interface BadgeProps {
   size?: keyof typeof BADGE_SIZE;
   className?: string;
   isSemibold?: boolean;
+  dataQa?: { id?: string | null; props?: string | null };
 }
 
 export const Badge = ({
@@ -27,9 +28,12 @@ export const Badge = ({
   type = "BASIC",
   size = "SMALL",
   isSemibold = true,
+  dataQa,
 }: BadgeProps) => {
   return (
     <span
+      data-qa-id={dataQa?.id}
+      data-qa-props={dataQa?.props}
       className={classNames(
         "badge-container",
         customClassName,

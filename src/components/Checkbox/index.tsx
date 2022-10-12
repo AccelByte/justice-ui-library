@@ -21,8 +21,10 @@ export interface CheckboxProps {
   helperText?: string;
   tooltip?: string;
   dataQa?: string | null;
+  dataQaProps?: string | null;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onClick?: () => void;
+  className?: string;
 }
 
 export const Checkbox = ({
@@ -33,12 +35,18 @@ export const Checkbox = ({
   isDisabled,
   value,
   dataQa,
+  dataQaProps,
+  className,
   onChange,
   onClick,
 }: CheckboxProps) => {
   const dataTip = React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip;
   return (
-    <div className={classNames("styled-checkbox", { isChecked, isDisabled })} data-qa-id={dataQa}>
+    <div
+      className={classNames("styled-checkbox", className, { isChecked, isDisabled })}
+      data-qa-id={dataQa}
+      data-qa-props={dataQaProps}
+    >
       <label className="checkbox-label">
         <input
           className="styled-checkbox__input"

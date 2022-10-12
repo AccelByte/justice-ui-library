@@ -25,5 +25,9 @@ export interface BadgeProps {
     size?: keyof typeof BADGE_SIZE;
     className?: string;
     isSemibold?: boolean;
+    dataQa?: {
+        id?: string | null;
+        props?: string | null;
+    };
 }
-export declare const Badge: ({ text, appearance, className: customClassName, type, size, isSemibold, }: BadgeProps) => JSX.Element;
+export declare const Badge: ({ text, appearance, className: customClassName, type, size, isSemibold, dataQa, }: BadgeProps) => JSX.Element;
