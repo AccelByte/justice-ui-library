@@ -9,7 +9,10 @@ export interface AccordionProps {
     /** Custom class name placed in the outermost wrapper of the component */
     className?: string;
     /** A testId prop is provided for specified elements, which is a unique string that appears as a data attribute `data-qa-id` in the rendered code, serving as a hook for automated tests.  */
-    dataQa?: string | null;
+    dataQa?: {
+        id?: string | null;
+        props?: string | null;
+    };
     /** If true, remove padding from .accordionContent */
     noPadding?: boolean;
     /** To disable toggle upon clicking the accordion  */
