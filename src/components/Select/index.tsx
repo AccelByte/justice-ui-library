@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+ * Copyright (c) 2021-2022 AccelByte Inc. All Rights Reserved.
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
  */
@@ -7,6 +7,7 @@
 import { default as AkSelect, SelectProps as AkSelectProps } from "@atlaskit/select";
 import { SelectOption } from "../../types";
 import "./index.scss";
+import { DropdownIndicator, MultiValueLabel } from "./reactSelectComponents";
 
 export interface SelectProps extends Omit<AkSelectProps<SelectOption, boolean>, "onChange"> {
   onChange?: (option: SelectOption) => void;
@@ -14,15 +15,16 @@ export interface SelectProps extends Omit<AkSelectProps<SelectOption, boolean>, 
   dataQaProps?: string | null;
 }
 
-const DropdownIndicator = () => <i className="icon-chevron-down" />;
-
 export const Select = ({ isMulti = false, onChange, dataQa = null, dataQaProps = null, ...props }: SelectProps) => {
   const renderSelect = () => {
     return (
       <AkSelect
         className="styled-atlaskit-select"
         classNamePrefix="styled-atlaskit-select"
-        components={{ DropdownIndicator }}
+        components={{
+          DropdownIndicator,
+          MultiValueLabel: ({ ...multiValueLabelProps }) => MultiValueLabel(multiValueLabelProps),
+        }}
         isMulti={isMulti}
         onChange={onChange ? (item) => onChange(item as SelectOption) : undefined}
         {...props}

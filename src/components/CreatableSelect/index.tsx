@@ -8,8 +8,7 @@ import { CreatableSelect as AkCreatableSelect } from "@atlaskit/select";
 import { SelectOption } from "../../types";
 import "./index.scss";
 import { SelectProps } from "../Select";
-
-const DropdownIndicator = () => <i className="icon-chevron-down" />;
+import { DropdownIndicator } from "../Select/reactSelectComponents";
 
 export const CreatableSelect = ({ isMulti = false, onChange, ...props }: SelectProps) => {
   return (

@@ -16,7 +16,7 @@ interface Props {
   placeholder?: string;
   options: SelectOption[];
   errMessage?: string;
-  onChange: (option: SelectOption) => void;
+  onChange: (option: SelectOption[]) => void;
   optionalLabel?: string;
   isInvalid?: boolean;
   isDisabled?: boolean;
@@ -45,13 +45,12 @@ export const ValidMultiSelect = ({
   <>
     {!!label && <FieldLabel label={label} optionalLabel={optionalLabel} isRequired={isRequired} tooltip={tooltip} />}
     <Select
-      className="react-select"
       isDisabled={isDisabled}
-      classNamePrefix="select"
       options={options}
       isMulti
       isSearchable={true}
       placeholder={placeholder}
+      // @ts-ignore
       onChange={onChange}
       value={value}
       menuPlacement="auto"
