@@ -5,7 +5,7 @@ interface Props {
     placeholder?: string;
     options: SelectOption[];
     errMessage?: string;
-    onChange: (option: SelectOption) => void;
+    onChange: (option: SelectOption[]) => void;
     optionalLabel?: string;
     isInvalid?: boolean;
     isDisabled?: boolean;

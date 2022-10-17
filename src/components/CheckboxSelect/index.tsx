@@ -8,6 +8,7 @@ import { CheckboxSelect as AkSelect, SelectProps } from "@atlaskit/select";
 import classNames from "classnames";
 import { ReactNode } from "react";
 import { SelectOption } from "../../types";
+import { DropdownIndicator } from "../Select/reactSelectComponents";
 import styles from "./index.module.scss";
 
 export interface CheckboxSelectProps
@@ -32,8 +33,6 @@ export interface CheckboxSelectProps
   isValueHidden?: boolean;
   replacementText?: ReactNode;
 }
-
-const DropdownIndicator = () => <i className="icon-chevron-down" />;
 
 export const CheckboxSelect = ({
   onChange,

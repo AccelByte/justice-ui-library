@@ -7,6 +7,7 @@ import React from "react";
 import { SelectProps as AkSelectProps, AsyncSelect, MenuListComponentProps } from "@atlaskit/select";
 import { components } from "react-select";
 import { SelectOption } from "../../types";
+import { DropdownIndicator } from "../Select/reactSelectComponents";
 import "./index.scss";
 
 export const reactSelectComponents = components;
@@ -18,8 +19,6 @@ export interface SelectAsyncProps extends Omit<AkSelectProps<SelectOption, boole
   loadOptions?: (keyword: string) => Promise<SelectOption[]>;
   onLoadMoreOptions?: (keyword: string, offset: number) => Promise<SelectOption[]>;
 }
-
-const DropdownIndicator = () => <i className="icon-chevron-down" />;
 
 const MenuList = (props: MenuListComponentProps<SelectOption>) => (
   <div className="styled-atlaskit-select__menu">
