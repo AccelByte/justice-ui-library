@@ -8,6 +8,12 @@
 
  @import "../../styles/variables.scss";
 
+ .react-select {
+  & > div {
+    font-family: $font-family-primary;
+  }
+ }
+
 .custom-control-selectWithLogo {
   .react-select__value-container {
     padding: 8px 0 8px 8px;
