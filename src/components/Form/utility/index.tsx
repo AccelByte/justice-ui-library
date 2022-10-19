@@ -15,7 +15,7 @@ import { MAX_SHORT_TEXT_LENGTH } from "../../../constants";
 import "../../../styles/icons/fa_icons.css";
 import DOMPurify from "dompurify";
 
-export const FieldErrorMessage = ({ message = "", dataQa }: { message?: string | null; dataQa?: string }) => (
+export const FieldErrorMessage = ({ message = "", dataQa = "common_form_field_error" }: { message?: string | null; dataQa?: string }) => (
   <span className="field-error-message" data-qa-id={dataQa && dataQa}>
     {message}
   </span>
