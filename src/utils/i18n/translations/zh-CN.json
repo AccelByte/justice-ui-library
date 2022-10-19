@@ -5,6 +5,7 @@
   "common.refreshPage": "刷新页面",
   "common.more": "更多",
   "common.loading": "加载",
+  "common.select.noResults": "没有结果",
   "dynamicTablePagination.perPage.prefix": "显示",
   "dynamicTablePagination.perPage.suffix": "每页记录",
   "pagination.prev": "上一步",

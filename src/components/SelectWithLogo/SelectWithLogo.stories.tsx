@@ -28,7 +28,7 @@ const Template: Story<SelectWithLogoProps> = (args) => {
 export const Example = Template.bind({});
 Example.args = {
   value: {
-    label: "Value 1",
+    label: "Accelbyte",
     value: "value1",
     logo: (
       <img
@@ -42,7 +42,7 @@ Example.args = {
       label: "group1",
       options: [
         {
-          label: "Value 1",
+          label: "Accelbyte",
           value: "value1",
           logo: (
             <img
@@ -56,8 +56,8 @@ Example.args = {
     {
       label: "group2",
       options: Array(50).fill("").map((_, index) => ({
-            label: `Value ${index + 2}`,
-            value: `value${index + 2}`,
+            label: `Value ${index + 1}`,
+            value: `value${index + 1}`,
             logo: (
               <img
                 src="https://2459647.fs1.hubspotusercontent-na1.net/hubfs/2459647/aa758ae3-8bbf-4db5-8fb7-24fc68692c5d.png"

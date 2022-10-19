@@ -5,6 +5,7 @@
   "common.refreshPage": "Refresh Page",
   "common.more": "More",
   "common.loading": "Loading",
+  "common.select.noResults": "No results",
   "dynamicTablePagination.perPage.prefix": "Show",
   "dynamicTablePagination.perPage.suffix": "records per page",
   "pagination.prev": "Prev",
