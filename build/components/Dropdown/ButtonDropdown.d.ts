@@ -1,8 +1,8 @@
 /// <reference types="react" />
 import "./ButtonDropdown.scss";
 import { DropdownMenuProps } from "../Dropdown";
-import { ButtonAppearance } from "../Button";
-declare type DropdownAppearance = Extract<ButtonAppearance, "subtle" | "primary">;
+import { ButtonAppearances } from "@atlaskit/button";
+declare type DropdownAppearance = Extract<ButtonAppearances, "subtle" | "primary"> | "outline";
 export interface ButtonDropdownProps extends Partial<Omit<DropdownMenuProps, "triggerType">> {
     /** Set if the dropdown menu button is disabled. */
     isDisabled?: boolean;

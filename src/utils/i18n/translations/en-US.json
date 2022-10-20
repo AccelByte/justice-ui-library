@@ -6,6 +6,7 @@
   "common.more": "More",
   "common.loading": "Loading",
   "common.select.noResults": "No results",
+  "common.noOptions": "No Options",
   "dynamicTablePagination.perPage.prefix": "Show",
   "dynamicTablePagination.perPage.suffix": "records per page",
   "pagination.prev": "Prev",

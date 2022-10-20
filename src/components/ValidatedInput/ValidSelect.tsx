@@ -35,6 +35,7 @@ export interface ValidSelectProps extends SelectProps {
   isMulti?: boolean;
   className?: string;
   helperText?: React.ReactNode;
+  noOptionsMessage?: ((obj: { inputValue: string }) => string | null) | undefined;
 }
 
 export const ValidSelect = ({
