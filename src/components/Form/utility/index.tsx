@@ -15,7 +15,13 @@ import { MAX_SHORT_TEXT_LENGTH } from "../../../constants";
 import "../../../styles/icons/fa_icons.css";
 import DOMPurify from "dompurify";
 
-export const FieldErrorMessage = ({ message = "", dataQa = "common_form_field_error" }: { message?: string | null; dataQa?: string }) => (
+export const FieldErrorMessage = ({
+  message = "",
+  dataQa = "common_form_field_error",
+}: {
+  message?: string | null;
+  dataQa?: string;
+}) => (
   <span className="field-error-message" data-qa-id={dataQa && dataQa}>
     {message}
   </span>
@@ -28,6 +34,7 @@ export interface FieldLabelProps {
   tooltip?: string;
   tooltipRef?: React.RefObject<HTMLElement>;
   isRequired?: boolean;
+  className?: string;
 }
 
 export const FieldLabel = ({
@@ -37,8 +44,9 @@ export const FieldLabel = ({
   optionalLabel = ` ${translation("common.optionalFieldLabel")}`,
   tooltip,
   tooltipRef,
+  className,
 }: FieldLabelProps) => (
-  <label className={classNames("field-label", { withTooltip: tooltip })}>
+  <label className={classNames("field-label", className, { withTooltip: tooltip })}>
     <div>
       {label}
       {!isRequired && optionalLabel}

@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.11.7]
+### Added
+- `label` and `tooltip` props in `DateTimePicker`
+- `className` prop in `FieldLabel`
+
+### Refactored
+- Increase `Tooltip`'s z-index
+
+### Fixed
+- Text color in `DateTimePicker`
+- Row height in `DynamicTable`
+- Font size of `EmptyResultsWithIcon`'s title
+- Text color of `EmptyResultsWithIcon`'s description
+- Text color and font size in `NoResultTip`
+- Placeholder color in text input components
+
 ## [0.11.6]
 ### Added
 - English & Chinese translation for `no result` in `SelectWithLogo` component

@@ -62,6 +62,7 @@
     white-space: pre;
     width: fit-content;
     height: fit-content;
+    z-index: 1;
 
     &.position-right {
       transform: translateX(-8%);

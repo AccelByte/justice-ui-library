@@ -8,6 +8,8 @@ export interface DateTimePickerProps extends DatetimepickerProps {
     errorMessage?: string;
     className?: string;
     isDisabled?: boolean;
+    label?: string;
+    tooltip?: string;
 }
 declare class DateTimePicker extends React.Component<DateTimePickerProps> {
     renderInput: (props: any, openCalendar: any) => JSX.Element;

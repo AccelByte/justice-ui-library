@@ -22,11 +22,13 @@
   }
 }
 .emptyResultsWithIconTitle {
+  margin-top: 8px;
   line-height: 32px;
   font-weight: 500;
-  font-size: $font-size-h3;
+  font-size: $font-size-h4;
 }
 .emptyResultsWithIconDescription {
   font-size: $font-size-h6;
+  color: $base-60;
   margin-bottom: 16px;
 }

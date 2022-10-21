@@ -8,7 +8,7 @@ import * as React from "react";
 import { DatetimepickerProps } from "react-datetime";
 import { default as classNames } from "classnames";
 import Datetime from "react-datetime";
-import { FieldErrorMessage } from "../Form/utility";
+import { FieldErrorMessage, FieldLabel } from "../Form/utility";
 import "react-datetime/css/react-datetime.css";
 import "./index.scss";
 import "../../styles/icons/fa_icons.css";
@@ -18,6 +18,8 @@ export interface DateTimePickerProps extends DatetimepickerProps {
   errorMessage?: string;
   className?: string;
   isDisabled?: boolean;
+  label?: string;
+  tooltip?: string;
 }
 
 class DateTimePicker extends React.Component<DateTimePickerProps> {
@@ -37,9 +39,10 @@ class DateTimePicker extends React.Component<DateTimePickerProps> {
   };
 
   render() {
-    const { className, dataQa, errorMessage, ...dateTimePickerProps } = this.props;
+    const { className, dataQa, errorMessage, label = "", tooltip, ...dateTimePickerProps } = this.props;
     return (
       <div className={classNames("datepicker__container", className)} data-qa-id={dataQa}>
+        {label && <FieldLabel {...{ label, tooltip }} />}
         <Datetime {...dateTimePickerProps} {...{ renderInput: this.renderInput }} />
         {errorMessage && <FieldErrorMessage message={errorMessage} />}
       </div>

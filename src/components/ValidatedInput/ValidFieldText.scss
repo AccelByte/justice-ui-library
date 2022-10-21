@@ -57,6 +57,10 @@
 
     input {
       font-size: $font-size-h5;
+
+      &::placeholder {
+        color: $base-40;
+      }
     }
 
     .rightIcon {

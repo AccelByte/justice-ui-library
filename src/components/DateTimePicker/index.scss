@@ -27,6 +27,7 @@
     padding: 0.375rem 0.75rem;
     font-family: $font-family-primary;
     font-size: 16px;
+    color: $base-120;
     &:focus {
       outline: none;
     }
@@ -36,6 +37,9 @@
     &.form-control:focus {
       background-color: transparent;
       box-shadow: none;
+    }
+    &::placeholder {
+      color: $base-40;
     }
   }
   i {
@@ -58,6 +62,11 @@
 
 .datepicker__container {
   width: 100%;
+
+  .field-label {
+    padding-bottom: 4px;
+  }
+
   .rdtPicker {
     font-family: $font-family-primary;
     font-size: $font-size-h6;
