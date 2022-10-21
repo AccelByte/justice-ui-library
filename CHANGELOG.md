@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [0.11.7]
 ### Added
+- Support `buttonAppearance` with `outline` in `ButtonDropdown`
+- English & Chinese translation for `noOptionsMessage` in `Select` and `ValidSelectAsync`
 - `label` and `tooltip` props in `DateTimePicker`
 - `className` prop in `FieldLabel`
 
