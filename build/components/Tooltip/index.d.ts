@@ -18,5 +18,6 @@ export interface TooltipProps {
     isTooltipShownOnOverflowOnly?: boolean;
     isPositionFixed?: boolean;
     position?: Enum<typeof TOOLTIP_POSITION>;
+    shouldFitContainer?: boolean;
 }
-export declare const Tooltip: ({ content, children, noClipboard, positionRight, narrow, medium, isBoxed, isTooltipShownOnOverflowOnly, onCopySuccess, isPositionFixed, position, }: TooltipProps) => JSX.Element;
+export declare const Tooltip: ({ content, children, noClipboard, positionRight, narrow, medium, isBoxed, isTooltipShownOnOverflowOnly, onCopySuccess, isPositionFixed, position, shouldFitContainer, }: TooltipProps) => JSX.Element;

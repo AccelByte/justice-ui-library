@@ -12,6 +12,14 @@
   font-family: $font-family-primary;
   width: fit-content;
 
+  &.full-width {
+    width: 100%;
+
+    .common-tooltip-children {
+      max-width: 100%;
+    }
+  }
+
   .common-tooltip-children {
     display: block;
     box-sizing: border-box;
@@ -76,6 +84,7 @@
       border-style: solid;
       transform: translateX(-50%);
     }
+
     &.top {
       &::after {
         border-width: 7px 5px 0 5px;
@@ -84,9 +93,11 @@
         left: 50%;
       }
     }
+
     &.right {
       left: 100%;
       top: 5%;
+
       &::after {
         border-width: 5px 7px 5px 0;
         border-color: transparent $tooltip-backgroundColor transparent transparent;
@@ -105,9 +116,11 @@
       white-space: normal;
       width: 200px;
     }
+
     &-hidden {
       display: none !important;
     }
+
     &.fixed {
       position: fixed;
     }
@@ -117,6 +130,7 @@
     .common-tooltip-content {
       display: block;
     }
+
     .common-tooltip-children {
       .clipboard {
         display: inline-block;
