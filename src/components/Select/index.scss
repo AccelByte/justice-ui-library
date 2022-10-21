@@ -50,6 +50,9 @@
     color: $color--text--primary;
     height: 36px;
     line-height: 24px;
+    &--is-disabled {
+      color: $base-45 !important;
+    }
     &.styled-atlaskit-select__option--is-focused {
       background-color: $select-option--hovered;
       box-shadow: none;
