@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.scss";
 import "../../../styles/icons/fa_icons.css";
-export declare const FieldErrorMessage: ({ message, dataQa }: {
+export declare const FieldErrorMessage: ({ message, dataQa, }: {
     message?: string | null | undefined;
     dataQa?: string | undefined;
 }) => JSX.Element;
@@ -12,8 +12,9 @@ export interface FieldLabelProps {
     tooltip?: string;
     tooltipRef?: React.RefObject<HTMLElement>;
     isRequired?: boolean;
+    className?: string;
 }
-export declare const FieldLabel: ({ label, children, isRequired, optionalLabel, tooltip, tooltipRef, }: FieldLabelProps) => JSX.Element;
+export declare const FieldLabel: ({ label, children, isRequired, optionalLabel, tooltip, tooltipRef, className, }: FieldLabelProps) => JSX.Element;
 export interface FieldCounterProps {
     value: string | null;
     maxLength: number;

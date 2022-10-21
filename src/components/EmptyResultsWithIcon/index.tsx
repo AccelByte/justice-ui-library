@@ -17,13 +17,22 @@ export interface EmptyResultsProps {
   dataQa?: string | null;
   /** If `true`, it gives more vertical padding */
   isTaller?: boolean;
+  className?: string;
 }
 
-export const EmptyResultsWithIcon = ({ imgSrc, title, description, children, isTaller, dataQa }: EmptyResultsProps) => {
+export const EmptyResultsWithIcon = ({
+  imgSrc,
+  title,
+  description,
+  children,
+  isTaller,
+  dataQa,
+  className,
+}: EmptyResultsProps) => {
   return (
-    <div className={classNames("emptyResultsWithIcon", { taller: isTaller })} data-qa-id={dataQa}>
+    <div className={classNames("emptyResultsWithIcon", className, { taller: isTaller })} data-qa-id={dataQa}>
       <img src={imgSrc} />
-      <div className="emptyResultsWithIconTitle mt-2">{title}</div>
+      <div className="emptyResultsWithIconTitle">{title}</div>
       {description && <div className="emptyResultsWithIconDescription">{description}</div>}
       {children && <div>{children}</div>}
     </div>
