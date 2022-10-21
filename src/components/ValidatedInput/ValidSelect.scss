@@ -12,3 +12,11 @@
     padding-bottom: 4px;
   }
 }
+
+.styled-atlaskit-select {
+  &__option {
+    &--is-disabled {
+      color: $base-45 !important;
+    }
+  }
+}
