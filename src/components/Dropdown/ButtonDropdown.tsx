@@ -7,9 +7,9 @@
 import classNames from "classnames";
 import "./ButtonDropdown.scss";
 import { DropdownMenu, DropdownMenuProps } from "../Dropdown";
-import { ButtonAppearance } from "../Button";
+import { ButtonAppearances } from "@atlaskit/button";
 
-type DropdownAppearance = Extract<ButtonAppearance, "subtle" | "primary">;
+type DropdownAppearance = Extract<ButtonAppearances, "subtle" | "primary"> | "outline";
 
 export interface ButtonDropdownProps extends Partial<Omit<DropdownMenuProps, "triggerType">> {
   /** Set if the dropdown menu button is disabled. */
@@ -29,13 +29,18 @@ export const ButtonDropdown = ({
   buttonClassName,
   ...props
 }: ButtonDropdownProps) => {
+  const isOutline = buttonAppearance === "outline";
+  const appearance = isOutline ? undefined : buttonAppearance;
   const renderDropdownMenu = () => (
     <DropdownMenu
       triggerType="button"
       triggerButtonProps={{
         isDisabled,
-        appearance: buttonAppearance,
-        className: classNames("dropdownMenu", buttonClassName, buttonAppearance),
+        appearance,
+        className: classNames("dropdownMenu", {
+          "styled-atlaskit-button": isOutline,
+          [buttonAppearance as string]: isOutline,
+        }, buttonClassName, buttonAppearance),
       }}
       {...props}
     >

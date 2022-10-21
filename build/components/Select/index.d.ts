@@ -7,4 +7,4 @@ export interface SelectProps extends Omit<AkSelectProps<SelectOption, boolean>, 
     dataQa?: string | null;
     dataQaProps?: string | null;
 }
-export declare const Select: ({ isMulti, onChange, dataQa, dataQaProps, ...props }: SelectProps) => JSX.Element;
+export declare const Select: ({ isMulti, onChange, dataQa, dataQaProps, noOptionsMessage, ...props }: SelectProps) => JSX.Element;

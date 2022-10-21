@@ -6,8 +6,9 @@
 
 import { default as AkSelect, SelectProps as AkSelectProps } from "@atlaskit/select";
 import { SelectOption } from "../../types";
-import "./index.scss";
 import { DropdownIndicator, MultiValueLabel } from "./reactSelectComponents";
+import { translation } from "../../utils/i18n";
+import "./index.scss";
 
 export interface SelectProps extends Omit<AkSelectProps<SelectOption, boolean>, "onChange"> {
   onChange?: (option: SelectOption) => void;
@@ -15,12 +16,13 @@ export interface SelectProps extends Omit<AkSelectProps<SelectOption, boolean>, 
   dataQaProps?: string | null;
 }
 
-export const Select = ({ isMulti = false, onChange, dataQa = null, dataQaProps = null, ...props }: SelectProps) => {
+export const Select = ({ isMulti = false, onChange, dataQa = null, dataQaProps = null, noOptionsMessage = () => translation("common.select.noResults"), ...props }: SelectProps) => {
   const renderSelect = () => {
     return (
       <AkSelect
         className="styled-atlaskit-select"
         classNamePrefix="styled-atlaskit-select"
+        noOptionsMessage={noOptionsMessage}
         components={{
           DropdownIndicator,
           MultiValueLabel: ({ ...multiValueLabelProps }) => MultiValueLabel(multiValueLabelProps),

@@ -24,6 +24,16 @@ div[class|="Droplist__Trigger"] {
       }
     }
 
+    &.styled-atlaskit-button:not(:disabled).outline {
+      &:hover {
+        background-color: $brand-10;
+      }
+
+      &:active {
+        background-color: $brand-40;
+      }
+    }
+
     &:disabled {
       background-color: $base-white;
 
@@ -32,7 +42,7 @@ div[class|="Droplist__Trigger"] {
       }
     }
 
-    &[aria-expanded="true"] {
+    &:not(.outline)[aria-expanded="true"] {
       background-color: $brand-80;
 
       &:hover {
