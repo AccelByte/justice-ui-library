@@ -26,6 +26,7 @@ export interface TooltipProps {
   isTooltipShownOnOverflowOnly?: boolean;
   isPositionFixed?: boolean;
   position?: Enum<typeof TOOLTIP_POSITION>;
+  shouldFitContainer?: boolean;
 }
 
 const HIDDEN_TOOLTIP_CLASSNAME = "common-tooltip-content-hidden";
@@ -42,6 +43,7 @@ export const Tooltip = ({
   onCopySuccess,
   isPositionFixed = false,
   position = TOOLTIP_POSITION.top,
+  shouldFitContainer = false,
 }: TooltipProps) => {
   const tooltipChildrenRef = React.useRef<HTMLElement>(null);
   const tooltipContentRef = React.useRef<HTMLSpanElement>(null);
@@ -94,7 +96,7 @@ export const Tooltip = ({
   }, [isPositionFixed]);
 
   return (
-    <div className="common-tooltip">
+    <div className={classNames("common-tooltip", { "full-width": shouldFitContainer })}>
       <span
         ref={tooltipContentRef}
         className={classNames("common-tooltip-content", {

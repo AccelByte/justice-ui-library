@@ -14,7 +14,7 @@ export default {
 } as Meta;
 
 const Template: Story<TooltipProps> = (args) => (
-  <div style={{ marginTop: 30 }}>
+  <div style={{ marginTop: 30, width: 300 }}>
     <Tooltip {...args} />
   </div>
 );
@@ -24,6 +24,6 @@ Default.args = {
   content: "Text",
   isTooltipShownOnOverflowOnly: false,
   positionRight: true,
-  children: "Try hover this text",
+  children: "Try hover this looooooooooooooooooooong text",
   position: TOOLTIP_POSITION.top,
 };
