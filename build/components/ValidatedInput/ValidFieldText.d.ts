@@ -4,7 +4,7 @@ import "./ValidFieldText.scss";
 import { Placement } from "@atlaskit/inline-dialog/types";
 import { InlinePopoverType } from "../InlinePopover";
 export declare class Input extends FieldText {
-    componentWillReceiveProps(nextProps: any, nextContext: any): void;
+    componentWillReceiveProps(nextProps: any): void;
 }
 export interface ValidFieldTextProps extends Pick<React.InputHTMLAttributes<HTMLInputElement>, "maxLength" | "placeholder" | "disabled" | "onBlur" | "className"> {
     onKeyDown?: (event: React.FormEvent<HTMLInputElement>) => void;
@@ -17,7 +17,7 @@ export interface ValidFieldTextProps extends Pick<React.InputHTMLAttributes<HTML
     optionalLabel?: string;
     isLabelHidden?: boolean;
     isInvalid?: boolean;
-    type?: "number" | "text" | "password";
+    type?: "number" | "text" | "password" | "tel";
     min?: number;
     max?: number;
     helperText?: React.ReactNode;
