@@ -15,7 +15,7 @@ import { InlinePopover, InlinePopoverType } from "../InlinePopover";
 import { isForbiddenKey } from "../../utils";
 
 export class Input extends FieldText {
-  componentWillReceiveProps(nextProps: any, nextContext: any) {
+  componentWillReceiveProps(nextProps: any) {
     const isValueSame = this.props.value === nextProps.value;
     if (isValueSame) {
       return;
@@ -41,7 +41,7 @@ export interface ValidFieldTextProps
   optionalLabel?: string;
   isLabelHidden?: boolean;
   isInvalid?: boolean;
-  type?: "number" | "text" | "password";
+  type?: "number" | "text" | "password" | "tel";
   min?: number;
   max?: number;
   helperText?: React.ReactNode;
@@ -120,8 +120,9 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
   handleOnKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     const { onKeyDown, type, min, isFloat } = this.props;
     const { key, ctrlKey } = event;
+    const isTypeNumeric = ["number", "tel"].includes(type as string);
 
-    if (type === "number" && !ctrlKey && isForbiddenKey(key, min, isFloat)) {
+    if (isTypeNumeric && !ctrlKey && isForbiddenKey(key, min, isFloat)) {
       event.preventDefault();
     }
 
@@ -200,7 +201,7 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
           {!!maxLength && <FieldCounter value={value} maxLength={maxLength} className="px-0" />}
         </div>
         <div className={classNames("valid-field-text-input-container", { focusedFieldText: this.state.isFocus })}>
-          {!!popoverContent ? (
+          {popoverContent ? (
             <InlinePopover isOpen={isFocus} placement={popoverPlacement} content={popoverContent} type={popoverType}>
               {this.renderInput()}
             </InlinePopover>
