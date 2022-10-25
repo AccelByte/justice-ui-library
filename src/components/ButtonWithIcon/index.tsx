@@ -7,9 +7,10 @@
 import classNames from "classnames";
 import { Button, ButtonProps } from "../Button";
 
-export interface ButtonWithIconProps extends ButtonProps {
+export interface ButtonWithIconProps extends Omit<ButtonProps, "children"> {
   buttonIcon?: string;
   iconPosition?: "left" | "right";
+  children?: React.ReactNode;
 }
 
 export const ButtonWithIcon = ({
