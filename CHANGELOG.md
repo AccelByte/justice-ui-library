@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ## [0.11.10]
 ### Refactored
 - Change type `tel` to `float` in `type` prop of `ValidFieldText`
+- make `children` prop to be optional in `ButtonWithIcon` component
 
 ## [0.11.9]
 ### Refactored
