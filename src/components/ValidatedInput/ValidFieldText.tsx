@@ -41,7 +41,7 @@ export interface ValidFieldTextProps
   optionalLabel?: string;
   isLabelHidden?: boolean;
   isInvalid?: boolean;
-  type?: "number" | "text" | "password" | "tel";
+  type?: "number" | "text" | "password" | "float";
   min?: number;
   max?: number;
   helperText?: React.ReactNode;
@@ -50,7 +50,6 @@ export interface ValidFieldTextProps
   dataQaProps?: string | null;
   validFieldTextRef?: React.RefObject<HTMLDivElement>;
   rightIcon?: React.ReactNode;
-  isFloat?: boolean;
   autoComplete?: "on" | "off";
   showTooltipOnFocus?: boolean;
   popoverContent?: React.ReactNode;
@@ -118,11 +117,11 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
   };
 
   handleOnKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    const { onKeyDown, type, min, isFloat } = this.props;
+    const { onKeyDown, type, min } = this.props;
     const { key, ctrlKey } = event;
-    const isTypeNumeric = ["number", "tel"].includes(type as string);
+    const isTypeNumeric = ["number", "float"].includes(type as string);
 
-    if (isTypeNumeric && !ctrlKey && isForbiddenKey(key, min, isFloat)) {
+    if (isTypeNumeric && !ctrlKey && isForbiddenKey(key, min, type === "float")) {
       event.preventDefault();
     }
 
@@ -142,7 +141,7 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
         // @ts-ignore
         onChange={onChange}
         disabled={disabled}
-        type={type}
+        type={type === "float" ? "tel" : type}
         min={min}
         max={max}
         shouldFitContainer={true}
