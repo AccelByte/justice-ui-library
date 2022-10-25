@@ -17,7 +17,7 @@ export interface ValidFieldTextProps extends Pick<React.InputHTMLAttributes<HTML
     optionalLabel?: string;
     isLabelHidden?: boolean;
     isInvalid?: boolean;
-    type?: "number" | "text" | "password" | "tel";
+    type?: "number" | "text" | "password" | "float";
     min?: number;
     max?: number;
     helperText?: React.ReactNode;
@@ -26,7 +26,6 @@ export interface ValidFieldTextProps extends Pick<React.InputHTMLAttributes<HTML
     dataQaProps?: string | null;
     validFieldTextRef?: React.RefObject<HTMLDivElement>;
     rightIcon?: React.ReactNode;
-    isFloat?: boolean;
     autoComplete?: "on" | "off";
     showTooltipOnFocus?: boolean;
     popoverContent?: React.ReactNode;
