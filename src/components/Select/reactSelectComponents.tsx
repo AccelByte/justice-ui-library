@@ -4,9 +4,12 @@
  * and restrictions contact your company contract manager.
  */
 
+import { OptionProps } from "@atlaskit/select";
 import React from "react";
+import ReactTooltip from "react-tooltip";
 import { components } from "react-select";
 import { SelectOption } from "../../types";
+import { getDomScrollWidthByRef } from "../../utils/dom";
 
 interface MultiValueGenericProps<OptionType extends SelectOption> {
   children: React.ReactNode;
@@ -35,6 +38,36 @@ export const MultiValueLabel: React.FC<MultiValueGenericProps<SelectOption>> = (
   return (
     <div className="styled-atlaskit-select__multi-value-unremovable">
       <components.MultiValueLabel {...updatedProps} />
+    </div>
+  );
+};
+
+export const Option: React.ComponentType<OptionProps<SelectOption, boolean>> = (props) => {
+  const optionRef = React.useRef<HTMLDivElement>(null);
+  const [isEllipsisActive, setIsEllipsisActive] = React.useState(false);
+
+  const { label, tooltip }: SelectOption = props.data;
+  const tooltipProps = !isEllipsisActive
+    ? {}
+    : { "data-tip": tooltip || label, "data-place": "right", "data-for": "select-tooltip" };
+
+  React.useEffect(() => {
+    if (!optionRef?.current) return;
+
+    const optionScrollWidth = getDomScrollWidthByRef(optionRef.current, ".styled-atlaskit-select__option");
+    setIsEllipsisActive(optionScrollWidth > optionRef.current.offsetWidth);
+  }, []);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      ReactTooltip.rebuild();
+    }, 100);
+  }, []);
+
+  return (
+    <div ref={optionRef} {...tooltipProps} className="optionLabel">
+      <components.Option {...props} />
+      <ReactTooltip effect="solid" id="select-tooltip" />
     </div>
   );
 };

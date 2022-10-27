@@ -12,7 +12,7 @@ export interface ValidSelectProps extends SelectProps {
     placeholder?: string;
     options: SelectOption[];
     name?: string;
-    value: SelectOption | SelectOption[] | string | null;
+    value: SelectOption | SelectOption[] | null;
     errMessage?: string;
     onChange: (option: SelectOption | SelectOption[]) => void;
     optionalLabel?: string;

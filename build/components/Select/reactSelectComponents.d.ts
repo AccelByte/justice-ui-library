@@ -1,3 +1,4 @@
+import { OptionProps } from "@atlaskit/select";
 import React from "react";
 import { SelectOption } from "../../types";
 interface MultiValueGenericProps<OptionType extends SelectOption> {
@@ -10,4 +11,5 @@ interface MultiValueGenericProps<OptionType extends SelectOption> {
 }
 export declare const DropdownIndicator: () => JSX.Element;
 export declare const MultiValueLabel: React.FC<MultiValueGenericProps<SelectOption>>;
+export declare const Option: React.ComponentType<OptionProps<SelectOption, boolean>>;
 export {};

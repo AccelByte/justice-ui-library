@@ -15,6 +15,18 @@
       color: $text-field-label--inactive;
     }
   }
+  input {
+    color: $base-120;
+
+    &:disabled {
+      color: $base-60;
+    }
+
+    &::placeholder {
+      color: $base-40;
+    }
+  }
+
   div[class^="Content-"] {
     border-radius: $border-radius;
     border: 1px solid $input-borderColor--inactive;
