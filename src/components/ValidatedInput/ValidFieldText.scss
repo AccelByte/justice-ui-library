@@ -57,6 +57,11 @@
 
     input {
       font-size: $font-size-h5;
+      color: $base-120;
+
+      &:disabled {
+        color: $base-60;
+      }
 
       &::placeholder {
         color: $base-40;

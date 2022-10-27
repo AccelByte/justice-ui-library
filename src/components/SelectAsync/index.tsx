@@ -7,7 +7,7 @@ import React from "react";
 import { SelectProps as AkSelectProps, AsyncSelect, MenuListComponentProps } from "@atlaskit/select";
 import { components } from "react-select";
 import { SelectOption } from "../../types";
-import { DropdownIndicator } from "../Select/reactSelectComponents";
+import { DropdownIndicator, Option } from "../Select/reactSelectComponents";
 import "./index.scss";
 
 export const reactSelectComponents = components;
@@ -105,7 +105,8 @@ const RenderSelect = ({
     <AsyncSelect
       className="styled-atlaskit-select"
       classNamePrefix="styled-atlaskit-select"
-      components={{ DropdownIndicator, MenuList }}
+      // @ts-ignore
+      components={{ DropdownIndicator, MenuList, Option: !props.formatOptionLabel ? Option : components.Option }}
       loadOptions={loadOptions}
       isMulti={isMulti}
       onChange={onChange ? (item) => onChange(item as SelectOption) : undefined}

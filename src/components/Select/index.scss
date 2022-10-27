@@ -7,6 +7,7 @@
 @import "src/styles/variables";
 
 .styled-atlaskit-select {
+  font-family: $font-family-primary !important;
   &__control,
   div[class*="-control"] {
     background-color: transparent;

@@ -23,7 +23,11 @@ const Template: Story<SelectProps> = (args) => {
   React.useEffect(() => {
     setOption(args.value);
   }, [args.value]);
-  return <Select {...args} value={option} onChange={onChange} />;
+  return (
+    <div style={{ width: 300 }}>
+      <Select {...args} value={option} onChange={onChange} />
+    </div>
+  );
 };
 
 export const Example = Template.bind({});
@@ -31,7 +35,7 @@ Example.args = {
   value: { label: "Value 1", value: "value1" },
   options: [
     { label: "Value 1", value: "value1" },
-    { label: "Value 2", value: "value2" },
+    { label: "Value 2 and it is so unusually looooooooooooooooooooooooooooooooooooooooooooooong", value: "value2" },
     { label: "Value 3", value: "value3" },
     { label: "Value 4", value: "value4" },
     { label: "Value 5", value: "value5" },
