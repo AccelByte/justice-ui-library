@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { Checkbox, CheckboxProps } from ".";
+import { Checkbox, CheckboxProps } from "./Checkbox";
 
 export default {
   title: "Components/Checkbox",

@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { ProgressModalPage, ProgressModalPageProps } from ".";
+import { ProgressModalPage, ProgressModalPageProps } from "./ProgressModalPage";
 import { Button } from "..";
 
 export default {

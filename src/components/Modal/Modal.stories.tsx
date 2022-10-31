@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { Modal, ModalProps } from ".";
+import { Modal, ModalProps } from "./Modal";
 import { Button } from "../..";
 
 export default {

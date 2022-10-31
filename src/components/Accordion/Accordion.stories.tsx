@@ -5,7 +5,7 @@
  */
 
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { Accordion, AccordionProps } from ".";
+import { Accordion, AccordionProps } from "./Accordion";
 
 export default {
   title: "Components/Accordion",

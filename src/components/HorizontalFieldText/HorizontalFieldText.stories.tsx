@@ -5,7 +5,7 @@
  */
 
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { HorizontalFieldText, HorizontalFieldTextProps } from ".";
+import { HorizontalFieldText, HorizontalFieldTextProps } from "./HorizontalFieldText";
 import { Card } from "../Card/Card";
 
 export default {

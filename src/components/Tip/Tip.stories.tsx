@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { Tip, TipProps, TipType } from ".";
+import { Tip, TipProps, TipType } from "./Tip";
 
 export default {
   title: "Components/Tip",

@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { CheckboxSelect, CheckboxSelectProps } from ".";
+import { CheckboxSelect, CheckboxSelectProps } from "./CheckboxSelect";
 import { SelectOption } from "../../types";
 
 export default {

@@ -5,7 +5,7 @@
  */
 
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { Breadcrumb, BreadcrumbProps } from ".";
+import { Breadcrumb, BreadcrumbProps } from "./Breadcrumb";
 import { BreadcrumbSchema } from "../../types";
 
 export default {

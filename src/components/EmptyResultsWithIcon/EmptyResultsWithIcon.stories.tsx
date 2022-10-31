@@ -5,7 +5,7 @@
  */
 
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { EmptyResultsProps, EmptyResultsWithIcon } from ".";
+import { EmptyResultsProps, EmptyResultsWithIcon } from "./EmptyResultWithIcon";
 import logo from "../../assets/headerLogo.svg";
 
 export default {

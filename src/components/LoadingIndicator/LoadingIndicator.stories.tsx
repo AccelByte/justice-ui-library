@@ -5,7 +5,7 @@
  */
 
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { LoadingIndicator, LoadingIndicatorProps } from ".";
+import { LoadingIndicator, LoadingIndicatorProps } from "./LoadingIndicator";
 
 export default {
   title: "Components/Loading/LoadingIndicator",

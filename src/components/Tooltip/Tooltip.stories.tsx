@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { Tooltip, TooltipProps, TOOLTIP_POSITION } from ".";
+import { Tooltip, TooltipProps, TOOLTIP_POSITION } from "./Tooltip";
 
 export default {
   title: "Components/Tooltip",

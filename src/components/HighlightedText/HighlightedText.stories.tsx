@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { HighlightedText, HighlightedTextProps } from ".";
+import { HighlightedText, HighlightedTextProps } from "./HighlightedText";
 
 export default {
   title: "Components/HighlightedText",

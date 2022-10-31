@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { CreatableSelect } from ".";
+import { CreatableSelect } from "./CreatableSelect";
 import { SelectOption } from "../../types";
 import { SelectProps } from "../Select/Select";
 

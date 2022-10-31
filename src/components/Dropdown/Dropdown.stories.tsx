@@ -5,7 +5,7 @@
  */
 
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { DropdownMenu, DropdownItemGroup, DropdownItem, DropdownMenuProps } from ".";
+import { DropdownMenu, DropdownItemGroup, DropdownItem, DropdownMenuProps } from "./Dropdown";
 
 export default {
   title: "Components/Dropdown/DropdownMenu",

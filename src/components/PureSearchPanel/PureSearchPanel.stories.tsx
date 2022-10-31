@@ -6,7 +6,7 @@
 
 import React, { ChangeEvent } from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { PureSearchPanel, PureSearchPanelProps } from ".";
+import { PureSearchPanel, PureSearchPanelProps } from "./PureSearchPanel";
 
 export default {
   title: "Components/PureSearchPanel",

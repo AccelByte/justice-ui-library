@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { InlinePopover, InlinePopoverProps } from ".";
+import { InlinePopover, InlinePopoverProps } from "./InlinePopover";
 
 export default {
   title: "Components/InlinePopover",

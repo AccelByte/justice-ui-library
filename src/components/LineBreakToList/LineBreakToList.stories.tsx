@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { LineBreakToList, LineBreakToListProps } from ".";
+import { LineBreakToList, LineBreakToListProps } from "./LineBreakToList";
 
 export default {
   title: "Components/LineBreakToList",
