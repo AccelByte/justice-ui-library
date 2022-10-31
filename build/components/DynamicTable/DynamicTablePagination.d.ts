@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { PaginationProps } from "../Pagination";
+import { PaginationProps } from "../Pagination/Pagination";
 import { SelectOption } from "../../types";
 import "./DynamicTablePagination.scss";
 export interface DynamicTablePaginationProps extends PaginationProps {

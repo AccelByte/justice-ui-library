@@ -1,6 +1,6 @@
 /// <reference types="react" />
 import "./ButtonDropdown.scss";
-import { DropdownMenuProps } from "../Dropdown";
+import { DropdownMenuProps } from "./Dropdown";
 import { ButtonAppearances } from "@atlaskit/button";
 declare type DropdownAppearance = Extract<ButtonAppearances, "subtle" | "primary"> | "outline";
 export interface ButtonDropdownProps extends Partial<Omit<DropdownMenuProps, "triggerType">> {

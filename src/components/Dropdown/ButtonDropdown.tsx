@@ -6,7 +6,7 @@
 
 import classNames from "classnames";
 import "./ButtonDropdown.scss";
-import { DropdownMenu, DropdownMenuProps } from "../Dropdown";
+import { DropdownMenu, DropdownMenuProps } from "./Dropdown";
 import { ButtonAppearances } from "@atlaskit/button";
 
 type DropdownAppearance = Extract<ButtonAppearances, "subtle" | "primary"> | "outline";
