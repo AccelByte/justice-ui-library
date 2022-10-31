@@ -7,12 +7,12 @@
 import * as React from "react";
 import "./ValidDynamicText.scss";
 import { default as classNames } from "classnames";
-import { FieldErrorMessage, FieldLabel } from "../Form/utility";
-import { Button } from "../Button";
+import { FieldErrorMessage, FieldLabel } from "../Form/utility/FormUtility";
+import { Button } from "../Button/Button";
 import { Input } from "./ValidFieldText";
 import { translation } from "../../utils/i18n";
 import "../../styles/icons/fa_icons.css";
-import { ButtonWithIcon } from "../ButtonWithIcon";
+import { ButtonWithIcon } from "../ButtonWithIcon/ButtonWithIcon";
 
 export interface ValidDynamicTextProps {
   label?: string;

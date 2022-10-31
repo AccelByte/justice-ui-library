@@ -8,7 +8,7 @@ import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { CreatableSelect } from ".";
 import { SelectOption } from "../../types";
-import { SelectProps } from "../Select";
+import { SelectProps } from "../Select/Select";
 
 export default {
   title: "Components/CreatableSelect",

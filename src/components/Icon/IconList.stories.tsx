@@ -8,8 +8,8 @@ import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
 import "../../styles/icons/ab_icons.css";
 import { AccelIconsList } from "./IconList";
-import { Button } from "../Button";
-import { FieldLabel } from "../Form/utility";
+import { Button } from "../Button/Button";
+import { FieldLabel } from "../Form/utility/FormUtility";
 
 export default {
   title: "Iconography/Icons",

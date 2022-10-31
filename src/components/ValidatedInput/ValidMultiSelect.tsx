@@ -8,7 +8,7 @@
 
 import * as React from "react";
 import { SelectOption } from "../../types";
-import { FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
+import { FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility/FormUtility";
 import { Select } from "..";
 
 interface Props {

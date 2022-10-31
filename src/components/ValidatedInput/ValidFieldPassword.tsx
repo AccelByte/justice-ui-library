@@ -14,7 +14,7 @@ import "./ValidFieldPassword.scss";
 import { generatePassword } from "../../utils";
 import { DEFAULT_PASSWORD_AND_SECRET_REGEX } from "../../constants";
 import { PASSWORD_STRENGTH_METER } from "../../constants";
-import { Button } from "../Button";
+import { Button } from "../Button/Button";
 import { translation } from "../../utils/i18n";
 import "../../styles/icons/fa_icons.css";
 import DOMPurify from "dompurify";

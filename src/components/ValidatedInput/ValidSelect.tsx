@@ -9,7 +9,7 @@
 import * as React from "react";
 import { default as classNames } from "classnames";
 import { Enum, SelectOption } from "../../types";
-import { FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
+import { FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility/FormUtility";
 import { Select, SelectProps } from "..";
 import "./ValidSelect.scss";
 

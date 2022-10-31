@@ -8,7 +8,7 @@ import React from "react";
 import { default as classNames } from "classnames";
 import { FieldTextAreaStateless, FieldTextAreaStatelessProps } from "@atlaskit/field-text-area";
 import "./ValidFieldTextArea.scss";
-import { FieldCounter, FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
+import { FieldCounter, FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility/FormUtility";
 
 export interface ValidFieldTextAreaProps extends FieldTextAreaStatelessProps {
   value: string;

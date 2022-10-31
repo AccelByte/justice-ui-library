@@ -7,7 +7,7 @@
  */
 
 import { default as classNames } from "classnames";
-import { FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
+import { FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility/FormUtility";
 import { CreatableSelect, ValidSelectProps } from "..";
 import "./ValidCreatableSelect.scss";
 

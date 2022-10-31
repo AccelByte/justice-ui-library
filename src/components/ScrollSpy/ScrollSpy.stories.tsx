@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { ScrollSpy, ScrollSpyProps } from "./index";
+import { ScrollSpy, ScrollSpyProps } from "./ScrollSpy";
 import { Enum } from "../../types";
 
 export default {

@@ -9,9 +9,9 @@ import classNames from "classnames";
 import ReactTooltip from "react-tooltip";
 import { default as FieldText } from "@atlaskit/field-text";
 import "./ValidFieldText.scss";
-import { FieldCounter, FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility";
+import { FieldCounter, FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility/FormUtility";
 import { Placement } from "@atlaskit/inline-dialog/types";
-import { InlinePopover, InlinePopoverType } from "../InlinePopover";
+import { InlinePopover, InlinePopoverType } from "../InlinePopover/InlinePopover";
 import { isForbiddenKey } from "../../utils";
 
 export class Input extends FieldText {

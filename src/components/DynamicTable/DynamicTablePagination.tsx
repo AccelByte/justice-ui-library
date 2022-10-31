@@ -5,8 +5,8 @@
  */
 
 import React from "react";
-import { Select } from "../Select";
-import { Pagination, PaginationProps } from "../Pagination";
+import { Select } from "../Select/Select";
+import { Pagination, PaginationProps } from "../Pagination/Pagination";
 import { SelectOption } from "../../types";
 import "./DynamicTablePagination.scss";
 import { translation } from "../../utils/i18n";

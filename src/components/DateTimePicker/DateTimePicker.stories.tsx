@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { DateTimePicker, DateTimePickerProps } from "./index";
+import { DateTimePicker, DateTimePickerProps } from "./DateTimePicker";
 
 export default {
   title: "Components/DateTimePicker",
