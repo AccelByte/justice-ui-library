@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { HorizontalSelect, HorizontalSelectProps } from ".";
+import { HorizontalSelect, HorizontalSelectProps } from "./HorizontalSelect";
 
 export default {
   title: "Components/HorizontalSelect",

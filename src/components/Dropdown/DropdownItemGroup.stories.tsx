@@ -5,7 +5,7 @@
  */
 
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { DropdownItemGroup, DropdownItem, DropdownItemGroupProps, ButtonDropdown } from ".";
+import { DropdownItemGroup, DropdownItem, DropdownItemGroupProps, ButtonDropdown } from "./Dropdown";
 import "../../styles/icons/fa_icons.css";
 
 export default {

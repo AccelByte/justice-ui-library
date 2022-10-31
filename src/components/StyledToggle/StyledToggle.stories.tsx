@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { StyledToggleProps, StyledToggle } from ".";
+import { StyledToggleProps, StyledToggle } from "./StyledToggle";
 
 export default {
   title: "Components/StyledToggle",

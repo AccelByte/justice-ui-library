@@ -5,7 +5,7 @@
  */
 
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { ErrorWrapper, ErrorWrapperProps } from ".";
+import { ErrorWrapper, ErrorWrapperProps } from "./ErrorWrapper";
 import logo from "../../assets/headerLogo.svg";
 
 export default {

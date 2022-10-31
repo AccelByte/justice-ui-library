@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { DividerProps, HorizontalDivider } from ".";
+import { DividerProps, HorizontalDivider } from "./Divider";
 
 export default {
   title: "Components/Divider",

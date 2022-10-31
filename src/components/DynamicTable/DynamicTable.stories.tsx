@@ -5,7 +5,7 @@
  */
 
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { DynamicTable, DynamicTableProps } from ".";
+import { DynamicTable, DynamicTableProps } from "./DynamicTable";
 import { SelectOption } from "../../types";
 
 export default {

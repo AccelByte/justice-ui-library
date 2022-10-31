@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { NavigationTab, NavigationTabProps } from ".";
+import { NavigationTab, NavigationTabProps } from "./NavigationTab";
 
 export default {
   title: "Components/NavigationTab",

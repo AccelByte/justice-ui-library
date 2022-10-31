@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { TextField, TextFieldProps } from ".";
+import { TextField, TextFieldProps } from "./TextField";
 
 export default {
   title: "Components/TextField",

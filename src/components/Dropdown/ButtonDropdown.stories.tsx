@@ -6,7 +6,7 @@
 
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { ButtonDropdown, ButtonDropdownProps } from "./ButtonDropdown";
-import { DropdownItemGroup, DropdownItem } from ".";
+import { DropdownItemGroup, DropdownItem } from "./Dropdown";
 
 export default {
   title: "Components/Dropdown/ButtonDropdown",

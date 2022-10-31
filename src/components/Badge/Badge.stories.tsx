@@ -5,7 +5,7 @@
  */
 
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { Badge, BadgeProps, BADGE_APPEARANCE, BADGE_SIZE, BADGE_TYPE } from ".";
+import { Badge, BadgeProps, BADGE_APPEARANCE, BADGE_SIZE, BADGE_TYPE } from "./Badge";
 
 export default {
   title: "Components/Badge",

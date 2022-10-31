@@ -5,7 +5,7 @@
  */
 
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { Tag } from ".";
+import { Tag } from "./Tag";
 import { RemovableTagProps } from "@atlaskit/tag";
 
 export default {

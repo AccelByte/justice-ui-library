@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { Spinner, SpinnerProps } from ".";
+import { Spinner, SpinnerProps } from "./Spinner";
 
 export default {
   title: "Components/Spinner",
