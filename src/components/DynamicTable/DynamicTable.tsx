@@ -19,6 +19,8 @@ export interface DynamicTableProps extends PropsWithChildren<StatelessProps> {
   /** Whether to have a padding bottom for the table */
   noPadding?: boolean;
   pagination?: DynamicTablePaginationProps;
+  /** Minimum width of the table */
+  minWidth?: string | number;
 }
 
 export const DynamicTable = ({
@@ -28,10 +30,15 @@ export const DynamicTable = ({
   dataQa = null,
   noPadding = false,
   pagination,
+  minWidth,
   ...props
 }: DynamicTableProps) => {
   return (
-    <div className={classNames("styled-atlaskit-table", { "no-padding": noPadding }, className)} data-qa-id={dataQa}>
+    <div
+      className={classNames("styled-atlaskit-table", { "no-padding": noPadding }, className)}
+      data-qa-id={dataQa}
+      style={{ minWidth }}
+    >
       {customContent}
       <AkDynamicTable {...props} />
       {!!pagination && <DynamicTablePagination {...pagination} />}

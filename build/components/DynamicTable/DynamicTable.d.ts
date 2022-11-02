@@ -10,5 +10,7 @@ export interface DynamicTableProps extends PropsWithChildren<StatelessProps> {
     /** Whether to have a padding bottom for the table */
     noPadding?: boolean;
     pagination?: DynamicTablePaginationProps;
+    /** Minimum width of the table */
+    minWidth?: string | number;
 }
-export declare const DynamicTable: ({ className, children, customContent, dataQa, noPadding, pagination, ...props }: DynamicTableProps) => JSX.Element;
+export declare const DynamicTable: ({ className, children, customContent, dataQa, noPadding, pagination, minWidth, ...props }: DynamicTableProps) => JSX.Element;
