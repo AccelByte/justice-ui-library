@@ -117,15 +117,15 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
   };
 
   handleOnKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    const { onKeyDown, type, min } = this.props;
+    const { onKeyDown, type, min, value } = this.props;
     const { key, ctrlKey } = event;
     const isTypeNumeric = ["number", "float"].includes(type as string);
 
-    if (isTypeNumeric && !ctrlKey && isForbiddenKey(key, min, type === "float")) {
+    if (isTypeNumeric && !ctrlKey && isForbiddenKey({ key, value, min, isFloat: type === "float" })) {
       event.preventDefault();
     }
 
-    !!onKeyDown && onKeyDown(event);
+    if (onKeyDown) onKeyDown(event);
   };
 
   renderInput = () => {
