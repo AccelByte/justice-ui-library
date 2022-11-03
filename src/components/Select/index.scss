@@ -39,11 +39,6 @@
       }
     }
   }
-  &__menu-list {
-    &:hover {
-      background-color: $base-white;
-    }
-  }
   &__option {
     text-overflow: ellipsis;
     overflow: hidden;
