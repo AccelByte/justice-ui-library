@@ -42,6 +42,7 @@ export interface ValidFieldTextProps
   isLabelHidden?: boolean;
   isInvalid?: boolean;
   type?: "number" | "text" | "password" | "float";
+  precision?: number;
   min?: number;
   max?: number;
   helperText?: React.ReactNode;
@@ -116,12 +117,26 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
     this.setState({ isFocus: true });
   };
 
+  getInputType = () => {
+    const { type, precision } = this.props;
+    switch (type) {
+      case "float":
+        if (precision === 0) return "number";
+        return "tel";
+      default:
+        return type;
+    }
+  };
+
   handleOnKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    const { onKeyDown, type, min, value } = this.props;
-    const { key, ctrlKey } = event;
+    const { onKeyDown, type, min, value, precision } = this.props;
     const isTypeNumeric = ["number", "float"].includes(type as string);
 
-    if (isTypeNumeric && !ctrlKey && isForbiddenKey({ key, value, min, isFloat: type === "float" })) {
+    if (
+      isTypeNumeric &&
+      !event.ctrlKey &&
+      isForbiddenKey({ event, value, min, isFloat: this.getInputType() === "tel", precision })
+    ) {
       event.preventDefault();
     }
 
@@ -129,7 +144,7 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
   };
 
   renderInput = () => {
-    const { placeholder, name, value, disabled, type, min, max, maxLength, autoComplete, onChange } = this.props;
+    const { placeholder, name, value, disabled, min, max, maxLength, autoComplete, onChange } = this.props;
     return (
       <Input
         isLabelHidden={false}
@@ -138,10 +153,11 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
         placeholder={placeholder}
         name={name}
         value={value}
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         onChange={onChange}
         disabled={disabled}
-        type={type === "float" ? "tel" : type}
+        type={this.getInputType()}
         min={min}
         max={max}
         shouldFitContainer={true}

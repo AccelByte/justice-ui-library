@@ -18,6 +18,7 @@ export interface ValidFieldTextProps extends Pick<React.InputHTMLAttributes<HTML
     isLabelHidden?: boolean;
     isInvalid?: boolean;
     type?: "number" | "text" | "password" | "float";
+    precision?: number;
     min?: number;
     max?: number;
     helperText?: React.ReactNode;
@@ -46,6 +47,7 @@ export declare class ValidFieldText extends React.Component<ValidFieldTextProps,
     showTooltip: () => void;
     handleBlur: (event: React.FocusEvent<HTMLInputElement>) => void;
     handleFocus: (event: React.FormEvent<HTMLInputElement>) => void;
+    getInputType: () => "number" | "text" | "password" | "tel" | undefined;
     handleOnKeyDown: (event: React.KeyboardEvent<HTMLInputElement>) => void;
     renderInput: () => JSX.Element;
     render(): JSX.Element;
