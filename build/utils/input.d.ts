@@ -1,8 +1,10 @@
+/// <reference types="react" />
 interface Params {
-    key: string;
+    event: React.KeyboardEvent<HTMLInputElement>;
     value: string;
     min?: number | string;
     isFloat?: boolean;
+    precision?: number;
 }
-export declare function isForbiddenKey({ key, value, min, isFloat }: Params): boolean;
+export declare function isForbiddenKey({ event, value, min, isFloat, precision }: Params): boolean;
 export {};

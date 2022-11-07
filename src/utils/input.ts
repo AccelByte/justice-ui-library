@@ -7,17 +7,27 @@
 import { DEFAULT_MIN_VALUE } from "../constants";
 
 interface Params {
-  key: string;
+  event: React.KeyboardEvent<HTMLInputElement>;
   value: string;
   min?: number | string;
   isFloat?: boolean;
+  precision?: number;
 }
 
-export function isForbiddenKey({ key, value, min, isFloat }: Params): boolean {
+export function isForbiddenKey({ event, value, min, isFloat = false, precision }: Params): boolean {
+  const { key } = event;
   const isNumber = !isNaN(Number(key));
-  const isDotAllowed = !!isFloat && value.split(".").length < 2 && key === ".";
   const isDashAllowed = !!min && min < DEFAULT_MIN_VALUE && key === "-";
   const isUtilityKey = key.length > 1; // for example Enter, Shift, F2, ArrowLeft
+  const isDotAllowed = isFloat && value.split(".").length < 2 && key === ".";
+  let isIllegalPrecision = false;
+  if (isFloat) {
+    isIllegalPrecision =
+      precision !== undefined ? value.split(".")[1]?.length >= precision && !Number.isNaN(Number(key)) : false;
+    const { selectionStart } = event.currentTarget;
+    if (selectionStart !== null && isIllegalPrecision && value.indexOf(".") >= selectionStart)
+      isIllegalPrecision = false;
+  }
 
-  return !(isNumber || isDotAllowed || isDashAllowed || isUtilityKey);
+  return !(isNumber || isDotAllowed || isDashAllowed || isUtilityKey) || isIllegalPrecision;
 }
