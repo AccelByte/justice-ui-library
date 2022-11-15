@@ -20,4 +20,5 @@ Example.args = {
   image: logo,
   title: "Title",
   subTitle: "Subtitle",
+  dataQA: "data QA"
 };

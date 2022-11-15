@@ -9,8 +9,9 @@ import "./TagList.scss";
 
 export interface TagListProps {
   children: React.ReactNode;
+  dataQA: string | null;
 }
 
-export const TagList = ({ children }: TagListProps) => {
-  return <div className={"styled-atlaskit-tag-list"}>{children}</div>;
+export const TagList = ({ children, dataQA }: TagListProps) => {
+  return <div className={"styled-atlaskit-tag-list"}  data-qa-id={dataQA}>{children}</div>;
 };

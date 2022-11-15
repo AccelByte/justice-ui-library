@@ -10,11 +10,12 @@ import "./index.scss";
 export interface BoxProps {
   children: React.ReactNode;
   title: string;
+  dataQA?: string | null;
 }
 
-export const Box = ({ children, title }: BoxProps) => {
+export const Box = ({ children, title, dataQA }: BoxProps) => {
   return (
-    <div className="box">
+    <div className="box" data-qa-id={dataQA}>
       <div className="header">{title}</div>
       <div className="body">{children}</div>
     </div>
