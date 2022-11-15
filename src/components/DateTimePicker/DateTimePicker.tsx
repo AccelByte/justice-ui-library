@@ -20,6 +20,7 @@ export interface DateTimePickerProps extends DatetimepickerProps {
   isDisabled?: boolean;
   label?: string;
   tooltip?: string;
+  isPositionUnset?: boolean;
 }
 
 class DateTimePicker extends React.Component<DateTimePickerProps> {
@@ -39,9 +40,20 @@ class DateTimePicker extends React.Component<DateTimePickerProps> {
   };
 
   render() {
-    const { className, dataQa, errorMessage, label = "", tooltip, ...dateTimePickerProps } = this.props;
+    const {
+      className,
+      dataQa,
+      errorMessage,
+      label = "",
+      isPositionUnset,
+      tooltip,
+      ...dateTimePickerProps
+    } = this.props;
     return (
-      <div className={classNames("datepicker__container", className)} data-qa-id={dataQa}>
+      <div
+        className={classNames("datepicker__container", { "unpositioned-datepicker": isPositionUnset }, className)}
+        data-qa-id={dataQa}
+      >
         {label && <FieldLabel {...{ label, tooltip }} />}
         <Datetime {...dateTimePickerProps} {...{ renderInput: this.renderInput }} />
         {errorMessage && <FieldErrorMessage message={errorMessage} />}

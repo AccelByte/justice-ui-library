@@ -59,8 +59,8 @@
     }
   }
   &__placeholder,
-  &__value-container div,
-  div.styled-atlaskit-select__option {
+  &__option,
+  &__value-container div {
     font-family: $font-family-primary;
     font-size: $font-size-h5;
   }
