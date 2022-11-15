@@ -19,6 +19,7 @@ export interface SelectProps
     | "blurInputOnSelect"
     | "className"
     | "classNamePrefix"
+    | "closeMenuOnScroll"
     | "closeMenuOnSelect"
     | "components"
     | "defaultInputValue"
