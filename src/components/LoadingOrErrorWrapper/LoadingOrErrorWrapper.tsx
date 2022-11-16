@@ -24,7 +24,7 @@ export interface LoadingOrErrorWrapperProps {
   errorButtonText?: string;
   children: React.ReactNode;
   isFullHeight?: boolean;
-  dataQA?: string | null;
+  dataQa?: string | null;
 }
 
 export const LoadingOrErrorWrapper = ({
@@ -39,11 +39,11 @@ export const LoadingOrErrorWrapper = ({
   onErrorActionClick,
   isRefreshable,
   isFullHeight = false,
-  dataQA
+  dataQa
 }: LoadingOrErrorWrapperProps) => {
   if (isLoading) {
     return (
-      <div className={classNames("loading-container", { "full-height": isFullHeight })} data-qa-id={dataQA}>
+      <div className={classNames("loading-container", { "full-height": isFullHeight })} data-qa-id={dataQa}>
         <LoadingIndicator />
         {loadingInfo && <span className="loading-info">{loadingInfo}</span>}
       </div>
@@ -52,7 +52,7 @@ export const LoadingOrErrorWrapper = ({
 
   if (!isLoading && !!error) {
     return (
-      <div className={"error-container"} data-qa-id={dataQA}>
+      <div className={"error-container"} data-qa-id={dataQa}>
         <ErrorWrapper title={errorTitle} subTitle={errorMessage} image={errorImage} />
         {isRefreshable && (
           <button

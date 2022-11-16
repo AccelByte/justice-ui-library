@@ -33,5 +33,5 @@ Default.args = {
   value: "search value",
   placeholder: "Search something",
   onSearch: () => console.log("Searching..."),
-  dataQA: "data QA"
+  dataQa: "data QA"
 };

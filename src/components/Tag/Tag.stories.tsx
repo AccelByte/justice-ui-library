@@ -15,4 +15,4 @@ export default {
 const Template: Story<TagsProps> = (args) => <Tag {...args} />;
 
 export const Example = Template.bind({});
-Example.args = { text: "My tag", isRemovable: true, appearance: "default" };
+Example.args = { text: "My tag", isRemovable: true, appearance: "default", dataQa: "data QA" };

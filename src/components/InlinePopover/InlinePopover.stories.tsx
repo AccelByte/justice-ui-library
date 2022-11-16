@@ -36,5 +36,5 @@ export const Default = Template.bind({});
 Default.args = {
   content: "inline popover content",
   type: "dark",
-  dataQA: "data QA"
+  dataQa: "data QA"
 };

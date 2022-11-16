@@ -10,13 +10,13 @@ import "./index.scss";
 import classNames from "classnames";
 
 export interface TagsProps extends Omit<RemovableTagProps, "color"> {
-    dataQA: string | null;
+    dataQa: string | null;
 }
 
 export const Tag = ({ ...props }: TagsProps) => {
   return (
     <div className={classNames("styled-atlaskit-tag", { isRemovable: props.isRemovable })}
-         data-qa-id={props.dataQA}>
+         data-qa-id={props.dataQa}>
       <AkTag {...props} />
     </div>
   );

@@ -34,5 +34,5 @@ Example.args = {
   errorTitle: "Error Title",
   errorMessage: "Error message",
   error: new Error("error"),
-  dataQA: "data QA"
+  dataQa: "data QA"
 };

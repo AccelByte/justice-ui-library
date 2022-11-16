@@ -10,9 +10,9 @@ import "./index.scss";
 
 export interface LoadingIndicatorProps {
   size?: "small" | "normal" | "large";
-  dataQA?: string | null
+  dataQa?: string | null
 }
 
-export const LoadingIndicator = ({ size = "normal", dataQA }: LoadingIndicatorProps) => {
-  return <span className={classNames("loading-icon", size)}  data-qa-id={dataQA} />;
+export const LoadingIndicator = ({ size = "normal", dataQa }: LoadingIndicatorProps) => {
+  return <span className={classNames("loading-icon", size)}  data-qa-id={dataQa} />;
 };

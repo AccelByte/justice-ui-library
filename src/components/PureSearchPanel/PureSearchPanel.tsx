@@ -22,7 +22,7 @@ export interface PureSearchPanelProps
   fixedWidth?: boolean;
   searchIconPosition?: Enum<typeof SearchIconPosition>;
   isDisabled?: boolean;
-  dataQA?: string | null;
+  dataQa?: string | null;
 }
 
 export const PureSearchPanel = ({
@@ -30,11 +30,11 @@ export const PureSearchPanel = ({
   fixedWidth = false,
   searchIconPosition = "RIGHT",
   isDisabled = false,
-  dataQA,
+  dataQa,
   ...props
 }: PureSearchPanelProps) => {
   return (
-    <div className={classNames("search-panel__container", { "fixed-width": fixedWidth, disabled: isDisabled })} data-qa-id={dataQA}>
+    <div className={classNames("search-panel__container", { "fixed-width": fixedWidth, disabled: isDisabled })} data-qa-id={dataQa}>
       <div className={`search-panel__bar ${searchIconPosition === SearchIconPosition.LEFT ? "searchIconLeft" : ""}`}>
         {searchIconPosition === SearchIconPosition.LEFT && <Icon name="icon-search" onClick={onSearch} />}
         <input disabled={isDisabled} {...props} />
