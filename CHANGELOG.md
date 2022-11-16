@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [0.13.6]
 ### Added
-- add data-qa-id props for `Box`, `ErrorWrapper`, `InlinePopover`, `LoadingIndicator`, `loadOrErrorWrapper`, `PureSeachPanel`, `Spinner`, `Tag`, `Tooltip` component
+- add data-qa-id props for `Box`, `ErrorWrapper`, `InlinePopover`, `LoadingIndicator`, `LoadingOrErrorWrapper`, `PureSeachPanel`, `Spinner`, `Tag`, `Tooltip` component
 
 ## [0.13.5]
 ### Added
