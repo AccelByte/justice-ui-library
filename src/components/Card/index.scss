@@ -317,35 +317,6 @@
           font-size: $font-size-h6;
         }
       }
-      .styled-atlaskit-button-enable {
-        button {
-          width: 80px;
-          border-radius: 4px;
-          height: 30px;
-          justify-content: center;
-          color: $color--success--primary !important;
-          border: 1px solid $button-borderColor--green;
-          background-color: $backgroundColor--primary;
-        }
-        span {
-          font-family: $font-family-primary;
-          font-size: $font-size-h6;
-          line-height: 30px;
-        }
-      }
-      .styled-atlaskit-button-disable {
-        button {
-          width: 80px;
-          border-radius: 4px;
-          height: 30px;
-          justify-content: center;
-        }
-        span {
-          font-family: $font-family-primary;
-          font-size: $font-size-h6;
-          line-height: 30px;
-        }
-      }
       .styled-atlaskit-inline-edit > div {
         margin-top: -14px;
         padding-right: 20px;
