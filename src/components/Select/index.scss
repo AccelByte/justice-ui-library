@@ -10,10 +10,10 @@
   font-family: $font-family-primary !important;
   &__control,
   div[class*="-control"] {
-    background-color: transparent;
+    background-color: transparent !important;
     border-radius: $border-radius;
-    border-width: 1px;
-    border-color: $input-borderColor--inactive;
+    border-width: 1px !important;
+    border-color: $input-borderColor--inactive !important;
     &:hover {
       background-color: $input-backgroundColor--hovered;
       border-color: $input-borderColor--hovered;
@@ -62,7 +62,7 @@
   &__option,
   &__value-container div {
     font-family: $font-family-primary;
-    font-size: $font-size-h5;
+    font-size: $font-size-h5 !important;
   }
   &__single-value {
     line-height: 20px !important;
