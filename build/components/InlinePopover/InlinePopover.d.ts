@@ -10,5 +10,6 @@ export declare type PopoverPlacement = Placement;
 export interface InlinePopoverProps extends Omit<Props, "testId"> {
     isOpen: boolean;
     type?: InlinePopoverType;
+    dataQa?: string;
 }
 export declare const InlinePopover: React.FC<InlinePopoverProps>;
