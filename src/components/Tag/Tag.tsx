@@ -9,9 +9,14 @@ import { RemovableTagProps } from "@atlaskit/tag/dist/types/tag/internal/removab
 import "./index.scss";
 import classNames from "classnames";
 
-export const Tag = ({ ...props }: Omit<RemovableTagProps, "color">) => {
+export interface TagsProps extends Omit<RemovableTagProps, "color"> {
+    dataQa: string | null;
+}
+
+export const Tag = ({ ...props }: TagsProps) => {
   return (
-    <div className={classNames("styled-atlaskit-tag", { isRemovable: props.isRemovable })}>
+    <div className={classNames("styled-atlaskit-tag", { isRemovable: props.isRemovable })}
+         data-qa-id={props.dataQa}>
       <AkTag {...props} />
     </div>
   );

@@ -12,5 +12,6 @@ export interface LoadingOrErrorWrapperProps {
     errorButtonText?: string;
     children: React.ReactNode;
     isFullHeight?: boolean;
+    dataQa?: string | null;
 }
-export declare const LoadingOrErrorWrapper: ({ children, isLoading, loadingInfo, error, errorImage, errorTitle, errorMessage, errorButtonText, onErrorActionClick, isRefreshable, isFullHeight, }: LoadingOrErrorWrapperProps) => JSX.Element;
+export declare const LoadingOrErrorWrapper: ({ children, isLoading, loadingInfo, error, errorImage, errorTitle, errorMessage, errorButtonText, onErrorActionClick, isRefreshable, isFullHeight, dataQa }: LoadingOrErrorWrapperProps) => JSX.Element;

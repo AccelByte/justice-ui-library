@@ -13,15 +13,16 @@ export interface ErrorWrapperProps {
   title: string;
   subTitle?: React.ReactNode;
   customComponent?: React.ReactNode;
+  dataQa?: string | null;
 }
 
-export const ErrorWrapper = ({ image, title, subTitle, customComponent }: ErrorWrapperProps) => {
+export const ErrorWrapper = ({ image, title, subTitle, customComponent, dataQa }: ErrorWrapperProps) => {
   if (customComponent) {
-    return <div className={"error-wrapper error-wrapper__custom-component"}>{customComponent}</div>;
+    return <div className={"error-wrapper error-wrapper__custom-component"} data-qa-id={dataQa}>{customComponent}</div>;
   }
 
   return (
-    <div className={"error-wrapper"}>
+    <div className={"error-wrapper"} data-qa-id={dataQa}>
       {image && (
         <>{typeof image === "string" ? <img className={"error-wrapper__image"} src={image} alt={title} /> : image}</>
       )}

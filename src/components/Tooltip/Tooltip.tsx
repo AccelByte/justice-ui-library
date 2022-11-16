@@ -27,6 +27,7 @@ export interface TooltipProps {
   isPositionFixed?: boolean;
   position?: Enum<typeof TOOLTIP_POSITION>;
   shouldFitContainer?: boolean;
+  dataQa?: string | null;
 }
 
 const HIDDEN_TOOLTIP_CLASSNAME = "common-tooltip-content-hidden";
@@ -44,6 +45,7 @@ export const Tooltip = ({
   isPositionFixed = false,
   position = TOOLTIP_POSITION.top,
   shouldFitContainer = false,
+  dataQa
 }: TooltipProps) => {
   const tooltipChildrenRef = React.useRef<HTMLElement>(null);
   const tooltipContentRef = React.useRef<HTMLSpanElement>(null);
@@ -96,7 +98,7 @@ export const Tooltip = ({
   }, [isPositionFixed]);
 
   return (
-    <div className={classNames("common-tooltip", { "full-width": shouldFitContainer })}>
+    <div className={classNames("common-tooltip", { "full-width": shouldFitContainer })} data-qa-id={dataQa}>
       <span
         ref={tooltipContentRef}
         className={classNames("common-tooltip-content", {

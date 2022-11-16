@@ -26,4 +26,5 @@ Default.args = {
   positionRight: true,
   children: "Try hover this looooooooooooooooooooong text",
   position: TOOLTIP_POSITION.top,
+  dataQa: "data QA"
 };

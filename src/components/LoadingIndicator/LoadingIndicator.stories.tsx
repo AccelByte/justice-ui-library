@@ -17,4 +17,5 @@ const Template: Story<LoadingIndicatorProps> = (args) => <LoadingIndicator {...a
 export const Example = Template.bind({});
 Example.args = {
   size: "normal",
+  dataQa: "data QA"
 };

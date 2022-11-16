@@ -12,12 +12,13 @@ import "./index.scss";
 export interface SpinnerProps {
   loadingText?: string;
   className?: string;
+  dataQa?: string | null;
 }
 
 export const Spinner = (props: SpinnerProps) => {
-  const { loadingText, className } = props;
+  const { loadingText, className, dataQa } = props;
   return (
-    <div className={classNames("loader-wrapper show", className)}>
+    <div className={classNames("loader-wrapper show", className)} data-qa-id={dataQa}>
       <div className="loading-flag">
         <span className="loading-icon" />
         {loadingText && <span className="loading-info">{loadingText}</span>}

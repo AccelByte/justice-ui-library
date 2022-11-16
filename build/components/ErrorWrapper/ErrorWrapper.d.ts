@@ -5,5 +5,6 @@ export interface ErrorWrapperProps {
     title: string;
     subTitle?: React.ReactNode;
     customComponent?: React.ReactNode;
+    dataQa?: string | null;
 }
-export declare const ErrorWrapper: ({ image, title, subTitle, customComponent }: ErrorWrapperProps) => JSX.Element;
+export declare const ErrorWrapper: ({ image, title, subTitle, customComponent, dataQa }: ErrorWrapperProps) => JSX.Element;

@@ -5,15 +5,14 @@
  */
 
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { Tag } from "./Tag";
-import { RemovableTagProps } from "@atlaskit/tag";
+import {Tag, TagsProps} from "./Tag";
 
 export default {
   title: "Components/Tag",
   component: Tag,
 } as Meta;
 
-const Template: Story<RemovableTagProps> = (args) => <Tag {...args} />;
+const Template: Story<TagsProps> = (args) => <Tag {...args} />;
 
 export const Example = Template.bind({});
-Example.args = { text: "My tag", isRemovable: true, appearance: "default" };
+Example.args = { text: "My tag", isRemovable: true, appearance: "default", dataQa: "data QA" };

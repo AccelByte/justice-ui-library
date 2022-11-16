@@ -18,13 +18,14 @@ export type PopoverPlacement = Placement;
 export interface InlinePopoverProps extends Omit<Props, "testId"> {
   isOpen: boolean;
   type?: InlinePopoverType;
+  dataQa?: string;
 }
 
 export const InlinePopover: React.FC<InlinePopoverProps> = ({ placement = "right", ...props }) => {
-  const { content, children, isOpen, type } = props;
+  const { content, children, isOpen, type, dataQa } = props;
 
   return (
-    <div className={classNames("inline-popover", type)}>
+    <div className={classNames("inline-popover", type)} data-qa-id={dataQa}>
       <InlineDialog
         {...props}
         isOpen={!!content && isOpen}

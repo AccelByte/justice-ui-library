@@ -16,4 +16,4 @@ export default {
 const Template: Story<BoxProps> = (args) => <Box {...args} />;
 
 export const Example = Template.bind({});
-Example.args = { title: "Box title", children: "Box children" };
+Example.args = { title: "Box title", children: "Box children", dataQa: "Data QA" };

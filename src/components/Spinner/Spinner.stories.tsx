@@ -16,4 +16,4 @@ export default {
 const Template: Story<SpinnerProps> = (args) => <Spinner {...args} />;
 
 export const Success = Template.bind({});
-Success.args = { loadingText: "Loading..." };
+Success.args = { loadingText: "Loading...", dataQa: "data QA" };

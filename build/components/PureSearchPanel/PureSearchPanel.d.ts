@@ -11,5 +11,6 @@ export interface PureSearchPanelProps extends Pick<React.InputHTMLAttributes<HTM
     fixedWidth?: boolean;
     searchIconPosition?: Enum<typeof SearchIconPosition>;
     isDisabled?: boolean;
+    dataQa?: string | null;
 }
-export declare const PureSearchPanel: ({ onSearch, fixedWidth, searchIconPosition, isDisabled, ...props }: PureSearchPanelProps) => JSX.Element;
+export declare const PureSearchPanel: ({ onSearch, fixedWidth, searchIconPosition, isDisabled, dataQa, ...props }: PureSearchPanelProps) => JSX.Element;
