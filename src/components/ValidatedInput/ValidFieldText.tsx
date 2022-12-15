@@ -77,6 +77,7 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
   }
 
   toolTipRef = React.createRef<HTMLElement>();
+  inputRef = React.createRef<Input>();
 
   componentDidMount() {
     setTimeout(() => {
@@ -128,9 +129,11 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
     }
   };
 
+  typeIsNumeric = () => ["number", "float"].includes(this.props.type as string);
+
   handleOnKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    const { onKeyDown, type, min, value, precision } = this.props;
-    const isTypeNumeric = ["number", "float"].includes(type as string);
+    const { onKeyDown, min, value, precision } = this.props;
+    const isTypeNumeric = this.typeIsNumeric();
 
     if (
       isTypeNumeric &&
@@ -143,10 +146,46 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
     if (onKeyDown) onKeyDown(event);
   };
 
+  handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const target = event.currentTarget;
+
+    const { onChange, type } = this.props;
+
+    /**
+     * this section was added for handle validation copy-paste non-numeric characters
+     * onKeydown will skip copy-paste step, so we should add extra validation inside onChange event
+     * 
+     * FYI : this logic was created to fix the issue user copy-paste (ctrl+v) letter 'e' which not covered validation by onKeyDown
+     * 
+     * for input which has type number by default behavior letter 'e' considered as part of valid number
+     * so is cause the validation is not running and the user is able to input the letter 'e' (using ctrl+v)
+     * https://stackoverflow.com/questions/31706611/why-does-the-html-input-with-type-number-allow-the-letter-e-to-be-entered-in
+     * 
+     * to resolve the issue we can use property `valueAsNumber` instead of `value` property
+     * if we use `valueAsNumber` the result will be NaN and is the expected value we want
+     * 
+     * otherwise if the input have type float(tel) letter 'e' will considered as invalid number
+     * and we can still use current default behaviour for get the value
+     */
+    if (this.typeIsNumeric() && isNaN(type === 'float' ? Number(target.value) :  target.valueAsNumber)) {
+      // use setTimeout as workaround for fix issue race condition with default behaviour
+      // also we can use Promise, but more simple to use just setTimeout
+      setTimeout(() => {
+        //@ts-ignore
+        target.value = null; // we should set to be null, if set empty string react won't able to re-render the ui (related with letter e)
+        this.inputRef.current?.setState({ value: '' })
+      });
+      return;
+    }
+
+    onChange?.(event);
+  };
+
   renderInput = () => {
-    const { placeholder, name, value, disabled, min, max, maxLength, autoComplete, onChange } = this.props;
+    const { placeholder, name, value, disabled, min, max, maxLength, autoComplete } = this.props;
     return (
       <Input
+        ref={this.inputRef as any}
         isLabelHidden={false}
         onFocus={this.handleFocus}
         onBlur={this.handleBlur}
@@ -155,7 +194,7 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
         value={value}
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
-        onChange={onChange}
+        onChange={this.handleOnChange}
         disabled={disabled}
         type={this.getInputType()}
         min={min}

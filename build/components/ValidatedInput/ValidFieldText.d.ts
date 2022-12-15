@@ -41,6 +41,7 @@ interface State {
 export declare class ValidFieldText extends React.Component<ValidFieldTextProps, State> {
     constructor(props: ValidFieldTextProps);
     toolTipRef: React.RefObject<HTMLElement>;
+    inputRef: React.RefObject<Input>;
     componentDidMount(): void;
     componentWillUnmount(): void;
     hideTooltip: () => void;
@@ -48,7 +49,9 @@ export declare class ValidFieldText extends React.Component<ValidFieldTextProps,
     handleBlur: (event: React.FocusEvent<HTMLInputElement>) => void;
     handleFocus: (event: React.FormEvent<HTMLInputElement>) => void;
     getInputType: () => "number" | "text" | "password" | "tel" | undefined;
+    typeIsNumeric: () => boolean;
     handleOnKeyDown: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+    handleOnChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
     renderInput: () => JSX.Element;
     render(): JSX.Element;
 }
