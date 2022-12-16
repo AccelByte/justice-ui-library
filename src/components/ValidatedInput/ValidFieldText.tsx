@@ -149,7 +149,7 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
   handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const target = event.currentTarget;
 
-    const { onChange, type } = this.props;
+    const { onChange, type, value: prevValue } = this.props;
 
     /**
      * this section was added for handle validation copy-paste non-numeric characters
@@ -168,16 +168,13 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
      * and we can still use current default behaviour for get the value
      */
     if (this.typeIsNumeric() &&  isNaN(type === 'float' ? Number(target.value) :  target.valueAsNumber)) {
-      event.currentTarget.value = ''
-      event.target.value = ''
+      event.currentTarget.value = prevValue || ''
+      event.target.value = prevValue || ''
 
-      // use setTimeout as workaround for fix issue race condition with default behaviour
-      // also we can use Promise, but more simple to use just setTimeout
-      setTimeout(() => {
-        //@ts-ignore
-        target.value = null; // we should set to be null, if set empty string react won't able to re-render the ui (related with letter e)
-        this.inputRef.current?.setState({ value: '' })
-      });
+      //@ts-ignore
+      target.value = prevValue || null; // we should set to be null, if set empty string react won't able to re-render the ui (related with letter e)
+      this.inputRef.current?.setState({ value: prevValue || '' })
+     
     }
 
     onChange?.(event);
