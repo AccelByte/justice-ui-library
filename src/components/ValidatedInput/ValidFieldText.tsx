@@ -1,4 +1,4 @@
-/*
+ /*                     
  * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
@@ -78,6 +78,7 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
 
   toolTipRef = React.createRef<HTMLElement>();
   inputRef = React.createRef<Input>();
+  revertValueNumericTimer: number | null = null;
 
   componentDidMount() {
     setTimeout(() => {
@@ -106,6 +107,18 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
     this.hideTooltip();
 
     if (typeof onBlur === "function") {
+      /**
+       * Should make onBlur on same stack, 
+       * setTimeout work in queue callstack, 
+       * so it's will void race condition with revert value function
+       */
+      if (this.revertValueNumericTimer) {
+        setTimeout(() => {
+          onBlur(event);
+        }, 1)
+        return;
+      }
+
       return onBlur(event);
     }
     this.setState({ isFocus: false });
@@ -168,19 +181,21 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
      * and we can still use current default behaviour for get the value
      */
     if (this.typeIsNumeric() &&  isNaN(type === 'float' ? Number(target.value) :  target.valueAsNumber)) {
-      event.currentTarget.value = ''
-      event.target.value = ''
+      event.currentTarget.value = '';
+      event.target.value = '';
 
-      // use setTimeout as workaround for fix issue race condition with default behaviour
-      // also we can use Promise, but more simple to use just setTimeout
-      setTimeout(() => {
-        //@ts-ignore
-        target.value = null; // we should set to be null, if set empty string react won't able to re-render the ui (related with letter e)
+      this.revertValueNumericTimer = setTimeout(() => {
+        // @ts-ignore
+        target.value = null // we should set to be null, if set empty string react won't able to re-render the ui (related with letter e)
         this.inputRef.current?.setState({ value: '' })
-      });
+        this.revertValueNumericTimer = null;
+      })
+
+     
     }
 
     onChange?.(event);
+
   };
 
   renderInput = () => {
