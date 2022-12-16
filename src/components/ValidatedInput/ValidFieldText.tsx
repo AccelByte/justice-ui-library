@@ -50,7 +50,8 @@ export interface ValidFieldTextProps
   dataQa?: string | null;
   dataQaProps?: string | null;
   validFieldTextRef?: React.RefObject<HTMLDivElement>;
-  rightIcon?: React.ReactNode;
+  prefixField?: React.ReactNode;
+  suffixField?: React.ReactNode;
   autoComplete?: "on" | "off";
   showTooltipOnFocus?: boolean;
   popoverContent?: React.ReactNode;
@@ -237,7 +238,8 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
       tooltip,
       dataQa,
       dataQaProps,
-      rightIcon,
+      prefixField,
+      suffixField,
       validFieldTextRef,
       popoverContent,
       popoverPlacement,
@@ -271,16 +273,18 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
           )}
           {!!maxLength && <FieldCounter value={value} maxLength={maxLength} className="px-0" />}
         </div>
-        <div className={classNames("valid-field-text-input-container", { focusedFieldText: this.state.isFocus })}>
-          {popoverContent ? (
-            <InlinePopover isOpen={isFocus} placement={popoverPlacement} content={popoverContent} type={popoverType}>
-              {this.renderInput()}
-            </InlinePopover>
-          ) : (
-            this.renderInput()
-          )}
-          {!!rightIcon && <div className="rightIcon">{rightIcon}</div>}
-        </div>
+
+          <div className={classNames("valid-field-text-input-container", { focusedFieldText: this.state.isFocus })}>
+            {!!prefixField && <div className="addOns--field__prefix">{prefixField}</div>}
+            {popoverContent ? (
+              <InlinePopover isOpen={isFocus} placement={popoverPlacement} content={popoverContent} type={popoverType}>
+                {this.renderInput()}
+              </InlinePopover>
+            ) : (
+              this.renderInput()
+            )}
+            {!!suffixField && <div className="addOns--field__suffix">{suffixField}</div>}
+          </div>
         {customField}
         {isInvalid && errMessage && <FieldErrorMessage message={errMessage} />}
         {helperText && <FieldHelperText message={helperText} />}

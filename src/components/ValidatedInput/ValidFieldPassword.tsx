@@ -27,7 +27,7 @@ interface PasswordStrengthDataQa {
   barProps?: string | null,
   label?: string | null,
 }
-export interface ValidFieldPasswordProps extends Omit<ValidFieldTextProps, "type" | "rightIcon" | "isFloat"> {
+export interface ValidFieldPasswordProps extends Omit<ValidFieldTextProps, "type" | "suffixField" | "isFloat"> {
   hasGeneratePassword?: boolean;
   customPattern?: string;
   hasPasswordStrengthMeter?: boolean;
@@ -192,7 +192,7 @@ export class ValidFieldPassword extends React.Component<ValidFieldPasswordProps,
       <div className="valid-field-password">
         <ValidFieldText
           {...this.props}
-          rightIcon={this.handleEyeIcon()}
+          suffixField={this.handleEyeIcon()}
           type={this.handleFieldType()}
           className={classNames(this.props.className, "password-field-text")}
           customField={this.handleGenerateText()}
