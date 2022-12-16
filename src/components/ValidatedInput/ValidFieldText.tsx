@@ -167,7 +167,10 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
      * otherwise if the input have type float(tel) letter 'e' will considered as invalid number
      * and we can still use current default behaviour for get the value
      */
-    if (this.typeIsNumeric() && isNaN(type === 'float' ? Number(target.value) :  target.valueAsNumber)) {
+    if (this.typeIsNumeric() &&  isNaN(type === 'float' ? Number(target.value) :  target.valueAsNumber)) {
+      event.currentTarget.value = ''
+      event.target.value = ''
+
       // use setTimeout as workaround for fix issue race condition with default behaviour
       // also we can use Promise, but more simple to use just setTimeout
       setTimeout(() => {
@@ -175,7 +178,6 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
         target.value = null; // we should set to be null, if set empty string react won't able to re-render the ui (related with letter e)
         this.inputRef.current?.setState({ value: '' })
       });
-      return;
     }
 
     onChange?.(event);
