@@ -8,7 +8,7 @@ interface PasswordStrengthDataQa {
     barProps?: string | null;
     label?: string | null;
 }
-export interface ValidFieldPasswordProps extends Omit<ValidFieldTextProps, "type" | "rightIcon" | "isFloat"> {
+export interface ValidFieldPasswordProps extends Omit<ValidFieldTextProps, "type" | "suffixField" | "isFloat"> {
     hasGeneratePassword?: boolean;
     customPattern?: string;
     hasPasswordStrengthMeter?: boolean;

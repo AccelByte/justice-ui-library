@@ -26,7 +26,8 @@ export interface ValidFieldTextProps extends Pick<React.InputHTMLAttributes<HTML
     dataQa?: string | null;
     dataQaProps?: string | null;
     validFieldTextRef?: React.RefObject<HTMLDivElement>;
-    rightIcon?: React.ReactNode;
+    prefixField?: React.ReactNode;
+    suffixField?: React.ReactNode;
     autoComplete?: "on" | "off";
     showTooltipOnFocus?: boolean;
     popoverContent?: React.ReactNode;

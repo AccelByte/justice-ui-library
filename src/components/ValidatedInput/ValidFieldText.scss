@@ -40,49 +40,65 @@
   div > label {
     display: none;
   }
-  .valid-field-text-input-container {
-    height: 40px;
-    position: relative;
-    [class|="Content__ChildWrapper"] > [class|="Content"] {
-      border: 1px solid $base-40;
-      &:hover {
-        border: 1px solid $base-80;
-      }
-    }
-    &.focusedFieldText {
-      [class|="Content__ChildWrapper"] > [class|="Content"] {
-        border: 2px solid $color--accent;
-      }
-    }
 
-    input {
-      font-size: $font-size-h5;
-      color: $base-120;
 
-      &:disabled {
-        color: $base-60;
-      }
-
-      &::placeholder {
-        color: $base-40;
-      }
-    }
-
-    .rightIcon {
-      position: absolute;
+    .valid-field-text-input-container {
+      height: 40px;
+      position: relative;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      right: 0;
-      top: 0;
-      height: 100%;
-      padding: 0 10px;
-      color: $color--icon;
-      background-color: $base-10;
-      border-radius: 0px 4px 4px 0px;
-      border: 1px solid $base-40;
-      font-size: large;
-      box-sizing: border-box;
+
+      .inline-popover {
+        width: 100%;
+      }
+
+      [class|="Content__ChildWrapper"] > [class|="Content"] {
+        border: 1px solid $base-40;
+
+        &:hover {
+          border: 1px solid $base-80;
+        }
+      }
+
+      &.focusedFieldText {
+        [class|="Content__ChildWrapper"] > [class|="Content"] {
+          border: 2px solid $color--accent;
+        }
+      }
+
+      input {
+        font-size: $font-size-h5;
+        color: $base-120;
+
+        &:disabled {
+          color: $base-60;
+        }
+
+        &::placeholder {
+          color: $base-40;
+        }
+      }
+
+      [class ^= "addOns--field"] {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 10px;
+        color: $color--icon;
+        background-color: $base-10;
+        border: 1px solid $base-40;
+        font-size: large;
+        box-sizing: border-box;
+        z-index: 2;
+
+        &[class $= "__prefix"] {
+          margin-right: -2px;
+          border-radius: 4px 0px 0px 4px;
+        }
+
+        &[class $= "__suffix"] {
+          margin-left: -2px;
+          border-radius: 0px 4px 4px 0px;
+        }
+      }
     }
-  }
 }
