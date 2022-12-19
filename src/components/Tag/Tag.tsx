@@ -10,7 +10,7 @@ import "./index.scss";
 import classNames from "classnames";
 
 export interface TagsProps extends Omit<RemovableTagProps, "color"> {
-    dataQa: string | null;
+    dataQa?: string | null;
 }
 
 export const Tag = ({ ...props }: TagsProps) => {

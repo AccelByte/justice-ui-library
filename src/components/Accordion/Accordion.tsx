@@ -22,6 +22,8 @@ export interface AccordionProps {
   noPadding?: boolean;
   /** To disable toggle upon clicking the accordion  */
   isToggleDisabled?: boolean;
+  /** To open Accordion by default **/
+  defaultOpen?: boolean;
 }
 
 export const Accordion = ({
@@ -31,8 +33,9 @@ export const Accordion = ({
   dataQa,
   noPadding = false,
   isToggleDisabled = false,
+  defaultOpen = false
 }: AccordionProps) => {
-  const [isOpen, toggleAccordion] = React.useState(false);
+  const [isOpen, toggleAccordion] = React.useState(defaultOpen);
 
   const onToggleAccordion = () => {
     if (isToggleDisabled) return;

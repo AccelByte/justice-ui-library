@@ -42,6 +42,7 @@ export declare class ValidFieldText extends React.Component<ValidFieldTextProps,
     constructor(props: ValidFieldTextProps);
     toolTipRef: React.RefObject<HTMLElement>;
     inputRef: React.RefObject<Input>;
+    revertValueNumericTimer: number | null;
     componentDidMount(): void;
     componentWillUnmount(): void;
     hideTooltip: () => void;

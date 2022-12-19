@@ -17,5 +17,7 @@ export interface AccordionProps {
     noPadding?: boolean;
     /** To disable toggle upon clicking the accordion  */
     isToggleDisabled?: boolean;
+    /** To open Accordion by default **/
+    defaultOpen?: boolean;
 }
-export declare const Accordion: ({ title, className, children, dataQa, noPadding, isToggleDisabled, }: AccordionProps) => JSX.Element;
+export declare const Accordion: ({ title, className, children, dataQa, noPadding, isToggleDisabled, defaultOpen }: AccordionProps) => JSX.Element;
