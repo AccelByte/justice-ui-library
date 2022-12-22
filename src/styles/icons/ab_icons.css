@@ -315,3 +315,12 @@
 .icon-ab-sidebar-campaigns-2:before {
   content: "\e95f";
 }
+.icon-ab-config-promoter:before {
+  content: "\e960";
+}
+.icon-ab-arrange-top:before {
+  content: "\e961";
+}
+.icon-ab-arrange-bottom:before {
+  content: "\e962";
+}
