@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: 'accelicons';
-  src: url('../../assets/fonts/accelicons.woff?2rgpcc') format('woff');
+  src: url('../../assets/fonts/accelicons.woff?o11zvz') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -315,12 +315,9 @@
 .icon-ab-sidebar-campaigns-2:before {
   content: "\e95f";
 }
-.icon-ab-config-promoter:before {
+.icon-ab-arrange-top:before {
   content: "\e960";
 }
-.icon-ab-arrange-top:before {
-  content: "\e961";
-}
 .icon-ab-arrange-bottom:before {
-  content: "\e962";
+  content: "\e961";
 }

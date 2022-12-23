@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ## [0.14.0]
 ### Added
 - add prefixField props in `ValidFieldText`
-- add 3 icons
+- add 2 icons
 
 ### Refactored
 - changes rightIcon props to suffixField in `ValidFieldText`
