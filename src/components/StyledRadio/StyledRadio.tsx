@@ -55,12 +55,16 @@ export const StyledRadio = ({
               disabled,
               selected: item.value === selectedRadio,
             })}
-            {...(!disabled && item.value !== selectedRadio && { onClick: onChange.bind(null, item) })}
             key={String(item.value)}
             data-qa-props={dataQa && item.value}
           >
-            <span className="radio-icon" />
-            <span className="radio-label">{item.label}</span>
+            <div
+              {...(!disabled && item.value !== selectedRadio && { onClick: onChange.bind(null, item) })}
+              className="selectable-field"
+            >
+              <span className="radio-icon" />
+              <span className="radio-label">{item.label}</span>
+            </div>
             {!isHorizontal &&
               item.helper &&
               (isList ? (

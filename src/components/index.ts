@@ -42,7 +42,6 @@ export * from "./Pagination/Pagination";
 export * from "./Popover/Popover";
 export * from "./ProgressModalPage/ProgressModalPage";
 export * from "./PureSearchPanel/PureSearchPanel";
-export * from "./RadioButton/RadioButton";
 export * from "./ScrollSpy/ScrollSpy";
 export * from "./Select/Select";
 export * from "./Spinner/Spinner";

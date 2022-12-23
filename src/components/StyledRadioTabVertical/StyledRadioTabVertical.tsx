@@ -55,11 +55,15 @@ export const StyledRadioTabVertical = ({
                 selected: item.value === selectedRadio,
               })}
               data-qa-props={item.dataQaProps}
-              {...(!disabled && item.value !== selectedRadio && { onClick: onChange.bind(null, item) })}
               key={String(item.value)}
             >
-              <span className="radio-icon" />
-              <span className="radio-label">{item.label}</span>
+              <div
+                className="selectable-field"
+                {...(!disabled && item.value !== selectedRadio && { onClick: onChange.bind(null, item) })}
+              >
+                <span className="radio-icon" />
+                <span className="radio-label">{item.label}</span>
+              </div>
               {item.value === selectedRadio && !!item.helper && (
                 <span className="radio-helper">{addLineBreaks(item.helper)}</span>
               )}

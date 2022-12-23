@@ -22,7 +22,6 @@
     }
     .radio-item {
       margin-right: 20px;
-      cursor: pointer;
       &:hover {
         background-color: transparent;
         .radio-icon {
@@ -44,6 +43,9 @@
           &:hover {
             border-color: $base-40;
           }
+        }
+        .selectable-field {
+          cursor: not-allowed;
         }
         &.selected {
           .radio-icon {
@@ -67,6 +69,10 @@
         vertical-align: middle;
         margin-right: 10px;
         box-sizing: border-box;
+      }
+      .selectable-field {
+        cursor: pointer;
+        width: fit-content;
       }
       &.selected {
         .radio-icon {
