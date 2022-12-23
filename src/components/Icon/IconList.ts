@@ -101,7 +101,6 @@ export const AccelIconsList = [
   "icon-ab-sidebar-users",
   "icon-ab-sidebar-wallets",
   "icon-ab-sidebar-statistics",
-  "icon-ab-config-promoter",
   "icon-ab-arrange-top",
   "icon-ab-arrange-bottom",
 ];
