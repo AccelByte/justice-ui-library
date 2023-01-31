@@ -9,7 +9,7 @@
 import * as React from "react";
 import { SelectOption } from "../../types";
 import { FieldErrorMessage, FieldHelperText, FieldLabel } from "../Form/utility/FormUtility";
-import { Select } from "..";
+import { Select, SelectProps } from "..";
 
 interface Props {
   label?: string;
@@ -25,6 +25,7 @@ interface Props {
   tooltip?: string;
   helperText?: React.ReactNode;
   menuPortalTarget?: HTMLElement;
+  formatOptionLabel?: SelectProps["formatOptionLabel"];
 }
 
 export const ValidMultiSelect = ({
@@ -41,6 +42,7 @@ export const ValidMultiSelect = ({
   tooltip,
   helperText,
   menuPortalTarget,
+  formatOptionLabel,
 }: Props) => (
   <>
     {!!label && <FieldLabel label={label} optionalLabel={optionalLabel} isRequired={isRequired} tooltip={tooltip} />}
@@ -55,6 +57,7 @@ export const ValidMultiSelect = ({
       value={value}
       menuPlacement="auto"
       menuPortalTarget={menuPortalTarget}
+      formatOptionLabel={formatOptionLabel}
     />
     {isInvalid && <FieldErrorMessage message={errMessage} />}
     {helperText && <FieldHelperText message={helperText} />}
