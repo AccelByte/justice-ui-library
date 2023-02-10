@@ -35,7 +35,7 @@ export class ScrollSpy extends React.Component<ScrollSpyProps, State> {
     super(props);
     this.state = {
       activeSessionId: null,
-      scrollTarget: props.scrollTarget ? props.scrollTarget : window,
+      scrollTarget: props.scrollTarget || window,
     };
   }
 
