@@ -22,10 +22,12 @@ export interface ScrollSpyProps {
   items: SpyItem[];
   className: string;
   offset?: number;
+  scrollTarget?: Element | null;
 }
 
 interface State {
   activeSessionId: string | null;
+  scrollTarget: Element | typeof window;
 }
 
 export class ScrollSpy extends React.Component<ScrollSpyProps, State> {
@@ -33,16 +35,17 @@ export class ScrollSpy extends React.Component<ScrollSpyProps, State> {
     super(props);
     this.state = {
       activeSessionId: null,
+      scrollTarget: props.scrollTarget || window,
     };
   }
 
   componentDidMount() {
     this.setActiveSection();
-    window.addEventListener("scroll", this.debounceSetActiveSession);
+    this.state.scrollTarget.addEventListener("scroll", this.debounceSetActiveSession);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.debounceSetActiveSession);
+    this.state.scrollTarget.removeEventListener("scroll", this.debounceSetActiveSession);
   }
 
   getElements = () => {
@@ -59,8 +62,9 @@ export class ScrollSpy extends React.Component<ScrollSpyProps, State> {
 
     for (let i = 0; i < items.length; i++) {
       const section = this.getElements()[i];
+      const distance = this.state.scrollTarget instanceof Element ? this.state.scrollTarget.scrollTop : window.scrollY;
       if (!section) return;
-      if (window.pageYOffset + pageOffsetToTop > section.offsetTop) {
+      if (distance + pageOffsetToTop > section.offsetTop) {
         currentSection = section.id;
       }
     }

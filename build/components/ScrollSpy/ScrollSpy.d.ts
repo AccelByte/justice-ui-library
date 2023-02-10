@@ -9,9 +9,11 @@ export interface ScrollSpyProps {
     items: SpyItem[];
     className: string;
     offset?: number;
+    scrollTarget?: Element | null;
 }
 interface State {
     activeSessionId: string | null;
+    scrollTarget: Element | typeof window;
 }
 export declare class ScrollSpy extends React.Component<ScrollSpyProps, State> {
     constructor(props: ScrollSpyProps);
