@@ -20,10 +20,10 @@ interface PaginationLimit {
 }
 export interface PaginationProps {
   paging: {
-    previous?: string;
-    next?: string;
-  };
-  changePage: (page?: string) => void;
+    previous?: string | null;
+    next?: string | null;
+  } | null;
+  changePage: (page?: string | null) => void;
   limit?: PaginationLimit;
   prevDataQa?: string | null;
   nextDataQa?: string | null;
@@ -33,8 +33,8 @@ const Pagination: React.FunctionComponent<PaginationProps> = (props) => {
   const { paging, changePage, limit, prevDataQa = "pagination_prev", nextDataQa = "pagination_next" } = props;
 
   const renderPrev = () => {
-    const onClick = () => changePage(paging.previous);
-    const paginationClass = paging.previous ? "navigation" : "disabled";
+    const onClick = () => changePage(paging?.previous);
+    const paginationClass = paging?.previous ? "navigation" : "disabled";
     return (
       <a className={paginationClass} onClick={onClick} data-qa-id={prevDataQa}>
         <i className="icon-chevron-left page-icon" /> {translation("pagination.prev")}
@@ -43,8 +43,8 @@ const Pagination: React.FunctionComponent<PaginationProps> = (props) => {
   };
 
   const renderNext = () => {
-    const onClick = () => changePage(paging.next);
-    const paginationClass = paging.next ? "navigation" : "disabled";
+    const onClick = () => changePage(paging?.next);
+    const paginationClass = paging?.next ? "navigation" : "disabled";
     return (
       <a className={paginationClass} onClick={onClick} data-qa-id={nextDataQa}>
         {translation("pagination.next")} <i className="icon-chevron-right page-icon" />
