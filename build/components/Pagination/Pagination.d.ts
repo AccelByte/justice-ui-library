@@ -10,10 +10,10 @@ interface PaginationLimit {
 }
 export interface PaginationProps {
     paging: {
-        previous?: string;
-        next?: string;
-    };
-    changePage: (page?: string) => void;
+        previous?: string | null;
+        next?: string | null;
+    } | null;
+    changePage: (page?: string | null) => void;
     limit?: PaginationLimit;
     prevDataQa?: string | null;
     nextDataQa?: string | null;
