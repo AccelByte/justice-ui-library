@@ -21,14 +21,17 @@ export interface DateTimePickerProps extends DatetimepickerProps {
   label?: string;
   tooltip?: string;
   isPositionUnset?: boolean;
+  enableManualInput?: boolean;
 }
 
 class DateTimePicker extends React.Component<DateTimePickerProps> {
   renderInput = (props: any, openCalendar: any) => {
-    const { isDisabled } = this.props;
+    const { isDisabled, enableManualInput = false } = this.props;
 
     const onKeyDown = (event: KeyboardEvent) => {
-      event.preventDefault();
+      if (!enableManualInput) {
+        event.preventDefault();
+      }
     };
 
     return (
