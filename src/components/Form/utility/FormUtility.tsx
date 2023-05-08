@@ -48,7 +48,8 @@ export const FieldLabel = ({
 }: FieldLabelProps) => {
   // make id is unique to avoid issue duplicate tooltip display due to define ReactTooltip with same id multiple time,
   // is happen if we define FieldLabel or all component which use FieldLabel multiple times in same component
-  const uniqueId = (Math.random() + 1).toString(36).substring(7) + (new Date()).getTime()
+  console.log("happenn");
+  const uniqueId = (Math.random() + 1).toString(36).substring(7) + new Date().getTime();
   return (
     <label className={classNames("field-label", className, { withTooltip: tooltip })}>
       <div>
@@ -70,7 +71,7 @@ export const FieldLabel = ({
       )}
     </label>
   );
-}
+};
 
 export interface FieldCounterProps {
   value: string | null;
