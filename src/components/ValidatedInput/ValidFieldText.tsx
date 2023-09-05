@@ -1,4 +1,4 @@
- /*                     
+/*
  * Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
  * This is licensed software from AccelByte Inc, for limitations
  * and restrictions contact your company contract manager.
@@ -108,20 +108,9 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
     this.hideTooltip();
 
     if (typeof onBlur === "function") {
-      /**
-       * Should make onBlur on same stack, 
-       * setTimeout work in queue callstack, 
-       * so it's will void race condition with revert value function
-       */
-      if (this.revertValueNumericTimer) {
-        setTimeout(() => {
-          onBlur(event);
-        }, 1)
-        return;
-      }
-
       return onBlur(event);
     }
+
     this.setState({ isFocus: false });
   };
 
@@ -160,47 +149,8 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
     if (onKeyDown) onKeyDown(event);
   };
 
-  handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const target = event.currentTarget;
-
-    const { onChange, type } = this.props;
-
-    /**
-     * this section was added for handle validation copy-paste non-numeric characters
-     * onKeydown will skip copy-paste step, so we should add extra validation inside onChange event
-     * 
-     * FYI : this logic was created to fix the issue user copy-paste (ctrl+v) letter 'e' which not covered validation by onKeyDown
-     * 
-     * for input which has type number by default behavior letter 'e' considered as part of valid number
-     * so is cause the validation is not running and the user is able to input the letter 'e' (using ctrl+v)
-     * https://stackoverflow.com/questions/31706611/why-does-the-html-input-with-type-number-allow-the-letter-e-to-be-entered-in
-     * 
-     * to resolve the issue we can use property `valueAsNumber` instead of `value` property
-     * if we use `valueAsNumber` the result will be NaN and is the expected value we want
-     * 
-     * otherwise if the input have type float(tel) letter 'e' will considered as invalid number
-     * and we can still use current default behaviour for get the value
-     */
-    if (this.typeIsNumeric() &&  isNaN(type === 'float' ? Number(target.value) :  target.valueAsNumber)) {
-      event.currentTarget.value = '';
-      event.target.value = '';
-
-      this.revertValueNumericTimer = setTimeout(() => {
-        // @ts-ignore
-        target.value = null // we should set to be null, if set empty string react won't able to re-render the ui (related with letter e)
-        this.inputRef.current?.setState({ value: '' })
-        this.revertValueNumericTimer = null;
-      })
-
-     
-    }
-
-    onChange?.(event);
-
-  };
-
   renderInput = () => {
-    const { placeholder, name, value, disabled, min, max, maxLength, autoComplete } = this.props;
+    const { placeholder, name, value, disabled, min, max, maxLength, autoComplete, onChange } = this.props;
     return (
       <Input
         ref={this.inputRef as any}
@@ -212,7 +162,7 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
         value={value}
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
-        onChange={this.handleOnChange}
+        onChange={onChange}
         disabled={disabled}
         type={this.getInputType()}
         min={min}
@@ -274,17 +224,17 @@ export class ValidFieldText extends React.Component<ValidFieldTextProps, State> 
           {!!maxLength && <FieldCounter value={value} maxLength={maxLength} className="px-0" />}
         </div>
 
-          <div className={classNames("valid-field-text-input-container", { focusedFieldText: this.state.isFocus })}>
-            {!!prefixField && <div className="addOns--field__prefix">{prefixField}</div>}
-            {popoverContent ? (
-              <InlinePopover isOpen={isFocus} placement={popoverPlacement} content={popoverContent} type={popoverType}>
-                {this.renderInput()}
-              </InlinePopover>
-            ) : (
-              this.renderInput()
-            )}
-            {!!suffixField && <div className="addOns--field__suffix">{suffixField}</div>}
-          </div>
+        <div className={classNames("valid-field-text-input-container", { focusedFieldText: this.state.isFocus })}>
+          {!!prefixField && <div className="addOns--field__prefix">{prefixField}</div>}
+          {popoverContent ? (
+            <InlinePopover isOpen={isFocus} placement={popoverPlacement} content={popoverContent} type={popoverType}>
+              {this.renderInput()}
+            </InlinePopover>
+          ) : (
+            this.renderInput()
+          )}
+          {!!suffixField && <div className="addOns--field__suffix">{suffixField}</div>}
+        </div>
         {customField}
         {isInvalid && errMessage && <FieldErrorMessage message={errMessage} />}
         {helperText && <FieldHelperText message={helperText} />}
