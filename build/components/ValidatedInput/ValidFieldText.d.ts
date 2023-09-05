@@ -53,7 +53,6 @@ export declare class ValidFieldText extends React.Component<ValidFieldTextProps,
     getInputType: () => "number" | "text" | "password" | "tel" | undefined;
     typeIsNumeric: () => boolean;
     handleOnKeyDown: (event: React.KeyboardEvent<HTMLInputElement>) => void;
-    handleOnChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
     renderInput: () => JSX.Element;
     render(): JSX.Element;
 }

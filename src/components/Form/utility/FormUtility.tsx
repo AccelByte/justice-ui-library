@@ -45,33 +45,27 @@ export const FieldLabel = ({
   tooltip,
   tooltipRef,
   className,
-}: FieldLabelProps) => {
-  // make id is unique to avoid issue duplicate tooltip display due to define ReactTooltip with same id multiple time,
-  // is happen if we define FieldLabel or all component which use FieldLabel multiple times in same component
-  console.log("happenn");
-  const uniqueId = (Math.random() + 1).toString(36).substring(7) + new Date().getTime();
-  return (
-    <label className={classNames("field-label", className, { withTooltip: tooltip })}>
-      <div>
-        {label}
-        {!isRequired && optionalLabel}
-        {children}
-      </div>
-      {tooltip && (
-        <>
-          <i
-            ref={tooltipRef}
-            className="icon-info"
-            data-for={`field-label__tooltip-${uniqueId}`}
-            data-tip={DOMPurify.sanitize(React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip)}
-            data-html={true}
-          />
-          <ReactTooltip effect="solid" id={`field-label__tooltip-${uniqueId}`} isCapture />
-        </>
-      )}
-    </label>
-  );
-};
+}: FieldLabelProps) => (
+  <label className={classNames("field-label", className, { withTooltip: tooltip })}>
+    <div>
+      {label}
+      {!isRequired && optionalLabel}
+      {children}
+    </div>
+    {tooltip && (
+      <>
+        <i
+          ref={tooltipRef}
+          className="icon-info"
+          data-for="field-label__tooltip"
+          data-tip={DOMPurify.sanitize(React.isValidElement(tooltip) ? renderToString(tooltip) : tooltip)}
+          data-html={true}
+        />
+        <ReactTooltip effect="solid" id="field-label__tooltip" />
+      </>
+    )}
+  </label>
+);
 
 export interface FieldCounterProps {
   value: string | null;
