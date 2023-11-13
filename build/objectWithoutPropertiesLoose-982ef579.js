@@ -1,1 +1,0 @@
-function r(){return r=Object.assign||function(r){for(var n=1;n<arguments.length;n++){var t=arguments[n];for(var e in t)Object.prototype.hasOwnProperty.call(t,e)&&(r[e]=t[e])}return r},r.apply(this,arguments)}function n(r,n){if(null==r)return{};var t,e,a={},o=Object.keys(r);for(e=0;e<o.length;e++)t=o[e],n.indexOf(t)>=0||(a[t]=r[t]);return a}export{r as _,n as a};
