@@ -18,6 +18,10 @@ import replace from "@rollup/plugin-replace";
 import fs from "fs";
 import path from "path";
 
+const packageJson = JSON.parse(fs.readFileSync(path.resolve("./package.json"), "utf-8"));
+// We need to exclude these because we don't want them bundled since they'll be installed anyway when we do `npm install`.
+const packageJsonDependencies = Object.keys(packageJson.dependencies);
+
 function findFilesInDirectory(startPath, fileExtensionFilters, forbiddenExtensions) {
   let results = [];
   if (!fs.existsSync(startPath)) {
@@ -84,4 +88,5 @@ export default {
     }),
     terser({ format: { comments: false } }),
   ],
+  external: packageJsonDependencies,
 };
