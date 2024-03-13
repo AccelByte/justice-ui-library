@@ -14,9 +14,8 @@
     flex-direction: column;
     position: absolute;
     align-items: center;
-    right: 0;
-    top: 0;
-    margin: 32px;
+    right: var(--modal-page-close-btn-right, 32px);
+    top: var(--modal-page-close-btn-top, 32px);
     color: $color--text--secondary;
     z-index: 510;
     .close {

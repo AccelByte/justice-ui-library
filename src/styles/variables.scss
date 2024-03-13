@@ -4,12 +4,12 @@
  * and restrictions contact your company contract manager.
  */
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
-@import './colors';
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap");
+@import "./colors";
 
 // Typography
-$font-family-primary: 'Roboto', sans-serif;
-$font-family-monospace: 'Roboto Mono', monospace;
+$font-family-primary: "Roboto", sans-serif;
+$font-family-monospace: "Roboto Mono", monospace;
 
 $font-size-h1-large: 28px;
 $font-size-h1: 24px;
@@ -33,3 +33,8 @@ $img-height-1: 78px;
 $header-height: 56px;
 
 $border-radius: 4px;
+
+:root {
+  --modal-page-close-btn-top: 32px;
+  --modal-page-close-btn-right: 32px;
+}
