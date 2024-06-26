@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.15.3]
+### Added
+- added prop `isInvalid` in `HorizontalFieldText`
+
 ## [0.15.2]
 ### Fixed
 - Add css variable to set top and right position on modal page

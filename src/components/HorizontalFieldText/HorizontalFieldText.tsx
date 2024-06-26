@@ -28,6 +28,7 @@ export interface HorizontalFieldTextProps {
   isRequired?: boolean;
   optionalLabel?: string;
   showTooltipOnFocus?: boolean;
+  isInvalid?: boolean;
 }
 
 export const HorizontalFieldText = ({
@@ -45,6 +46,7 @@ export const HorizontalFieldText = ({
   labelAlignment,
   isRequired = true,
   optionalLabel = translation("common.optionalFieldLabel"),
+  isInvalid = false,
 }: HorizontalFieldTextProps) => {
   const tooltipRef = React.useRef<HTMLLIElement>(null);
 
@@ -86,6 +88,11 @@ export const HorizontalFieldText = ({
     >
       {!isLabelHidden && (
         <div className={classNames("cell-1", labelAlignment)}>
+          {isInvalid && (
+            <span className="label-icon label-icon-invalid">
+              <i className="icon-ab-exclamation-mark-filled" />
+            </span>
+          )}
           <span className="label">
             {label}
             {!isRequired && ` ${optionalLabel}`}

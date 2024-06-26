@@ -21,6 +21,15 @@
       color: $color--text--secondary;
     }
 
+    span.label-icon {
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    span.label-icon-invalid i {
+      color: $color--error--primary;
+    }
+
     #horizontal-field-text-label__tooltip {
       text-align: left;
     }
