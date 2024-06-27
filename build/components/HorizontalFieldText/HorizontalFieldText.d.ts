@@ -16,5 +16,6 @@ export interface HorizontalFieldTextProps {
     isRequired?: boolean;
     optionalLabel?: string;
     showTooltipOnFocus?: boolean;
+    isInvalid?: boolean;
 }
-export declare const HorizontalFieldText: ({ children, className, tooltip, showTooltip, showTooltipOnFocus, label, isLabelHidden, isFlex, rightCellClassName, isValueMultiLine, dataQa, labelAlignment, isRequired, optionalLabel, }: HorizontalFieldTextProps) => JSX.Element;
+export declare const HorizontalFieldText: ({ children, className, tooltip, showTooltip, showTooltipOnFocus, label, isLabelHidden, isFlex, rightCellClassName, isValueMultiLine, dataQa, labelAlignment, isRequired, optionalLabel, isInvalid, }: HorizontalFieldTextProps) => JSX.Element;
